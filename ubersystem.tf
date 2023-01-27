@@ -27,6 +27,7 @@ module "stock2023" {
     year                    = "2023"
     environment             = "prod"
     db_endpoint             = aws_db_instance.uber.endpoint
+    db_hostname             = aws_db_instance.uber.address
     db_username             = aws_db_instance.uber.username
     db_password             = aws_secretsmanager_secret_version.password.secret_string
     rds_instance            = [

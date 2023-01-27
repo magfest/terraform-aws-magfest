@@ -319,8 +319,8 @@ resource "aws_lb" "ubersystem" {
     aws_security_group.uber_public.id
   ]
   subnets            = [
-    aws_subnet.primary.cidr_block,
-    aws_subnet.secondary.cidr_block
+    aws_subnet.primary.id,
+    aws_subnet.secondary.id
   ]
 
   enable_deletion_protection = false
