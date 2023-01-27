@@ -21,7 +21,7 @@ module "stock2023" {
     loadbalancer_arn        = aws_lb.ubersystem.arn
     lb_web_listener_arn     = aws_lb_listener.ubersystem_web_https.arn
     lb_priority             = 10
-    prefix                  = "stock2023"
+    prefix                  = "stck23"
     event                   = "stock"
     year                    = "2023"
     environment             = "prod"
