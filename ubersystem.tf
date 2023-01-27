@@ -36,4 +36,6 @@ module "stock2023" {
     ]
     uber_db_name            = "stock2023"
     uber_db_username        = "stock2023"
+    efs_id                  = aws_efs_file_system.ubersystem_static.id
+    efs_dir                 = "stock2023"
 }
