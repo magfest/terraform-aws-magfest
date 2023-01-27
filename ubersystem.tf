@@ -16,7 +16,7 @@ module "stock2023" {
         aws_security_group.uber_redis.arn
     ]
     vpc_id                  = aws_vpc.uber.arn
-    hostname                = "stock2023.uber.magfest.org"
+    hostname                = "stock2023.dev.magevent.net"
     zonename                = var.zonename
     ubersystem_container    = "ghcr.io/magfest/magprime:main"
     loadbalancer_arn        = aws_lb.ubersystem.arn
