@@ -284,7 +284,7 @@ resource "aws_acm_certificate" "uber" {
 }
 
 data "aws_route53_zone" "uber" {
-  name         = var.hostname
+  name         = var.zonename
   private_zone = false
 }
 
