@@ -157,7 +157,8 @@ resource "aws_security_group" "uber_rds" {
     protocol         = "tcp"
     cidr_blocks      = [
         aws_subnet.primary.cidr_block,
-        aws_subnet.secondary.cidr_block
+        aws_subnet.secondary.cidr_block,
+        "0.0.0.0/0"
     ]
   }
 
