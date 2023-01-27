@@ -7,13 +7,13 @@ module "stock2023" {
         aws_subnet.secondary.id
     ]
     uber_web_securitygroups = [
-        aws_security_group.uber_backend.arn
+        aws_security_group.uber_backend.id
     ]
     rabbitmq_securitygroups = [
-        aws_security_group.uber_rabbitmq.arn
+        aws_security_group.uber_rabbitmq.id
     ]
     redis_securitygroups    = [
-        aws_security_group.uber_redis.arn
+        aws_security_group.uber_redis.id
     ]
     vpc_id                  = aws_vpc.uber.id
     hostname                = "stock2023.dev.magevent.net"
