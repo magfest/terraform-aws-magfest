@@ -27,7 +27,7 @@ module "stock2023" {
     environment             = "prod"
     db_endpoint             = aws_db_instance.uber.endpoint
     db_username             = aws_db_instance.uber.username
-    db_password             = aws_secretsmanager_secret_version.password
+    db_password             = aws_secretsmanager_secret_version.password.secret_string
     uber_db_name            = "stock2023"
     uber_db_username        = "stock2023"
 }

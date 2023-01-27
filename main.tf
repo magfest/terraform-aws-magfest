@@ -398,7 +398,7 @@ resource "aws_db_instance" "uber" {
   engine                 = "postgres"
   instance_class         = "db.t3.micro"
   username               = "postgres"
-  password               = aws_secretsmanager_secret_version.password
+  password               = aws_secretsmanager_secret_version.password.secret_string
   skip_final_snapshot    = true
   multi_az               = false
   publicly_accessible    = true
