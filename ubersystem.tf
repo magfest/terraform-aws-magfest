@@ -20,6 +20,7 @@ module "stock2023" {
     zonename                = var.zonename
     ubersystem_container    = "ghcr.io/magfest/magprime:main"
     loadbalancer_arn        = aws_lb.ubersystem.arn
+    loadbalancer_dns_name   = aws_lb.ubersystem.dns_name
     lb_web_listener_arn     = aws_lb_listener.ubersystem_web_https.arn
     lb_priority             = 10
     prefix                  = "stck23"
