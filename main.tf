@@ -275,9 +275,6 @@ resource "aws_iam_policy" "task_role_logs" {
 
 resource "aws_iam_role" "task_role" {
   name_prefix = "uber"
-  managed_policy_arns = [
-    "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
-  ]
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -294,9 +291,14 @@ resource "aws_iam_role" "task_role" {
   })
 }
 
-resource "aws_iam_role_policy_attachment" "task_role_attach" {
+resource "aws_iam_role_policy_attachment" "task_role_logs_attach" {
   role       = aws_iam_role.task_role.name
   policy_arn = aws_iam_policy.task_role_logs.arn
+}
+
+resource "aws_iam_role_policy_attachment" "task_role_default_attach" {
+    role = aws_iam_role.task_role.name
+    policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
 }
 
 # -------------------------------------------------------------------
