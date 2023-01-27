@@ -388,7 +388,7 @@ resource "random_password" "uber" {
 }
 
 resource "aws_secretsmanager_secret" "db_password" {
-  name = "ubersystem-db-password"
+  name = "ubersystem-db-pass"
 }
 
 resource "aws_secretsmanager_secret_version" "password" {
