@@ -257,6 +257,23 @@ resource "aws_ecs_cluster" "uber" {
   }
 }
 
+resource "aws_iam_policy" "task_role_logs" {
+    name = "ecs-logs"
+    policy = <<EOF
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "VisualEditor0",
+                "Effect": "Allow",
+                "Action": "logs:CreateLogGroup",
+                "Resource": "arn:aws:logs:*:025244845726:log-group:*"
+            }
+        ]
+    }
+EOF
+}
+
 resource "aws_iam_role" "task_role" {
   name_prefix = "uber"
   managed_policy_arns = [
@@ -276,6 +293,11 @@ resource "aws_iam_role" "task_role" {
       },
     ]
   })
+}
+
+resource "aws_iam_role_policy_attachment" "task_role_attach" {
+  role       = aws_iam_role.task_role.name
+  policy_arn = aws_iam_policy.task_role_logs.arn
 }
 
 # -------------------------------------------------------------------
