@@ -315,7 +315,7 @@ resource "aws_lb" "ubersystem" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [
-    aws_security_group.uber_public.arn
+    aws_security_group.uber_public.id
   ]
   subnets            = [
     aws_subnet.primary.cidr_block,
