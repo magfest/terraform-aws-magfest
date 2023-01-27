@@ -15,7 +15,7 @@ module "stock2023" {
     redis_securitygroups    = [
         aws_security_group.uber_redis.arn
     ]
-    vpc_id                  = aws_vpc.uber.arn
+    vpc_id                  = aws_vpc.uber.id
     hostname                = "stock2023.dev.magevent.net"
     zonename                = var.zonename
     ubersystem_container    = "ghcr.io/magfest/magprime:main"
