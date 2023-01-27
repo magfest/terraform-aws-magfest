@@ -31,4 +31,7 @@ module "stock2023" {
     db_password             = aws_secretsmanager_secret_version.password.secret_string
     uber_db_name            = "stock2023"
     uber_db_username        = "stock2023"
+    depends_on              = [
+      aws_db_instance.uber
+    ]
 }
