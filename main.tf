@@ -156,8 +156,8 @@ resource "aws_security_group" "uber_rds" {
     to_port          = 5432
     protocol         = "tcp"
     cidr_blocks      = [
-        aws_subnet.primary.arn,
-        aws_subnet.secondary.arn
+        aws_subnet.primary.cidr_block,
+        aws_subnet.secondary.cidr_block
     ]
   }
 
@@ -318,8 +318,8 @@ resource "aws_lb" "ubersystem" {
     aws_security_group.uber_public.arn
   ]
   subnets            = [
-    aws_subnet.primary.arn,
-    aws_subnet.secondary.arn
+    aws_subnet.primary.cidr_block,
+    aws_subnet.secondary.cidr_block
   ]
 
   enable_deletion_protection = false
