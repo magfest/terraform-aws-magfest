@@ -3,8 +3,8 @@ module "stock2023" {
     ecs_cluster             = aws_ecs_cluster.uber.arn
     ecs_task_role           = aws_iam_role.task_role.arn
     subnet_ids              = [
-        aws_subnet.primary.arn,
-        aws_subnet.secondary.arn
+        aws_subnet.primary.id,
+        aws_subnet.secondary.id
     ]
     uber_web_securitygroups = [
         aws_security_group.uber_backend.arn
