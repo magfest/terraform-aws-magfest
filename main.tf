@@ -375,6 +375,22 @@ resource "aws_efs_file_system" "ubersystem_static" {
   }
 }
 
+resource "aws_efs_mount_target" "primary" {
+  file_system_id = aws_efs_file_system.ubersystem_static.id
+  subnet_id      = aws_subnet.primary.id
+  tags = {
+    Name = "Ubersystem Primary"
+  }
+}
+
+resource "aws_efs_mount_target" "secondary" {
+  file_system_id = aws_efs_file_system.ubersystem_static.id
+  subnet_id      = aws_subnet.secondary.id
+  tags = {
+    Name = "Ubersystem Secondary"
+  }
+}
+
 # -------------------------------------------------------------------
 # RDS
 # -------------------------------------------------------------------
