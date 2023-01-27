@@ -171,7 +171,7 @@ resource "aws_security_group" "uber_rds" {
   }
 
   tags = {
-    Name = "Ubersystem Public"
+    Name = "Ubersystem RDS"
   }
 }
 
@@ -259,6 +259,9 @@ resource "aws_ecs_cluster" "uber" {
 
 resource "aws_iam_role" "task_role" {
   name_prefix = "uber"
+  managed_policy_arns = [
+    "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
+  ]
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
