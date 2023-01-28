@@ -1,6 +1,5 @@
 module "stock2023" {
-    #source = "github.com/magfest/terraform-aws-ubersystem-ecs"
-    source = "../terraform-aws-ubersystem-ecs"
+    source = "github.com/magfest/terraform-aws-ubersystem-ecs"
     ecs_cluster             = aws_ecs_cluster.uber.arn
     ecs_task_role           = aws_iam_role.task_role.arn
     subnet_ids              = [
@@ -42,8 +41,7 @@ module "stock2023" {
 }
 
 module "west2023" {
-    #source = "github.com/magfest/terraform-aws-ubersystem-ecs"
-    source = "../terraform-aws-ubersystem-ecs"
+    source = "github.com/magfest/terraform-aws-ubersystem-ecs"
     ecs_cluster             = aws_ecs_cluster.uber.arn
     ecs_task_role           = aws_iam_role.task_role.arn
     subnet_ids              = [
