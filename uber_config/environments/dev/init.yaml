@@ -1,0 +1,20 @@
+reggie:
+  user: vagrant
+  group: vagrant
+  install_dir: /home/vagrant/reggie-formula/reggie_install
+  host: 127.0.0.1
+  port: 4443
+  nonssl_port: 8000
+
+  plugins:
+    ubersystem:
+      config:
+        send_emails: True
+        dev_box: True
+
+        celery:
+          beat_schedule_filename: /tmp/celerybeat-schedule.db
+
+        secret:
+          stripe_secret_key: 'sk_test_QHnlImUs68dQFxgTfVauz5Ue'
+          stripe_public_key: 'pk_test_q4kSJVwk6LXKv2ahxuVn7VOK'

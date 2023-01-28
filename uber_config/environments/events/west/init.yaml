@@ -1,0 +1,288 @@
+reggie:
+  sideboard:
+    priority_plugins: ['uber','covid']
+
+  plugins:
+    magwest:
+      name: magwest
+      source: https://github.com/magfest/magwest.git
+      
+    covid:
+      name: covid
+      source: https://github.com/magfest/covid.git
+      branch: main
+
+    ubersystem:
+      config:
+        organization_name: MAGFest, Inc.
+        event_name: MAGWest
+        event_timezone: US/Pacific
+        event_venue: "DoubleTree by Hilton, San Jose"
+        event_venue_address: "2050 Gateway Pl, San Jose, CA 95110"
+        
+        api_enabled: true
+        mivs_enabled: false
+        panels_enabled: true
+        kiosk_cc_enabled: true
+        attractions_enabled: true
+        shift_custom_badges: false
+        separate_staff_merch: false
+        collect_extra_donation: true
+        collect_exact_birthdate: true
+        badge_promo_codes_enabled: true
+        volunteer_agreement_enabled: true
+        use_checkin_barcode: true
+        
+        consent_form_url: ''
+        contact_url: 'mailto:contact@magwest.org'
+        code_of_conduct_url: 'https://www.magwest.org/code-of-conduct'
+        prereg_faq_url: 'https://www.magwest.org/faq/'
+        covid_policies_url: 'https://magwest.org/covid'
+
+        min_group_size: 5
+        min_group_addition: 3
+        shirts_per_staffer: 0
+        hours_for_shirt: 8
+        max_badge_sales: 2000
+        preassigned_badge_types: ["staff_badge", "contractor_badge"]
+
+        admin_email: "MAGFest Sys Admin <sysadmin@magfest.org>"
+        developer_email: "MAGFest Software <developers@magfest.org>"
+        security_email: "MAGWest Security <security@magwest.org>"
+        ROOM_EMAIL_SENDER: "MAGWest Staff Rooms <stops@magwest.org>" # This is all-caps in configspec.ini and I ain't messing with it
+        mivs_email: "MAGWest Indies <indies@magwest.org>"
+        techops_email: "MAGWest TechOps <techops@magwest.org>"
+
+        regdesk_email: "MAGWest Registration <registration@magwest.org>"
+        regdesk_email_signature: " - MAGWest Registration Department"
+
+        staff_email: "MAGWest Staffing <stops@magwest.org>"
+        stops_email_signature: " - MAGWest Staff Operations"
+
+        marketplace_email: "MAGWest Marketplace <marketplace@magwest.org>"
+        marketplace_email_signature: " - MAGWest Marketplace"
+
+        panels_email: "MAGWest Panels <panels@magwest.org>"
+        peglegs_email_signature: " - MAGWest Panels Department"
+
+        guest_email: "MAGWest Guests <guests@magwest.org>"
+        guest_email_signature: " - MAGWest Guest Department"
+
+        band_email: "MAGWest Music Department <music@magwest.org>"
+        band_email_signature: "- MAGWest Music Department"
+
+        badge_ranges:
+          staff_badge: [7, 999]
+          contractor_badge: [7, 999]
+          guest_badge: [2000, 9999]
+          attendee_badge: [2000, 9999]
+          one_day_badge: [2000, 9999]
+          child_badge: [2000, 9999]
+
+        social_media: ["Facebook", "Twitter", "Instagram", "LinkedIn"]
+
+        social_media_urls:
+          facebook: "https://www.facebook.com/{}"
+          twitter: "https://twitter.com/{}"
+          instagram: "https://www.instagram.com/{}"
+          linked_in: "https://www.linkedin.com/in/{}"
+
+        social_media_placeholders:
+          facebook: "Facebook page or username"
+          twitter: "Twitter profile or username"
+          instagram: "Instagram page or username"
+          linked_in: "LinkedIn page or username"
+
+        enums:
+          badge:
+            child_badge: Minor
+
+          ribbon:
+            band: RockStar
+            guest: Guest
+            mivs: Indie Dev
+
+          interest:
+            console: "Consoles"
+            chipspace: "Chipspace"
+            arcade: "Arcade"
+            lan: "LAN"
+            music: "Concerts"
+            Jams: "Jam Space"
+            panels: "Guests/Panels"
+            tabletop: "Tabletop"
+            dealers: "Dealers"
+            tournaments: "Tournaments"
+            indie_games: "Indie Games"
+          
+          dealer_wares:
+            vgames: Video Games
+            tshirts: T-shirts
+            figures: Figures
+            general: General Merchandise
+            prints: Prints
+            plushes: Plushes
+            lanyards: Lanyards/Keychains
+            perler: Perler Beads
+            jewelry: Jewelry
+            handmade: General Handmade
+
+          event_location:
+            panels_1: "Panels 1"
+            panels_2: "Panels 2"
+            arcade_tournaments_1: "Arcade (Tournaments 1)"
+            arcade_tournaments_2: "Arcade (Tournaments 2)"
+            concerts: "Concerts"
+            jamspace: "Jam Space"
+            chipspace: "Chipspace"
+            console_tournament: "Consoles (Tournaments)"
+            console_attendee: "Consoles (Attendee Tournaments)"
+            tabletop_tournaments: "Tabletop"
+            mages: "MAGES"
+
+          food_restriction:
+            gluten: No gluten
+            pork: No pork
+            nuts: No nuts
+            dairy: No dairy
+            vegetarian: Vegetarian
+            vegan: Vegan
+
+        integer_enums:
+          shirt_level: 35
+          supporter_level: 85
+          season_level: 200
+          
+          shirt:
+            "no shirt": 0
+            "S Unisex": 1
+            "M Unisex": 2
+            "L Unisex": 3
+            "XL Unisex": 4
+            "2XL Unisex": 5
+            "3XL Unisex": 6
+            "4XL Unisex": 11
+            "5XL Unisex": 12
+
+          # staff_event_shirt:
+          #  "Generic MAGWest Shirt": 0
+          #  "Event Shirt": 1
+
+          donation_tier:
+            No thanks: 0
+            T-Shirt Bundle: SHIRT_LEVEL
+            Supporter Package: SUPPORTER_LEVEL
+            Jet Tier: SEASON_LEVEL
+            
+        dept_head_checklist:
+          creating_shifts:
+            deadline: 1970-01-01
+            description: >
+                We have the ability to import shifts from last year's MAGWest, if you are only
+                making minor changes and want assistance with this step, please let us know.
+            path: /shifts_admin/index?department_id={department_id}
+
+          assigned_volunteers:
+            deadline: ''
+            name: Volunteers Assigned to Your Department
+            description: >
+                Check all of the volunteers currently assigned to your department to make sure no one is
+                missing AND that no one is there who shouldn't be.
+            path: /shifts_admin/staffers?department_id={department_id}
+            
+          social_media:
+            deadline: 1970-01-01
+            name: Social Media Requests
+            description: >
+                If you have a guest or event that you believe is worth promoting on social media beforehand, 
+                let us know here!
+            
+          approve_setup_teardown:
+            deadline: ''
+            name: Approve/Decline Additional Hotel Nights to Help With Setup/Teardown
+            description: >
+                An overwhelming majority of staffers want to work setup and teardown shifts rather than
+                work during the event itself, so we have far more offers than we have need for. Since this
+                affects what hotel nights staffers get, please approve and decline requests for this for
+                people in your department.
+            path: /dept_checklist/hotel_requests?department_id={department_id}
+            
+          hotel_eligible:
+            deadline: ''
+            name: Staffers Requesting Hotel Space
+            description: Double check that everyone in your department who you know needs hotel space has requested it.
+            path: /dept_checklist/hotel_eligible?department_id={department_id}
+
+          placeholders:
+            deadline: ''
+            name: Checking Placeholder Registrations
+            description: >
+                We create placeholder registrations for volunteers and ask them to fill out the rest of
+                their information and also confirm that they'll be coming. We need our department heads
+                to review the unclaimed badges for their departments to check for any essential volunteers
+                who haven't claimed their badges.
+            path: /dept_checklist/placeholders?department_id={department_id}
+            
+          hotel_setup:
+            deadline: 1970-01-01
+            name: Hotel Set-up Requests
+            description: Do you need tables, chairs, trash cans, water dispensers, etc?
+            path: /dept_checklist/hotel_setup?department_id={department_id}
+            
+          printed_signs:
+            deadline: ''
+            description: Other than a sign for your area, what printed signs/banners/forms do you need?
+            path: /dept_checklist/printed_signs?department_id={department_id}
+            
+          logistics:
+            deadline: 1970-01-01
+            name: Logistics Needs
+            description: What do you need brought from the warehouse?
+            path: /dept_checklist/logistics?department_id={department_id}
+
+          treasury:
+            deadline: ''
+            name: Treasury Information
+            description: If you need cash and/or mpoints, tell us your department schedule and your specific cash needs.
+            path: /dept_checklist/treasury?department_id={department_id}
+            
+          tech_requirements:
+            deadline: ''
+            name: Tech Requirements
+            description: What do you need in terms of laptops, projectors, cables, internet access, etc?
+            path: /dept_checklist/tech_requirements?department_id={department_id}
+            
+          bulk_print_jobs:
+            deadline: 1970-01-01
+            description: >
+                Do you have any bulk print jobs (more than 50 pages) you'd like us to print in advance?
+            
+          office_supplies:
+            deadline: ''
+            description: Do you need any paper, pens, sharpies, tripods, whiteboards, scissors, staplers, etc?
+            
+          mediatron:
+            deadline: 1970-01-01
+            name: Mediatron! Shot List
+            description: >
+                If you have something especially cool happening that you would like Mediatron! to capture, let 
+                us know here!
+
+          postcon_hours:
+            deadline: ''
+            name: (After the Event) Marking and Rating Shifts
+            description: >
+                After the weekend is over, we'll want all department heads to
+                ensure that their volunteers had their shifts marked and rated.
+            path: /shifts_admin/signups?department_id={department_id}
+            email_post_con: True
+            
+        volunteer_checklist:
+          2: staffing/food_item.html
+          3: staffing/shirt_item.html
+          4: staffing/hotel_item.html
+          97: staffing/emergency_procedures_item.html
+          98: staffing/volunteer_agreement_item.html
+          99: staffing/shifts_item.html
+
+        techops_dept_checklist_form_url: https://forms.gle/MiPrDDC8wYVhu7qSA

@@ -1,0 +1,12 @@
+reggie:
+  plugins:
+    ubersystem:
+      config:
+        at_the_con: False
+        post_con: False
+
+        dates:
+          dealer_reg_start: 2018-08-17 20
+          mits_submission_deadline: 2018-11-01
+          mits_editing_deadline: 2018-12-01
+          

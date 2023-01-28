@@ -1,0 +1,5 @@
+reggie:
+  plugins:
+    ubersystem:
+      config:
+        event_year: 2019

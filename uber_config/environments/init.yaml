@@ -1,0 +1,122 @@
+reggie:
+  user: reggie
+  group: reggie
+  install_dir: /srv/reggie
+  mounted_data_dir: /srv/mnt/reggie
+  host: {{ loadbalancer_id }}
+  maintenance: {{ pillar.get('reggie', {}).get('maintenance', False) }}
+
+  db:
+    username: reggie
+    password: reggie
+    name: reggie
+    host: {{ db_ip }}
+    backups:
+      enabled: False
+      backup_dir: /srv/backups/reggie/db
+      backup_log_dir: /var/log/reggie
+      backup_log_filename: db_backup.log
+      backup_schedule: '0 3 * * *'  # crontab format "m h dom mon dow"
+      preserve_local_backup_count: 7
+      remote_backup_dir: /mnt/uber-backups/db-backups/reggie
+      remote_backup_server: backups.magfest.net
+
+  queue:
+    username: reggie
+    password: reggie
+    name: reggie
+    vhost: reggie
+    host: {{ queue_ip }}
+
+  sessions:
+    host: {{ sessions_ip }}
+    password: reggie
+    storage_type: redis
+    timeout: 60  # 1 hour (in minutes)
+
+  sideboard:
+    branch: master
+    config:
+      cherrypy:
+        server.socket_host: 127.0.0.1
+        server.socket_port: 8282
+
+  plugins:
+    ubersystem:
+      branch: master
+      config:
+        path: ''
+
+        sqlalchemy_pool_size: 5
+        sqlalchemy_max_overflow: 10
+
+        code_of_conduct_url: 'http://super.magfest.org/codeofconduct'
+        consent_form_url: 'http://super.magfest.org/parentalconsentform'
+        contact_url: 'http://super.magfest.org/contact'
+        prereg_faq_url: 'http://super.magfest.org/faq'
+        privacy_policy_url: 'https://super.magfest.org/privacy-policy'
+        jira_enabled: true
+        attendee_accounts_enabled: false
+        maps_enabled: true
+        blank_staff_badges: 50
+
+        panels_twilio_number: '+12405415595'
+        tabletop_twilio_number: '+15713646627'
+
+        preassigned_badge_types: ['staff_badge','contractor_badge']
+
+        admin_email: MAGFest Sys Admin <sysadmin@magfest.org>
+        developer_email: MAGFest Software <developers@magfest.org>
+        security_email: MAGFest Security <security@magfest.org>
+
+        regdesk_email: MAGFest Registration <regsupport@magfest.org>
+        regdesk_email_signature: '- MAGFest Registration Department'
+
+        staff_email: MAGFest Staffing <stops@magfest.org>
+        stops_email_signature: '- MAGFest Staff Operations'
+
+        marketplace_email: MAGFest Marketplace <marketplace@magfest.org>
+        marketplace_email_signature: '- MAGFest Marketplace'
+
+        panels_email: MAGFest Panels <panels@magfest.org>
+        peglegs_email_signature: '- MAGFest Panels Department'
+
+        guest_email: MAGFest Guests <guests@magfest.org>
+        guest_email_signature: '- MAGFest Guest Department'
+
+        band_email: MAGFest Music Department <music@magfest.org>
+        band_email_signature: '- MAGFest Music Department'
+
+        prereg_hotel_info_email_sender: Do Not Reply <noreply@magfest.org>
+        prereg_hotel_info_email_signature: '- MAGFest'
+
+        secret:
+          barcode_key: 'TEST ONLY!'
+          barcode_salt: 255
+          barcode_event_id: 255
+
+
+ssh:
+  password_authentication: True
+  permit_root_login: False
+
+
+ssl:
+  dir: /etc/ssl
+  certs_dir: /etc/ssl/certs
+
+
+ufw:
+  enabled: True
+
+  settings:
+    ipv6: False
+
+  sysctl:
+    ipv6_autoconf: 0
+
+  applications:
+    OpenSSH:
+      limit: True
+      to_addr: {{ private_ip }}
+      comment: Private network SSH
