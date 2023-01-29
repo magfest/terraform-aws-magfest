@@ -474,6 +474,9 @@ resource "random_password" "uber" {
 
 resource "aws_secretsmanager_secret" "db_password" {
   name = "ubersystem-db-pass"
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 resource "aws_secretsmanager_secret_version" "password" {
