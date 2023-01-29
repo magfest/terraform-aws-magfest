@@ -1,6 +1,6 @@
 plugins:
   uber:
-    path: ''
+    path: 'uber'
 
     sqlalchemy_pool_size: 5
     sqlalchemy_max_overflow: 10
