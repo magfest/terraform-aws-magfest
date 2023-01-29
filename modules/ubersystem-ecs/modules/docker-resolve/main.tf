@@ -7,7 +7,7 @@ terraform {
 }
 
 locals {
-    image_info = regex("^(?:(?P<hostname>(?:[a-z0-9]+\\.)+[a-z0-9]+)(?::(?P<port>[0-9]+))?/)?(?P<path>(?:[a-z0-9]+/)*[a-z0-9]+)(?::(?P<tag>[a-z0-9\\.]+))?(?:@sha256:(?P<hash>[a-f0-9]+))?$", var.image)
+    image_info = regex("^(?:(?P<hostname>(?:(?:[a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9])\\.)+(?:[a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]))(?::(?P<port>[0-9]+))?/)?(?P<path>(?:[a-z0-9][a-z0-9\\._-]*/)*[a-z0-9\\._-]*[a-z0-9])(?::(?P<tag>[\\w][\\w.-]{0,127}))?(?:@sha256:(?P<hash>[a-f0-9]+))?$", var.image)
     reference = local.image_info.hash != null ? local.image_info.hash : local.image_info.tag != null ? local.image_info.tag : "latest"
 }
 
