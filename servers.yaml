@@ -1,5 +1,5 @@
 stock2023:
-  ubersystem_container: ghcr.io/magfest/magprime:main
+  ubersystem_container: ghcr.io/magfest/ubersystem:env_config
   hostname: stock2023.dev.magevent.net
   zonename: dev.magevent.net
   prefix: stock23
