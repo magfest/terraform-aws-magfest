@@ -126,10 +126,10 @@ plugins:
 
     table_prices:
       default_price: 350
-      1: 150
-      2: 250
-      3: 400
-      4: 550
+      "1": 150
+      "2": 250
+      "3": 400
+      "4": 550
 
     integer_enums:
       shirt_level: 25
