@@ -1,7 +1,4 @@
-reggie:
-  maintenance: False
-  plugins:
-    ubersystem:
-      config:
-        at_the_con: False
-        post_con: True
+plugins:
+  ubersystem:
+    at_the_con: False
+    post_con: True

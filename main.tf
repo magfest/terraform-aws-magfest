@@ -4,6 +4,12 @@ terraform {
       source  = "hashicorp/aws"
       version = ">= 4.38.0"
     }
+    postgresql = {
+      source = "cyrilgdn/postgresql"
+    }
+    curl = {
+      source = "marcofranssen/curl"
+    }
   }
 }
 
@@ -489,4 +495,27 @@ resource "aws_db_instance" "uber" {
     aws_security_group.uber_rds.id
   ]
   db_subnet_group_name   = aws_db_subnet_group.uber.name
+}
+
+provider "postgresql" {
+  host       = aws_db_instance.uber.address
+  username   = aws_db_instance.uber.username
+  password   = aws_secretsmanager_secret_version.password.secret_string
+  superuser  = false
+}
+
+data "curl_request" "ghcr_token" {
+  http_method = "GET"
+  uri = "https://ghcr.io/token?scope=repository:magfest/magprime:pull"
+  lifecycle {
+    postcondition {
+      condition = self.response_status_code == 200
+      error_message = "Invalid response code getting login token: ${self.response_status_code}\n\n${self.response_body}"
+    }
+  }
+}
+
+provider "curl" {
+  alias = "ghcr"
+  token = jsondecode(data.curl_request.ghcr_token.response_body).token
 }

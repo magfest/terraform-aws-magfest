@@ -1,9 +1,9 @@
 variable "hostname" {
     type    = string
-    default = "default.uber.magfest.org"
+    default = "default.dev.magevent.net"
 }
 
 variable "zonename" {
     type    = string
-    default = "magfest.org"
+    default = "dev.magevent.net"
 }

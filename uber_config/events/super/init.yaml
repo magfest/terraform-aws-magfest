@@ -1,344 +1,333 @@
-reggie:
-  plugins:
-    magprime:
-      name: magprime
-      source: https://github.com/magfest/magprime.git
-      
-    covid:
-      name: covid
-      source: https://github.com/magfest/covid.git
-      branch: main
+plugins:
+  ubersystem:
+    organization_name: MAGFest INC
+    event_name: MAGFest
+    event_timezone: US/Eastern
+    event_venue: The Gaylord National Hotel and Convention Center
+    event_venue_address: 201 Waterfront St, National Harbor, MD 20745
+    untransferable_attrs: ['first_name','last_name','legal_name','email','birthdate','zip_code','international','ec_name','ec_phone','cellphone','interests','age_group','staffing','requested_depts','agreed_to_covid_policies','special_merch','group_name','agreed_to_covid_policies','covid_ready']
 
-    ubersystem:
-      config:
-        organization_name: MAGFest INC
-        event_name: MAGFest
-        event_timezone: US/Eastern
-        event_venue: The Gaylord National Hotel and Convention Center
-        event_venue_address: 201 Waterfront St, National Harbor, MD 20745
-        untransferable_attrs: ['first_name','last_name','legal_name','email','birthdate','zip_code','international','ec_name','ec_phone','cellphone','interests','age_group','staffing','requested_depts','agreed_to_covid_policies','special_merch','group_name','agreed_to_covid_policies','covid_ready']
+    separate_staff_merch: true
+    shirts_per_staffer: 2
+    hours_for_shirt: 12
+    hours_for_food: 12
 
-        separate_staff_merch: true
-        shirts_per_staffer: 2
-        hours_for_shirt: 12
-        hours_for_food: 12
+    mits_enabled: True
+    mivs_enabled: True
+    row_load_limit: 1000
 
-        mits_enabled: True
-        mivs_enabled: True
-        row_load_limit: 1000
+    volunteer_perks_url: 'https://www.notion.so/magfest/MAGFest-Super-Perks-f001221c31484ef4957a6513c54a6fd6'
+    covid_policies_url: ''
+    prior_covid_policies_url: 'https://super.magfest.org/covid'
 
-        volunteer_perks_url: 'https://www.notion.so/magfest/MAGFest-Super-Perks-f001221c31484ef4957a6513c54a6fd6'
-        covid_policies_url: ''
-        prior_covid_policies_url: 'https://super.magfest.org/covid'
+    panel_rooms: ['panels_1', 'panels_2', 'panels_3', 'panels_4', 'panels_5', 'tabletop_panels', 'the_forge',
+                  'autographs', 'autographs_1']
+    tabletop_locations: ['tabletop_tournaments', 'tabletop_tournaments_2', 'tabletop_indie']
+    music_rooms: ['concerts', 'chiptunes', 'pose_lounge', 'lobby_bar', 'jamspace', 'jam_clinic', 'jam_shop']
 
-        panel_rooms: ['panels_1', 'panels_2', 'panels_3', 'panels_4', 'panels_5', 'tabletop_panels', 'the_forge',
-                      'autographs', 'autographs_1']
-        tabletop_locations: ['tabletop_tournaments', 'tabletop_tournaments_2', 'tabletop_indie']
-        music_rooms: ['concerts', 'chiptunes', 'pose_lounge', 'lobby_bar', 'jamspace', 'jam_clinic', 'jam_shop']
+    discountable_badge_types: ['attendee_badge', 'child_badge']
 
-        discountable_badge_types: ['attendee_badge', 'child_badge']
+    accessibility_services_enabled: True
+    volunteer_agreement_enabled: True
+    emergency_procedures_enabled: True
+    require_dedicated_guest_table_presence: True
+    rock_island_groups: ['band', 'guest', 'rock_island']
 
-        accessibility_services_enabled: True
-        volunteer_agreement_enabled: True
-        emergency_procedures_enabled: True
-        require_dedicated_guest_table_presence: True
-        rock_island_groups: ['band', 'guest', 'rock_island']
+    admin_email: MAGFest Sys Admin <sysadmin@magfest.org>
+    developer_email: MAGFest Software <developers@magfest.org>
+    security_email: MAGFest Security <security@magfest.org>
 
-        admin_email: MAGFest Sys Admin <sysadmin@magfest.org>
-        developer_email: MAGFest Software <developers@magfest.org>
-        security_email: MAGFest Security <security@magfest.org>
+    regdesk_email: MAGFest Registration <regsupport@magfest.org>
+    regdesk_email_signature: |
+        MAGFest Registration Department
+        MAGFest Inc.
+        http://super.magfest.org
 
-        regdesk_email: MAGFest Registration <regsupport@magfest.org>
-        regdesk_email_signature: |
-            MAGFest Registration Department
-            MAGFest Inc.
-            http://super.magfest.org
+    staff_email: MAGFest Staffing <stops@magfest.org>
+    stops_email_signature: |
+        Thank You,
+        Staff Operations: MAGFest Inc.
+        http://super.magfest.org
 
-        staff_email: MAGFest Staffing <stops@magfest.org>
-        stops_email_signature: |
-            Thank You,
-            Staff Operations: MAGFest Inc.
-            http://super.magfest.org
+    marketplace_email: MAGFest Marketplace <marketplace@magfest.org>
+    marketplace_email_signature: |
+        - Danielle Pomfrey,
+        MAGFest Marketplace Coordinator
 
-        marketplace_email: MAGFest Marketplace <marketplace@magfest.org>
-        marketplace_email_signature: |
-            - Danielle Pomfrey,
-            MAGFest Marketplace Coordinator
+    panels_email: MAGFest Panels <panels@magfest.org>
+    panels_email_signature: |
+        - MAGFest Panels Department
 
-        panels_email: MAGFest Panels <panels@magfest.org>
-        panels_email_signature: |
-            - MAGFest Panels Department
+    guest_email: MAGFest Guests <guests@magfest.org>
+    guest_email_signature: |
+        Super MAGFest Guests & MAGMoves Team
 
-        guest_email: MAGFest Guests <guests@magfest.org>
-        guest_email_signature: |
-            Super MAGFest Guests & MAGMoves Team
+    band_email: MAGFest Music Department <music@magfest.org>
+    band_email_signature: '- MAGFest Music Department'
 
-        band_email: MAGFest Music Department <music@magfest.org>
-        band_email_signature: '- MAGFest Music Department'
+    social_media: ["Social Media Info"]
 
-        social_media: ["Social Media Info"]
+    social_media_urls:
+      social_media_info: ""
 
-        social_media_urls:
-          social_media_info: ""
+    social_media_placeholders:
+      social_media_info: "List social media sites you use and include a link to your page, or your username."
 
-        social_media_placeholders:
-          social_media_info: "List social media sites you use and include a link to your page, or your username."
+    dealer_term: seller
+    dealer_helper_term: Marketplace Assistant
+    dealer_app_term: marketplace application
+    dealer_loc_term: marketplace
+    dealer_reg_term: marketplace registration
 
-        dealer_term: seller
-        dealer_helper_term: Marketplace Assistant
-        dealer_app_term: marketplace application
-        dealer_loc_term: marketplace
-        dealer_reg_term: marketplace registration
+    enums:
+      badge:
+        attendee_badge: Attendee
+        child_badge: Minor
+        staff_badge: Staff
+        guest_badge: Guest
+        one_day_badge: One Day
 
-        enums:
-          badge:
-            attendee_badge: Attendee
-            child_badge: Minor
-            staff_badge: Staff
-            guest_badge: Guest
-            one_day_badge: One Day
+      ribbon:
+        band: RockStar
+        under_13: 12 & Under
+        mivs: Indie Dev
+        superstar_ribbon: Superstar
 
-          ribbon:
-            band: RockStar
-            under_13: 12 & Under
-            mivs: Indie Dev
-            superstar_ribbon: Superstar
+      special_merch:
+        no_merch: Select a size
 
-          special_merch:
-            no_merch: Select a size
+      job_interest:
+        anything: Anything
+        arcade: Arcade
+        challenges: Challenges Booth
+        charity: Charity
+        chipspace: Chipspace
+        console: Consoles
+        film_fest: Film Festival
+        indie_games: Indie Showcase
+        jamspace: Jam Space
+        lan: LAN
+        museum: Museum
+        panels: Panels
+        regdesk: Registration
+        loudr: Rock Island (Merch)
+        security: Security
+        food_prep: Staff Suite
+        staff_support: Staff Support
+        tea_room: Staff Tea Room
+        tabletop: Tabletop
+        tech_ops: Tech Ops
+        other: Other
 
-          job_interest:
-            anything: Anything
-            arcade: Arcade
-            challenges: Challenges Booth
-            charity: Charity
-            chipspace: Chipspace
-            console: Consoles
-            film_fest: Film Festival
-            indie_games: Indie Showcase
-            jamspace: Jam Space
-            lan: LAN
-            museum: Museum
-            panels: Panels
-            regdesk: Registration
-            loudr: Rock Island (Merch)
-            security: Security
-            food_prep: Staff Suite
-            staff_support: Staff Support
-            tea_room: Staff Tea Room
-            tabletop: Tabletop
-            tech_ops: Tech Ops
-            other: Other
+      interest:
+        console: Consoles
+        arcade: Arcade
+        lan: LAN
+        music: Concerts
+        Jams: Jam Space
+        panels: Guests/Panels
+        tabletop: Tabletop games
+        dealers: Marketplace
+        tournaments: Tournaments
 
-          interest:
-            console: Consoles
-            arcade: Arcade
-            lan: LAN
-            music: Concerts
-            Jams: Jam Space
-            panels: Guests/Panels
-            tabletop: Tabletop games
-            dealers: Marketplace
-            tournaments: Tournaments
+      dealer_wares:
+        vgames: Video Games
+        tshirts: T-shirts
+        figures: Figures
+        general: General Merchandise
+        prints: Prints
+        plushes: Plushes
+        lanyards: Lanyards/Keychains
+        perler: Perler Beads
+        jewelry: Jewelry
+        bath: Bath Products
+        handmade: General Handmade
 
-          dealer_wares:
-            vgames: Video Games
-            tshirts: T-shirts
-            figures: Figures
-            general: General Merchandise
-            prints: Prints
-            plushes: Plushes
-            lanyards: Lanyards/Keychains
-            perler: Perler Beads
-            jewelry: Jewelry
-            bath: Bath Products
-            handmade: General Handmade
+      sandwich:
+        turkey: Turkey
+        ham: Ham
+        cheese: Cheese
+        peanut_butter: Peanut Butter
+        jelly: Jelly
+        salad: Prefer salad instead of sandwich
 
-          sandwich:
-            turkey: Turkey
-            ham: Ham
-            cheese: Cheese
-            peanut_butter: Peanut Butter
-            jelly: Jelly
-            salad: Prefer salad instead of sandwich
+      food_restriction:
+        dairy: No Dairy
+        gluten: No Gluten
+        nuts: No Nuts
+        veggie: Vegetarian
+        vegan: Vegan
+        
+      panel_dept:
+        panels: No Specific Department
+        mivs: Indie Developer Showcase
+        mages: MAGES
+        museum: Museum
+        makerspace: Makerspace
+        magmoves: MAGMoves (the Arena)
+        tabletop: Tabletop
+        
+      noise_level:
+        level_0: Level 0 (Just talking to the audience)
+        level_1: Level 1 (Showing video clips or playing prerecorded music)
+        level_2: Level 2 (Playing live instruments or singing)
+        level_3: Level 3 (Absolute chaos)
 
-          food_restriction:
-            dairy: No Dairy
-            gluten: No Gluten
-            nuts: No Nuts
-            veggie: Vegetarian
-            vegan: Vegan
+      presentation:
+        basic: Lecture
+        group_discussion: Group Discussion with Moderator
+        qa: Question & Answer
+        gameshow: Gameshow
+        workshop: Workshop
+        learn_to_play: Learn to Play
+        participation: Audience Participation
+        physical_activity: Physical Activity (either group participation or performance)
+        performance: Comedy Performance
+        music: Music Performance (Jam Clinic)
+        advanced_av: Podcast/Vodcast Recording
+        karaoke: Karaoke/Sing a Long
+        movie: Movie Screening
+        other: Other
+
+      guest_merch:
+        no_merch: Not selling merch
+        own_table: Dedicated half-table in the Marketplace
+        rock_island: Rock Island
+
+    dept_head_checklist:
+      placeholders:
+        deadline: 1970-01-01
+        name: Checking Placeholder Registrations
+        description: >
+            We create placeholder registrations for volunteers and ask them to fill out the rest of
+            their information and also confirm that they'll be coming. We need our department heads
+            to review the unclaimed badges for their departments to check for any essential volunteers
+            who haven't claimed their badges.
+        path: /dept_checklist/placeholders?department_id={department_id}
+
+      creating_shifts:
+        deadline: 1970-01-01
+        description: >
+            We are able to import shifts from last year. If you want us to import last year's shifts, please 
+            email stops@magfest.org. You will still need to approve these via the checklist after the import.
+        path: /shifts_admin/index?department_id={department_id}
+
+      assigned_volunteers:
+        deadline: 1970-01-01
+        name: Volunteers Assigned to Your Department
+        description: >
+            Check all of the volunteers currently assigned to your department to make sure no one is
+            missing AND that no one is there who shouldn't be.
+        path: /shifts_admin/staffers?department_id={department_id}
+
+      treasury:
+        deadline: 1970-01-01
+        name: Treasury Information
+        description: If you need cash and/or mpoints, tell us your department schedule and your specific cash needs.
+        path: /dept_checklist/treasury?department_id={department_id}
+
+      hotel_setup:
+        deadline: 1970-01-01
+        name: Hotel Setup Information
+        description: Do you need tables, chairs, trash cans, water dispensers, etc?
+
+      approve_setup_teardown:
+        deadline: 1970-01-01
+        name: Approve/Decline Additional Hotel Nights
+        description: >
+            Many staffers want to work setup and teardown shifts rather than work during the event. We have more 
+            volunteers than we need to do this, so we require DH approval of volunteers who need hotel space for 
+            those dates.
+        path: /dept_checklist/hotel_requests?department_id={department_id}
+
+      # Turned off for Super 2020 as Tuber does not have the relevant page
+      #hotel_eligible:
+      #  deadline: 1970-01-01
+      #  name: Staffers Requesting Hotel Space
+      #  description: Double check that everyone in your department who you know needs hotel space has requested it.
+      #  path: /dept_checklist/hotel_eligible?department_id={department_id}
+
+      tech_requirements:
+        deadline: 1970-01-01
+        name: Tech Requirements
+        description: What do you need in terms of laptops, projectors, cables, internet access, etc?
+        full_description: >
+            What do you need in terms of laptops, projectors, cables, internet access, etc?
+            Note: Your department must fill out the form, even if you don't need anything. If you have any questions, please 
+            contact TechOps on Slack ( #super-techops ) or via email ( techops@magfest.org )
+        
+      printed_signs:
+        deadline: 1970-01-01
+        name: Room Signage
+        description: Other than a sign for your area, what printed coroplast signs or banners do you need?
+        path: /dept_checklist/printed_signs?department_id={department_id}
+
+      logistics:
+        deadline: 1970-01-01
+        name: Logistics Needs
+        description: What do you need brought from the warehouse?
+        
+      mediatron:
+        deadline: 1970-01-01
+        name: Mediatron! Shot List
+        description: >
+            If you have something especially cool happening that you would like Mediatron! to capture, let us know 
+            here so they can do their best to get your event on their schedule. For detailed or special requests, 
+            please contact mediatron@magfest.org.
+
+      office_supplies:
+        deadline: 1970-01-01
+        description: >
+            STOPS can provide the following office supplies: pens, sharpies, paper, whiteboard, whiteboard markers, 
+            sticky notes, scissors, painters tape, scotch tape, staplers, clipboards. List 
+            WHICH ITEMS you need and HOW MANY you need of each item (if you request an item but don't give a quantity, 
+            you will get 1). If you need a very specific office item, you will need to purchase it yourself using your 
+            department's budget. Note 1: STOPS has a paper cutter and a printer for small jobs (less than 50 pages). 
+            Anything more than 50 pages needs to go into 'Bulk Print Jobs.' Note 2: A ream of paper is 500 sheets.
             
-          panel_dept:
-            panels: No Specific Department
-            mivs: Indie Developer Showcase
-            mages: MAGES
-            museum: Museum
-            makerspace: Makerspace
-            magmoves: MAGMoves (the Arena)
-            tabletop: Tabletop
+      guidebook_schedule:
+        deadline: 1970-01-01
+        name: Schedule for Guidebook
+        description: Make sure your public-facing events or open hours are on our Uber schedule so they can be exported to Guidebook.
+        path: /dept_checklist/guidebook_schedule?department_id={department_id}
+        
+      social_media:
+        deadline: 1970-01-01
+        name: Social Media Requests
+        description: >
+            If you have a guest or event that you believe is worth promoting on social media beforehand, let us know! 
+            For detailed or special requests, please contact socialmedia@magfest.org. You can also make requests in 
+            #socialmedia-requests on Slack.
             
-          noise_level:
-            level_0: Level 0 (Just talking to the audience)
-            level_1: Level 1 (Showing video clips or playing prerecorded music)
-            level_2: Level 2 (Playing live instruments or singing)
-            level_3: Level 3 (Absolute chaos)
-
-          presentation:
-            basic: Lecture
-            group_discussion: Group Discussion with Moderator
-            qa: Question & Answer
-            gameshow: Gameshow
-            workshop: Workshop
-            learn_to_play: Learn to Play
-            participation: Audience Participation
-            physical_activity: Physical Activity (either group participation or performance)
-            performance: Comedy Performance
-            music: Music Performance (Jam Clinic)
-            advanced_av: Podcast/Vodcast Recording
-            karaoke: Karaoke/Sing a Long
-            movie: Movie Screening
-            other: Other
-
-          guest_merch:
-            no_merch: Not selling merch
-            own_table: Dedicated half-table in the Marketplace
-            rock_island: Rock Island
-
-        dept_head_checklist:
-          placeholders:
-            deadline: 1970-01-01
-            name: Checking Placeholder Registrations
-            description: >
-                We create placeholder registrations for volunteers and ask them to fill out the rest of
-                their information and also confirm that they'll be coming. We need our department heads
-                to review the unclaimed badges for their departments to check for any essential volunteers
-                who haven't claimed their badges.
-            path: /dept_checklist/placeholders?department_id={department_id}
-
-          creating_shifts:
-            deadline: 1970-01-01
-            description: >
-                We are able to import shifts from last year. If you want us to import last year's shifts, please 
-                email stops@magfest.org. You will still need to approve these via the checklist after the import.
-            path: /shifts_admin/index?department_id={department_id}
-
-          assigned_volunteers:
-            deadline: 1970-01-01
-            name: Volunteers Assigned to Your Department
-            description: >
-                Check all of the volunteers currently assigned to your department to make sure no one is
-                missing AND that no one is there who shouldn't be.
-            path: /shifts_admin/staffers?department_id={department_id}
-
-          treasury:
-            deadline: 1970-01-01
-            name: Treasury Information
-            description: If you need cash and/or mpoints, tell us your department schedule and your specific cash needs.
-            path: /dept_checklist/treasury?department_id={department_id}
-
-          hotel_setup:
-            deadline: 1970-01-01
-            name: Hotel Setup Information
-            description: Do you need tables, chairs, trash cans, water dispensers, etc?
-
-          approve_setup_teardown:
-            deadline: 1970-01-01
-            name: Approve/Decline Additional Hotel Nights
-            description: >
-                Many staffers want to work setup and teardown shifts rather than work during the event. We have more 
-                volunteers than we need to do this, so we require DH approval of volunteers who need hotel space for 
-                those dates.
-            path: /dept_checklist/hotel_requests?department_id={department_id}
-
-          # Turned off for Super 2020 as Tuber does not have the relevant page
-          #hotel_eligible:
-          #  deadline: 1970-01-01
-          #  name: Staffers Requesting Hotel Space
-          #  description: Double check that everyone in your department who you know needs hotel space has requested it.
-          #  path: /dept_checklist/hotel_eligible?department_id={department_id}
-
-          tech_requirements:
-            deadline: 1970-01-01
-            name: Tech Requirements
-            description: What do you need in terms of laptops, projectors, cables, internet access, etc?
-            full_description: >
-                What do you need in terms of laptops, projectors, cables, internet access, etc?
-                Note: Your department must fill out the form, even if you don't need anything. If you have any questions, please 
-                contact TechOps on Slack ( #super-techops ) or via email ( techops@magfest.org )
+      bulk_print_jobs:
+        deadline: 1970-01-01
+        description: >
+            Do you have any bulk print jobs (more than 50 pages) you'd like us to print in advance? STOPS has a paper 
+            cutter and a printer for small jobs (less than 50 pages). Anything more than 50 pages should go here! For 
+            EACH item you need printed, please include a link to the document and the number of copies.
             
-          printed_signs:
-            deadline: 1970-01-01
-            name: Room Signage
-            description: Other than a sign for your area, what printed coroplast signs or banners do you need?
-            path: /dept_checklist/printed_signs?department_id={department_id}
+      water_requests:
+        deadline: 1970-01-01
+        description: >
+            Please let us know how much water or sports drinks you need ordered for your staff. Note: while Staff Suite 
+            coordinates the ordering of these items, departments are responsible for picking up their own water and sports 
+            drinks from the expo halls in a timely fashion. Water/drink orders will be adjusted at the discretion of Staff 
+            Suite leadership if needed. 
 
-          logistics:
-            deadline: 1970-01-01
-            name: Logistics Needs
-            description: What do you need brought from the warehouse?
-            
-          mediatron:
-            deadline: 1970-01-01
-            name: Mediatron! Shot List
-            description: >
-                If you have something especially cool happening that you would like Mediatron! to capture, let us know 
-                here so they can do their best to get your event on their schedule. For detailed or special requests, 
-                please contact mediatron@magfest.org.
+      postcon_hours:
+        deadline: 1970-01-01
+        name: (After the Event) Marking + Rating Shifts
+        description: >
+            Please go through your volunteers shifts carefully. This ensures that they receive the appropriate perks, 
+            are imported as staff next year, maintain eligibility for hotel crash space, etc.
+        path: /shifts_admin/signups?department_id={department_id}
+        email_post_con: True
 
-          office_supplies:
-            deadline: 1970-01-01
-            description: >
-                STOPS can provide the following office supplies: pens, sharpies, paper, whiteboard, whiteboard markers, 
-                sticky notes, scissors, painters tape, scotch tape, staplers, clipboards. List 
-                WHICH ITEMS you need and HOW MANY you need of each item (if you request an item but don't give a quantity, 
-                you will get 1). If you need a very specific office item, you will need to purchase it yourself using your 
-                department's budget. Note 1: STOPS has a paper cutter and a printer for small jobs (less than 50 pages). 
-                Anything more than 50 pages needs to go into 'Bulk Print Jobs.' Note 2: A ream of paper is 500 sheets.
-                
-          guidebook_schedule:
-            deadline: 1970-01-01
-            name: Schedule for Guidebook
-            description: Make sure your public-facing events or open hours are on our Uber schedule so they can be exported to Guidebook.
-            path: /dept_checklist/guidebook_schedule?department_id={department_id}
-            
-          social_media:
-            deadline: 1970-01-01
-            name: Social Media Requests
-            description: >
-                If you have a guest or event that you believe is worth promoting on social media beforehand, let us know! 
-                For detailed or special requests, please contact socialmedia@magfest.org. You can also make requests in 
-                #socialmedia-requests on Slack.
-                
-          bulk_print_jobs:
-            deadline: 1970-01-01
-            description: >
-                Do you have any bulk print jobs (more than 50 pages) you'd like us to print in advance? STOPS has a paper 
-                cutter and a printer for small jobs (less than 50 pages). Anything more than 50 pages should go here! For 
-                EACH item you need printed, please include a link to the document and the number of copies.
-                
-          water_requests:
-            deadline: 1970-01-01
-            description: >
-                Please let us know how much water or sports drinks you need ordered for your staff. Note: while Staff Suite 
-                coordinates the ordering of these items, departments are responsible for picking up their own water and sports 
-                drinks from the expo halls in a timely fashion. Water/drink orders will be adjusted at the discretion of Staff 
-                Suite leadership if needed. 
-
-          postcon_hours:
-            deadline: 1970-01-01
-            name: (After the Event) Marking + Rating Shifts
-            description: >
-                Please go through your volunteers shifts carefully. This ensures that they receive the appropriate perks, 
-                are imported as staff next year, maintain eligibility for hotel crash space, etc.
-            path: /shifts_admin/signups?department_id={department_id}
-            email_post_con: True
-
-        volunteer_checklist:
-          2: staffing/volunteer_agreement_item.html
-          3: staffing/hotel_item.html
-          4: staffing/food_item.html
-          5: staffing/shirt_item.html
-          6: staffing/emergency_procedures_item.html
-          7: staffing/credits_item.html
-          99: staffing/shifts_item.html
+    volunteer_checklist:
+      2: staffing/volunteer_agreement_item.html
+      3: staffing/hotel_item.html
+      4: staffing/food_item.html
+      5: staffing/shirt_item.html
+      6: staffing/emergency_procedures_item.html
+      7: staffing/credits_item.html
+      99: staffing/shifts_item.html

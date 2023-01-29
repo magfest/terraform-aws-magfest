@@ -1,0 +1,17 @@
+stock2023:
+  ubersystem_container: ghcr.io/magfest/magprime:main
+  hostname: stock2023.dev.magevent.net
+  zonename: dev.magevent.net
+  prefix: stck23
+  config_paths:
+    - uber_config/environments/prod
+    - uber_config/events/stock/2023
+
+west2023:
+  ubersystem_container: ghcr.io/magfest/magprime:main
+  hostname: west2023.dev.magevent.net
+  zonename: dev.magevent.net
+  prefix: west23
+  config_paths:
+    - uber_config/environments/prod
+    - uber_config/events/west/2023
