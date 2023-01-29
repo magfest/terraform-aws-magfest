@@ -474,9 +474,7 @@ resource "random_password" "uber" {
 
 resource "aws_secretsmanager_secret" "db_password" {
   name = "rds-postgres-passwd"
-  lifecycle {
-    prevent_destroy = true
-  }
+  recovery_window_in_days = 0
 }
 
 resource "aws_secretsmanager_secret_version" "password" {

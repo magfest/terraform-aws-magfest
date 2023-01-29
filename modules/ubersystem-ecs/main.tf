@@ -586,9 +586,7 @@ resource "random_password" "uber" {
 
 resource "aws_secretsmanager_secret" "db_password" {
   name = "${var.prefix}-rds-passwd"
-  lifecycle {
-    prevent_destroy = true
-  }
+  recovery_window_in_days = 0
 }
 
 resource "aws_secretsmanager_secret_version" "password" {
@@ -607,9 +605,6 @@ resource "postgresql_database" "uber" {
   depends_on = [
     postgresql_role.uber
   ]
-  lifecycle {
-    prevent_destroy = true
-  }
 }
 
 resource "postgresql_role" "uber" {
@@ -618,7 +613,4 @@ resource "postgresql_role" "uber" {
   login            = true
   connection_limit = -1
   password         = aws_secretsmanager_secret_version.password.secret_string
-  lifecycle {
-    prevent_destroy = true
-  }
 }
