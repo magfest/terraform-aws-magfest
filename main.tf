@@ -498,6 +498,10 @@ resource "aws_db_instance" "uber" {
     aws_security_group.uber_rds.id
   ]
   db_subnet_group_name   = aws_db_subnet_group.uber.name
+  depends_on = [
+    aws_route_table_association.primary_route,
+    aws_route_table_association.secondary_route
+  ]
 }
 
 provider "postgresql" {
