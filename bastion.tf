@@ -135,7 +135,7 @@ resource "aws_ecs_service" "ssh" {
   }
   
   service_registries {
-    registry_arn = aws_service_discovery_service.redis.arn
+    registry_arn = aws_service_discovery_service.bastion.arn
   }
 }
 
