@@ -209,7 +209,7 @@ resource "aws_ecs_task_definition" "ubersystem_web" {
           {
             "sourceVolume": "static",
             "containerPath": "/app/plugins/uber/uploaded_files",
-            "readOnly": true
+            "readOnly": false
           }
         ]
       }
@@ -303,7 +303,7 @@ resource "aws_ecs_task_definition" "ubersystem_celery" {
           {
             "sourceVolume": "static",
             "containerPath": "/app/plugins/uber/uploaded_files",
-            "readOnly": true
+            "readOnly": false
           }
         ]
       },
@@ -345,7 +345,7 @@ resource "aws_ecs_task_definition" "ubersystem_celery" {
           {
             "sourceVolume": "static",
             "containerPath": "/app/plugins/uber/uploaded_files",
-            "readOnly": true
+            "readOnly": false
           }
         ]
       }
