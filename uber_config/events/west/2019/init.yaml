@@ -89,10 +89,10 @@ plugins:
       
     table_prices:
       default_price: 200
-      1: 60
-      2: 100
-      3: 200
-      4: 275
+      "1": 60
+      "2": 100
+      "3": 200
+      "4": 275
 
     donation_tier_descriptions:
       no_thanks:
@@ -177,8 +177,8 @@ plugins:
         path: /jobs/signups?department_id={department_id}
 
     volunteer_checklist:
-      2: signups/food_item.html
-      3: signups/shirt_item.html
-      4: hotel_requests/hotel_item.html
-      98: signups/volunteer_agreement_item.html
-      99: signups/shifts_item.html
+      "2": signups/food_item.html
+      "3": signups/shirt_item.html
+      "4": hotel_requests/hotel_item.html
+      "98": signups/volunteer_agreement_item.html
+      "99": signups/shifts_item.html

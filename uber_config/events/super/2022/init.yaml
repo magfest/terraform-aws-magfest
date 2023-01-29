@@ -155,10 +155,10 @@ plugins:
 
     table_prices:
       default_price: 350
-      1: 180
-      2: 300
-      3: 500
-      4: 700
+      "1": 180
+      "2": 300
+      "3": 500
+      "4": 700
 
     age_groups:
       under_6:
@@ -316,10 +316,10 @@ plugins:
         link: ../static_views/super.html|../static_views/super.html|../static_views/super.html
         
     volunteer_checklist:
-      2: staffing/shirt_item.html
-      3: staffing/volunteer_agreement_item.html
-      4: staffing/hotel_item.html
-      5: staffing/food_item.html
+      "2": staffing/shirt_item.html
+      "3": staffing/volunteer_agreement_item.html
+      "4": staffing/hotel_item.html
+      "5": staffing/food_item.html
 
 
     mivs_checklist:

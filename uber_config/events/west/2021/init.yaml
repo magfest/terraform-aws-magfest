@@ -104,10 +104,10 @@ plugins:
       
     table_prices:
       default_price: 200
-      1: 60
-      2: 100
-      3: 200
-      4: 275
+      "1": 60
+      "2": 100
+      "3": 200
+      "4": 275
 
     donation_tier_descriptions:
       no_thanks:
@@ -236,8 +236,8 @@ plugins:
             are imported as staff next year.
 
     volunteer_checklist:
-      2: staffing/food_item.html
-      3: staffing/shirt_item.html
-      4: staffing/hotel_item.html
-      98: staffing/volunteer_agreement_item.html
-      99: staffing/shifts_item.html
+      "2": staffing/food_item.html
+      "3": staffing/shirt_item.html
+      "4": staffing/hotel_item.html
+      "98": staffing/volunteer_agreement_item.html
+      "99": staffing/shifts_item.html

@@ -169,10 +169,10 @@ plugins:
 
     table_prices:
       default_price: 350
-      1: 200
-      2: 350
-      3: 550
-      4: 800
+      "1": 200
+      "2": 350
+      "3": 550
+      "4": 800
 
     age_groups:
       under_6:
@@ -340,12 +340,12 @@ plugins:
         link: ../static_views/tshirt.html|../static_views/supporter.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html
 
     volunteer_checklist:
-      2: staffing/shirt_item.html
-      3: staffing/hotel_item.html
-      4: staffing/food_item.html
-      5: staffing/volunteer_agreement_item.html
-      6: staffing/emergency_procedures_item.html
-      7: ""
+      "2": staffing/shirt_item.html
+      "3": staffing/hotel_item.html
+      "4": staffing/food_item.html
+      "5": staffing/volunteer_agreement_item.html
+      "6": staffing/emergency_procedures_item.html
+      "7": ""
 
     mivs_checklist:
       core_hours:
