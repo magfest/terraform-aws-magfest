@@ -32,7 +32,7 @@ plugins:
         alone: I'm coming alone
         unknown: I don't know yet
 
-uber:
+  uber:
     organization_name: MAGFest INC
     event_name: MAGStock
     event_timezone: US/Eastern
