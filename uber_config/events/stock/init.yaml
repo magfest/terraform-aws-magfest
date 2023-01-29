@@ -210,9 +210,9 @@ plugins:
         email_post_con: True
 
     volunteer_checklist:
-      2: ''
-      3: ''
-      4: ''
-      99: staffing/shifts_item.html
+      "2": ''
+      "3": ''
+      "4": ''
+      "99": staffing/shifts_item.html
 
     age_groups: {}
