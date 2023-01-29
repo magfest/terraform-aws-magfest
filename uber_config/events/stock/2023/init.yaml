@@ -24,12 +24,15 @@ plugins:
     dept_head_checklist:
       creating_shifts:
         deadline: 2023-05-01
+        description: Creating Shifts
 
       assigned_volunteers:
         deadline: 2023-05-01
+        description: Assigned Volunteers
 
       postcon_hours:
         deadline: 2023-06-15
+        description: Postcon hours
 
       printed_signs:
         deadline: 2023-05-14
