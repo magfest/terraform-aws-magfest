@@ -454,9 +454,6 @@ resource "aws_efs_mount_target" "primary" {
   security_groups = [
     aws_security_group.uber_efs.id
   ]
-  tags = {
-    Name = "Ubersystem Primary"
-  }
 }
 
 resource "aws_efs_mount_target" "secondary" {
@@ -465,9 +462,6 @@ resource "aws_efs_mount_target" "secondary" {
   security_groups = [
     aws_security_group.uber_efs.id
   ]
-  tags = {
-    Name = "Ubersystem Secondary"
-  }
 }
 
 # -------------------------------------------------------------------
@@ -497,7 +491,7 @@ resource "aws_db_instance" "uber" {
   db_name                = "uber"
   engine                 = "postgres"
   instance_class         = "db.t3.micro"
-  identifier             = "Ubersystem"
+  identifier             = "ubersystem"
   username               = "postgres"
   password               = aws_secretsmanager_secret_version.password.secret_string
   skip_final_snapshot    = true
