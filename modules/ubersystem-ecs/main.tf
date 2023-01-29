@@ -74,7 +74,7 @@ resource "aws_route53_record" "public" {
 }
 
 resource "aws_lb_target_group" "ubersystem_web" {
-  name          = "${prefix}-web"
+  name          = "${var.prefix}-web"
   port          = 80
   protocol      = "HTTP"
   target_type   = "ip"
@@ -128,7 +128,7 @@ resource "aws_efs_access_point" "uber" {
   }
 
   tags = {
-    Name = "${prefix}-static"
+    Name = "${var.prefix}-static"
   }
 }
 
@@ -153,7 +153,7 @@ resource "aws_ecs_service" "ubersystem_web" {
 }
 
 resource "aws_ecs_task_definition" "ubersystem_web" {
-  family                    = "ubersystem_web"
+  family                    = "${var.prefix}_ubersystem_web"
   container_definitions     = jsonencode(
     [
       {
@@ -263,7 +263,7 @@ resource "aws_ecs_service" "ubersystem_celery" {
 }
 
 resource "aws_ecs_task_definition" "ubersystem_celery" {
-  family                    = "ubersystem_celery"
+  family                    = "${var.prefix}_ubersystem_celery"
   container_definitions     = jsonencode(
     [
       {
@@ -403,7 +403,7 @@ resource "aws_ecs_service" "rabbitmq" {
 }
 
 resource "aws_ecs_task_definition" "rabbitmq" {
-  family                    = "rabbitmq"
+  family                    = "${var.prefix}_rabbitmq"
   container_definitions     = jsonencode(
     [
       {
@@ -481,7 +481,7 @@ resource "aws_ecs_service" "redis" {
 }
 
 resource "aws_ecs_task_definition" "redis" {
-  family                    = "redis"
+  family                    = "${var.prefix}_redis"
   container_definitions     = jsonencode(
     [
       {
