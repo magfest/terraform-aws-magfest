@@ -5,6 +5,7 @@ terraform {
       version = ">= 4.38.0"
     }
     postgresql = {
+      configuration_aliases = [ postgresql.uber ]
       source = "cyrilgdn/postgresql"
     }
     curl = {
@@ -593,6 +594,7 @@ resource "aws_secretsmanager_secret_version" "password" {
 }
 
 resource "postgresql_database" "uber" {
+  provider          = postgresql.uber
   name              = var.uber_db_name
   owner             = var.uber_db_username
   template          = "template0"
@@ -602,17 +604,12 @@ resource "postgresql_database" "uber" {
   depends_on = [
     postgresql_role.uber
   ]
-  lifecycle {
-    prevent_destroy = true
-  }
 }
 
 resource "postgresql_role" "uber" {
+  provider         = postgresql.uber
   name             = var.uber_db_username
   login            = true
   connection_limit = -1
   password         = aws_secretsmanager_secret_version.password.secret_string
-  lifecycle {
-    prevent_destroy = true
-  }
 }

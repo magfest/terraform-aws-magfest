@@ -498,6 +498,7 @@ resource "aws_db_instance" "uber" {
 }
 
 provider "postgresql" {
+  alias      = "uber"
   host       = aws_db_instance.uber.address
   username   = aws_db_instance.uber.username
   password   = aws_secretsmanager_secret_version.password.secret_string
