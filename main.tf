@@ -278,6 +278,10 @@ resource "aws_route_table" "public" {
       cidr_block = "0.0.0.0/0"
       gateway_id = "${aws_internet_gateway.igw.id}"
   }
+  
+  tags = {
+    Name = "Ubersystem"
+  }
 }
 
 resource "aws_route_table_association" "primary_route" {
@@ -304,7 +308,7 @@ resource "aws_ecs_cluster" "uber" {
 }
 
 resource "aws_iam_policy" "task_role_logs" {
-    name = "ecs-logs"
+    name = "UbersystemECSLogs"
     policy = jsonencode({
         Version = "2012-10-17"
         Statement = [
@@ -320,7 +324,7 @@ resource "aws_iam_policy" "task_role_logs" {
 }
 
 resource "aws_iam_role" "task_role" {
-  name_prefix = "uber"
+  name = "UbersystemECSRole"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -384,7 +388,7 @@ resource "aws_acm_certificate_validation" "uber" {
 }
 
 resource "aws_lb" "ubersystem" {
-  name_prefix        = "uber"
+  name               = "Ubersystem"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [
@@ -450,6 +454,9 @@ resource "aws_efs_mount_target" "primary" {
   security_groups = [
     aws_security_group.uber_efs.id
   ]
+  tags = {
+    Name = "Ubersystem Primary"
+  }
 }
 
 resource "aws_efs_mount_target" "secondary" {
@@ -458,6 +465,9 @@ resource "aws_efs_mount_target" "secondary" {
   security_groups = [
     aws_security_group.uber_efs.id
   ]
+  tags = {
+    Name = "Ubersystem Secondary"
+  }
 }
 
 # -------------------------------------------------------------------
@@ -487,6 +497,7 @@ resource "aws_db_instance" "uber" {
   db_name                = "uber"
   engine                 = "postgres"
   instance_class         = "db.t3.micro"
+  identifier             = "Ubersystem"
   username               = "postgres"
   password               = aws_secretsmanager_secret_version.password.secret_string
   skip_final_snapshot    = true

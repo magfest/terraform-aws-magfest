@@ -74,7 +74,7 @@ resource "aws_route53_record" "public" {
 }
 
 resource "aws_lb_target_group" "ubersystem_web" {
-  name_prefix   = "${var.prefix}"
+  name          = "${prefix}-web"
   port          = 80
   protocol      = "HTTP"
   target_type   = "ip"
@@ -125,6 +125,10 @@ resource "aws_efs_access_point" "uber" {
       owner_uid   = 65534
       permissions = 0755
     }
+  }
+
+  tags = {
+    Name = "${prefix}-static"
   }
 }
 
