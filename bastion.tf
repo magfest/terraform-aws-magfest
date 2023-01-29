@@ -98,8 +98,7 @@ resource "aws_security_group" "bastion_ssh" {
     to_port          = 22
     protocol         = "tcp"
     cidr_blocks      = [
-      aws_subnet.primary.cidr_block,
-      aws_subnet.secondary.cidr_block
+      "0.0.0.0/0"
     ]
   }
 
@@ -132,33 +131,5 @@ resource "aws_ecs_service" "ssh" {
         aws_security_group.bastion_ssh.id
     ]
     assign_public_ip  = true
-  }
-  
-  service_registries {
-    registry_arn = aws_service_discovery_service.bastion.arn
-  }
-}
-
-resource "aws_service_discovery_public_dns_namespace" "bastion" {
-  name        = "bastion.dev.magevent.net"
-  description = "bastion host namespace"
-}
-
-resource "aws_service_discovery_service" "bastion" {
-  name = "ssh"
-
-  dns_config {
-    namespace_id = aws_service_discovery_public_dns_namespace.bastion.id
-
-    dns_records {
-      ttl  = 10
-      type = "A"
-    }
-
-    routing_policy = "MULTIVALUE"
-  }
-
-  health_check_custom_config {
-    failure_threshold = 1
   }
 }
