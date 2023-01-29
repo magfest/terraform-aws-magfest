@@ -150,68 +150,68 @@ resource "aws_ecs_service" "ubersystem_web" {
 
 resource "aws_ecs_task_definition" "ubersystem_web" {
   family                    = "ubersystem_web"
-  container_definitions     = <<TASK_DEFINITION
-[
-  {
-    "logConfiguration": {
-      "logDriver": "awslogs",
-      "options": {
-        "awslogs-group": "/ecs/Ubersystem",
-        "awslogs-region": "us-east-1",
-        "awslogs-stream-prefix": "ecs",
-        "awslogs-create-group": "true"
-      }
-    },
-    "portMappings": [
+  container_definitions     = jsonencode(
+    [
       {
-        "hostPort": 8282,
-        "protocol": "tcp",
-        "containerPort": 8282
-      }
-    ],
-    "environment": [
-      {
-        "name": "CERT_NAME",
-        "value": "ssl"
-      },
-      {
-        "name": "VIRTUAL_HOST",
-        "value": "${var.hostname}"
-      },
-      {
-        "name": "SESSION_HOST",
-        "value": "redis.${var.hostname}"
-      },
-      {
-        "name": "BROKER_HOST",
-        "value": "rabbitmq.${var.hostname}"
-      },
-      {
-        "name": "UBERSYSTEM_CONFIG",
-        "value": "${var.ubersystem_config}"
-      },
-      {
-        "name": "UBERSYSTEM_SECRETS",
-        "value": "${var.ubersystem_secrets}"
-      },
-      {
-        "name": "DB_CONNECTION_STRING",
-        "value": "postgresql://${var.uber_db_username}:${aws_secretsmanager_secret_version.password.secret_string}@${var.db_endpoint}/${var.uber_db_name}"
-      }
-    ],
-    "image": "${var.ubersystem_container}@sha256:${module.uber_image.docker_digest}",
-    "essential": true,
-    "name": "web",
-    "mountPoints": [
-      {
-        "sourceVolume": "static",
-        "containerPath": "/app/plugins/uber/uploaded_files",
-        "readOnly": true
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+            "awslogs-group": "/ecs/Ubersystem",
+            "awslogs-region": "us-east-1",
+            "awslogs-stream-prefix": "ecs",
+            "awslogs-create-group": "true"
+          }
+        },
+        "portMappings": [
+          {
+            "hostPort": 8282,
+            "protocol": "tcp",
+            "containerPort": 8282
+          }
+        ],
+        "environment": [
+          {
+            "name": "CERT_NAME",
+            "value": "ssl"
+          },
+          {
+            "name": "VIRTUAL_HOST",
+            "value": var.hostname
+          },
+          {
+            "name": "SESSION_HOST",
+            "value": "redis.${var.hostname}"
+          },
+          {
+            "name": "BROKER_HOST",
+            "value": "rabbitmq.${var.hostname}"
+          },
+          {
+            "name": "UBERSYSTEM_CONFIG",
+            "value": var.ubersystem_config
+          },
+          {
+            "name": "UBERSYSTEM_SECRETS",
+            "value": var.ubersystem_secrets
+          },
+          {
+            "name": "DB_CONNECTION_STRING",
+            "value": "postgresql://${var.uber_db_username}:${aws_secretsmanager_secret_version.password.secret_string}@${var.db_endpoint}/${var.uber_db_name}"
+          }
+        ],
+        "image": "${var.ubersystem_container}@sha256:${module.uber_image.docker_digest}",
+        "essential": true,
+        "name": "web",
+        "mountPoints": [
+          {
+            "sourceVolume": "static",
+            "containerPath": "/app/plugins/uber/uploaded_files",
+            "readOnly": true
+          }
+        ]
       }
     ]
-  }
-]
-TASK_DEFINITION
+  )
 
   volume {
     name = "static"
@@ -260,94 +260,94 @@ resource "aws_ecs_service" "ubersystem_celery" {
 
 resource "aws_ecs_task_definition" "ubersystem_celery" {
   family                    = "ubersystem_celery"
-  container_definitions     = <<TASK_DEFINITION
-[
-  {
-    "logConfiguration": {
-      "logDriver": "awslogs",
-      "options": {
-        "awslogs-group": "/ecs/Ubersystem",
-        "awslogs-region": "us-east-1",
-        "awslogs-stream-prefix": "ecs",
-        "awslogs-create-group": "true"
-      }
-    },
-    "command": [
-      "celery-beat"
-    ],
-    "environment": [
+  container_definitions     = jsonencode(
+    [
       {
-        "name": "DB_CONNECTION_STRING",
-        "value": "postgresql://${var.uber_db_username}:${aws_secretsmanager_secret_version.password.secret_string}@${var.db_endpoint}/${var.uber_db_name}"
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+            "awslogs-group": "/ecs/Ubersystem",
+            "awslogs-region": "us-east-1",
+            "awslogs-stream-prefix": "ecs",
+            "awslogs-create-group": "true"
+          }
+        },
+        "command": [
+          "celery-beat"
+        ],
+        "environment": [
+          {
+            "name": "DB_CONNECTION_STRING",
+            "value": "postgresql://${var.uber_db_username}:${aws_secretsmanager_secret_version.password.secret_string}@${var.db_endpoint}/${var.uber_db_name}"
+          },
+          {
+            "name": "BROKER_HOST",
+            "value": "rabbitmq.${var.hostname}"
+          },
+          {
+            "name": "UBERSYSTEM_CONFIG",
+            "value": var.ubersystem_config
+          },
+          {
+            "name": "UBERSYSTEM_SECRETS",
+            "value": var.ubersystem_secrets
+          },
+        ],
+        "image": "${var.ubersystem_container}@sha256:${module.uber_image.docker_digest}",
+        "essential": true,
+        "name": "celery-beat",
+        "mountPoints": [
+          {
+            "sourceVolume": "static",
+            "containerPath": "/app/plugins/uber/uploaded_files",
+            "readOnly": true
+          }
+        ]
       },
       {
-        "name": "BROKER_HOST",
-        "value": "rabbitmq.${var.hostname}"
-      },
-      {
-        "name": "UBERSYSTEM_CONFIG",
-        "value": "${var.ubersystem_config}"
-      },
-      {
-        "name": "UBERSYSTEM_SECRETS",
-        "value": "${var.ubersystem_secrets}"
-      },
-    ],
-    "image": "${var.ubersystem_container}@sha256:${module.uber_image.docker_digest}",
-    "essential": true,
-    "name": "celery-beat",
-    "mountPoints": [
-      {
-        "sourceVolume": "static",
-        "containerPath": "/app/plugins/uber/uploaded_files",
-        "readOnly": true
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+            "awslogs-group": "/ecs/Ubersystem",
+            "awslogs-region": "us-east-1",
+            "awslogs-stream-prefix": "ecs",
+            "awslogs-create-group": "true"
+          }
+        },
+        "environment": [
+          {
+            "name": "DB_CONNECTION_STRING",
+            "value": "postgresql://${var.uber_db_username}:${aws_secretsmanager_secret_version.password.secret_string}@${var.db_endpoint}/${var.uber_db_name}"
+          },
+          {
+            "name": "BROKER_HOST",
+            "value": "rabbitmq.${var.hostname}"
+          },
+          {
+            "name": "UBERSYSTEM_CONFIG",
+            "value": var.ubersystem_config
+          },
+          {
+            "name": "UBERSYSTEM_SECRETS",
+            "value": var.ubersystem_secrets
+          },
+        ],
+        "image": "${var.ubersystem_container}@sha256:${module.uber_image.docker_digest}",
+        "command": [
+          "celery-worker"
+        ],
+        "essential": true,
+        "name": "celery-worker",
+        "mountPoints": [
+          {
+            "sourceVolume": "static",
+            "containerPath": "/app/plugins/uber/uploaded_files",
+            "readOnly": true
+          }
+        ]
       }
     ]
-  },
-  {
-    "logConfiguration": {
-      "logDriver": "awslogs",
-      "options": {
-        "awslogs-group": "/ecs/Ubersystem",
-        "awslogs-region": "us-east-1",
-        "awslogs-stream-prefix": "ecs",
-        "awslogs-create-group": "true"
-      }
-    },
-    "environment": [
-      {
-        "name": "DB_CONNECTION_STRING",
-        "value": "postgresql://${var.uber_db_username}:${aws_secretsmanager_secret_version.password.secret_string}@${var.db_endpoint}/${var.uber_db_name}"
-      },
-      {
-        "name": "BROKER_HOST",
-        "value": "rabbitmq.${var.hostname}"
-      },
-      {
-        "name": "UBERSYSTEM_CONFIG",
-        "value": "${var.ubersystem_config}"
-      },
-      {
-        "name": "UBERSYSTEM_SECRETS",
-        "value": "${var.ubersystem_secrets}"
-      },
-    ],
-    "image": "${var.ubersystem_container}@sha256:${module.uber_image.docker_digest}",
-    "command": [
-      "celery-worker"
-    ],
-    "essential": true,
-    "name": "celery-worker",
-    "mountPoints": [
-      {
-        "sourceVolume": "static",
-        "containerPath": "/app/plugins/uber/uploaded_files",
-        "readOnly": true
-      }
-    ]
-  }
-]
-TASK_DEFINITION
+  )
 
   volume {
     name = "static"
@@ -400,45 +400,45 @@ resource "aws_ecs_service" "rabbitmq" {
 
 resource "aws_ecs_task_definition" "rabbitmq" {
   family                    = "rabbitmq"
-  container_definitions     = <<TASK_DEFINITION
-[
-  {
-    "logConfiguration": {
-      "logDriver": "awslogs",
-      "options": {
-        "awslogs-group": "/ecs/Ubersystem",
-        "awslogs-region": "us-east-1",
-        "awslogs-stream-prefix": "ecs",
-        "awslogs-create-group": "true"
+  container_definitions     = jsonencode(
+    [
+      {
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+            "awslogs-group": "/ecs/Ubersystem",
+            "awslogs-region": "us-east-1",
+            "awslogs-stream-prefix": "ecs",
+            "awslogs-create-group": "true"
+          }
+        },
+        "portMappings": [
+          {
+            "hostPort": 5672,
+            "protocol": "tcp",
+            "containerPort": 5672
+          }
+        ],
+        "environment": [
+          {
+            "name": "RABBITMQ_DEFAULT_PASS",
+            "value": "celery"
+          },
+          {
+            "name": "RABBITMQ_DEFAULT_USER",
+            "value": "celery"
+          },
+          {
+            "name": "RABBITMQ_DEFAULT_VHOST",
+            "value": "uber"
+          }
+        ],
+        "image": "public.ecr.aws/docker/library/rabbitmq:alpine",
+        "essential": true,
+        "name": "rabbitmq"
       }
-    },
-    "portMappings": [
-      {
-        "hostPort": 5672,
-        "protocol": "tcp",
-        "containerPort": 5672
-      }
-    ],
-    "environment": [
-      {
-        "name": "RABBITMQ_DEFAULT_PASS",
-        "value": "celery"
-      },
-      {
-        "name": "RABBITMQ_DEFAULT_USER",
-        "value": "celery"
-      },
-      {
-        "name": "RABBITMQ_DEFAULT_VHOST",
-        "value": "uber"
-      }
-    ],
-    "image": "public.ecr.aws/docker/library/rabbitmq:alpine",
-    "essential": true,
-    "name": "rabbitmq"
-  }
-]
-TASK_DEFINITION
+    ]
+  )
 
   cpu                       = 256
   memory                    = 512
@@ -478,37 +478,37 @@ resource "aws_ecs_service" "redis" {
 
 resource "aws_ecs_task_definition" "redis" {
   family                    = "redis"
-  container_definitions     = <<TASK_DEFINITION
-[
-  {
-    "logConfiguration": {
-      "logDriver": "awslogs",
-      "options": {
-        "awslogs-group": "/ecs/Ubersystem",
-        "awslogs-region": "us-east-1",
-        "awslogs-stream-prefix": "ecs",
-        "awslogs-create-group": "true"
-      }
-    },
-    "portMappings": [
+  container_definitions     = jsonencode(
+    [
       {
-        "hostPort": 6379,
-        "protocol": "tcp",
-        "containerPort": 6379
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+            "awslogs-group": "/ecs/Ubersystem",
+            "awslogs-region": "us-east-1",
+            "awslogs-stream-prefix": "ecs",
+            "awslogs-create-group": "true"
+          }
+        },
+        "portMappings": [
+          {
+            "hostPort": 6379,
+            "protocol": "tcp",
+            "containerPort": 6379
+          }
+        ],
+        "environment": [
+          {
+            "name": "ALLOW_EMPTY_PASSWORD",
+            "value": "true"
+          }
+        ],
+        "image": "public.ecr.aws/ubuntu/redis:latest",
+        "essential": true,
+        "name": "redis"
       }
-    ],
-    "environment": [
-      {
-        "name": "ALLOW_EMPTY_PASSWORD",
-        "value": "true"
-      }
-    ],
-    "image": "public.ecr.aws/ubuntu/redis:latest",
-    "essential": true,
-    "name": "redis"
-  }
-]
-TASK_DEFINITION
+    ]
+  )
 
   cpu                       = 256
   memory                    = 512
