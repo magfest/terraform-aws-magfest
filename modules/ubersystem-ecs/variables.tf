@@ -40,6 +40,16 @@ variable "ubersystem_container" {
     default = "ghcr.io/magfest/magprime:main"
 }
 
+variable "web_cpu" {
+    type = number
+    default = 256
+}
+
+variable "web_ram" {
+    type = number
+    default = 512
+}
+
 variable "loadbalancer_arn" {
     type    = string
 }

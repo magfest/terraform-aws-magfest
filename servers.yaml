@@ -15,3 +15,5 @@ super2020:
   config_paths:
     - uber_config/environments/prod
     - uber_config/events/super/2020
+  web_cpu: 512
+  web_ram: 1024

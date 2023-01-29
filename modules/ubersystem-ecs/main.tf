@@ -236,8 +236,8 @@ resource "aws_ecs_task_definition" "ubersystem_web" {
     }
   }
 
-  cpu                       = 256
-  memory                    = 512
+  cpu                       = var.web_cpu
+  memory                    = var.web_ram
   requires_compatibilities  = ["FARGATE"]
   network_mode              = "awsvpc"
   execution_role_arn        = var.ecs_task_role
