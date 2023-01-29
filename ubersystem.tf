@@ -31,7 +31,7 @@ module "uberserver-ecs" {
     uber_db_name            = lookup(each.value, "uber_db_name", each.key)
     uber_db_username        = lookup(each.value, "uber_db_username", each.key)
     web_cpu                 = lookup(each.value, "web_cpu", 256)
-    web_ram                 = lookup(each.value, "web_ram", 256)
+    web_ram                 = lookup(each.value, "web_ram", 512)
 
     ecs_cluster             = aws_ecs_cluster.uber.arn
     ecs_task_role           = aws_iam_role.task_role.arn
