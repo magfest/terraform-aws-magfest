@@ -1,5 +1,5 @@
 plugins:
-  ubersystem:
+  uber:
     event_year: 2019
     at_the_con: False
     post_con: True

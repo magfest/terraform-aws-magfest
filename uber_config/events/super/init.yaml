@@ -1,5 +1,5 @@
 plugins:
-  ubersystem:
+  uber:
     organization_name: MAGFest INC
     event_name: MAGFest
     event_timezone: US/Eastern

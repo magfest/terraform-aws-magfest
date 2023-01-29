@@ -1,5 +1,5 @@
 plugins:
-  ubersystem:
+  uber:
     send_emails: True
     send_sms: True
     dev_box: False

@@ -2,7 +2,7 @@ sideboard:
   priority_plugins: ['uber','covid']
 
 plugins:
-  ubersystem:
+  uber:
     organization_name: MAGFest, Inc.
     event_name: MAGWest
     event_timezone: US/Pacific

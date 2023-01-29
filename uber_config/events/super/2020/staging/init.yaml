@@ -1,5 +1,5 @@
 plugins:
-  ubersystem:
+  uber:
     post_con: True
     dates:
       dealer_reg_start: 2019-07-17 21

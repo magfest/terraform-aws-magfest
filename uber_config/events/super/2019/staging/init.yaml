@@ -1,5 +1,5 @@
 plugins:
-  ubersystem:
+  uber:
     at_the_con: False
     post_con: False
 

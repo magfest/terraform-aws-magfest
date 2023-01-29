@@ -1,5 +1,5 @@
 plugins:
-  ubersystem:
+  uber:
     at_the_con: True
     shirt_stock: 10
     supporter_stock: 10

@@ -1,5 +1,5 @@
 plugins:
-  ubersystem:
+  uber:
     shirt_stock: 0
     supporter_stock: 0
     season_stock: 0

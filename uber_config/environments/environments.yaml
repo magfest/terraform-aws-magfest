@@ -4,7 +4,7 @@ sideboard:
     server.socket_port: 8282
 
 plugins:
-  ubersystem:
+  uber:
     path: ''
 
     sqlalchemy_pool_size: 5

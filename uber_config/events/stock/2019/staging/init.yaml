@@ -1,4 +1,4 @@
 plugins:
-  ubersystem:
+  uber:
     at_the_con: True
     post_con: False
