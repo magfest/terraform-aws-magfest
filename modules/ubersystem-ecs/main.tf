@@ -585,7 +585,7 @@ resource "random_password" "uber" {
 }
 
 resource "aws_secretsmanager_secret" "db_password" {
-  name = "${var.prefix}-db-pass"
+  name = "${var.prefix}-rds-passwd"
   lifecycle {
     prevent_destroy = true
   }
