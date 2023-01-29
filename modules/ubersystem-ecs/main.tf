@@ -73,11 +73,18 @@ resource "aws_route53_record" "public" {
 }
 
 resource "aws_lb_target_group" "ubersystem_web" {
-  name          = "${var.prefix}-web"
-  port          = 80
-  protocol      = "HTTP"
-  target_type   = "ip"
-  vpc_id        = data.aws_vpc.uber.id
+  name                 = "${var.prefix}-web"
+  port                 = 80
+  protocol             = "HTTP"
+  target_type          = "ip"
+  vpc_id               = data.aws_vpc.uber.id
+  deregistration_delay = 10
+
+  stickiness {
+    cookie_name = session_id
+    enabled     = true
+    type        = app_cookie
+  }
 
   health_check {
     healthy_threshold   = 2

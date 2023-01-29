@@ -8,7 +8,7 @@ stock2023:
     - uber_config/events/stock/2023
 
 super2020:
-  ubersystem_container: ghcr.io/magfest/magprime:main
+  ubersystem_container: ghcr.io/magfest/magprime:super2020_migrated
   hostname: super2020.dev.magevent.net
   zonename: dev.magevent.net
   prefix: super20
