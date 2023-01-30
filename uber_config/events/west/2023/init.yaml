@@ -187,7 +187,7 @@ plugins:
         deadline: 2023-07-13
         description: Other than a sign for your area, what printed signage do you need?
         full_description: >
-            <div class="text-left">All attendee-facing rooms will automatically receive a 24"x36” sign. Please submit requests for additional signage here, including any department-specific COVID reminders.
+            <div class="text-left">All attendee-facing rooms will automatically receive a 24"x36" sign. Please submit requests for additional signage here, including any department-specific COVID reminders.
             <br/><br/>We will compare all requests against our known signage inventory, so please include your complete list of needs.
             <br/><br/>Signage comes in two types: 12"x18" coroplast and 24"x36" coroplast. Be sure to specify FOR EACH SIGN:
             <ul><li>Number needed</li>
