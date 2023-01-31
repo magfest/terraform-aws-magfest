@@ -403,7 +403,7 @@ resource "aws_lb" "ubersystem" {
 }
 
 resource "aws_route53_record" "default" {
-  zone_id = aws_route53_zone.uber.zone_id
+  zone_id = data.aws_route53_zone.uber.zone_id
   name    = var.hostname
   type    = "CNAME"
   ttl     = 300
