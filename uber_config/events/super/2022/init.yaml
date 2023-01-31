@@ -17,7 +17,7 @@ plugins:
     event_qr_id: sm22
 
     alt_schedule_url: https://guidebook.com/guide/101720/schedule
-    treasury_dept_checklist_form_url: "%(url_base)s/static_views/treasury_form.html"
+    treasury_dept_checklist_form_url: https://super2022.dev.magevent.net/static_views/treasury_form.html
     techops_dept_checklist_form_url: https://forms.gle/UnVmgAihABQ71Swn8
     hotel_setup_form_url: https://forms.gle/dkgVaa5aM85SDV8v9
     logistics_form_url: https://forms.gle/5pSswz87rFS96YU26

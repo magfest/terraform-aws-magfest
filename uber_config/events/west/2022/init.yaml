@@ -11,6 +11,7 @@ plugins:
     post_con: True
     send_sms: False
     emergency_procedures_enabled: True
+    maps_enabled: False
     
     techops_dept_checklist_form_url: 'https://forms.gle/rJPSwmrmW2GUfHW89'
     treasury_dept_checklist_form_url: 'https://forms.gle/vS26HZQiFaTjvuwn8'
