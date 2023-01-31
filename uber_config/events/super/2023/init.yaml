@@ -21,7 +21,7 @@ plugins:
 
     alt_schedule_url: https://guidebook.com/guide/101720/schedule
 
-    treasury_dept_checklist_form_url: "%(url_base)s/static_views/treasury_form.html"
+    treasury_dept_checklist_form_url: "https://super2023.dev.magevent.net/static_views/treasury_form.html"
     volunteer_perks_url: https://www.notion.so/magfest/MAGFest-Super-Perks-f001221c31484ef4957a6513c54a6fd6
     staff_room_faq_url: https://www.notion.so/magfest/Staff-Room-FAQ-656edde68e324dae97891c2002439465
 
