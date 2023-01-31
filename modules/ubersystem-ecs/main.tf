@@ -103,7 +103,6 @@ resource "aws_lb_listener_certificate" "uber" {
 
 resource "aws_lb_listener_rule" "uber" {
   listener_arn = var.lb_web_listener_arn
-  priority     = var.lb_priority
 
   action {
     type             = "forward"
