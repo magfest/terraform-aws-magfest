@@ -1,12 +1,12 @@
 super2023:
-  ubersystem_container: ghcr.io/magfest/magprime:super2023
+  ubersystem_container: ghcr.io/magfest/magprime:main
   hostname: super2023.dev.magevent.net
   zonename: dev.magevent.net
   prefix: super23
   config_paths:
     - uber_config/environments/prod
     - uber_config/events/super/2023
-    
+
 stock2023:
   ubersystem_container: ghcr.io/magfest/magstock:main
   hostname: stock2023.dev.magevent.net
