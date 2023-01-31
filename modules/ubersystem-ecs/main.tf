@@ -141,7 +141,7 @@ resource "aws_ecs_service" "ubersystem_web" {
   name            = "${var.prefix}_ubersystem_web"
   cluster         = var.ecs_cluster
   task_definition = aws_ecs_task_definition.ubersystem_web.arn
-  desired_count   = 1
+  desired_count   = var.web_count
   launch_type     = "FARGATE"
 
   network_configuration {
@@ -258,7 +258,7 @@ resource "aws_ecs_service" "ubersystem_celery" {
   name            = "${var.prefix}_ubersystem_celery"
   cluster         = var.ecs_cluster
   task_definition = aws_ecs_task_definition.ubersystem_celery.arn
-  desired_count   = 1
+  desired_count   = var.celery_count
   launch_type     = "FARGATE"
 
   network_configuration {
@@ -371,8 +371,8 @@ resource "aws_ecs_task_definition" "ubersystem_celery" {
     }
   }
 
-  cpu                       = 256
-  memory                    = 512
+  cpu                       = var.celery_cpu
+  memory                    = var.celery_ram
   requires_compatibilities  = ["FARGATE"]
   network_mode              = "awsvpc"
   execution_role_arn        = var.ecs_task_role
@@ -393,7 +393,7 @@ resource "aws_ecs_service" "rabbitmq" {
   name            = "${var.prefix}_rabbitmq"
   cluster         = var.ecs_cluster
   task_definition = aws_ecs_task_definition.rabbitmq.arn
-  desired_count   = 1
+  desired_count   = var.rabbitmq_count
   launch_type     = "FARGATE"
 
   network_configuration {
@@ -449,8 +449,8 @@ resource "aws_ecs_task_definition" "rabbitmq" {
     ]
   )
 
-  cpu                       = 256
-  memory                    = 512
+  cpu                       = var.rabbitmq_cpu
+  memory                    = var.rabbitmq_ram
   requires_compatibilities  = ["FARGATE"]
   network_mode              = "awsvpc"
   execution_role_arn        = var.ecs_task_role
@@ -471,7 +471,7 @@ resource "aws_ecs_service" "redis" {
   name            = "${var.prefix}_redis"
   cluster         = var.ecs_cluster
   task_definition = aws_ecs_task_definition.redis.arn
-  desired_count   = 1
+  desired_count   = var.redis_count
   launch_type     = "FARGATE"
 
   network_configuration {
@@ -519,8 +519,8 @@ resource "aws_ecs_task_definition" "redis" {
     ]
   )
 
-  cpu                       = 256
-  memory                    = 512
+  cpu                       = var.redis_cpu
+  memory                    = var.redis_ram
   requires_compatibilities  = ["FARGATE"]
   network_mode              = "awsvpc"
   execution_role_arn        = var.ecs_task_role

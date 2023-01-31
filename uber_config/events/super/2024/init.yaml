@@ -330,13 +330,13 @@ plugins:
       supporter:
         name: Brawler Tier
         icon: ../static/icons/supporter.png
-        description: All T-Shirt Tier Items|Rally Towel|Water Bottle|GAMER BLOOD™|Trading Card Pack|Hand Warmer|Super Swadge|& More!
+        description: All T-Shirt Tier Items|Rally Towel|Water Bottle|GAMER BLOOD|Trading Card Pack|Hand Warmer|Super Swadge|& More!
         link: ../static_views/tshirt.html|../static_views/supporter.html|../static_views/supporter.html|../static_views/supporter.html|../static_views/supporter.html|../static_views/supporter.html|../static_views/swadge.html|../static_views/supporter.html
 
       super_supporter:
         name: ULTIMATE Tier
         icon: ../static/icons/super.png
-        description: All T-Shirt Tier Items|All Brawler Tier Items|Exclusive Duffel Bag|GAMER BLOOD™ x 3|Roaring Sound Drop|Comfy Butt Pillow|Engraved Soap|Exclusive Mystery Items|Secret Tier Invite|& MORE!!
+        description: All T-Shirt Tier Items|All Brawler Tier Items|Exclusive Duffel Bag|GAMER BLOOD x 3|Roaring Sound Drop|Comfy Butt Pillow|Engraved Soap|Exclusive Mystery Items|Secret Tier Invite|& MORE!!
         link: ../static_views/tshirt.html|../static_views/supporter.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html
 
     volunteer_checklist:

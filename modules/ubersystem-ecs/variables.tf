@@ -50,6 +50,55 @@ variable "web_ram" {
     default = 512
 }
 
+variable "web_count" {
+  type = number
+  default = 1
+}
+
+variable "celery_cpu" {
+    type = number
+    default = 256
+}
+
+variable "celery_ram" {
+    type = number
+    default = 512
+}
+
+variable "celery_count" {
+  type = number
+  default = 1
+}
+variable "redis_cpu" {
+    type = number
+    default = 256
+}
+
+variable "redis_ram" {
+    type = number
+    default = 512
+}
+
+variable "redis_count" {
+  type = number
+  default = 1
+}
+
+variable "rabbitmq_cpu" {
+    type = number
+    default = 256
+}
+
+variable "rabbitmq_ram" {
+    type = number
+    default = 512
+}
+
+variable "rabbitmq_count" {
+  type = number
+  default = 1
+}
+
 variable "loadbalancer_arn" {
     type    = string
 }

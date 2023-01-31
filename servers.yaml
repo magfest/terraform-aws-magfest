@@ -15,6 +15,8 @@ stock2023:
   config_paths:
     - uber_config/environments/prod
     - uber_config/events/stock/2023
+  celery_count: 0
+  rabbitmq_count: 0
 
 west2023:
   ubersystem_container: ghcr.io/magfest/magwest:main
@@ -24,6 +26,8 @@ west2023:
   config_paths:
     - uber_config/environments/prod
     - uber_config/events/west/2023
+  celery_count: 0
+  rabbitmq_count: 0
 
 super2022:
   ubersystem_container: ghcr.io/magfest/magprime:super2022
@@ -33,6 +37,8 @@ super2022:
   config_paths:
     - uber_config/environments/prod
     - uber_config/events/super/2022
+  celery_count: 0
+  rabbitmq_count: 0
 
 west2022:
   ubersystem_container: ghcr.io/magfest/magwest:west2022
@@ -42,6 +48,8 @@ west2022:
   config_paths:
     - uber_config/environments/prod
     - uber_config/events/west/2022
+  celery_count: 0
+  rabbitmq_count: 0
 
 super2020:
   ubersystem_container: ghcr.io/magfest/magprime:super2020_migrated
@@ -51,4 +59,6 @@ super2020:
   config_paths:
     - uber_config/environments/prod
     - uber_config/events/super/2020
+  celery_count: 0
+  rabbitmq_count: 0
 
