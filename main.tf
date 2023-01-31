@@ -402,6 +402,14 @@ resource "aws_lb" "ubersystem" {
   enable_deletion_protection = false
 }
 
+resource "aws_route53_record" "default" {
+  zone_id = aws_route53_zone.uber.zone_id
+  name    = var.hostname
+  type    = "CNAME"
+  ttl     = 300
+  records = [aws_lb.ubersystem.dns_name]
+}
+
 resource "aws_lb_listener" "ubersystem_web_http" {
   load_balancer_arn = aws_lb.ubersystem.arn
   port              = "80"

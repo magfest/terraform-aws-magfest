@@ -1,6 +1,6 @@
 variable "hostname" {
     type    = string
-    default = "default.dev.magevent.net"
+    default = "dev.magevent.net"
 }
 
 variable "zonename" {
