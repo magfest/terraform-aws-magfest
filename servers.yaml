@@ -7,17 +7,6 @@ stock2023:
     - uber_config/environments/prod
     - uber_config/events/stock/2023
 
-super2020:
-  ubersystem_container: ghcr.io/magfest/magprime:super2020_migrated
-  hostname: super2020.dev.magevent.net
-  zonename: dev.magevent.net
-  prefix: super20
-  config_paths:
-    - uber_config/environments/prod
-    - uber_config/events/super/2020
-  web_cpu: 512
-  web_ram: 1024
-
 west2023:
   ubersystem_container: ghcr.io/magfest/magwest:main
   hostname: west2023.dev.magevent.net
@@ -26,3 +15,30 @@ west2023:
   config_paths:
     - uber_config/environments/prod
     - uber_config/events/west/2023
+
+super2022:
+  ubersystem_container: ghcr.io/magfest/magprime:super2022
+  hostname: super2022.dev.magevent.net
+  zonename: dev.magevent.net
+  prefix: super22
+  config_paths:
+    - uber_config/environments/prod
+    - uber_config/events/super/2022
+
+west2022:
+  ubersystem_container: ghcr.io/magfest/magwest:west2022
+  hostname: west2022.dev.magevent.net
+  zonename: dev.magevent.net
+  prefix: west22
+  config_paths:
+    - uber_config/environments/prod
+    - uber_config/events/west/2022
+
+super2020:
+  ubersystem_container: ghcr.io/magfest/magprime:super2020_migrated
+  hostname: super2020.dev.magevent.net
+  zonename: dev.magevent.net
+  prefix: super20
+  config_paths:
+    - uber_config/environments/prod
+    - uber_config/events/super/2020
