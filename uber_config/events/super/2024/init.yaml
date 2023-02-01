@@ -12,7 +12,7 @@ plugins:
     self_service_deferrals_open: False
     merch_shipping_fee: 15
     at_the_con: False
-    post_con: True
+    post_con: False
     covid_policies_url: 'https://super.magfest.org/covid'
     prior_covid_policies_url: ''
 
