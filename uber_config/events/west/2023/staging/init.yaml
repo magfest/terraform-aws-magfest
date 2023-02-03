@@ -1,0 +1,14 @@
+plugins:
+  uber:
+    at_the_con: False
+    post_con: False
+    shirt_stock: 0
+    supporter_stock: 0
+    season_stock: 0
+
+    dates:
+      prereg_open: 2023-01-01
+      dealer_reg_start: 2023-01-01
+      volunteer_checklist_open: 2023-01-01
+      mivs_start: 2023-01-01
+      panels_start: 2023-01-01
