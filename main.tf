@@ -323,20 +323,11 @@ resource "aws_iam_policy" "task_role_logs" {
     })
 }
 
-resource "aws_iam_role" "task_role" {
-  name = "UbersystemECSRole"
-
-  assume_role_policy = jsonencode({
+resource "aws_iam_policy" "task_role_ssm" {
+  name = "UbersystemECSSSM"
+  policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
-      {
-        Action = "sts:AssumeRole"
-        Effect = "Allow"
-        Sid    = ""
-        Principal = {
-          Service = "ecs-tasks.amazonaws.com"
-        }
-      },
       {
         "Effect": "Allow",
         "Action": [
@@ -351,9 +342,32 @@ resource "aws_iam_role" "task_role" {
   })
 }
 
+resource "aws_iam_role" "task_role" {
+  name = "UbersystemECSRole"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = "sts:AssumeRole"
+        Effect = "Allow"
+        Sid    = ""
+        Principal = {
+          Service = "ecs-tasks.amazonaws.com"
+        }
+      }
+    ]
+  })
+}
+
 resource "aws_iam_role_policy_attachment" "task_role_logs_attach" {
   role       = aws_iam_role.task_role.name
   policy_arn = aws_iam_policy.task_role_logs.arn
+}
+
+resource "aws_iam_role_policy_attachment" "task_role_ssm_attach" {
+  role       = aws_iam_role.task_role.name
+  policy_arn = aws_iam_policy.task_role_ssm.arn
 }
 
 resource "aws_iam_role_policy_attachment" "task_role_default_attach" {
