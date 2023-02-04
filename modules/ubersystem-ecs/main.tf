@@ -250,7 +250,7 @@ resource "aws_ecs_task_definition" "ubersystem_web" {
   }
 
   depends_on = [
-    aws_service_discovery_service.rabbitmq
+    aws_service_discovery_service.rabbitmq,
     aws_service_discovery_service.redis
   ]
 }
