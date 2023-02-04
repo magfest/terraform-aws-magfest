@@ -378,6 +378,7 @@ resource "aws_ecs_task_definition" "ubersystem_celery" {
   requires_compatibilities  = ["FARGATE"]
   network_mode              = "awsvpc"
   execution_role_arn        = var.ecs_task_role
+  task_role_arn             = var.ecs_task_role
 
   runtime_platform {
     operating_system_family = "LINUX"
