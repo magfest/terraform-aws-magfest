@@ -138,11 +138,12 @@ resource "aws_efs_access_point" "uber" {
 }
 
 resource "aws_ecs_service" "ubersystem_web" {
-  name            = "${var.prefix}_ubersystem_web"
-  cluster         = var.ecs_cluster
-  task_definition = aws_ecs_task_definition.ubersystem_web.arn
-  desired_count   = var.web_count
-  launch_type     = "FARGATE"
+  name                   = "${var.prefix}_ubersystem_web"
+  cluster                = var.ecs_cluster
+  task_definition        = aws_ecs_task_definition.ubersystem_web.arn
+  desired_count          = var.web_count
+  launch_type            = "FARGATE"
+  enable_execute_command = true
 
   network_configuration {
     subnets           = var.subnet_ids
@@ -255,11 +256,12 @@ resource "aws_ecs_task_definition" "ubersystem_web" {
 # -------------------------------------------------------------------
 
 resource "aws_ecs_service" "ubersystem_celery" {
-  name            = "${var.prefix}_ubersystem_celery"
-  cluster         = var.ecs_cluster
-  task_definition = aws_ecs_task_definition.ubersystem_celery.arn
-  desired_count   = var.celery_count
-  launch_type     = "FARGATE"
+  name                   = "${var.prefix}_ubersystem_celery"
+  cluster                = var.ecs_cluster
+  task_definition        = aws_ecs_task_definition.ubersystem_celery.arn
+  desired_count          = var.celery_count
+  launch_type            = "FARGATE"
+  enable_execute_command = true
 
   network_configuration {
     subnets           = var.subnet_ids
@@ -390,11 +392,12 @@ resource "aws_ecs_task_definition" "ubersystem_celery" {
 
 
 resource "aws_ecs_service" "rabbitmq" {
-  name            = "${var.prefix}_rabbitmq"
-  cluster         = var.ecs_cluster
-  task_definition = aws_ecs_task_definition.rabbitmq.arn
-  desired_count   = var.rabbitmq_count
-  launch_type     = "FARGATE"
+  name                   = "${var.prefix}_rabbitmq"
+  cluster                = var.ecs_cluster
+  task_definition        = aws_ecs_task_definition.rabbitmq.arn
+  desired_count          = var.rabbitmq_count
+  launch_type            = "FARGATE"
+  enable_execute_command = true
 
   network_configuration {
     subnets           = var.subnet_ids
@@ -468,11 +471,12 @@ resource "aws_ecs_task_definition" "rabbitmq" {
 # -------------------------------------------------------------------
 
 resource "aws_ecs_service" "redis" {
-  name            = "${var.prefix}_redis"
-  cluster         = var.ecs_cluster
-  task_definition = aws_ecs_task_definition.redis.arn
-  desired_count   = var.redis_count
-  launch_type     = "FARGATE"
+  name                   = "${var.prefix}_redis"
+  cluster                = var.ecs_cluster
+  task_definition        = aws_ecs_task_definition.redis.arn
+  desired_count          = var.redis_count
+  launch_type            = "FARGATE"
+  enable_execute_command = true
 
   network_configuration {
     subnets           = var.subnet_ids
