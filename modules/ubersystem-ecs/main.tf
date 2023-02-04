@@ -248,6 +248,11 @@ resource "aws_ecs_task_definition" "ubersystem_web" {
     operating_system_family = "LINUX"
     cpu_architecture        = "X86_64"
   }
+
+  depends_on = [
+    aws_service_discovery_service.rabbitmq
+    aws_service_discovery_service.redis
+  ]
 }
 
 
@@ -384,6 +389,10 @@ resource "aws_ecs_task_definition" "ubersystem_celery" {
     operating_system_family = "LINUX"
     cpu_architecture        = "X86_64"
   }
+
+  depends_on = [
+    aws_service_discovery_service.rabbitmq
+  ]
 }
 
 
@@ -465,6 +474,10 @@ resource "aws_ecs_task_definition" "rabbitmq" {
   }
 
   task_role_arn = var.ecs_task_role
+
+  depends_on = [
+    aws_service_discovery_service.rabbitmq
+  ]
 }
 
 # -------------------------------------------------------------------
@@ -536,6 +549,10 @@ resource "aws_ecs_task_definition" "redis" {
   }
 
   task_role_arn = "${var.ecs_task_role}"
+
+  depends_on = [
+    aws_service_discovery_service.redis
+  ]
 }
 
 # -------------------------------------------------------------------
