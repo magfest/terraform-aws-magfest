@@ -34,6 +34,10 @@ variable "zonename" {
     type    = string
 }
 
+variable "private_zone" {
+    type    = string
+}
+
 variable "ubersystem_container" {
     type    = string
 

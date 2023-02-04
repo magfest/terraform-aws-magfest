@@ -190,11 +190,11 @@ resource "aws_ecs_task_definition" "ubersystem_web" {
           },
           {
             "name": "SESSION_HOST",
-            "value": "redis.${var.hostname}"
+            "value": "redis.${var.private_zone}"
           },
           {
             "name": "BROKER_HOST",
-            "value": "rabbitmq.${var.hostname}"
+            "value": "rabbitmq.${var.private_zone}"
           },
           {
             "name": "UBERSYSTEM_CONFIG",
@@ -293,7 +293,7 @@ resource "aws_ecs_task_definition" "ubersystem_celery" {
           },
           {
             "name": "BROKER_HOST",
-            "value": "rabbitmq.${var.hostname}"
+            "value": "rabbitmq.${var.private_zone}"
           },
           {
             "name": "UBERSYSTEM_CONFIG",
@@ -332,7 +332,7 @@ resource "aws_ecs_task_definition" "ubersystem_celery" {
           },
           {
             "name": "BROKER_HOST",
-            "value": "rabbitmq.${var.hostname}"
+            "value": "rabbitmq.${var.private_zone}"
           },
           {
             "name": "UBERSYSTEM_CONFIG",
@@ -543,7 +543,7 @@ resource "aws_ecs_task_definition" "redis" {
 # -------------------------------------------------------------------
 
 resource "aws_service_discovery_private_dns_namespace" "uber" {
-  name        = var.hostname
+  name        = var.private_zone
   description = "Uber Internal Services (${var.hostname})"
   vpc         = data.aws_vpc.uber.id
 }

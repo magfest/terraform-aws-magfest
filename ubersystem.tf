@@ -22,6 +22,7 @@ module "uberserver-ecs" {
 
     hostname                = each.value.hostname
     zonename                = each.value.zonename
+    private_zone            = lookup(each.value, "private_zone", join("", [each.key,".local"]))
     ubersystem_container    = each.value.ubersystem_container
     lb_priority             = lookup(each.value, "lb_priority", index(local.server_names, each.key))*10+50
     prefix                  = each.value.prefix
