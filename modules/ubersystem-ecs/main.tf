@@ -566,7 +566,8 @@ resource "aws_service_discovery_private_dns_namespace" "uber" {
 }
 
 resource "aws_service_discovery_service" "redis" {
-  name = "redis"
+  name          = "redis"
+  force_destroy = true
 
   dns_config {
     namespace_id = aws_service_discovery_private_dns_namespace.uber.id
@@ -585,7 +586,8 @@ resource "aws_service_discovery_service" "redis" {
 }
 
 resource "aws_service_discovery_service" "rabbitmq" {
-  name = "rabbitmq"
+  name          = "rabbitmq"
+  force_destroy = true
 
   dns_config {
     namespace_id = aws_service_discovery_private_dns_namespace.uber.id
