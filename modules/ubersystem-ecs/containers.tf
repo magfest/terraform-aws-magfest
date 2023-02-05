@@ -225,12 +225,16 @@ resource "aws_secretsmanager_secret_version" "current_config" {
   secret_string = var.ubersystem_config
 }
 
-resource "aws_ecs_service" "ubersystem_combined" {
+# -------------------------------------------------------------------
+# MAGFest Ubersystem Supporting Services (Web / Combined)
+# -------------------------------------------------------------------
+
+resource "aws_ecs_service" "ubersystem_web" {
   count = var.layout == "single" ? 1 : 0
-  name                   = "${var.prefix}_ubersystem"
+  name                   = "${var.prefix}_ubersystem_web"
   cluster                = var.ecs_cluster
-  task_definition        = aws_ecs_task_definition.ubersystem_combined[count.index].arn
-  desired_count          = 1
+  task_definition        = aws_ecs_task_definition.ubersystem_web.arn
+  desired_count          = var.web_count
   launch_type            = "FARGATE"
   enable_execute_command = true
 
@@ -247,9 +251,8 @@ resource "aws_ecs_service" "ubersystem_combined" {
   }
 }
 
-resource "aws_ecs_task_definition" "ubersystem_combined" {
-  count = var.layout == "single" ? 1 : 0
-  family                    = "${var.prefix}_ubersystem_combined"
+resource "aws_ecs_task_definition" "ubersystem_web" {
+  family                    = "${var.prefix}_ubersystem_web"
   # There has to be a cleaner way to do this, but I don't really understand how types work here.
   # Only deploy web/redis unless enable_workers is true
   container_definitions     = jsonencode(slice(
@@ -261,7 +264,7 @@ resource "aws_ecs_task_definition" "ubersystem_combined" {
       local.container_celery_worker
     ],
     0,
-    var.enable_workers ? 5 : 2
+    var.layout == "single" ? (var.enable_workers ? 5 : 2) : 1
   ))
 
   volume {
@@ -290,70 +293,6 @@ resource "aws_ecs_task_definition" "ubersystem_combined" {
     cpu_architecture        = "X86_64"
   }
 }
-
-resource "aws_ecs_service" "ubersystem_web" {
-  count = var.layout == "scalable" ? 1 : 0
-  name                   = "${var.prefix}_ubersystem_web"
-  cluster                = var.ecs_cluster
-  task_definition        = aws_ecs_task_definition.ubersystem_web[count.index].arn
-  desired_count          = var.web_count
-  launch_type            = "FARGATE"
-  enable_execute_command = true
-
-  network_configuration {
-    subnets           = var.subnet_ids
-    security_groups   = var.uber_web_securitygroups
-    assign_public_ip  = true
-  }
-
-  load_balancer {
-    target_group_arn = aws_lb_target_group.ubersystem_web.arn
-    container_name   = "web"
-    container_port   = 8282
-  }
-}
-
-resource "aws_ecs_task_definition" "ubersystem_web" {
-  count = var.layout == "scalable" ? 1 : 0
-  family                    = "${var.prefix}_ubersystem_web"
-  container_definitions     = jsonencode(
-    [
-      local.container_web
-    ]
-  )
-
-  volume {
-    name = "static"
-
-    efs_volume_configuration {
-      file_system_id          = var.efs_id
-      transit_encryption      = "ENABLED"
-      transit_encryption_port = 2999
-      authorization_config {
-        access_point_id = aws_efs_access_point.uber.id
-      }
-    }
-  }
-
-  cpu                       = var.web_cpu
-  memory                    = var.web_ram
-  requires_compatibilities  = ["FARGATE"]
-  network_mode              = "awsvpc"
-  execution_role_arn        = var.ecs_task_role
-
-  task_role_arn = var.ecs_task_role
-
-  runtime_platform {
-    operating_system_family = "LINUX"
-    cpu_architecture        = "X86_64"
-  }
-
-  depends_on = [
-    aws_service_discovery_service.rabbitmq,
-    aws_service_discovery_service.redis
-  ]
-}
-
 
 # -------------------------------------------------------------------
 # MAGFest Ubersystem Containers (celery)
