@@ -29,11 +29,11 @@ locals {
             },
             {
                 "name": "SESSION_HOST",
-                "value": locals.session_host
+                "value": local.session_host
             },
             {
                 "name": "BROKER_HOST",
-                "value": locals.broker_host
+                "value": local.broker_host
             },
             {
                 "name": "UBERSYSTEM_CONFIG",
@@ -79,7 +79,7 @@ locals {
             },
             {
                 "name": "BROKER_HOST",
-                "value": locals.broker_host
+                "value": local.broker_host
             },
             {
                 "name": "UBERSYSTEM_CONFIG",
@@ -118,7 +118,7 @@ locals {
             },
             {
                 "name": "BROKER_HOST",
-                "value": locals.broker_host
+                "value": local.broker_host
             },
             {
                 "name": "UBERSYSTEM_CONFIG",
@@ -234,13 +234,13 @@ resource "aws_ecs_task_definition" "ubersystem_combined" {
   family                    = "${var.prefix}_ubersystem_combined"
   container_definitions     = jsonencode(concat(
     [
-      locals.container_web,
-      locals.container_redis
+      local.container_web,
+      local.container_redis
     ],
     var.enable_workers ? [
-      locals.container_rabbitmq,
-      locals.container_celery_beat,
-      locals.container_celery_worker
+      local.container_rabbitmq,
+      local.container_celery_beat,
+      local.container_celery_worker
     ] : []
   ))
 
@@ -298,7 +298,7 @@ resource "aws_ecs_task_definition" "ubersystem_web" {
   family                    = "${var.prefix}_ubersystem_web"
   container_definitions     = jsonencode(
     [
-      locals.container_web
+      local.container_web
     ]
   )
 
@@ -359,8 +359,8 @@ resource "aws_ecs_task_definition" "ubersystem_celery" {
   family                    = "${var.prefix}_ubersystem_celery"
   container_definitions     = jsonencode(
     [
-      locals.container_celery_beat,
-      locals.container_celery_worker
+      local.container_celery_beat,
+      local.container_celery_worker
     ]
   )
 
@@ -425,7 +425,7 @@ resource "aws_ecs_task_definition" "rabbitmq" {
   family                    = "${var.prefix}_rabbitmq"
   container_definitions     = jsonencode(
     [
-      locals.container_rabbitmq
+      local.container_rabbitmq
     ]
   )
 
@@ -476,7 +476,7 @@ resource "aws_ecs_task_definition" "redis" {
   family                    = "${var.prefix}_redis"
   container_definitions     = jsonencode(
     [
-      locals.container_redis
+      local.container_redis
     ]
   )
 
