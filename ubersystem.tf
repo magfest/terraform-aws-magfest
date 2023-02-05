@@ -32,6 +32,7 @@ module "uberserver-ecs" {
     uber_db_name            = lookup(each.value, "uber_db_name", each.key)
     uber_db_username        = lookup(each.value, "uber_db_username", each.key)
     layout                  = lookup(each.value, "layout", "scalable")
+    enable_workers          = lookup(each.value, "enable_workers", true)
     
     web_count               = lookup(each.value, "web_count", 1)
     web_cpu                 = lookup(each.value, "web_cpu", 256)

@@ -230,7 +230,7 @@ resource "aws_ecs_service" "ubersystem_combined" {
   name                   = "${var.prefix}_ubersystem"
   cluster                = var.ecs_cluster
   task_definition        = aws_ecs_task_definition.ubersystem_combined[count.index].arn
-  desired_count          = var.web_count
+  desired_count          = 1
   launch_type            = "FARGATE"
   enable_execute_command = true
 
