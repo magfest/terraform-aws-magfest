@@ -390,7 +390,7 @@ resource "aws_ecs_task_definition" "ubersystem_celery" {
   }
 
   depends_on = [
-    aws_service_discovery_service.rabbitmq[count.index]
+    aws_service_discovery_service.rabbitmq
   ]
 }
 
@@ -443,7 +443,7 @@ resource "aws_ecs_task_definition" "rabbitmq" {
   task_role_arn = var.ecs_task_role
 
   depends_on = [
-    aws_service_discovery_service.rabbitmq[count.index]
+    aws_service_discovery_service.rabbitmq
   ]
 }
 
@@ -494,6 +494,6 @@ resource "aws_ecs_task_definition" "redis" {
   task_role_arn = "${var.ecs_task_role}"
 
   depends_on = [
-    aws_service_discovery_service.redis[count.index]
+    aws_service_discovery_service.redis
   ]
 }
