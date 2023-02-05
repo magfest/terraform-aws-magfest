@@ -342,6 +342,22 @@ resource "aws_iam_policy" "task_role_ssm" {
   })
 }
 
+resource "aws_iam_policy" "task_role_secrets" {
+  name = "UbersystemECSSecrets"
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "secretsmanager:GetSecretValue"
+        ],
+        "Resource": "*"
+      }
+    ]
+  })
+}
+
 resource "aws_iam_role" "task_role" {
   name = "UbersystemECSRole"
 
@@ -358,6 +374,11 @@ resource "aws_iam_role" "task_role" {
       }
     ]
   })
+}
+
+resource "aws_iam_role_policy_attachment" "task_role_secrets_attach" {
+  role       = aws_iam_role.task_role.name
+  policy_arn = aws_iam_policy.task_role_secrets.arn
 }
 
 resource "aws_iam_role_policy_attachment" "task_role_logs_attach" {
