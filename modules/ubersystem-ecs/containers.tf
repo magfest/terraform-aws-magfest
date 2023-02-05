@@ -234,17 +234,18 @@ resource "aws_ecs_service" "ubersystem_combined" {
 resource "aws_ecs_task_definition" "ubersystem_combined" {
   count = var.layout == "single" ? 1 : 0
   family                    = "${var.prefix}_ubersystem_combined"
-  container_definitions     = jsonencode(concat(
-    [
-      local.container_web,
-      local.container_redis
-    ],
+  container_definitions     = jsonencode(
     var.enable_workers ? toset([
+      local.container_web,
+      local.container_redis,
       local.container_rabbitmq,
       local.container_celery_beat,
       local.container_celery_worker
-    ]) : toset([])
-  ))
+    ]) : [
+      local.container_web,
+      local.container_redis
+    ],
+  )
 
   volume {
     name = "static"
