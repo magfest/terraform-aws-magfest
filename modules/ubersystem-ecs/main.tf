@@ -133,7 +133,7 @@ resource "aws_service_discovery_service" "redis" {
   force_destroy = true
 
   dns_config {
-    namespace_id = aws_service_discovery_private_dns_namespace.uber.id
+    namespace_id = aws_service_discovery_private_dns_namespace.uber[count.index].id
 
     dns_records {
       ttl  = 10
@@ -154,7 +154,7 @@ resource "aws_service_discovery_service" "rabbitmq" {
   force_destroy = true
 
   dns_config {
-    namespace_id = aws_service_discovery_private_dns_namespace.uber.id
+    namespace_id = aws_service_discovery_private_dns_namespace.uber[count.index].id
 
     dns_records {
       ttl  = 10
@@ -208,4 +208,25 @@ resource "postgresql_role" "uber" {
   login            = true
   connection_limit = -1
   password         = aws_secretsmanager_secret_version.password.secret_string
+}
+
+# -------------------------------------------------------------------
+# EFS Filesystem
+# -------------------------------------------------------------------
+
+resource "aws_efs_access_point" "uber" {
+  file_system_id = var.efs_id
+
+  root_directory {
+    path = var.efs_dir
+    creation_info {
+      owner_gid   = 65534
+      owner_uid   = 65534
+      permissions = 0755
+    }
+  }
+
+  tags = {
+    Name = "${var.prefix}-static"
+  }
 }
