@@ -237,11 +237,11 @@ resource "aws_ecs_task_definition" "ubersystem_combined" {
       local.container_web,
       local.container_redis
     ],
-    var.enable_workers ? [
+    var.enable_workers ? toset([
       local.container_rabbitmq,
       local.container_celery_beat,
       local.container_celery_worker
-    ] : []
+    ]) : toset([])
   ))
 
   volume {
