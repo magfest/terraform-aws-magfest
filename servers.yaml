@@ -7,6 +7,7 @@ staging:
     config_paths:
       - uber_config/environments/staging
       - uber_config/events/super/2023/staging
+    enable_workers: false
     layout: single
 
   stock2023:
@@ -17,9 +18,8 @@ staging:
     config_paths:
       - uber_config/environments/staging
       - uber_config/events/stock/2023/staging
+    enable_workers: false
     layout: single
-    celery_count: 0
-    rabbitmq_count: 0
 
   west2023:
     ubersystem_container: ghcr.io/magfest/magwest:main
@@ -29,9 +29,8 @@ staging:
     config_paths:
       - uber_config/environments/staging
       - uber_config/events/west/2023/staging
+    enable_workers: false
     layout: single
-    celery_count: 0
-    rabbitmq_count: 0
 
 production:
   super2023:
@@ -55,11 +54,8 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/stock/2023
+    enable_workers: false
     layout: single
-    web_count: 1
-    redis_count: 1
-    celery_count: 0
-    rabbitmq_count: 0
 
   west2023:
     ubersystem_container: ghcr.io/magfest/magwest:main
@@ -69,11 +65,8 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/west/2023
+    enable_workers: false
     layout: single
-    web_count: 1
-    redis_count: 1
-    celery_count: 0
-    rabbitmq_count: 0
 
   super2022:
     ubersystem_container: ghcr.io/magfest/magprime:super2022
@@ -83,11 +76,8 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/super/2022
+    enable_workers: false
     layout: single
-    web_count: 1
-    redis_count: 1
-    celery_count: 0
-    rabbitmq_count: 0
 
   west2022:
     ubersystem_container: ghcr.io/magfest/magwest:west2022
@@ -97,11 +87,8 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/west/2022
+    enable_workers: false
     layout: single
-    web_count: 1
-    redis_count: 1
-    celery_count: 0
-    rabbitmq_count: 0
 
   super2020:
     ubersystem_container: ghcr.io/magfest/magprime:super2020_migrated
@@ -111,8 +98,5 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/super/2020
+    enable_workers: false
     layout: single
-    web_count: 1
-    redis_count: 1
-    celery_count: 0
-    rabbitmq_count: 0
