@@ -1,64 +1,129 @@
-super2023:
-  ubersystem_container: ghcr.io/magfest/magprime:super2023
-  hostname: super2023.dev.magevent.net
-  zonename: dev.magevent.net
-  prefix: super23
-  config_paths:
-    - uber_config/environments/prod
-    - uber_config/events/super/2023
+staging:
+  super2023:
+    ubersystem_container: ghcr.io/magfest/magprime:super2023
+    hostname: super2023.dev.magevent.net
+    zonename: dev.magevent.net
+    prefix: super23
+    config_paths:
+      - uber_config/environments/prod
+      - uber_config/events/super/2023
 
-stock2023:
-  ubersystem_container: ghcr.io/magfest/magstock:main
-  hostname: stock2023.dev.magevent.net
-  zonename: dev.magevent.net
-  prefix: stock23
-  config_paths:
-    - uber_config/environments/prod
-    - uber_config/events/stock/2023
-  celery_count: 0
-  rabbitmq_count: 0
+  stock2023:
+    ubersystem_container: ghcr.io/magfest/magstock:main
+    hostname: stock2023.dev.magevent.net
+    zonename: dev.magevent.net
+    prefix: stock23
+    config_paths:
+      - uber_config/environments/prod
+      - uber_config/events/stock/2023
+    celery_count: 0
+    rabbitmq_count: 0
 
-west2023:
-  ubersystem_container: ghcr.io/magfest/magwest:main
-  hostname: west2023.dev.magevent.net
-  zonename: dev.magevent.net
-  prefix: west23
-  config_paths:
-    - uber_config/environments/prod
-    - uber_config/events/west/2023
-  celery_count: 0
-  rabbitmq_count: 0
+  west2023:
+    ubersystem_container: ghcr.io/magfest/magwest:main
+    hostname: west2023.dev.magevent.net
+    zonename: dev.magevent.net
+    prefix: west23
+    config_paths:
+      - uber_config/environments/prod
+      - uber_config/events/west/2023
+    celery_count: 0
+    rabbitmq_count: 0
 
-super2022:
-  ubersystem_container: ghcr.io/magfest/magprime:super2022
-  hostname: super2022.dev.magevent.net
-  zonename: dev.magevent.net
-  prefix: super22
-  config_paths:
-    - uber_config/environments/prod
-    - uber_config/events/super/2022
-  celery_count: 0
-  rabbitmq_count: 0
+  super2022:
+    ubersystem_container: ghcr.io/magfest/magprime:super2022
+    hostname: super2022.dev.magevent.net
+    zonename: dev.magevent.net
+    prefix: super22
+    config_paths:
+      - uber_config/environments/prod
+      - uber_config/events/super/2022
+    celery_count: 0
+    rabbitmq_count: 0
 
-west2022:
-  ubersystem_container: ghcr.io/magfest/magwest:west2022
-  hostname: west2022.dev.magevent.net
-  zonename: dev.magevent.net
-  prefix: west22
-  config_paths:
-    - uber_config/environments/prod
-    - uber_config/events/west/2022
-  celery_count: 0
-  rabbitmq_count: 0
+  west2022:
+    ubersystem_container: ghcr.io/magfest/magwest:west2022
+    hostname: west2022.dev.magevent.net
+    zonename: dev.magevent.net
+    prefix: west22
+    config_paths:
+      - uber_config/environments/prod
+      - uber_config/events/west/2022
+    celery_count: 0
+    rabbitmq_count: 0
 
-super2020:
-  ubersystem_container: ghcr.io/magfest/magprime:super2020_migrated
-  hostname: super2020.dev.magevent.net
-  zonename: dev.magevent.net
-  prefix: super20
-  config_paths:
-    - uber_config/environments/prod
-    - uber_config/events/super/2020
-  celery_count: 0
-  rabbitmq_count: 0
+  super2020:
+    ubersystem_container: ghcr.io/magfest/magprime:super2020_migrated
+    hostname: super2020.dev.magevent.net
+    zonename: dev.magevent.net
+    prefix: super20
+    config_paths:
+      - uber_config/environments/prod
+      - uber_config/events/super/2020
+    celery_count: 0
+    rabbitmq_count: 0
 
+production:
+  super2023:
+    ubersystem_container: ghcr.io/magfest/magprime:super2023
+    hostname: super2023.reg.magfest.org
+    zonename: reg.magfest.org
+    prefix: super23
+    config_paths:
+      - uber_config/environments/prod
+      - uber_config/events/super/2023
+
+  stock2023:
+    ubersystem_container: ghcr.io/magfest/magstock:main
+    hostname: stock2023.reg.magfest.org
+    zonename: reg.magfest.org
+    prefix: stock23
+    config_paths:
+      - uber_config/environments/prod
+      - uber_config/events/stock/2023
+    celery_count: 0
+    rabbitmq_count: 0
+
+  west2023:
+    ubersystem_container: ghcr.io/magfest/magwest:main
+    hostname: west2023.reg.magfest.org
+    zonename: reg.magfest.org
+    prefix: west23
+    config_paths:
+      - uber_config/environments/prod
+      - uber_config/events/west/2023
+    celery_count: 0
+    rabbitmq_count: 0
+
+  super2022:
+    ubersystem_container: ghcr.io/magfest/magprime:super2022
+    hostname: super2022.reg.magfest.org
+    zonename: reg.magfest.org
+    prefix: super22
+    config_paths:
+      - uber_config/environments/prod
+      - uber_config/events/super/2022
+    celery_count: 0
+    rabbitmq_count: 0
+
+  west2022:
+    ubersystem_container: ghcr.io/magfest/magwest:west2022
+    hostname: west2022.reg.magfest.org
+    zonename: reg.magfest.org
+    prefix: west22
+    config_paths:
+      - uber_config/environments/prod
+      - uber_config/events/west/2022
+    celery_count: 0
+    rabbitmq_count: 0
+
+  super2020:
+    ubersystem_container: ghcr.io/magfest/magprime:super2020_migrated
+    hostname: super2020.reg.magfest.org
+    zonename: reg.magfest.org
+    prefix: super20
+    config_paths:
+      - uber_config/environments/prod
+      - uber_config/events/super/2020
+    celery_count: 0
+    rabbitmq_count: 0

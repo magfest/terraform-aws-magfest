@@ -1,5 +1,5 @@
 locals {
-    servers = yamldecode(file("servers.yaml"))
+    servers = lookup(yamldecode(file("servers.yaml")), var.environment, {})
     server_names = sort(keys(local.servers))
     paths = zipmap(local.server_names, [
         for server_name in local.server_names: flatten([
