@@ -8,7 +8,7 @@ plugins:
     season_stock: 0
 
     dates:
-      epoch: 2023-06-04 10
+      epoch: 2023-06-04 11
       eschaton: 2023-06-07 18
       prereg_open: 2023-06-04 12
       shirt_deadline: 2023-06-01
