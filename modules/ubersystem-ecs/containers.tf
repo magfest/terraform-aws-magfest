@@ -47,7 +47,7 @@ locals {
         "secrets": [
           {
             "name": "UBERSYSTEM_SECRETS",
-            "valueFrom": aws_secretsmanager_secret_version.current_config.secret_string
+            "valueFrom": aws_secretsmanager_secret.uber_config.arn
           }
         ],
         "image": "${var.ubersystem_container}@sha256:${module.uber_image.docker_digest}",
@@ -91,7 +91,7 @@ locals {
         "secrets": [
           {
             "name": "UBERSYSTEM_SECRETS",
-            "valueFrom": aws_secretsmanager_secret_version.current_config.secret_string
+            "valueFrom": aws_secretsmanager_secret.uber_config.arn
           }
         ],
         "image": "${var.ubersystem_container}@sha256:${module.uber_image.docker_digest}",
@@ -132,7 +132,7 @@ locals {
         "secrets": [
           {
             "name": "UBERSYSTEM_SECRETS",
-            "valueFrom": aws_secretsmanager_secret_version.current_config.secret_string
+            "valueFrom": aws_secretsmanager_secret.uber_config.arn
           }
         ],
         "image": "${var.ubersystem_container}@sha256:${module.uber_image.docker_digest}",
