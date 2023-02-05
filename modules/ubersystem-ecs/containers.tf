@@ -211,7 +211,7 @@ resource "aws_ecs_service" "ubersystem_combined" {
   count = var.layout == "single" ? 1 : 0
   name                   = "${var.prefix}_ubersystem"
   cluster                = var.ecs_cluster
-  task_definition        = aws_ecs_task_definition.ubersystem_combined.arn
+  task_definition        = aws_ecs_task_definition.ubersystem_combined[count.index].arn
   desired_count          = var.web_count
   launch_type            = "FARGATE"
   enable_execute_command = true
@@ -223,7 +223,7 @@ resource "aws_ecs_service" "ubersystem_combined" {
   }
 
   load_balancer {
-    target_group_arn = aws_lb_target_group.ubersystem_combined.arn
+    target_group_arn = aws_lb_target_group.ubersystem_combined[count.index].arn
     container_name   = "ubersystem"
     container_port   = 8282
   }
@@ -275,7 +275,7 @@ resource "aws_ecs_service" "ubersystem_web" {
   count = var.layout == "scalable" ? 1 : 0
   name                   = "${var.prefix}_ubersystem_web"
   cluster                = var.ecs_cluster
-  task_definition        = aws_ecs_task_definition.ubersystem_web.arn
+  task_definition        = aws_ecs_task_definition.ubersystem_web[count.index].arn
   desired_count          = var.web_count
   launch_type            = "FARGATE"
   enable_execute_command = true
@@ -343,7 +343,7 @@ resource "aws_ecs_service" "ubersystem_celery" {
   count = var.layout == "scalable" && var.enable_workers ? 1 : 0
   name                   = "${var.prefix}_ubersystem_celery"
   cluster                = var.ecs_cluster
-  task_definition        = aws_ecs_task_definition.ubersystem_celery.arn
+  task_definition        = aws_ecs_task_definition.ubersystem_celery[count.index].arn
   desired_count          = var.celery_count
   launch_type            = "FARGATE"
   enable_execute_command = true
@@ -390,7 +390,7 @@ resource "aws_ecs_task_definition" "ubersystem_celery" {
   }
 
   depends_on = [
-    aws_service_discovery_service.rabbitmq
+    aws_service_discovery_service.rabbitmq[count.index]
   ]
 }
 
@@ -404,7 +404,7 @@ resource "aws_ecs_service" "rabbitmq" {
   count = var.layout == "scalable" ? 1 : 0
   name                   = "${var.prefix}_rabbitmq"
   cluster                = var.ecs_cluster
-  task_definition        = aws_ecs_task_definition.rabbitmq.arn
+  task_definition        = aws_ecs_task_definition.rabbitmq[count.index].arn
   desired_count          = var.rabbitmq_count
   launch_type            = "FARGATE"
   enable_execute_command = true
@@ -416,7 +416,7 @@ resource "aws_ecs_service" "rabbitmq" {
   }
 
   service_registries {
-    registry_arn = aws_service_discovery_service.rabbitmq.arn
+    registry_arn = aws_service_discovery_service.rabbitmq[count.index].arn
   }
 }
 
@@ -443,7 +443,7 @@ resource "aws_ecs_task_definition" "rabbitmq" {
   task_role_arn = var.ecs_task_role
 
   depends_on = [
-    aws_service_discovery_service.rabbitmq
+    aws_service_discovery_service.rabbitmq[count.index]
   ]
 }
 
@@ -455,7 +455,7 @@ resource "aws_ecs_service" "redis" {
   count = var.layout == "scalable" ? 1 : 0
   name                   = "${var.prefix}_redis"
   cluster                = var.ecs_cluster
-  task_definition        = aws_ecs_task_definition.redis.arn
+  task_definition        = aws_ecs_task_definition.redis[count.index].arn
   desired_count          = var.redis_count
   launch_type            = "FARGATE"
   enable_execute_command = true
@@ -467,7 +467,7 @@ resource "aws_ecs_service" "redis" {
   }
   
   service_registries {
-    registry_arn = aws_service_discovery_service.redis.arn
+    registry_arn = aws_service_discovery_service.redis[count.index].arn
   }
 }
 
@@ -494,6 +494,6 @@ resource "aws_ecs_task_definition" "redis" {
   task_role_arn = "${var.ecs_task_role}"
 
   depends_on = [
-    aws_service_discovery_service.redis
+    aws_service_discovery_service.redis[count.index]
   ]
 }
