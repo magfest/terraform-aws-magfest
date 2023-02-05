@@ -176,7 +176,8 @@ locals {
         ],
         "image": "public.ecr.aws/docker/library/rabbitmq:alpine",
         "essential": true,
-        "name": "rabbitmq"
+        "name": "rabbitmq",
+        "mountPoints": []
     }
     container_redis = {
         "logConfiguration": {
@@ -203,7 +204,8 @@ locals {
         ],
         "image": "public.ecr.aws/ubuntu/redis:latest",
         "essential": true,
-        "name": "redis"
+        "name": "redis",
+        "mountPoints": []
     }
 }
 
