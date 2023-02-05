@@ -44,6 +44,16 @@ variable "ubersystem_container" {
     default = "ghcr.io/magfest/magprime:main"
 }
 
+variable "layout" {
+    type    = string
+    default = "scalable"
+}
+
+variable "enable_workers" {
+    type    = bool
+    default = true
+}
+
 variable "web_cpu" {
     type = number
     default = 256

@@ -5,8 +5,9 @@ staging:
     zonename: dev.magevent.net
     prefix: super23
     config_paths:
-      - uber_config/environments/prod
-      - uber_config/events/super/2023
+      - uber_config/environments/staging
+      - uber_config/events/super/2023/staging
+    layout: single
 
   stock2023:
     ubersystem_container: ghcr.io/magfest/magstock:main
@@ -14,8 +15,9 @@ staging:
     zonename: dev.magevent.net
     prefix: stock23
     config_paths:
-      - uber_config/environments/prod
-      - uber_config/events/stock/2023
+      - uber_config/environments/staging
+      - uber_config/events/stock/2023/staging
+    layout: single
     celery_count: 0
     rabbitmq_count: 0
 
@@ -25,41 +27,9 @@ staging:
     zonename: dev.magevent.net
     prefix: west23
     config_paths:
-      - uber_config/environments/prod
-      - uber_config/events/west/2023
-    celery_count: 0
-    rabbitmq_count: 0
-
-  super2022:
-    ubersystem_container: ghcr.io/magfest/magprime:super2022
-    hostname: super2022.dev.magevent.net
-    zonename: dev.magevent.net
-    prefix: super22
-    config_paths:
-      - uber_config/environments/prod
-      - uber_config/events/super/2022
-    celery_count: 0
-    rabbitmq_count: 0
-
-  west2022:
-    ubersystem_container: ghcr.io/magfest/magwest:west2022
-    hostname: west2022.dev.magevent.net
-    zonename: dev.magevent.net
-    prefix: west22
-    config_paths:
-      - uber_config/environments/prod
-      - uber_config/events/west/2022
-    celery_count: 0
-    rabbitmq_count: 0
-
-  super2020:
-    ubersystem_container: ghcr.io/magfest/magprime:super2020_migrated
-    hostname: super2020.dev.magevent.net
-    zonename: dev.magevent.net
-    prefix: super20
-    config_paths:
-      - uber_config/environments/prod
-      - uber_config/events/super/2020
+      - uber_config/environments/staging
+      - uber_config/events/west/2023/staging
+    layout: single
     celery_count: 0
     rabbitmq_count: 0
 
@@ -85,6 +55,7 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/stock/2023
+    layout: single
     web_count: 1
     redis_count: 1
     celery_count: 0
@@ -98,6 +69,7 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/west/2023
+    layout: single
     web_count: 1
     redis_count: 1
     celery_count: 0
@@ -111,6 +83,7 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/super/2022
+    layout: single
     web_count: 1
     redis_count: 1
     celery_count: 0
@@ -124,6 +97,7 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/west/2022
+    layout: single
     web_count: 1
     redis_count: 1
     celery_count: 0
@@ -137,6 +111,7 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/super/2020
+    layout: single
     web_count: 1
     redis_count: 1
     celery_count: 0

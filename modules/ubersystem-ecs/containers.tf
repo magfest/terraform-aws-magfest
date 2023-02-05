@@ -1,0 +1,499 @@
+locals {
+    session_host = var.layout == "single" ? "localhost" : "redis.${var.private_zone}"
+    broker_host = var.layout == "single" ? "localhost" : "rabbitmq.${var.private_zone}"
+    container_web = {
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-group": "/ecs/Ubersystem",
+                "awslogs-region": "us-east-1",
+                "awslogs-stream-prefix": "ecs",
+                "awslogs-create-group": "true"
+            }
+        },
+        "portMappings": [
+            {
+                "hostPort": 8282,
+                "protocol": "tcp",
+                "containerPort": 8282
+            }
+        ],
+        "environment": [
+            {
+                "name": "CERT_NAME",
+                "value": "ssl"
+            },
+            {
+                "name": "VIRTUAL_HOST",
+                "value": var.hostname
+            },
+            {
+                "name": "SESSION_HOST",
+                "value": locals.session_host
+            },
+            {
+                "name": "BROKER_HOST",
+                "value": locals.broker_host
+            },
+            {
+                "name": "UBERSYSTEM_CONFIG",
+                "value": var.ubersystem_config
+            },
+            {
+                "name": "UBERSYSTEM_SECRETS",
+                "value": var.ubersystem_secrets
+            },
+            {
+                "name": "DB_CONNECTION_STRING",
+                "value": "postgresql://${var.uber_db_username}:${aws_secretsmanager_secret_version.password.secret_string}@${var.db_endpoint}/${var.uber_db_name}"
+            }
+        ],
+        "image": "${var.ubersystem_container}@sha256:${module.uber_image.docker_digest}",
+        "essential": true,
+        "name": "web",
+        "mountPoints": [
+            {
+                "sourceVolume": "static",
+                "containerPath": "/app/plugins/uber/uploaded_files",
+                "readOnly": false
+            }
+        ]
+    }
+    container_celery_beat = {
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-group": "/ecs/Ubersystem",
+                "awslogs-region": "us-east-1",
+                "awslogs-stream-prefix": "ecs",
+                "awslogs-create-group": "true"
+            }
+        },
+        "command": [
+            "celery-beat"
+        ],
+        "environment": [
+            {
+                "name": "DB_CONNECTION_STRING",
+                "value": "postgresql://${var.uber_db_username}:${aws_secretsmanager_secret_version.password.secret_string}@${var.db_endpoint}/${var.uber_db_name}"
+            },
+            {
+                "name": "BROKER_HOST",
+                "value": locals.broker_host
+            },
+            {
+                "name": "UBERSYSTEM_CONFIG",
+                "value": var.ubersystem_config
+            },
+            {
+                "name": "UBERSYSTEM_SECRETS",
+                "value": var.ubersystem_secrets
+            },
+        ],
+        "image": "${var.ubersystem_container}@sha256:${module.uber_image.docker_digest}",
+        "essential": true,
+        "name": "celery-beat",
+        "mountPoints": [
+            {
+                "sourceVolume": "static",
+                "containerPath": "/app/plugins/uber/uploaded_files",
+                "readOnly": false
+            }
+        ]
+    }
+    container_celery_worker = {
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-group": "/ecs/Ubersystem",
+                "awslogs-region": "us-east-1",
+                "awslogs-stream-prefix": "ecs",
+                "awslogs-create-group": "true"
+            }
+        },
+        "environment": [
+            {
+                "name": "DB_CONNECTION_STRING",
+                "value": "postgresql://${var.uber_db_username}:${aws_secretsmanager_secret_version.password.secret_string}@${var.db_endpoint}/${var.uber_db_name}"
+            },
+            {
+                "name": "BROKER_HOST",
+                "value": locals.broker_host
+            },
+            {
+                "name": "UBERSYSTEM_CONFIG",
+                "value": var.ubersystem_config
+            },
+            {
+                "name": "UBERSYSTEM_SECRETS",
+                "value": var.ubersystem_secrets
+            },
+        ],
+        "image": "${var.ubersystem_container}@sha256:${module.uber_image.docker_digest}",
+        "command": [
+             "celery-worker"
+        ],
+        "essential": true,
+        "name": "celery-worker",
+        "mountPoints": [
+            {
+                "sourceVolume": "static",
+                "containerPath": "/app/plugins/uber/uploaded_files",
+                "readOnly": false
+            }
+        ]
+    }
+    container_rabbitmq = {
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-group": "/ecs/Ubersystem",
+                "awslogs-region": "us-east-1",
+                "awslogs-stream-prefix": "ecs",
+                "awslogs-create-group": "true"
+            }
+        },
+        "portMappings": [
+            {
+                "hostPort": 5672,
+                "protocol": "tcp",
+                "containerPort": 5672
+            }
+        ],
+        "environment": [
+            {
+                "name": "RABBITMQ_DEFAULT_PASS",
+                "value": "celery"
+            },
+            {
+                "name": "RABBITMQ_DEFAULT_USER",
+                "value": "celery"
+            },
+            {
+                "name": "RABBITMQ_DEFAULT_VHOST",
+                "value": "uber"
+            }
+        ],
+        "image": "public.ecr.aws/docker/library/rabbitmq:alpine",
+        "essential": true,
+        "name": "rabbitmq"
+    }
+    container_redis = {
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-group": "/ecs/Ubersystem",
+                "awslogs-region": "us-east-1",
+                "awslogs-stream-prefix": "ecs",
+                "awslogs-create-group": "true"
+            }
+        },
+        "portMappings": [
+            {
+                "hostPort": 6379,
+                "protocol": "tcp",
+                "containerPort": 6379
+            }
+        ],
+        "environment": [
+            {
+                "name": "ALLOW_EMPTY_PASSWORD",
+                "value": "true"
+            }
+        ],
+        "image": "public.ecr.aws/ubuntu/redis:latest",
+        "essential": true,
+        "name": "redis"
+    }
+}
+
+resource "aws_ecs_service" "ubersystem_combined" {
+  count = var.layout == "single" ? 1 : 0
+  name                   = "${var.prefix}_ubersystem"
+  cluster                = var.ecs_cluster
+  task_definition        = aws_ecs_task_definition.ubersystem_combined.arn
+  desired_count          = var.web_count
+  launch_type            = "FARGATE"
+  enable_execute_command = true
+
+  network_configuration {
+    subnets           = var.subnet_ids
+    security_groups   = var.uber_web_securitygroups
+    assign_public_ip  = true
+  }
+
+  load_balancer {
+    target_group_arn = aws_lb_target_group.ubersystem_combined.arn
+    container_name   = "ubersystem"
+    container_port   = 8282
+  }
+}
+
+resource "aws_ecs_task_definition" "ubersystem_combined" {
+  count = var.layout == "single" ? 1 : 0
+  family                    = "${var.prefix}_ubersystem_combined"
+  container_definitions     = jsonencode(concat(
+    [
+      locals.container_web,
+      locals.container_redis
+    ],
+    var.enable_workers ? [
+      locals.container_rabbitmq,
+      locals.container_celery_beat,
+      locals.container_celery_worker
+    ] : []
+  ))
+
+  volume {
+    name = "static"
+
+    efs_volume_configuration {
+      file_system_id          = var.efs_id
+      transit_encryption      = "ENABLED"
+      transit_encryption_port = 2999
+      authorization_config {
+        access_point_id = aws_efs_access_point.uber.id
+      }
+    }
+  }
+
+  cpu                       = var.web_cpu
+  memory                    = var.web_ram
+  requires_compatibilities  = ["FARGATE"]
+  network_mode              = "awsvpc"
+  execution_role_arn        = var.ecs_task_role
+
+  task_role_arn = var.ecs_task_role
+
+  runtime_platform {
+    operating_system_family = "LINUX"
+    cpu_architecture        = "X86_64"
+  }
+}
+
+resource "aws_ecs_service" "ubersystem_web" {
+  count = var.layout == "scalable" ? 1 : 0
+  name                   = "${var.prefix}_ubersystem_web"
+  cluster                = var.ecs_cluster
+  task_definition        = aws_ecs_task_definition.ubersystem_web.arn
+  desired_count          = var.web_count
+  launch_type            = "FARGATE"
+  enable_execute_command = true
+
+  network_configuration {
+    subnets           = var.subnet_ids
+    security_groups   = var.uber_web_securitygroups
+    assign_public_ip  = true
+  }
+
+  load_balancer {
+    target_group_arn = aws_lb_target_group.ubersystem_web.arn
+    container_name   = "web"
+    container_port   = 8282
+  }
+}
+
+resource "aws_ecs_task_definition" "ubersystem_web" {
+  count = var.layout == "scalable" ? 1 : 0
+  family                    = "${var.prefix}_ubersystem_web"
+  container_definitions     = jsonencode(
+    [
+      locals.container_web
+    ]
+  )
+
+  volume {
+    name = "static"
+
+    efs_volume_configuration {
+      file_system_id          = var.efs_id
+      transit_encryption      = "ENABLED"
+      transit_encryption_port = 2999
+      authorization_config {
+        access_point_id = aws_efs_access_point.uber.id
+      }
+    }
+  }
+
+  cpu                       = var.web_cpu
+  memory                    = var.web_ram
+  requires_compatibilities  = ["FARGATE"]
+  network_mode              = "awsvpc"
+  execution_role_arn        = var.ecs_task_role
+
+  task_role_arn = var.ecs_task_role
+
+  runtime_platform {
+    operating_system_family = "LINUX"
+    cpu_architecture        = "X86_64"
+  }
+
+  depends_on = [
+    aws_service_discovery_service.rabbitmq,
+    aws_service_discovery_service.redis
+  ]
+}
+
+
+# -------------------------------------------------------------------
+# MAGFest Ubersystem Containers (celery)
+# -------------------------------------------------------------------
+
+resource "aws_ecs_service" "ubersystem_celery" {
+  count = var.layout == "scalable" && var.enable_workers ? 1 : 0
+  name                   = "${var.prefix}_ubersystem_celery"
+  cluster                = var.ecs_cluster
+  task_definition        = aws_ecs_task_definition.ubersystem_celery.arn
+  desired_count          = var.celery_count
+  launch_type            = "FARGATE"
+  enable_execute_command = true
+
+  network_configuration {
+    subnets           = var.subnet_ids
+    assign_public_ip  = true
+  }
+}
+
+resource "aws_ecs_task_definition" "ubersystem_celery" {
+  count = var.layout == "scalable" && var.enable_workers ? 1 : 0
+  family                    = "${var.prefix}_ubersystem_celery"
+  container_definitions     = jsonencode(
+    [
+      locals.container_celery_beat,
+      locals.container_celery_worker
+    ]
+  )
+
+  volume {
+    name = "static"
+
+    efs_volume_configuration {
+      file_system_id          = var.efs_id
+      transit_encryption      = "ENABLED"
+      transit_encryption_port = 2999
+      authorization_config {
+        access_point_id = aws_efs_access_point.uber.id
+      }
+    }
+  }
+
+  cpu                       = var.celery_cpu
+  memory                    = var.celery_ram
+  requires_compatibilities  = ["FARGATE"]
+  network_mode              = "awsvpc"
+  execution_role_arn        = var.ecs_task_role
+  task_role_arn             = var.ecs_task_role
+
+  runtime_platform {
+    operating_system_family = "LINUX"
+    cpu_architecture        = "X86_64"
+  }
+
+  depends_on = [
+    aws_service_discovery_service.rabbitmq
+  ]
+}
+
+
+# -------------------------------------------------------------------
+# MAGFest Ubersystem Supporting Services (RabbitMQ)
+# -------------------------------------------------------------------
+
+
+resource "aws_ecs_service" "rabbitmq" {
+  count = var.layout == "scalable" ? 1 : 0
+  name                   = "${var.prefix}_rabbitmq"
+  cluster                = var.ecs_cluster
+  task_definition        = aws_ecs_task_definition.rabbitmq.arn
+  desired_count          = var.rabbitmq_count
+  launch_type            = "FARGATE"
+  enable_execute_command = true
+
+  network_configuration {
+    subnets           = var.subnet_ids
+    security_groups   = var.rabbitmq_securitygroups
+    assign_public_ip  = true
+  }
+
+  service_registries {
+    registry_arn = aws_service_discovery_service.rabbitmq.arn
+  }
+}
+
+resource "aws_ecs_task_definition" "rabbitmq" {
+  count = var.layout == "scalable" ? 1 : 0
+  family                    = "${var.prefix}_rabbitmq"
+  container_definitions     = jsonencode(
+    [
+      locals.container_rabbitmq
+    ]
+  )
+
+  cpu                       = var.rabbitmq_cpu
+  memory                    = var.rabbitmq_ram
+  requires_compatibilities  = ["FARGATE"]
+  network_mode              = "awsvpc"
+  execution_role_arn        = var.ecs_task_role
+
+  runtime_platform {
+    operating_system_family = "LINUX"
+    cpu_architecture        = "X86_64"
+  }
+
+  task_role_arn = var.ecs_task_role
+
+  depends_on = [
+    aws_service_discovery_service.rabbitmq
+  ]
+}
+
+# -------------------------------------------------------------------
+# MAGFest Ubersystem Supporting Services (Redis)
+# -------------------------------------------------------------------
+
+resource "aws_ecs_service" "redis" {
+  count = var.layout == "scalable" ? 1 : 0
+  name                   = "${var.prefix}_redis"
+  cluster                = var.ecs_cluster
+  task_definition        = aws_ecs_task_definition.redis.arn
+  desired_count          = var.redis_count
+  launch_type            = "FARGATE"
+  enable_execute_command = true
+
+  network_configuration {
+    subnets           = var.subnet_ids
+    security_groups   = var.redis_securitygroups
+    assign_public_ip  = true
+  }
+  
+  service_registries {
+    registry_arn = aws_service_discovery_service.redis.arn
+  }
+}
+
+resource "aws_ecs_task_definition" "redis" {
+  count = var.layout == "scalable" ? 1 : 0
+  family                    = "${var.prefix}_redis"
+  container_definitions     = jsonencode(
+    [
+      locals.container_redis
+    ]
+  )
+
+  cpu                       = var.redis_cpu
+  memory                    = var.redis_ram
+  requires_compatibilities  = ["FARGATE"]
+  network_mode              = "awsvpc"
+  execution_role_arn        = var.ecs_task_role
+
+  runtime_platform {
+    operating_system_family = "LINUX"
+    cpu_architecture        = "X86_64"
+  }
+
+  task_role_arn = "${var.ecs_task_role}"
+
+  depends_on = [
+    aws_service_discovery_service.redis
+  ]
+}
