@@ -223,7 +223,7 @@ resource "aws_ecs_service" "ubersystem_combined" {
   }
 
   load_balancer {
-    target_group_arn = aws_lb_target_group.ubersystem_combined[count.index].arn
+    target_group_arn = aws_lb_target_group.ubersystem_web.arn
     container_name   = "ubersystem"
     container_port   = 8282
   }
