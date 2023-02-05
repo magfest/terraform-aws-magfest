@@ -36,10 +36,6 @@ locals {
                 "value": local.broker_host
             },
             {
-                "name": "UBERSYSTEM_CONFIG",
-                "value": var.ubersystem_config
-            },
-            {
                 "name": "UBERSYSTEM_SECRETS",
                 "value": var.ubersystem_secrets
             },
@@ -47,6 +43,12 @@ locals {
                 "name": "DB_CONNECTION_STRING",
                 "value": "postgresql://${var.uber_db_username}:${aws_secretsmanager_secret_version.password.secret_string}@${var.db_endpoint}/${var.uber_db_name}"
             }
+        ],
+        "secrets": [
+          {
+            "name": "UBERSYSTEM_SECRETS",
+            "valueFrom": aws_secretsmanager_secret_version.current_config.secret_string
+          }
         ],
         "image": "${var.ubersystem_container}@sha256:${module.uber_image.docker_digest}",
         "essential": true,
@@ -82,13 +84,15 @@ locals {
                 "value": local.broker_host
             },
             {
-                "name": "UBERSYSTEM_CONFIG",
-                "value": var.ubersystem_config
-            },
-            {
                 "name": "UBERSYSTEM_SECRETS",
                 "value": var.ubersystem_secrets
             },
+        ],
+        "secrets": [
+          {
+            "name": "UBERSYSTEM_SECRETS",
+            "valueFrom": aws_secretsmanager_secret_version.current_config.secret_string
+          }
         ],
         "image": "${var.ubersystem_container}@sha256:${module.uber_image.docker_digest}",
         "essential": true,
@@ -121,13 +125,15 @@ locals {
                 "value": local.broker_host
             },
             {
-                "name": "UBERSYSTEM_CONFIG",
-                "value": var.ubersystem_config
-            },
-            {
                 "name": "UBERSYSTEM_SECRETS",
                 "value": var.ubersystem_secrets
             },
+        ],
+        "secrets": [
+          {
+            "name": "UBERSYSTEM_SECRETS",
+            "valueFrom": aws_secretsmanager_secret_version.current_config.secret_string
+          }
         ],
         "image": "${var.ubersystem_container}@sha256:${module.uber_image.docker_digest}",
         "command": [
@@ -209,6 +215,16 @@ locals {
     }
 }
 
+resource "aws_secretsmanager_secret" "uber_config" {
+  name = "${var.prefix}-uber-config"
+  recovery_window_in_days = 0
+}
+
+resource "aws_secretsmanager_secret_version" "current_config" {
+  secret_id = aws_secretsmanager_secret.uber_config.id
+  secret_string = var.ubersystem_config
+}
+
 resource "aws_ecs_service" "ubersystem_combined" {
   count = var.layout == "single" ? 1 : 0
   name                   = "${var.prefix}_ubersystem"
@@ -226,7 +242,7 @@ resource "aws_ecs_service" "ubersystem_combined" {
 
   load_balancer {
     target_group_arn = aws_lb_target_group.ubersystem_web.arn
-    container_name   = "ubersystem"
+    container_name   = "web"
     container_port   = 8282
   }
 }
@@ -234,6 +250,8 @@ resource "aws_ecs_service" "ubersystem_combined" {
 resource "aws_ecs_task_definition" "ubersystem_combined" {
   count = var.layout == "single" ? 1 : 0
   family                    = "${var.prefix}_ubersystem_combined"
+  # There has to be a cleaner way to do this, but I don't really understand how types work here.
+  # Only deploy web/redis unless enable_workers is true
   container_definitions     = jsonencode(slice(
     [
       local.container_web,
