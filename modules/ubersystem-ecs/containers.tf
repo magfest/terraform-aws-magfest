@@ -46,7 +46,7 @@ locals {
         ],
         "secrets": [
           {
-            "name": "UBERSYSTEM_SECRETS",
+            "name": "UBERSYSTEM_CONFIG",
             "valueFrom": aws_secretsmanager_secret.uber_config.arn
           }
         ],
@@ -90,7 +90,7 @@ locals {
         ],
         "secrets": [
           {
-            "name": "UBERSYSTEM_SECRETS",
+            "name": "UBERSYSTEM_CONFIG",
             "valueFrom": aws_secretsmanager_secret.uber_config.arn
           }
         ],
@@ -131,7 +131,7 @@ locals {
         ],
         "secrets": [
           {
-            "name": "UBERSYSTEM_SECRETS",
+            "name": "UBERSYSTEM_CONFIG",
             "valueFrom": aws_secretsmanager_secret.uber_config.arn
           }
         ],
