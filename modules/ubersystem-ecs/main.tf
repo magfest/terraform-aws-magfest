@@ -236,6 +236,6 @@ resource "aws_efs_access_point" "uber" {
 # -------------------------------------------------------------------
 
 resource "aws_secretsmanager_secret" "uber_secret" {
-  name = "${var.prefix}-config"
+  name = "${var.prefix}-uber-secrets"
   recovery_window_in_days = 0
 }
