@@ -36,10 +36,6 @@ locals {
                 "value": local.broker_host
             },
             {
-                "name": "UBERSYSTEM_SECRETS",
-                "value": var.ubersystem_secrets
-            },
-            {
                 "name": "DB_CONNECTION_STRING",
                 "value": "postgresql://${var.uber_db_username}:${aws_secretsmanager_secret_version.password.secret_string}@${var.db_endpoint}/${var.uber_db_name}"
             }
@@ -86,11 +82,7 @@ locals {
             {
                 "name": "BROKER_HOST",
                 "value": local.broker_host
-            },
-            {
-                "name": "UBERSYSTEM_SECRETS",
-                "value": var.ubersystem_secrets
-            },
+            }
         ],
         "secrets": [
           {
@@ -131,11 +123,7 @@ locals {
             {
                 "name": "BROKER_HOST",
                 "value": local.broker_host
-            },
-            {
-                "name": "UBERSYSTEM_SECRETS",
-                "value": var.ubersystem_secrets
-            },
+            }
         ],
         "secrets": [
           {
