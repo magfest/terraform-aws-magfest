@@ -1,5 +1,6 @@
 plugins:
   uber:
+    url_root: https://super2019.reg.magfest.org
     event_year: 2019
     event_qr_id: sm19
 

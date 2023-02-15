@@ -1,5 +1,6 @@
 plugins:
   uber:
+    url_root: https://super2024.dev.magevent.net
     at_the_con: False
     post_con: False
     shirt_stock: 0

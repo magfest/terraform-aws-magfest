@@ -1,5 +1,6 @@
 plugins:
   uber:
+    url_root: https://super2022.reg.magfest.org
     app_limit: 0
     shirt_stock: 950
     supporter_stock: 750

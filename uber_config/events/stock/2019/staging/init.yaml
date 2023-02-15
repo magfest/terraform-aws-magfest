@@ -1,4 +1,5 @@
 plugins:
   uber:
+    url_root: https://stock2019.dev.magevent.net
     at_the_con: True
     post_con: False

@@ -1,5 +1,6 @@
 plugins:
   uber:
+    url_root: https://west2021.reg.magfest.org
     shirt_stock: 0
     supporter_stock: 0
     season_stock: 0

@@ -1,5 +1,6 @@
 plugins:
   uber:
+    url_root: https://west2022.dev.magevent.net
     at_the_con: True
     post_con: False
 

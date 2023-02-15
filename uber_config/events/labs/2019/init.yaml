@@ -1,3 +1,4 @@
 plugins:
   uber:
+    url_root: https://labs2019.reg.magfest.org
     event_year: 2019

@@ -1,5 +1,6 @@
 plugins:
   uber:
+    url_root: https://super2020.dev.magevent.net
     post_con: True
     dates:
       dealer_reg_start: 2019-07-17 21

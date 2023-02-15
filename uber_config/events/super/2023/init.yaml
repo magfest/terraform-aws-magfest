@@ -1,5 +1,6 @@
 plugins:
   uber:
+    url_root: https://super2023.reg.magfest.org
     app_limit: 0
     shirt_stock: 980
     supporter_stock: 715
