@@ -44,6 +44,9 @@ production:
       - uber_config/environments/prod
       - uber_config/events/stock/2023
     enable_workers: false
+    enable_workers: true
+    web_ram: 1024
+    web_cpu: 512
     layout: single
 
   west2023:
