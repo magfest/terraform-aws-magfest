@@ -18,7 +18,9 @@ staging:
     config_paths:
       - uber_config/environments/staging
       - uber_config/events/west/2023/staging
-    enable_workers: false
+    enable_workers: true
+    web_ram: 1024
+    web_cpu: 512
     layout: single
 
 production:
