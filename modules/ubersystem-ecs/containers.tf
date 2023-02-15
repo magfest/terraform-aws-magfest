@@ -38,6 +38,10 @@ locals {
             {
                 "name": "DB_CONNECTION_STRING",
                 "value": "postgresql://${var.uber_db_username}:${aws_secretsmanager_secret_version.password.secret_string}@${var.db_endpoint}/${var.uber_db_name}"
+            },
+            {
+                "name": "UBERSYSTEM_CONFIG_VERSION",
+                "value": sha256(aws_secretsmanager_secret_version.current_config.secret_string)
             }
         ],
         "secrets": [
@@ -82,6 +86,10 @@ locals {
             {
                 "name": "BROKER_HOST",
                 "value": local.broker_host
+            },
+            {
+                "name": "UBERSYSTEM_CONFIG_VERSION",
+                "value": sha256(aws_secretsmanager_secret_version.current_config.secret_string)
             }
         ],
         "secrets": [
@@ -123,6 +131,10 @@ locals {
             {
                 "name": "BROKER_HOST",
                 "value": local.broker_host
+            },
+            {
+                "name": "UBERSYSTEM_CONFIG_VERSION",
+                "value": sha256(aws_secretsmanager_secret_version.current_config.secret_string)
             }
         ],
         "secrets": [
