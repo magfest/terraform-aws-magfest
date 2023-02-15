@@ -1,6 +1,6 @@
 plugins:
   uber:
-    url_root: https://west2022.reg.magfest.org
+    url_root: https://west2022.reg.magfest.org/
     shirt_stock: 100
     supporter_stock: 50
     season_stock: 50

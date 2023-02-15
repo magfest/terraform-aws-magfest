@@ -1,6 +1,6 @@
 plugins:
   uber:
-    url_root: https://west2023.reg.magfest.org
+    url_root: https://west2023.reg.magfest.org/
     shirt_stock: 0
     supporter_stock: 0
     season_stock: 0
@@ -164,7 +164,7 @@ plugins:
         deadline: 2023-06-15
         description: >
             STOPS is happy to assist you in creating shifts. Please let us know if you need assistance 
-            with this step. If you want us to import last year's shifts, please email stops@magwest.org. 
+            # with this step. If you want us to import last year's shifts, please email stops@magwest.org/. 
             You will still need to approve these via the checklist after the import.
         path: /jobs/index?department_id={department_id}
         
@@ -206,7 +206,7 @@ plugins:
         full_description: >
             If you have something especially cool happening that you would like Mediatron! to capture, let us know here so 
             they can do their best to get your event on their schedule. For detailed or special requests, please contact 
-            mediatron@magwest.org.
+            # mediatron@magwest.org/.
             
       ppe_requests:
         deadline: 2023-07-20
@@ -248,7 +248,7 @@ plugins:
         deadline: 2023-08-10
         full_description: >
             If you have a guest or event that you believe is worth promoting on social media beforehand, 
-            let us know! For detailed or special requests, please contact socialmedia@magfest.org or post 
+            # let us know! For detailed or special requests, please contact socialmedia@magfest.org/ or post 
             in #socialmedia-requests in Slack.
       postcon_hours:
         name: (After the Event) Marking + Rating Shifts

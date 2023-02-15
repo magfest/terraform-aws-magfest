@@ -1,6 +1,6 @@
 plugins:
   uber:
-    url_root: https://stock2023.reg.magfest.org
+    url_root: https://stock2023.reg.magfest.org/
     event_year: 2023
     at_the_con: False
     post_con: False

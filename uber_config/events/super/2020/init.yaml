@@ -1,6 +1,6 @@
 plugins:
   uber:
-    url_root: https://super2020.reg.magfest.org
+    url_root: https://super2020.reg.magfest.org/
     app_limit: 0
     shirt_stock: 1100
     supporter_stock: 850
