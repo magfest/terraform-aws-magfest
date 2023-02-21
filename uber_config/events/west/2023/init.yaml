@@ -13,11 +13,7 @@ plugins:
     send_sms: False
     emergency_procedures_enabled: True
     
-    techops_dept_checklist_form_url: 'https://forms.gle/rJPSwmrmW2GUfHW89'
     treasury_dept_checklist_form_url: 'https://forms.gle/vS26HZQiFaTjvuwn8'
-    hotel_setup_form_url: 'https://forms.gle/SSj2AWx7uqeXoofW9'
-    office_supplies_form_url: 'https://forms.gle/2YnYQD5KGRYyc8QT6'
-    ppe_form_url: 'https://forms.gle/5HWjTmuVpXxvWH5K6'
     expected_response: "May 15th"
     mivs_video_response_expected: "no later than September 17th"
     
@@ -167,13 +163,15 @@ plugins:
             # with this step. If you want us to import last year's shifts, please email stops@magwest.org/. 
             You will still need to approve these via the checklist after the import.
         path: /jobs/index?department_id={department_id}
-        
+
       hotel_setup:
         deadline: 2023-06-22
-        
+        external_form_url: https://forms.gle/SSj2AWx7uqeXoofW9
+
       tech_requirements:
         deadline: 2023-06-22
-        
+        external_form_url: https://forms.gle/rJPSwmrmW2GUfHW89
+
       approve_setup_teardown:
         name: Approve/Decline Additional Hotel Nights
         deadline: 2023-07-06
@@ -182,7 +180,7 @@ plugins:
             more volunteers than we need to do this, so we require DH approval of volunteers who need hotel 
             space for those dates.
         path: /hotel/requests?department_id={department_id}
-        
+
       printed_signs:
         name: Room Signage
         deadline: 2023-07-13
@@ -213,7 +211,7 @@ plugins:
         name: Bulk PPE & Sanitizing Supplies
         description: >
           MAGFest is providing basic PPE for departments for MAGWest 2023. Please let us know what you need and we will do our best to accommodate.
-        path: /dept_checklist/ppe_requests?department_id={department_id}
+        external_form_url: https://forms.gle/5HWjTmuVpXxvWH5K6
             
       office_supplies:
         deadline: 2023-07-20
@@ -224,7 +222,7 @@ plugins:
             you will get 1). If you need a very specific office item, you will need to purchase it yourself using your 
             department's budget. Note 1: STOPS has a paper cutter and a printer for small jobs (less than 50 pages). 
             Anything more than 50 pages needs to go into 'Bulk Print Jobs.' Note 2: A ream of paper is 500 sheets.
-        path: /dept_checklist/office_supplies?department_id={department_id}
+        external_form_url: https://forms.gle/2YnYQD5KGRYyc8QT6
             
       logistics:
         deadline: ''
@@ -257,6 +255,7 @@ plugins:
         description: >
             Please go through your volunteers' shifts carefully. This ensures that they receive the appropriate perks, 
             are imported as staff next year.
+
     volunteer_checklist:
       "2": staffing/food_item.html
       "3": staffing/shirt_item.html
