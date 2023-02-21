@@ -1,7 +1,7 @@
 staging:
-  stock:
+  stock2023:
     ubersystem_container: ghcr.io/magfest/magstock:main
-    hostname: stock.dev.magevent.net
+    hostname: stock2023.dev.magevent.net
     zonename: dev.magevent.net
     prefix: stock23
     config_paths:
@@ -10,9 +10,9 @@ staging:
     enable_workers: false
     layout: single
 
-  west:
+  west2023:
     ubersystem_container: ghcr.io/magfest/magwest:main
-    hostname: west.dev.magevent.net
+    hostname: west2023.dev.magevent.net
     zonename: dev.magevent.net
     prefix: west23
     config_paths:
