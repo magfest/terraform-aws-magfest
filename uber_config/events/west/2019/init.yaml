@@ -176,6 +176,9 @@ plugins:
 
       allotments:
         deadline: 2019-08-15
+        name: Treasury Information
+        description: If you need cash and/or mpoints, tell us your department schedule and your specific cash needs.
+        path: /dept_checklist/allotments?department_id={department_id}
         
       office_supplies:
         deadline: 2019-08-22
