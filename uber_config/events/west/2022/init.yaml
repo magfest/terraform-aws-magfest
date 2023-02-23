@@ -92,6 +92,14 @@ plugins:
       guest_interview_deadline: 2022-08-01
       guest_travel_plans_deadline: ""
 
+    badge_ranges:
+      staff_badge: [7, 999]
+      contractor_badge: [7, 999]
+      guest_badge: [2000, 9999]
+      attendee_badge: [2000, 9999]
+      one_day_badge: [2000, 9999]
+      child_badge: [2000, 9999]
+
     badge_prices:
       initial_attendee: 85
       group_discount: 25
