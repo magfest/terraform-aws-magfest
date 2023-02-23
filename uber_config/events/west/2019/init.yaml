@@ -169,6 +169,7 @@ plugins:
         deadline: 2019-08-08
 
       treasury:
+        name: MPoint Needs
         deadline: 2019-08-15
         
       tech_requirements:
