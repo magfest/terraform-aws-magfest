@@ -92,7 +92,6 @@ production:
       - uber_config/environments/prod
       - uber_config/events/west/2021
     enable_workers: false
-    web_count: 0
     layout: single
 
   super2020:
