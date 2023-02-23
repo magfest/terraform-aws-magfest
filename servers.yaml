@@ -104,3 +104,39 @@ production:
       - uber_config/events/super/2020
     enable_workers: false
     layout: single
+    
+  west2020:
+    ubersystem_container: ghcr.io/magfest/magwest:west2020
+    hostname: west2020.reg.magfest.org
+    zonename: reg.magfest.org
+    prefix: west22
+    config_paths:
+      - uber_config/environments/prod
+      - uber_config/events/west/2020
+    enable_workers: false
+    layout: single
+    web_count: 0
+    
+  stock2019:
+    ubersystem_container: ghcr.io/magfest/magstock:stock2019
+    hostname: stock2019.reg.magfest.org
+    zonename: reg.magfest.org
+    prefix: west22
+    config_paths:
+      - uber_config/environments/prod
+      - uber_config/events/stock/2019
+    enable_workers: false
+    layout: single
+    web_count: 0
+    
+  west2019:
+    ubersystem_container: ghcr.io/magfest/magwest:west2019
+    hostname: west2019.reg.magfest.org
+    zonename: reg.magfest.org
+    prefix: west22
+    config_paths:
+      - uber_config/environments/prod
+      - uber_config/events/west/2019
+    enable_workers: false
+    layout: single
+    web_count: 0
