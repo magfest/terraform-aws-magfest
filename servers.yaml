@@ -115,7 +115,6 @@ production:
       - uber_config/events/west/2020
     enable_workers: false
     layout: single
-    web_count: 0
     
   stock2019:
     ubersystem_container: ghcr.io/magfest/magstock:stock2019
@@ -127,7 +126,6 @@ production:
       - uber_config/events/stock/2019
     enable_workers: false
     layout: single
-    web_count: 0
     
   west2019:
     ubersystem_container: ghcr.io/magfest/magwest:west2019
@@ -139,4 +137,3 @@ production:
       - uber_config/events/west/2019
     enable_workers: false
     layout: single
-    web_count: 0
