@@ -109,7 +109,7 @@ production:
     ubersystem_container: ghcr.io/magfest/magwest:west2020
     hostname: west2020.reg.magfest.org
     zonename: reg.magfest.org
-    prefix: west22
+    prefix: west20
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/west/2020
@@ -121,7 +121,7 @@ production:
     ubersystem_container: ghcr.io/magfest/magstock:stock2019
     hostname: stock2019.reg.magfest.org
     zonename: reg.magfest.org
-    prefix: west22
+    prefix: stock19
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/stock/2019
@@ -133,7 +133,7 @@ production:
     ubersystem_container: ghcr.io/magfest/magwest:west2019
     hostname: west2019.reg.magfest.org
     zonename: reg.magfest.org
-    prefix: west22
+    prefix: west19
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/west/2019
