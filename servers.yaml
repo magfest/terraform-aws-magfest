@@ -104,6 +104,8 @@ production:
       - uber_config/events/super/2020
     enable_workers: false
     layout: single
+    web_ram: 1024
+    web_cpu: 512
     
   west2020:
     ubersystem_container: ghcr.io/magfest/magwest:west2020
