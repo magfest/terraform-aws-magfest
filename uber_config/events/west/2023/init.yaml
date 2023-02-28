@@ -14,7 +14,7 @@ plugins:
     emergency_procedures_enabled: True
     
     treasury_dept_checklist_form_url: 'https://forms.gle/vS26HZQiFaTjvuwn8'
-    expected_response: "May 15th"
+    expected_response: "May 31st" # displayed on panels app text
     mivs_video_response_expected: "no later than September 17th"
     
     volunteer_placeholder_deadline: "June 16"
@@ -49,7 +49,7 @@ plugins:
       # sent in the days and weeks leading up to DEALER_PAYMENT_DUE.  All waitlisted dealers will
       # be emailed when the waitlist has been exhausted and all available positions have been
       # filled, as defined by DEALER_WAITLIST_CLOSED.
-      dealer_reg_start: 2023-07-14
+      dealer_reg_start: 2023-03-01
       dealer_reg_shutdown: 2023-04-30
       dealer_payment_due: 2023-06-01
       dealer_reg_deadline: ""  # Disable automatic waitlist
@@ -69,7 +69,7 @@ plugins:
 
       # WARNING - everything below this is set to a temporary value just so
       #           that we won't get an exception at import time.
-      panels_deadline: 2023-05-15
+      panels_deadline: 2023-04-30
       panel_app_deadline: 2023-07-23 # Is this actually used?
       mivs_round_one_deadline: 2023-08-01
       mivs_round_two_start: 2023-08-01
@@ -96,15 +96,15 @@ plugins:
       child_badge: [2000, 9999]
       
     badge_prices:
-      initial_attendee: 85
-      group_discount: 25
-      dealer_badge_price: 50
+      initial_attendee: 90
+      group_discount: 20
+      dealer_badge_price: 60
       one_days_enabled: True
       presell_one_days: False
 
       single_day:
-        Friday: 45
-        Saturday: 55
+        Friday: 50
+        Saturday: 60
         Sunday: 30
       
     table_prices:
