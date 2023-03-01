@@ -107,6 +107,11 @@ plugins:
         perler: Perler Beads
         jewelry: Jewelry
         handmade: General Handmade
+        
+      panel_rating:
+        pg: "G/PG - Family friendly and fun"
+        pg15: "PG-15 - Some more adult language or concepts, but still mostly okay for children"
+        r: "R - Adult concepts and frequent use of adult language/cursing"
 
       event_location:
         panels_1: "Panels 1"
