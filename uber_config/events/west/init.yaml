@@ -26,7 +26,7 @@ plugins:
     contact_url: 'mailto:contact@magwest.org'
     code_of_conduct_url: 'https://www.magwest.org/code-of-conduct'
     prereg_faq_url: 'https://www.magwest.org/faq/'
-    covid_policies_url: 'https://magwest.org/covid'
+    prior_covid_policies_url: 'https://magwest.org/covid'
 
     min_group_size: 5
     min_group_addition: 3
