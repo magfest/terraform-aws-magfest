@@ -38,6 +38,9 @@ plugins:
     event_timezone: US/Eastern
     event_venue: Small Country Campground
     event_venue_address: 4400 Byrd Mill Road, Louisa, VA 23093
+    
+    volunteer_agreement_enabled: True
+    emergency_procedures_enabled: True
 
     numbered_badges: True
     attractions_enabled: false
@@ -240,9 +243,9 @@ plugins:
         email_post_con: True
 
     volunteer_checklist:
-      "2": ''
-      "3": ''
-      "4": ''
+      "2": staffing/food_item.html
+      "3": staffing/volunteer_agreement_item.html
+      "4": staffing/emergency_procedures_item.html
       "99": staffing/shifts_item.html
 
     age_groups: {}
