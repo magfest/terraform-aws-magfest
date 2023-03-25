@@ -7,6 +7,11 @@ plugins:
     shirt_stock: 0
     supporter_stock: 0
     season_stock: 0
+    
+    volunteer_placeholder_deadline: April 12
+    volunteer_food_deadline: May 19
+    volunteer_checklist_deadline: May 26
+    emergency_procedures_deadline: May 26
 
     dates:
       epoch: 2023-06-04 11
@@ -14,7 +19,7 @@ plugins:
       prereg_open: 2023-06-04 12
       shirt_deadline: 2023-06-01
       supporter_deadline: 2023-06-01
-      shifts_created: 2023-05-15
+      shifts_created: 2023-06-01
       
       dealer_reg_start: 2023-07-14
       dealer_reg_shutdown: 2023-04-30
@@ -29,18 +34,29 @@ plugins:
       band_stage_plot_deadline: 2023-05-10
 
     dept_head_checklist:
-      creating_shifts:
-        deadline: 2023-05-01
-        description: Creating Shifts
+      placeholders:
+        deadline: 2023-04-05
 
       assigned_volunteers:
-        deadline: 2023-05-01
-        description: Assigned Volunteers
+        deadline: 2023-04-05
+        
+      function_space:
+        deadline: 2023-04-21
+        external_form_url: https://forms.gle/SBcTk7XUCWdBPtzt7
 
-      postcon_hours:
-        deadline: 2023-06-15
-        description: Postcon hours
+      creating_shifts:
+        deadline: 2023-05-02
 
       printed_signs:
-        deadline: 2023-05-14
+        deadline: 2023-05-19
         description: Other than a sign for your area, what printed signs/banners/forms do you need?
+
+      office_supplies:
+        deadline: 2023-05-19
+        external_form_url: https://forms.gle/DoAUBfu93fMzTV6dA
+
+      guidebook_schedule:
+        deadline: 2023-05-26
+
+      postcon_hours:
+        deadline: 2023-06-26
