@@ -112,6 +112,12 @@ plugins:
         pg: "G/PG - Family friendly and fun"
         pg15: "PG-15 - Some more adult language or concepts, but still mostly okay for children"
         r: "R - Adult concepts and frequent use of adult language/cursing"
+        
+      noise_level:
+        level_0: Level 0 (Just talking to the audience)
+        level_1: Level 1 (Showing video clips or playing prerecorded music)
+        level_2: Level 2 (Playing live instruments or singing)
+        level_3: Level 3 (Absolute chaos)
 
       event_location:
         panels_1: "Panels 1"
