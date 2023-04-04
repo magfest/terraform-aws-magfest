@@ -52,10 +52,12 @@ plugins:
         description: Other than a sign for your area, what printed signs/banners/forms do you need?
 
       office_supplies:
+        name: Office Supplies and PPE
         deadline: 2023-05-19
         external_form_url: https://forms.gle/DoAUBfu93fMzTV6dA
 
       guidebook_schedule:
+        name: Public-Facing Schedule
         deadline: 2023-05-26
 
       postcon_hours:
