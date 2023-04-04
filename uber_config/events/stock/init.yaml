@@ -149,12 +149,20 @@ plugins:
         handmade: General Handmade
 
       event_location:
-        pavilion: Upper Pavilion
-        concerts: Concert Pavilion
-        hillside: Hillside
-        lake: Lakeside
-        black: Somewhere in Black
-        techstock: Techstock
+        saloon: Saloon
+        pool: Pool
+        craftbarn: Craft Barn
+        concerts: Main Stage
+        artistalley: Artist Alley
+        gameroom: Game Room
+        merch: Merch
+        registration: Registration
+        bonfire: Bonfire
+        projectiles: Projectiles
+        tennis: Tennis Court
+        amphitheater: Amphitheater
+        dininghall: Dining Hall
+        publicsafety: Public Safety
 
       sandwich:
         turkey: Turkey
