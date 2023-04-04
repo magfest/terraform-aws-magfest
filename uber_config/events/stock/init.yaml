@@ -52,7 +52,7 @@ plugins:
 
     admin_email: MAGFest Sys Admin <sysadmin@magfest.org>
     regdesk_email: MAGStock Registration <admin@magstock.org>
-    staff_email: MAGStock Staffing <admin@magstock.org>
+    staff_email: MAGStock Staffing <stops@magstock.org>
     marketplace_email: MAGStock Marketplace <admin@magstock.org>
     panels_email: MAGStock Panels <admin@magstock.org>
     developer_email: MAGFest Software <developers@magfest.org>
