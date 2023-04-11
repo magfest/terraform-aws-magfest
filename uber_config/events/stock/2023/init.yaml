@@ -7,6 +7,7 @@ plugins:
     shirt_stock: 0
     supporter_stock: 0
     season_stock: 0
+    food_price: 20
     
     volunteer_placeholder_deadline: April 12
     volunteer_food_deadline: May 19
@@ -16,10 +17,10 @@ plugins:
     dates:
       epoch: 2023-06-04 11
       eschaton: 2023-06-07 18
-      prereg_open: 2023-06-04 12
+      prereg_open: 2023-04-14 15
       shirt_deadline: 2023-06-01
       supporter_deadline: 2023-06-01
-      shifts_created: 2023-06-01
+      shifts_created: 2023-05-04
       
       dealer_reg_start: 2023-07-14
       dealer_reg_shutdown: 2023-04-30
@@ -32,6 +33,22 @@ plugins:
       band_taxes_deadline: 2023-05-10
       band_badges_deadline: 2023-05-10
       band_stage_plot_deadline: 2023-05-10
+      
+    badge_prices:
+      initial_attendee: 180
+      dealer_badge_price: 110
+      
+      attendee:
+        # Unlike all other dates, these dates indicate the start of the day, not 11:59pm
+        "2023-04-21": 190
+        "2023-05-05": 200
+        "2023-06-08": 210
+        "2023-06-09": 180
+        "2023-06-10": 150
+        "2023-06-11": 30
+        
+    table_prices:
+      default_price: 20
 
     dept_head_checklist:
       placeholders:
