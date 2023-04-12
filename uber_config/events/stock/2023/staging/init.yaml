@@ -3,9 +3,9 @@ plugins:
     url_root: https://stock2023.dev.magevent.net/
     at_the_con: False
     post_con: False
-    shirt_stock: 0
-    supporter_stock: 0
-    season_stock: 0
+    shirt_stock: 5
+    supporter_stock: 5
+    season_stock: 5
 
     dates:
       prereg_open: 2023-01-01
