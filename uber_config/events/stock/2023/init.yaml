@@ -4,9 +4,9 @@ plugins:
     event_year: 2023
     at_the_con: False
     post_con: False
-    shirt_stock: 0
-    supporter_stock: 0
-    season_stock: 0
+    shirt_stock: 40
+    supporter_stock: 30
+    season_stock: 40
     food_price: 20
     
     volunteer_placeholder_deadline: April 12
@@ -49,6 +49,43 @@ plugins:
         
     table_prices:
       default_price: 20
+      
+    integer_enums:
+      shirt_level: 30
+      supporter_level: 70
+      season_level: 180
+
+      donation_tier:
+        No thanks: 0
+        T-Shirt Tier: SHIRT_LEVEL
+        Iridium Tier: SUPPORTER_LEVEL
+        Prairie King Tier: SEASON_LEVEL
+
+    donation_tier_descriptions:
+      no_thanks:
+        name: No thanks
+        icon: ''
+        description: No thanks
+        link: ''
+
+      shirt:
+        name: T-Shirt Tier
+        icon: ../static/icons/shirt.png
+        description: Exclusive T-Shirt|20th Anniversary Pin|Full-Print Lanyard
+        link: ../static_views/tshirt.html|../static_views/tshirt.html|../static_views/tshirt.html
+
+      supporter:
+        name: Iridium Tier
+        icon: ../static/icons/supporter.png
+        description: All T-Shirt Tier Items|Rally Towel|Water Bottle|GAMER BLOOD|Trading Card Pack|Hand Warmer|Super Swadge|& More!
+        link: ../static_views/tshirt.html|../static_views/supporter.html|../static_views/supporter.html|../static_views/supporter.html|../static_views/supporter.html|../static_views/supporter.html|../static_views/swadge.html|../static_views/supporter.html
+
+      super_supporter:
+        name: Prairie King Tier
+        icon: ../static/icons/super.png
+        description: All T-Shirt Tier Items|All Brawler Tier Items|Exclusive Duffel Bag|GAMER BLOOD x 3|Roaring Sound Drop|Comfy Butt Pillow|Engraved Soap|Exclusive Mystery Items|Secret Tier Invite|& MORE!!
+        link: ../static_views/tshirt.html|../static_views/supporter.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html
+
 
     dept_head_checklist:
       placeholders:
