@@ -1,6 +1,10 @@
 plugins:
   magstock:
     food_price: 20
+    
+    enums:
+      cabin_type_stocks:
+        half: 6
 
   uber:
     url_root: https://stock2023.reg.magfest.org/
