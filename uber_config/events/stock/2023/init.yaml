@@ -9,7 +9,7 @@ plugins:
     post_con: False
     shirt_stock: 40
     supporter_stock: 30
-    season_stock: 40
+    super_stock: 40
     
     volunteer_placeholder_deadline: April 12
     volunteer_food_deadline: May 19
@@ -22,8 +22,6 @@ plugins:
       prereg_open: 2023-04-14 15
       shirt_deadline: 2023-06-01
       supporter_deadline: 2023-06-01
-      prereg_takedown: ''
-      group_prereg_takedown: ''
       badge_price_waived: ''
       refund_start: ''
       refund_cutoff: ''
@@ -34,7 +32,6 @@ plugins:
       volunteer_shirt_deadline: ''
       drop_shifts_deadline: 2023-06-01
       placeholder_deadline: ''
-      uber_takedown: ''
       
       dealer_reg_start: 2023-07-14
       dealer_reg_shutdown: 2023-04-30
@@ -112,7 +109,7 @@ plugins:
         description: All T-Shirt Tier Items|Rally Towel|Water Bottle|GAMER BLOOD|Trading Card Pack|Hand Warmer|Super Swadge|& More!
         link: ../static_views/tshirt.html|../static_views/supporter.html|../static_views/supporter.html|../static_views/supporter.html|../static_views/supporter.html|../static_views/supporter.html|../static_views/swadge.html|../static_views/supporter.html
 
-      super_supporter:
+      super:
         name: Prairie King Tier
         icon: ../static/icons/super.png
         description: All T-Shirt Tier Items|All Brawler Tier Items|Exclusive Duffel Bag|GAMER BLOOD x 3|Roaring Sound Drop|Comfy Butt Pillow|Engraved Soap|Exclusive Mystery Items|Secret Tier Invite|& MORE!!
