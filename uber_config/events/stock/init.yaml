@@ -1,43 +1,25 @@
 plugins:        
   magstock:
-    food_price: 30
-    food_stock: 150
+    food_price: 15
 
     enums:
-      noise_level:
-        quiet: Away from the main drag
-        normal: I can sleep through reasonable levels of noise
-        noisy: While others sleep, I PARTY!
-
       shirt_color:
         no_shirt_color: No Shirt
         black_shirt: Black Shirt
         white_shirt: White Shirt (for tie-dyeing later)
 
-      site_type:
-        normal: Normal - has electric and water hookups
-        primitive: Primitive - NO ELECTRIC OR WATER
-
       camping_type:
-        small_tent: Small Tent (small footprint)
-        medium_tent: Medium Tent (around four people)
-        large_tent: Large Tent (large and in charge)
-        car: Car - I plan to sleep in my car at my site for an additional fee ($20 - charged at door).
-        rv: RV - I plan to sleep in an RV or something similar for an additional fee ($40 - charged at door).
-        special_site: Special - I'm planning something that may take up a lot of space.
-
-      coming_as:
-        tent_leader: I am the Group Leader
-        tent_follower: I'm not the one coordinating my Group
-        alone: I'm coming alone
-        unknown: I don't know yet
+        tent: Tent
+        car: Car
+        rv: RV
+        cabin: Cabin
 
   uber:
     organization_name: MAGFest INC
     event_name: MAGStock
     event_timezone: US/Eastern
-    event_venue: Small Country Campground
-    event_venue_address: 4400 Byrd Mill Road, Louisa, VA 23093
+    event_venue: Camp Ramblewood
+    event_venue_address: 2564 Silver Rd, Darlington, MD 21034
     
     volunteer_perks_url: https://magstock.org/volunteer
     
@@ -110,20 +92,11 @@ plugins:
         x-large (female): 10
         xx-large (female): 12
 
-      donation_tier:
-        No thanks: 0
-        T-Shirt Bundle: SHIRT_LEVEL
-        Supporter Package: SUPPORTER_LEVEL
-        Mayor's Package: SEASON_LEVEL
-
     enums:
       badge:
         attendee_badge: Attendee
         staff_badge: Staff
         guest_badge: Guest
-
-      ribbon:
-        roughing_it: Roughing It
 
       job_interest:
         misc: General Support
@@ -155,22 +128,6 @@ plugins:
         bath: Bath Products
         handmade: General Handmade
 
-      event_location:
-        saloon: Saloon
-        pool: Pool
-        craftbarn: Craft Barn
-        concerts: Main Stage
-        artistalley: Artist Alley
-        gameroom: Game Room
-        merch: Merch
-        registration: Registration
-        bonfire: Bonfire
-        projectiles: Projectiles
-        tennis: Tennis Court
-        amphitheater: Amphitheater
-        dininghall: Dining Hall
-        publicsafety: Public Safety
-
       sandwich:
         turkey: Turkey
         ham: Ham
@@ -184,32 +141,6 @@ plugins:
         pork: No pork
         nuts: No nuts
         vegan: Vegetarian/Vegan
-
-
-    donation_tier_descriptions:
-      no_thanks:
-        name: No thanks
-        icon: ''
-        description: No thanks
-        link: ''
-
-      shirt:
-        name: T-Shirt Bundle
-        icon: ../static/icons/iconshirt.png
-        description: T-Shirt
-        link: ../static_views/tshirt.html
-
-      supporter_package:
-        name: Supporter Package
-        icon: ../static/icons/star.png
-        description: Supporter Swag
-        link: ../static_views/supporter.html
-
-      super_supporter:
-        name: Mayor's Package
-        icon: ../static/icons/heart.png
-        description: Crazy Exclusive Swag
-        link: ../static_views/pioneer.html
 
     dept_head_checklist:
       placeholders:
