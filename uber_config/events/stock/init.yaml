@@ -50,7 +50,6 @@ plugins:
     require_dedicated_guest_table_presence: False
     
     groups_enabled: True
-    group_discount: 10
     min_group_size: 5
     min_group_addition: 2
     
@@ -67,7 +66,6 @@ plugins:
     security_email: MAGStock Security <security@magstock.org>
     guest_email: MAGStock Guests <admin@magstock.org>
     band_email: MAGStock Music <music@magstock.org>
-
 
     band_email_signature: MAGStock Music Department
     regdesk_email_signature: MAGStock Registration Department
@@ -92,6 +90,7 @@ plugins:
       supporter_level: 50
       season_level: 100
       supporter_stock: 200
+      group_discount: 10
       staff_event_shirt:
         "Generic MAGStock Shirt": 0
         "Event Shirt": 1
