@@ -21,8 +21,8 @@ plugins:
     emergency_procedures_deadline: May 26
 
     dates:
-      epoch: 2023-06-04 11
-      eschaton: 2023-06-07 18
+      epoch: 2023-06-08 11
+      eschaton: 2023-06-11 18
       prereg_open: 2023-04-14 15
       shirt_deadline: 2023-06-01
       supporter_deadline: 2023-06-01
