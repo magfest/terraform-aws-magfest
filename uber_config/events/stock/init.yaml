@@ -39,21 +39,29 @@ plugins:
     event_venue: Small Country Campground
     event_venue_address: 4400 Byrd Mill Road, Louisa, VA 23093
     
+    volunteer_perks_url: https://magstock.org/volunteer
+    
     volunteer_agreement_enabled: True
     emergency_procedures_enabled: True
 
     numbered_badges: True
-    attractions_enabled: false
+    collect_exact_birthdate: True
+    attractions_enabled: False
     require_dedicated_guest_table_presence: False
-    groups_enabled: False
+    
+    groups_enabled: True
+    group_discount: 10
+    min_group_size: 5
+    min_group_addition: 2
+    
     merch_at_checkin: True
     untransferable_attrs: ['first_name','last_name','legal_name','email','birthdate','zip_code','international','ec_name','ec_phone','cellphone','interests','age_group','staffing','requested_depts','waiver_consent','license_plate','site_number','coming_as','camping_type','coming_with','site_type','noise_level','allergies']
     preassigned_badge_types: ["staff_badge"]
 
     admin_email: MAGFest Sys Admin <sysadmin@magfest.org>
-    regdesk_email: MAGStock Registration <admin@magstock.org>
+    regdesk_email: MAGStock Registration <registration@magstock.org>
     staff_email: MAGStock Staffing <stops@magstock.org>
-    marketplace_email: MAGStock Marketplace <admin@magstock.org>
+    marketplace_email: MAGStock Artist Alley <artist-alley@magstock.org>
     panels_email: MAGStock Panels <admin@magstock.org>
     developer_email: MAGFest Software <developers@magfest.org>
     security_email: MAGStock Security <security@magstock.org>

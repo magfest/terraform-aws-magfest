@@ -4,9 +4,10 @@ plugins:
     event_year: 2023
     at_the_con: False
     post_con: False
-    shirt_stock: 0
-    supporter_stock: 0
-    season_stock: 0
+    shirt_stock: 40
+    supporter_stock: 30
+    season_stock: 40
+    food_price: 20
     
     volunteer_placeholder_deadline: April 12
     volunteer_food_deadline: May 19
@@ -16,10 +17,10 @@ plugins:
     dates:
       epoch: 2023-06-04 11
       eschaton: 2023-06-07 18
-      prereg_open: 2023-06-04 12
+      prereg_open: 2023-04-14 15
       shirt_deadline: 2023-06-01
       supporter_deadline: 2023-06-01
-      shifts_created: 2023-06-01
+      shifts_created: 2023-05-04
       
       dealer_reg_start: 2023-07-14
       dealer_reg_shutdown: 2023-04-30
@@ -32,6 +33,59 @@ plugins:
       band_taxes_deadline: 2023-05-10
       band_badges_deadline: 2023-05-10
       band_stage_plot_deadline: 2023-05-10
+      
+    badge_prices:
+      initial_attendee: 180
+      dealer_badge_price: 110
+      
+      attendee:
+        # Unlike all other dates, these dates indicate the start of the day, not 11:59pm
+        "2023-04-21": 190
+        "2023-05-05": 200
+        "2023-06-08": 210
+        "2023-06-09": 180
+        "2023-06-10": 150
+        "2023-06-11": 30
+        
+    table_prices:
+      default_price: 20
+      
+    integer_enums:
+      shirt_level: 30
+      supporter_level: 70
+      season_level: 180
+
+      donation_tier:
+        No thanks: 0
+        T-Shirt Tier: SHIRT_LEVEL
+        Iridium Tier: SUPPORTER_LEVEL
+        Prairie King Tier: SEASON_LEVEL
+
+    donation_tier_descriptions:
+      no_thanks:
+        name: No thanks
+        icon: ''
+        description: No thanks
+        link: ''
+
+      shirt:
+        name: T-Shirt Tier
+        icon: ../static/icons/shirt.png
+        description: Exclusive T-Shirt|20th Anniversary Pin|Full-Print Lanyard
+        link: ../static_views/tshirt.html|../static_views/tshirt.html|../static_views/tshirt.html
+
+      supporter:
+        name: Iridium Tier
+        icon: ../static/icons/supporter.png
+        description: All T-Shirt Tier Items|Rally Towel|Water Bottle|GAMER BLOOD|Trading Card Pack|Hand Warmer|Super Swadge|& More!
+        link: ../static_views/tshirt.html|../static_views/supporter.html|../static_views/supporter.html|../static_views/supporter.html|../static_views/supporter.html|../static_views/supporter.html|../static_views/swadge.html|../static_views/supporter.html
+
+      super_supporter:
+        name: Prairie King Tier
+        icon: ../static/icons/super.png
+        description: All T-Shirt Tier Items|All Brawler Tier Items|Exclusive Duffel Bag|GAMER BLOOD x 3|Roaring Sound Drop|Comfy Butt Pillow|Engraved Soap|Exclusive Mystery Items|Secret Tier Invite|& MORE!!
+        link: ../static_views/tshirt.html|../static_views/supporter.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html
+
 
     dept_head_checklist:
       placeholders:
