@@ -149,13 +149,13 @@ plugins:
         name: T-Shirt Tier
         icon: ../static/icons/shirt.png
         description: Event T-Shirt|Lanyard|Enamel Pin
-        link: ../static_views/merch.html
+        link: ../static_views/merch.html|../static_views/merch.html|../static_views/merch.html
 
       supporter_package:
         name: Splat! Tier
         icon: ../static/icons/supporter.png
         description: Water Gun|Slap Bracelet|Custom Hat|Messenger Bag|Hydration Backpack
-        link: ../static_views/merch.html
+        link: ../static_views/merch.html|../static_views/merch.html|../static_views/merch.html|../static_views/merch.html|../static_views/merch.html
 
       #super_supporter:
       #  name: Jet Tier
