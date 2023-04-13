@@ -1,8 +1,8 @@
 plugins:
   uber:
     url_root: https://west2023.reg.magfest.org/
-    shirt_stock: 0
-    supporter_stock: 0
+    shirt_stock: 40
+    supporter_stock: 100
     season_stock: 0
     shared_kickin_stocks: False
     event_year: 2023
@@ -126,6 +126,17 @@ plugins:
         min_age: 5
         max_age: 11
         can_volunteer: False
+        
+    integer_enums:
+      shirt_level: 35
+      supporter_level: 199
+      #season_level: 180
+
+      donation_tier:
+        No thanks: 0
+        T-Shirt Tier: SHIRT_LEVEL
+        Splat! Tier: SUPPORTER_LEVEL
+        #Season Tier: SEASON_LEVEL
 
     donation_tier_descriptions:
       no_thanks:
@@ -135,22 +146,22 @@ plugins:
         link: ''
 
       shirt:
-        name: T-Shirt Bundle
+        name: T-Shirt Tier
         icon: ../static/icons/shirt.png
-        description: T-Shirt Bundle
-        link: ../static_views/tshirt.html
+        description: Event T-Shirt|Lanyard|Enamel Pin
+        link: ../static_views/merch.html
 
       supporter_package:
-        name: Supporter Package
+        name: Splat! Tier
         icon: ../static/icons/supporter.png
-        description: Supporter Swag
-        link: ../static_views/supporter.html
+        description: Water Gun|Slap Bracelet|Custom Hat|Messenger Bag|Hydration Backpack
+        link: ../static_views/merch.html
 
-      super_supporter:
-        name: Jet Tier
-        icon: ../static/icons/super.png
-        description: Crazy Exclusive Swag
-        link: ../static_views/super.html
+      #super_supporter:
+      #  name: Jet Tier
+      #  icon: ../static/icons/super.png
+      #  description: Crazy Exclusive Swag
+      #  link: ../static_views/super.html
 
     enums:
       guest_merch:
