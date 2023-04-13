@@ -46,6 +46,7 @@ production:
     enable_workers: true
     web_ram: 1024
     web_cpu: 512
+    web_count: 4
     layout: single
 
   west2023:
@@ -59,6 +60,7 @@ production:
     enable_workers: true
     web_ram: 1024
     web_cpu: 512
+    web_count: 4
     layout: single
 
   super2022:
