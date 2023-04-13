@@ -87,19 +87,19 @@ plugins:
         name: T-Shirt Tier
         icon: ../static/icons/shirt.png
         description: Event T-Shirt|Carabiner/Bottle Opener|Enamel Pin
-        link: ../static_views/merch.html
+        link: ../static_views/merch.html|../static_views/merch.html|../static_views/merch.html
 
       supporter:
         name: Iridium Tier
         icon: ../static/icons/supporter.png
         description: Bandana|Koozie|Cooler Tote Bag|Fredward Plushy
-        link: ../static_views/merch.html
+        link: ../static_views/merch.html|../static_views/merch.html|../static_views/merch.html|../static_views/merch.html
 
       season:
         name: Prairie King Tier
         icon: ../static/icons/super.png
         description: Custom Print Blanket|MAGStock LED Flashlight|Full Print Nalgene|Custom Fanny Pack|A Surprise Customized to You!
-        link: ../static_views/merch.html
+        link: ../static_views/merch.html|../static_views/merch.html|../static_views/merch.html|../static_views/merch.html|../static_views/merch.html
 
     enums:
       event_location:
