@@ -75,7 +75,32 @@ plugins:
         T-Shirt Tier: SHIRT_LEVEL
         Iridium Tier: SUPPORTER_LEVEL
         Prairie King Tier: SEASON_LEVEL
-        
+
+    donation_tier_descriptions:
+      no_thanks:
+        name: No thanks
+        icon: ''
+        description: No thanks
+        link: ''
+
+      shirt:
+        name: T-Shirt Tier
+        icon: ../static/icons/shirt.png
+        description: Event T-Shirt|Carabiner/Bottle Opener|Enamel Pin
+        link: ../static_views/merch.html
+
+      supporter:
+        name: Iridium Tier
+        icon: ../static/icons/supporter.png
+        description: Bandana|Koozie|Cooler Tote Bag|Fredward Plushy
+        link: ../static_views/merch.html
+
+      season:
+        name: Prairie King Tier
+        icon: ../static/icons/super.png
+        description: Custom Print Blanket|MAGStock LED Flashlight|Full Print Nalgene|Custom Fanny Pack|A Surprise Customized to You!
+        link: ../static_views/merch.html
+
     enums:
       event_location:
         saloon: Saloon
@@ -93,32 +118,6 @@ plugins:
         gym: Gym
         dininghall: Dining Hall
         publicsafety: Public Safety
-
-    donation_tier_descriptions:
-      no_thanks:
-        name: No thanks
-        icon: ''
-        description: No thanks
-        link: ''
-
-      shirt:
-        name: T-Shirt Tier
-        icon: ../static/icons/shirt.png
-        description: Exclusive T-Shirt|20th Anniversary Pin|Full-Print Lanyard
-        link: ../static_views/tshirt.html|../static_views/tshirt.html|../static_views/tshirt.html
-
-      supporter:
-        name: Iridium Tier
-        icon: ../static/icons/supporter.png
-        description: All T-Shirt Tier Items|Rally Towel|Water Bottle|GAMER BLOOD|Trading Card Pack|Hand Warmer|Super Swadge|& More!
-        link: ../static_views/tshirt.html|../static_views/supporter.html|../static_views/supporter.html|../static_views/supporter.html|../static_views/supporter.html|../static_views/supporter.html|../static_views/swadge.html|../static_views/supporter.html
-
-      season:
-        name: Prairie King Tier
-        icon: ../static/icons/super.png
-        description: All T-Shirt Tier Items|All Brawler Tier Items|Exclusive Duffel Bag|GAMER BLOOD x 3|Roaring Sound Drop|Comfy Butt Pillow|Engraved Soap|Exclusive Mystery Items|Secret Tier Invite|& MORE!!
-        link: ../static_views/tshirt.html|../static_views/supporter.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html|../static_views/super.html
-
 
     dept_head_checklist:
       placeholders:
