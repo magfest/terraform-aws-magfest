@@ -7,7 +7,7 @@ staging:
     config_paths:
       - uber_config/environments/staging
       - uber_config/events/stock/2023/staging
-    enable_workers: false
+    enable_workers: true
     layout: single
 
   west:
