@@ -15,6 +15,8 @@ plugins:
     supporter_stock: 30
     season_stock: 40
     
+    covid_policies_url: https://magstock.org/covid/
+    
     volunteer_placeholder_deadline: April 12
     volunteer_food_deadline: May 19
     volunteer_checklist_deadline: May 26
