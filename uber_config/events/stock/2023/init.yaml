@@ -26,7 +26,7 @@ plugins:
     dates:
       epoch: 2023-06-08 11
       eschaton: 2023-06-11 18
-      prereg_open: 2023-04-15 15
+      prereg_open: 2023-04-17 15
       shirt_deadline: 2023-06-01
       supporter_deadline: 2023-06-01
       badge_price_waived: ''
