@@ -18,6 +18,7 @@ plugins:
     covid_policies_url: https://magstock.org/covid/
     extra_checkin_docs: " and proof of vaccination (https://magstock.org/covid/)"
     
+    shirts_per_staffer: 0
     volunteer_placeholder_deadline: April 12
     volunteer_food_deadline: May 19
     volunteer_checklist_deadline: May 26
