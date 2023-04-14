@@ -48,10 +48,7 @@ production:
       - uber_config/environments/prod
       - uber_config/events/stock/2023
     enable_workers: true
-    web_ram: 1024
-    web_cpu: 512
     web_count: 4
-    layout: single
 
   west2023:
     ubersystem_container: ghcr.io/magfest/magwest:main
@@ -62,10 +59,7 @@ production:
       - uber_config/environments/prod
       - uber_config/events/west/2023
     enable_workers: true
-    web_ram: 1024
-    web_cpu: 512
     web_count: 4
-    layout: single
 
   super2022:
     ubersystem_container: ghcr.io/magfest/magprime:super2022
