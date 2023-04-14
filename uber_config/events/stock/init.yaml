@@ -30,6 +30,7 @@ plugins:
     collect_exact_birthdate: True
     attractions_enabled: False
     require_dedicated_guest_table_presence: False
+    badge_promo_codes_enabled: True
     
     groups_enabled: True
     min_group_size: 5
