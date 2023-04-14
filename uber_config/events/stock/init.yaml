@@ -60,6 +60,9 @@ plugins:
     badge_ranges:
       staff_badge: [1, 2000]
       attendee_badge: [1, 2000]
+      contractor_badge: [1, 2000]
+      guest_badge: [1, 2000]
+      child_badge: [1, 2000]
       one_day_badge: [30000, 39999]
 
     badge_prices:
