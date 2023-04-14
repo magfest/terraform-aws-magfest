@@ -9,6 +9,8 @@ staging:
       - uber_config/events/stock/2023/staging
     enable_workers: true
     layout: single
+    web_ram: 1024
+    web_cpu: 512
 
   west:
     ubersystem_container: ghcr.io/magfest/magwest:main
