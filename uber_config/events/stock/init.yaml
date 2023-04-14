@@ -28,6 +28,7 @@ plugins:
 
     numbered_badges: True
     collect_exact_birthdate: True
+    collect_extra_donation: True
     attractions_enabled: False
     require_dedicated_guest_table_presence: False
     badge_promo_codes_enabled: True
@@ -38,7 +39,7 @@ plugins:
     
     merch_at_checkin: True
     untransferable_attrs: ['first_name','last_name','legal_name','email','birthdate','zip_code','international','ec_name','ec_phone','cellphone','interests','age_group','staffing','requested_depts','waiver_consent','license_plate','site_number','coming_as','camping_type','coming_with','site_type','noise_level','allergies']
-    preassigned_badge_types: ["staff_badge"]
+    #preassigned_badge_types: ["staff_badge"]
 
     admin_email: MAGFest Sys Admin <sysadmin@magfest.org>
     regdesk_email: MAGStock Registration <registration@magstock.org>
@@ -52,7 +53,7 @@ plugins:
 
     band_email_signature: MAGStock Music Department
     regdesk_email_signature: MAGStock Registration Department
-    stops_email_signature: MAGStock Staffing Department
+    stops_email_signature: MAGStock Staffing Operations
     marketplace_email_signature: MAGStock Marketplace Department
     peglegs_email_signature: MAGStock Events Department
     guest_email_signature: MAGStock Guest Department
