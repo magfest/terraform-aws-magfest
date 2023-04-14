@@ -30,6 +30,7 @@ plugins:
     collect_exact_birthdate: True
     attractions_enabled: False
     require_dedicated_guest_table_presence: False
+    badge_promo_codes_enabled: True
     
     groups_enabled: True
     min_group_size: 5
@@ -79,21 +80,6 @@ plugins:
       staff_event_shirt:
         "Generic MAGStock Shirt": 0
         "Event Shirt": 1
-
-      shirt:
-        no shirt: 0
-        small: 1
-        medium: 2
-        large: 3
-        x-large: 4
-        xx-large: 5
-        xxx-large: 6
-        xxxx-large: 11
-        small (female): 7
-        medium (female): 8
-        large (female): 9
-        x-large (female): 10
-        xx-large (female): 12
 
     enums:
       badge:

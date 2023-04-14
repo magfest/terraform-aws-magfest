@@ -16,6 +16,7 @@ plugins:
     season_stock: 40
     
     covid_policies_url: https://magstock.org/covid/
+    extra_checkin_docs: " and proof of vaccination (https://magstock.org/covid/)"
     
     volunteer_placeholder_deadline: April 12
     volunteer_food_deadline: May 19
@@ -25,7 +26,7 @@ plugins:
     dates:
       epoch: 2023-06-08 11
       eschaton: 2023-06-11 18
-      prereg_open: 2023-04-14 15
+      prereg_open: 2023-04-17 15
       shirt_deadline: 2023-06-01
       supporter_deadline: 2023-06-01
       badge_price_waived: ''
@@ -77,6 +78,17 @@ plugins:
         T-Shirt Tier: SHIRT_LEVEL
         Iridium Tier: SUPPORTER_LEVEL
         Prairie King Tier: SEASON_LEVEL
+        
+      shirt:
+        Unisex XS: 1
+        Unisex S: 2
+        Unisex M: 3
+        Unisex L: 4
+        Unisex XL: 5
+        Unisex 2X: 6
+        Unisex 3X: 7
+        Unisex 4X: 8
+        Unisex 5X: 9
 
     donation_tier_descriptions:
       no_thanks:
