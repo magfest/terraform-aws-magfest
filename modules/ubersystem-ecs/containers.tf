@@ -242,7 +242,7 @@ resource "aws_secretsmanager_secret_version" "current_config" {
 # -------------------------------------------------------------------
 
 resource "aws_ecs_service" "ubersystem_web" {
-  count = var.layout == "single" ? 1 : 0
+  count = 1
   name                   = "${var.prefix}_ubersystem_web"
   cluster                = var.ecs_cluster
   task_definition        = aws_ecs_task_definition.ubersystem_web.arn
