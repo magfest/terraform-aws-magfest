@@ -80,21 +80,6 @@ plugins:
         "Generic MAGStock Shirt": 0
         "Event Shirt": 1
 
-      shirt:
-        no shirt: 0
-        small: 1
-        medium: 2
-        large: 3
-        x-large: 4
-        xx-large: 5
-        xxx-large: 6
-        xxxx-large: 11
-        small (female): 7
-        medium (female): 8
-        large (female): 9
-        x-large (female): 10
-        xx-large (female): 12
-
     enums:
       badge:
         attendee_badge: Attendee
