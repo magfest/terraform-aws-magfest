@@ -90,6 +90,8 @@ plugins:
         attendee_badge: Attendee
         staff_badge: Staff
         guest_badge: Guest
+        contractor_badge: Contractor
+        child_badge: Minor
 
       job_interest:
         misc: General Support
