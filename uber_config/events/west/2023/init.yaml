@@ -13,6 +13,8 @@ plugins:
     send_sms: False
     emergency_procedures_enabled: True
     
+    covid_policies_url: https://www.magwest.org/covid
+    
     treasury_dept_checklist_form_url: 'https://forms.gle/vS26HZQiFaTjvuwn8'
     expected_response: "May 31st" # displayed on panels app text
     mivs_video_response_expected: "no later than September 17th"
@@ -32,11 +34,11 @@ plugins:
       prereg_takedown: 2023-07-13
       group_prereg_takedown: 2023-07-13
       placeholder_deadline: 2023-07-16
-      prereg_open: 2023-07-14
+      prereg_open: 2023-04-13
       shifts_created: 2023-05-15
-      shirt_deadline: 2023-06-15
+      #shirt_deadline: 2023-06-15
       volunteer_shirt_deadline: 2023-06-23
-      supporter_deadline: 2023-07-16
+      #supporter_deadline: 2023-07-16
       room_deadline: 2023-07-08
       drop_shifts_deadline: 2023-07-07
       uber_takedown: 2023-08-18
@@ -137,6 +139,17 @@ plugins:
         T-Shirt Tier: SHIRT_LEVEL
         Splat! Tier: SUPPORTER_LEVEL
         #Season Tier: SEASON_LEVEL
+        
+      shirt:
+        Unisex XS: 1
+        Unisex S: 2
+        Unisex M: 3
+        Unisex L: 4
+        Unisex XL: 5
+        Unisex 2X: 6
+        Unisex 3X: 7
+        Unisex 4X: 8
+        Unisex 5X: 9
 
     donation_tier_descriptions:
       no_thanks:
