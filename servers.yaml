@@ -24,6 +24,19 @@ staging:
     layout: single
     web_ram: 1024
     web_cpu: 512
+    
+  super:
+    ubersystem_container: ghcr.io/magfest/magprime:main
+    hostname: super.dev.magevent.net
+    zonename: dev.magevent.net
+    prefix: super-staging
+    config_paths:
+      - uber_config/environments/staging
+      - uber_config/events/super/2024/staging
+    enable_workers: true
+    layout: single
+    web_ram: 1024
+    web_cpu: 512
 
 production:
   super2023:
