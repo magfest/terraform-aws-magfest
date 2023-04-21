@@ -19,10 +19,10 @@ plugins:
     expected_response: "May 31st" # displayed on panels app text
     mivs_video_response_expected: "no later than September 17th"
     
-    volunteer_placeholder_deadline: "June 16"
-    volunteer_food_deadline: "June 23"
-    volunteer_checklist_deadline: "August 4"
-    emergency_procedures_deadline: "August 4"
+    volunteer_placeholder_deadline: "May 12"
+    volunteer_food_deadline: "May 19"
+    volunteer_checklist_deadline: "June 30"
+    emergency_procedures_deadline: "June 30"
     
     require_dedicated_guest_table_presence: False
     expected_rehearsal_response: "August 5th"
@@ -38,9 +38,9 @@ plugins:
       volunteer_checklist_open: 2023-05-01
       shifts_created: 2023-05-15
       shirt_deadline: 2023-07-16
-      volunteer_shirt_deadline: 2023-06-23
+      volunteer_shirt_deadline: 2023-05-19
       supporter_deadline: 2023-07-16
-      room_deadline: 2023-07-08
+      room_deadline: 2023-05-19
       drop_shifts_deadline: 2023-07-07
       uber_takedown: 2023-08-18
 
@@ -183,31 +183,27 @@ plugins:
         
     dept_head_checklist:
       placeholders:
-        deadline: 2023-06-01
+        deadline: 2023-04-19
 
       assigned_volunteers:
-        deadline: 2023-06-01
-        path: /jobs/staffers?department_id={department_id}
+        deadline: 2023-04-19
+        path: /shifts_admin/staffers?department_id={department_id}
 
       creating_shifts:
-        deadline: 2023-06-15
+        deadline: 2023-05-10
         description: >
             STOPS is happy to assist you in creating shifts. Please let us know if you need assistance 
-            # with this step. If you want us to import last year's shifts, please email stops@magwest.org/. 
+            with this step. If you want us to import last year's shifts, please email stops@magwest.org.
             You will still need to approve these via the checklist after the import.
-        path: /jobs/index?department_id={department_id}
-
-      hotel_setup:
-        deadline: 2023-06-22
-        external_form_url: https://forms.gle/SSj2AWx7uqeXoofW9
-
+        path: /shifts_admin/index?department_id={department_id}
+        
       tech_requirements:
-        deadline: 2023-06-22
+        deadline: 2023-05-17
         external_form_url: https://forms.gle/rJPSwmrmW2GUfHW89
 
       approve_setup_teardown:
         name: Approve/Decline Additional Hotel Nights
-        deadline: 2023-07-06
+        deadline: 2023-05-24
         description: >
             Many staffers want to work setup and teardown shifts rather than work during the event. We have 
             more volunteers than we need to do this, so we require DH approval of volunteers who need hotel 
@@ -216,11 +212,11 @@ plugins:
 
       printed_signs:
         name: Room Signage
-        deadline: 2023-07-13
+        deadline: 2023-06-01
         description: Other than a sign for your area, what printed signage do you need?
         full_description: >
-            <div class="text-left">All attendee-facing rooms will automatically receive a 24"x36" sign. Please submit requests for additional signage here, including any department-specific COVID reminders.
-            <br/><br/>We will compare all requests against our known signage inventory, so please include your complete list of needs.
+            <div class="text-left">All attendee-facing rooms will automatically receive either a 24"x36" coroplast sign for outside of the room. Please submit requests for <strong>additional</strong> signage here.
+            <br/><br/>We will compare all requests against our known signage inventory, so please include your complete list of needs. (If you store any signs with your department supplies, however, we will not have records of them in our signage inventory, so DON'T include those here--this helps us avoid double-ordering.)
             <br/><br/>Signage comes in two types: 12"x18" coroplast and 24"x36" coroplast. Be sure to specify FOR EACH SIGN:
             <ul><li>Number needed</li>
             <li>Size of sign</li>
@@ -229,25 +225,25 @@ plugins:
             <li>Intended placement location for sign</li>
             <li>Link to any custom artwork that is needed</li>
             <li>Any additional notes</li></ul>
-            <br/>Event leadership reserves the right to reduce or decline requests according to their discretion. We will contact you if significant changes to your order are necessary.
-            <br/><br/>Note: This checklist item is NOT for printed materials such as sign-up forms, waivers, or anything else that goes on standard office paper. STOPS has a paper cutter and a printer for small jobs (less than 50 pages). Anything more than 50 pages needs to go into the Bulk Print Jobs checklist item.</div>
+            <br/>The signage department reserves the right to reduce or decline requests according to their discretion. We will contact you if significant changes to your order are necessary.
+            <br/><br/>Note: This checklist item is NOT for printed materials such as sign-up forms, waivers, or anything else that goes on standard office paper. STOPS has a paper cutter and a printer for small jobs (less than 50 pages). Anything more than 50 pages needs to go into the Bulk Print Jobs checklist item.
         
       mediatron:
-        deadline: 2023-07-13
+        deadline: 2023-06-01
         full_description: >
             If you have something especially cool happening that you would like Mediatron! to capture, let us know here so 
             they can do their best to get your event on their schedule. For detailed or special requests, please contact 
-            # mediatron@magwest.org/.
+            mediatron@magwest.org.
             
       ppe_requests:
-        deadline: 2023-07-20
+        deadline: 2023-06-08
         name: Bulk PPE & Sanitizing Supplies
         description: >
           MAGFest is providing basic PPE for departments for MAGWest 2023. Please let us know what you need and we will do our best to accommodate.
         external_form_url: https://forms.gle/5HWjTmuVpXxvWH5K6
             
       office_supplies:
-        deadline: 2023-07-20
+        deadline: ''
         description: >
             STOPS can provide the following office supplies: pens, sharpies, paper, whiteboard, whiteboard markers, 
             sticky notes, scissors, painters tape, scotch tape, staplers, clipboards, flip charts/easel pads. List 
@@ -255,36 +251,42 @@ plugins:
             you will get 1). If you need a very specific office item, you will need to purchase it yourself using your 
             department's budget. Note 1: STOPS has a paper cutter and a printer for small jobs (less than 50 pages). 
             Anything more than 50 pages needs to go into 'Bulk Print Jobs.' Note 2: A ream of paper is 500 sheets.
-        external_form_url: https://forms.gle/2YnYQD5KGRYyc8QT6
-            
+        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSc-w7naGwD2fNycj26XZZMHL1x7hDd4Bb5zc8p2XY0QL8uUNQ/viewform?usp=sharing
+
+      hotel_setup:
+        deadline: 2023-06-08
+        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSfYQZNnvX__ykuk6t7Ul7Z_zzxGjTnpun_6RqL3gZ1lNjOhhA/viewform
+
       logistics:
         deadline: ''
             
       guidebook_schedule:
-        deadline: 2023-08-03
+        deadline: 2023-06-15
         name: Public-Facing Schedule
         description: Make sure your public-facing events or open hours are on our Uber schedule so they can be exported to our attendee schedule.
         path: /dept_checklist/guidebook_schedule?department_id={department_id}
         
       bulk_print_jobs:
-        deadline: 2023-08-03
+        deadline: 2023-06-22
         full_description: >
             STOPS has a printer for small jobs (less than 50 pages). Anything more than 50 pages should go 
             here! For EACH item you need printed, please include a link to the document and the number of copies.
             
       treasury:
-        deadline: 2023-07-27
+        deadline: 2023-06-22
+        external_form_url: https://forms.gle/4BEHuj3gjCWdfVPq9
             
       social_media:
-        deadline: 2023-08-10
+        deadline: 2023-06-29
         full_description: >
             If you have a guest or event that you believe is worth promoting on social media beforehand, 
             # let us know! For detailed or special requests, please contact socialmedia@magfest.org/ or post 
             in #socialmedia-requests in Slack.
+
       postcon_hours:
         name: (After the Event) Marking + Rating Shifts
-        deadline: 2023-08-31
-        path: /jobs/signups?department_id={department_id}
+        deadline: 2023-07-30
+        path: /shifts_admin/signups?department_id={department_id}
         description: >
             Please go through your volunteers' shifts carefully. This ensures that they receive the appropriate perks, 
             are imported as staff next year.
