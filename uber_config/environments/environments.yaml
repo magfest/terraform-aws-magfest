@@ -1,6 +1,7 @@
 plugins:
   uber:
     path: 'uber'
+    api_enabled: true
 
     sqlalchemy_pool_size: 5
     sqlalchemy_max_overflow: 10
