@@ -215,7 +215,7 @@ plugins:
         deadline: 2023-06-01
         description: Other than a sign for your area, what printed signage do you need?
         full_description: >
-            <div class="text-left">“All attendee-facing rooms will automatically receive a 24"x36" coroplast sign for outside of the room. Please submit requests for <strong>additional</strong> signage here.
+            <div class="text-left">All attendee-facing rooms will automatically receive a 24"x36" coroplast sign for outside of the room. Please submit requests for <strong>additional</strong> signage here.
             <br/><br/>We will compare all requests against our known signage inventory, so please include your complete list of needs. (If you store any signs with your department supplies, however, we will not have records of them in our signage inventory, so DON'T include those here--this helps us avoid double-ordering.)
             <br/><br/>Signage comes in two types: 12"x18" coroplast and 24"x36" coroplast. Be sure to specify FOR EACH SIGN:
             <ul><li>Number needed</li>
