@@ -119,14 +119,14 @@ plugins:
       
     age_groups:
       under_6:
-        desc: "Under 5"
+        desc: "Under 6"
         min_age: 0
-        max_age: 4
+        max_age: 5
         can_register: True
 
       under_13:
-        desc: "Between 5 and 13"
-        min_age: 5
+        desc: "Between 6 and 13"
+        min_age: 6
         max_age: 11
         can_volunteer: False
         
