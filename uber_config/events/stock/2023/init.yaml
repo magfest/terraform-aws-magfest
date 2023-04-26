@@ -23,6 +23,8 @@ plugins:
     volunteer_food_deadline: May 19
     volunteer_checklist_deadline: May 26
     emergency_procedures_deadline: May 26
+    
+    dealer_loc_term: artist alley
 
     dates:
       epoch: 2023-06-08 11
