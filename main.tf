@@ -522,7 +522,7 @@ resource "aws_autoscaling_group" "ecs_cluster" {
   min_size                  = var.min_instances
   desired_capacity          = var.desired_capacity
   launch_configuration      = aws_launch_configuration.ecs_config_launch_config.name
-  protect_from_scale_in     = true
+  protect_from_scale_in     = false
   lifecycle {
     create_before_destroy = true
   }
@@ -542,7 +542,7 @@ resource "aws_ecs_capacity_provider" "ec2_cluster" {
 
   auto_scaling_group_provider {
     auto_scaling_group_arn         = aws_autoscaling_group.ecs_cluster.arn
-    managed_termination_protection = "ENABLED"
+    managed_termination_protection = "DISABLED"
 
     managed_scaling {
       status = "DISABLED"
