@@ -23,6 +23,11 @@ variable "instance_type" {
     default = "t3.medium"
 }
 
+variable "desired_capacity" {
+    type    = number
+    default = 1
+}
+
 variable "max_instances" {
     type    = number
     default = 5

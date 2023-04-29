@@ -515,6 +515,7 @@ resource "aws_autoscaling_group" "ecs_cluster" {
   health_check_grace_period = 30
   max_size                  = var.max_instances
   min_size                  = var.min_instances
+  desired_capacity          = var.desired_capacity
   launch_configuration      = aws_launch_configuration.ecs_config_launch_config.name
   protect_from_scale_in     = true
   lifecycle {
@@ -539,10 +540,7 @@ resource "aws_ecs_capacity_provider" "ec2_cluster" {
     managed_termination_protection = "ENABLED"
 
     managed_scaling {
-      maximum_scaling_step_size = 2
-      minimum_scaling_step_size = 1
-      status                    = "ENABLED"
-      target_capacity           = 90
+      status = "DISABLED"
     }
   }
 }
