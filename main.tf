@@ -502,6 +502,7 @@ resource "aws_launch_configuration" "ecs_config_launch_config" {
   user_data = <<EOF
 #!/bin/bash
 echo ECS_CLUSTER=${var.clustername} >> /etc/ecs/ecs.config
+echo ECS_ENABLE_AWSLOGS_EXECUTIONROLE_OVERRIDE=true >> /etc/ecs/ecs.config
 EOF
   security_groups      = [
     aws_security_group.uber_efs_ec2.id
