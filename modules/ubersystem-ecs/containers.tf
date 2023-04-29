@@ -63,7 +63,8 @@ locals {
                 "containerPath": "/app/plugins/uber/uploaded_files",
                 "readOnly": false
             }
-        ]
+        ],
+        "memoryReservation": 128
     }
     container_celery_beat = {
         "logConfiguration": {
@@ -111,7 +112,8 @@ locals {
                 "containerPath": "/app/plugins/uber/uploaded_files",
                 "readOnly": false
             }
-        ]
+        ],
+        "memoryReservation": 128
     }
     container_celery_worker = {
         "logConfiguration": {
@@ -159,7 +161,8 @@ locals {
                 "containerPath": "/app/plugins/uber/uploaded_files",
                 "readOnly": false
             }
-        ]
+        ],
+        "memoryReservation": 128
     }
     container_rabbitmq = {
         "logConfiguration": {
@@ -195,7 +198,8 @@ locals {
         "image": "public.ecr.aws/docker/library/rabbitmq:alpine",
         "essential": true,
         "name": "rabbitmq",
-        "mountPoints": []
+        "mountPoints": [],
+        "memoryReservation": 128
     }
     container_redis = {
         "logConfiguration": {
@@ -223,7 +227,8 @@ locals {
         "image": "public.ecr.aws/ubuntu/redis:latest",
         "essential": true,
         "name": "redis",
-        "mountPoints": []
+        "mountPoints": [],
+        "memoryReservation": 64
     }
 }
 
