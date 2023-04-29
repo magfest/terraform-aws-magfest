@@ -63,11 +63,13 @@ variable "enable_workers" {
 variable "web_cpu" {
     type = number
     default = 256
+    nullable = true
 }
 
 variable "web_ram" {
     type = number
     default = 512
+    nullable = true
 }
 
 variable "web_count" {
