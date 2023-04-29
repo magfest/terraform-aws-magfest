@@ -221,6 +221,68 @@ resource "aws_security_group" "uber_efs" {
   }
 }
 
+resource "aws_security_group" "uber_efs_ec2" {
+  name        = "uber_efs_ec2"
+  description = "Allow access to instances in EC2 ECS nodes"
+  vpc_id      = aws_vpc.uber.id
+
+  ingress {
+    description      = "SSH"
+    from_port        = 22
+    to_port          = 22
+    protocol         = "tcp"
+    cidr_blocks      = [
+        aws_subnet.primary.cidr_block,
+        aws_subnet.secondary.cidr_block
+    ]
+  }
+
+  ingress {
+    description      = "RabbitMQ"
+    from_port        = 5672
+    to_port          = 5672
+    protocol         = "tcp"
+    cidr_blocks      = [
+        aws_subnet.primary.cidr_block,
+        aws_subnet.secondary.cidr_block
+    ]
+  }
+
+  ingress {
+    description      = "Redis"
+    from_port        = 6379
+    to_port          = 6379
+    protocol         = "tcp"
+    cidr_blocks      = [
+        aws_subnet.primary.cidr_block,
+        aws_subnet.secondary.cidr_block
+    ]
+  }
+
+  ingress {
+    description      = "HTTP"
+    from_port        = 80
+    to_port          = 80
+    protocol         = "tcp"
+    cidr_blocks      = [
+        aws_subnet.primary.cidr_block,
+        aws_subnet.secondary.cidr_block
+    ]
+  }
+
+  egress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+
+  tags = {
+    Name = "Ubersystem ECS EC2"
+  }
+}
+
 # -------------------------------------------------------------------
 # Subnets
 # -------------------------------------------------------------------
@@ -299,7 +361,7 @@ resource "aws_route_table_association" "secondary_route" {
 # -------------------------------------------------------------------
 
 resource "aws_ecs_cluster" "uber" {
-  name = "Ubersystem"
+  name = var.clustername
 
   setting {
     name  = "containerInsights"
@@ -394,6 +456,98 @@ resource "aws_iam_role_policy_attachment" "task_role_ssm_attach" {
 resource "aws_iam_role_policy_attachment" "task_role_default_attach" {
     role = aws_iam_role.task_role.name
     policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
+}
+
+# -------------------------------------------------------------------
+# ECS EC2 Instances
+# -------------------------------------------------------------------
+
+data "aws_iam_policy_document" "ecs_agent" {
+  statement {
+    actions = ["sts:AssumeRole"]
+    principals {
+      type        = "Service"
+      identifiers = ["ec2.amazonaws.com"]
+    }
+  }
+}
+
+resource "aws_iam_role" "ecs_agent" {
+  name               = "ecs-agent"
+  assume_role_policy = data.aws_iam_policy_document.ecs_agent.json
+}
+
+resource "aws_iam_role_policy_attachment" "ecs_agent" {
+  role       = aws_iam_role.ecs_agent.name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceforEC2Role"
+}
+
+resource "aws_iam_instance_profile" "ecs_agent" {
+  name = "ecs-agent"
+  role = aws_iam_role.ecs_agent.name
+}
+
+resource "aws_key_pair" "ecs" {
+  key_name   = "uber_ec2_admin"
+  public_key = var.ssh_key
+}
+
+resource "aws_launch_configuration" "ecs_config_launch_config" {
+  name_prefix                 = "${var.clustername}_ecs_cluster"
+  image_id                    = data.aws_ami.aws_optimized_ecs.id
+  instance_type               = var.instance_type
+  associate_public_ip_address = true
+  lifecycle {
+    create_before_destroy = true
+  }
+  user_data = <<EOF
+#!/bin/bash
+echo ECS_CLUSTER=${var.clustername} >> /etc/ecs/ecs.config
+EOF
+  security_groups = [aws_security_group.uber_efs_ec2]
+  key_name             = aws_key_pair.ecs.key_name
+  iam_instance_profile = aws_iam_instance_profile.ecs_agent.arn
+}
+
+data "aws_ami" "aws_optimized_ecs" {
+  most_recent = true
+  filter {
+    name   = "name"
+    values = ["amzn-ami*amazon-ecs-optimized"]
+  }
+  filter {
+    name   = "architecture"
+    values = ["x86_64"]
+  }
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+  owners = ["591542846629"] # AWS
+}
+
+resource "aws_autoscaling_group" "ecs_cluster" {
+  name_prefix = "${var.clustername}_asg_"
+  termination_policies = [
+     "OldestInstance" 
+  ]
+  default_cooldown          = 30
+  health_check_grace_period = 30
+  max_size                  = var.max_instances
+  min_size                  = var.min_instances
+  desired_capacity          = var.min_instances
+  launch_configuration      = aws_launch_configuration.ecs_config_launch_config.name
+  lifecycle {
+    create_before_destroy = true
+  }
+  vpc_zone_identifier = aws_vpc.uber.id
+  tags = [
+    {
+      key                 = "Name"
+      value               = var.clustername,
+      propagate_at_launch = true
+    }
+  ]
 }
 
 # -------------------------------------------------------------------
