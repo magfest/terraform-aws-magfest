@@ -199,8 +199,8 @@ resource "aws_security_group" "uber_efs" {
 
   ingress {
     description      = "EFS Encryption"
-    from_port        = 2999
-    to_port          = 2999
+    from_port        = 1
+    to_port          = 65535
     protocol         = "tcp"
     cidr_blocks      = [
         aws_subnet.primary.cidr_block,

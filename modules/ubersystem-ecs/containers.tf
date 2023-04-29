@@ -289,7 +289,6 @@ resource "aws_ecs_task_definition" "ubersystem_web" {
     efs_volume_configuration {
       file_system_id          = var.efs_id
       transit_encryption      = "ENABLED"
-      transit_encryption_port = 2999
       authorization_config {
         access_point_id = aws_efs_access_point.uber.id
       }
@@ -338,7 +337,6 @@ resource "aws_ecs_task_definition" "ubersystem_celery" {
     efs_volume_configuration {
       file_system_id          = var.efs_id
       transit_encryption      = "ENABLED"
-      transit_encryption_port = 2999
       authorization_config {
         access_point_id = aws_efs_access_point.uber.id
       }

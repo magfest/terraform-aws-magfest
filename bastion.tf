@@ -66,7 +66,6 @@ resource "aws_ecs_task_definition" "ssh_bastion" {
     efs_volume_configuration {
       file_system_id          = aws_efs_file_system.ubersystem_static.id
       transit_encryption      = "ENABLED"
-      transit_encryption_port = 2999
       authorization_config {
         access_point_id = aws_efs_access_point.bastion.id
       }
