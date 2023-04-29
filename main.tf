@@ -538,6 +538,7 @@ resource "aws_autoscaling_group" "ecs_cluster" {
   min_size                  = var.min_instances
   desired_capacity          = var.min_instances
   launch_configuration      = aws_launch_configuration.ecs_config_launch_config.name
+  protect_from_scale_in     = true
   lifecycle {
     create_before_destroy = true
   }
