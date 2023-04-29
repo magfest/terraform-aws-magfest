@@ -50,8 +50,9 @@ variable "layout" {
 }
 
 variable "launch_type" {
-    type    = string
-    default = ""
+    type     = string
+    default  = null
+    nullable = true
 }
 
 variable "enable_workers" {

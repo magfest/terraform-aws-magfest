@@ -20,7 +20,7 @@ variable "clustername" {
 
 variable "instance_type" {
     type    = string
-    default = "t3.nano"
+    default = "t3.medium"
 }
 
 variable "max_instances" {
