@@ -504,7 +504,9 @@ resource "aws_launch_configuration" "ecs_config_launch_config" {
 #!/bin/bash
 echo ECS_CLUSTER=${var.clustername} >> /etc/ecs/ecs.config
 EOF
-  security_groups = [aws_security_group.uber_efs_ec2]
+  security_groups      = [
+    aws_security_group.uber_efs_ec2.id
+  ]
   key_name             = aws_key_pair.ecs.key_name
   iam_instance_profile = aws_iam_instance_profile.ecs_agent.arn
 }
