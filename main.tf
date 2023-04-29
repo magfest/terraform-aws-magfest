@@ -569,6 +569,21 @@ resource "aws_ecs_capacity_provider" "ec2_cluster" {
   }
 }
 
+resource "aws_ecs_cluster_capacity_providers" "uber_providers" {
+  cluster_name = aws_ecs_cluster.uber.name
+
+  capacity_providers = [
+    "FARGATE",
+    aws_ecs_capacity_provider.ec2_cluster.arn
+  ]
+
+  default_capacity_provider_strategy {
+    base              = 1
+    weight            = 100
+    capacity_provider = aws_ecs_capacity_provider.ec2_cluster.arn
+  }
+}
+
 # -------------------------------------------------------------------
 # Load Balancer
 # -------------------------------------------------------------------
