@@ -237,32 +237,10 @@ resource "aws_security_group" "uber_efs_ec2" {
   }
 
   ingress {
-    description      = "RabbitMQ"
-    from_port        = 5672
-    to_port          = 5672
-    protocol         = "tcp"
-    cidr_blocks      = [
-        aws_subnet.primary.cidr_block,
-        aws_subnet.secondary.cidr_block
-    ]
-  }
-
-  ingress {
-    description      = "Redis"
-    from_port        = 6379
-    to_port          = 6379
-    protocol         = "tcp"
-    cidr_blocks      = [
-        aws_subnet.primary.cidr_block,
-        aws_subnet.secondary.cidr_block
-    ]
-  }
-
-  ingress {
-    description      = "HTTP"
-    from_port        = 80
-    to_port          = 80
-    protocol         = "tcp"
+    description      = "Internal"
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
     cidr_blocks      = [
         aws_subnet.primary.cidr_block,
         aws_subnet.secondary.cidr_block
