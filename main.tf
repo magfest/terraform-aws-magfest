@@ -545,10 +545,6 @@ resource "aws_autoscaling_group" "ecs_cluster" {
     aws_subnet.primary.id,
     aws_subnet.secondary.id
   ]
-  tag = {
-    key   = "Name"
-    value = var.clustername
-  }
 }
 
 # -------------------------------------------------------------------
