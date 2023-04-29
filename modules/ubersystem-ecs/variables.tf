@@ -49,6 +49,11 @@ variable "layout" {
     default = "scalable"
 }
 
+variable "launch_type" {
+    type    = string
+    default = ""
+}
+
 variable "enable_workers" {
     type    = bool
     default = true

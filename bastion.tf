@@ -75,7 +75,6 @@ resource "aws_ecs_task_definition" "ssh_bastion" {
 
   cpu                       = 256
   memory                    = 512
-  requires_compatibilities  = ["FARGATE", "EC2"]
   network_mode              = "awsvpc"
   execution_role_arn        = aws_iam_role.task_role.arn
 

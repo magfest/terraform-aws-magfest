@@ -248,6 +248,7 @@ resource "aws_ecs_service" "ubersystem_web" {
   task_definition        = aws_ecs_task_definition.ubersystem_web.arn
   desired_count          = var.web_count
   enable_execute_command = true
+  launch_type            = var.launch_type
 
   network_configuration {
     subnets           = var.subnet_ids
@@ -293,7 +294,6 @@ resource "aws_ecs_task_definition" "ubersystem_web" {
 
   cpu                       = var.web_cpu
   memory                    = var.web_ram
-  requires_compatibilities  = ["FARGATE", "EC2"]
   network_mode              = "awsvpc"
   execution_role_arn        = var.ecs_task_role
 
@@ -316,6 +316,7 @@ resource "aws_ecs_service" "ubersystem_celery" {
   task_definition        = aws_ecs_task_definition.ubersystem_celery[count.index].arn
   desired_count          = var.celery_count
   enable_execute_command = true
+  launch_type            = var.launch_type
 
   network_configuration {
     subnets           = var.subnet_ids
@@ -348,7 +349,6 @@ resource "aws_ecs_task_definition" "ubersystem_celery" {
 
   cpu                       = var.celery_cpu
   memory                    = var.celery_ram
-  requires_compatibilities  = ["FARGATE", "EC2"]
   network_mode              = "awsvpc"
   execution_role_arn        = var.ecs_task_role
   task_role_arn             = var.ecs_task_role
@@ -376,6 +376,7 @@ resource "aws_ecs_service" "rabbitmq" {
   task_definition        = aws_ecs_task_definition.rabbitmq[count.index].arn
   desired_count          = var.rabbitmq_count
   enable_execute_command = true
+  launch_type            = var.launch_type
 
   network_configuration {
     subnets           = var.subnet_ids
@@ -399,7 +400,6 @@ resource "aws_ecs_task_definition" "rabbitmq" {
 
   cpu                       = var.rabbitmq_cpu
   memory                    = var.rabbitmq_ram
-  requires_compatibilities  = ["FARGATE", "EC2"]
   network_mode              = "awsvpc"
   execution_role_arn        = var.ecs_task_role
 
@@ -426,6 +426,7 @@ resource "aws_ecs_service" "redis" {
   task_definition        = aws_ecs_task_definition.redis[count.index].arn
   desired_count          = var.redis_count
   enable_execute_command = true
+  launch_type            = var.launch_type
 
   network_configuration {
     subnets           = var.subnet_ids
@@ -449,7 +450,6 @@ resource "aws_ecs_task_definition" "redis" {
 
   cpu                       = var.redis_cpu
   memory                    = var.redis_ram
-  requires_compatibilities  = ["FARGATE", "EC2"]
   network_mode              = "awsvpc"
   execution_role_arn        = var.ecs_task_role
 
