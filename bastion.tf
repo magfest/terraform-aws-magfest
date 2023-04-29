@@ -75,7 +75,7 @@ resource "aws_ecs_task_definition" "ssh_bastion" {
 
   cpu                       = 256
   memory                    = 512
-  requires_compatibilities  = ["FARGATE"]
+  requires_compatibilities  = ["FARGATE", "EC2"]
   network_mode              = "awsvpc"
   execution_role_arn        = aws_iam_role.task_role.arn
 
@@ -120,7 +120,6 @@ resource "aws_ecs_service" "ssh" {
   cluster         = aws_ecs_cluster.uber.arn
   task_definition = aws_ecs_task_definition.ssh_bastion.arn
   desired_count   = 1
-  launch_type     = "FARGATE"
 
   network_configuration {
     subnets           = [
