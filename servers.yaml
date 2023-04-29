@@ -64,7 +64,7 @@ production:
       - uber_config/environments/prod
       - uber_config/events/stock/2023
     enable_workers: true
-    web_count: 4
+    web_count: 1
 
   west2023:
     ubersystem_container: ghcr.io/magfest/magwest:main
@@ -75,7 +75,7 @@ production:
       - uber_config/environments/prod
       - uber_config/events/west/2023
     enable_workers: true
-    web_count: 4
+    web_count: 1
 
   super2022:
     ubersystem_container: ghcr.io/magfest/magprime:super2022
@@ -87,6 +87,9 @@ production:
       - uber_config/events/super/2022
     enable_workers: false
     layout: single
+    launch_type: EC2
+    web_ram: null
+    web_cpu: null
 
   west2022:
     ubersystem_container: ghcr.io/magfest/magwest:west2022
