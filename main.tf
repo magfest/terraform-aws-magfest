@@ -506,6 +506,11 @@ data "aws_ami" "aws_optimized_ecs" {
   owners = ["591542846629"] # AWS
 }
 
+resource "aws_ecs_account_setting_default" "account_settings" {
+  name  = "awsvpcTrunking"
+  value = "enabled"
+}
+
 resource "aws_autoscaling_group" "ecs_cluster" {
   name_prefix = "${var.clustername}_asg_"
   termination_policies = [
