@@ -232,8 +232,7 @@ resource "aws_security_group" "uber_efs_ec2" {
     to_port          = 22
     protocol         = "tcp"
     cidr_blocks      = [
-        aws_subnet.primary.cidr_block,
-        aws_subnet.secondary.cidr_block
+        "0.0.0.0/0"
     ]
   }
 
