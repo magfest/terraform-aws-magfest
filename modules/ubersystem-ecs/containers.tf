@@ -253,7 +253,6 @@ resource "aws_ecs_service" "ubersystem_web" {
   network_configuration {
     subnets           = var.subnet_ids
     security_groups   = var.uber_web_securitygroups
-    assign_public_ip  = true
   }
 
   load_balancer {
@@ -320,7 +319,6 @@ resource "aws_ecs_service" "ubersystem_celery" {
 
   network_configuration {
     subnets           = var.subnet_ids
-    assign_public_ip  = true
   }
 }
 
@@ -381,7 +379,6 @@ resource "aws_ecs_service" "rabbitmq" {
   network_configuration {
     subnets           = var.subnet_ids
     security_groups   = var.rabbitmq_securitygroups
-    assign_public_ip  = true
   }
 
   service_registries {
@@ -431,7 +428,6 @@ resource "aws_ecs_service" "redis" {
   network_configuration {
     subnets           = var.subnet_ids
     security_groups   = var.redis_securitygroups
-    assign_public_ip  = true
   }
   
   service_registries {
