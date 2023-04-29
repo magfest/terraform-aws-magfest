@@ -542,7 +542,10 @@ resource "aws_autoscaling_group" "ecs_cluster" {
   lifecycle {
     create_before_destroy = true
   }
-  vpc_zone_identifier = aws_vpc.uber.id
+  vpc_zone_identifier = [
+    aws_subnet.primary.id,
+    aws_subnet.secondary.id
+  ]
   tags = [
     {
       key                 = "Name"
