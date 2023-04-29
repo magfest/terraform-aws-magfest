@@ -297,11 +297,6 @@ resource "aws_ecs_task_definition" "ubersystem_web" {
   execution_role_arn        = var.ecs_task_role
 
   task_role_arn = var.ecs_task_role
-
-  runtime_platform {
-    operating_system_family = "LINUX"
-    cpu_architecture        = "X86_64"
-  }
 }
 
 # -------------------------------------------------------------------
@@ -351,11 +346,6 @@ resource "aws_ecs_task_definition" "ubersystem_celery" {
   execution_role_arn        = var.ecs_task_role
   task_role_arn             = var.ecs_task_role
 
-  runtime_platform {
-    operating_system_family = "LINUX"
-    cpu_architecture        = "X86_64"
-  }
-
   depends_on = [
     aws_service_discovery_service.rabbitmq
   ]
@@ -400,11 +390,6 @@ resource "aws_ecs_task_definition" "rabbitmq" {
   network_mode              = "awsvpc"
   execution_role_arn        = var.ecs_task_role
 
-  runtime_platform {
-    operating_system_family = "LINUX"
-    cpu_architecture        = "X86_64"
-  }
-
   task_role_arn = var.ecs_task_role
 
   depends_on = [
@@ -448,11 +433,6 @@ resource "aws_ecs_task_definition" "redis" {
   memory                    = var.redis_ram
   network_mode              = "awsvpc"
   execution_role_arn        = var.ecs_task_role
-
-  runtime_platform {
-    operating_system_family = "LINUX"
-    cpu_architecture        = "X86_64"
-  }
 
   task_role_arn = "${var.ecs_task_role}"
 
