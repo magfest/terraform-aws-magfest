@@ -298,7 +298,7 @@ resource "aws_ecs_task_definition" "ubersystem_web" {
 
   cpu                       = var.web_cpu
   memory                    = var.web_ram
-  network_mode              = var.launch_type == "FARGATE" ? "awsvpc" : "bridge"
+  network_mode              = "awsvpc"
   execution_role_arn        = var.ecs_task_role
 
   task_role_arn = var.ecs_task_role
@@ -347,7 +347,7 @@ resource "aws_ecs_task_definition" "ubersystem_celery" {
 
   cpu                       = var.celery_cpu
   memory                    = var.celery_ram
-  network_mode              = var.launch_type == "FARGATE" ? "awsvpc" : "bridge"
+  network_mode              = "awsvpc"
   execution_role_arn        = var.ecs_task_role
   task_role_arn             = var.ecs_task_role
 
@@ -393,7 +393,7 @@ resource "aws_ecs_task_definition" "rabbitmq" {
 
   cpu                       = var.rabbitmq_cpu
   memory                    = var.rabbitmq_ram
-  network_mode              = var.launch_type == "FARGATE" ? "awsvpc" : "bridge"
+  network_mode              = "awsvpc"
   execution_role_arn        = var.ecs_task_role
 
   task_role_arn = var.ecs_task_role
@@ -438,7 +438,7 @@ resource "aws_ecs_task_definition" "redis" {
 
   cpu                       = var.redis_cpu
   memory                    = var.redis_ram
-  network_mode              = var.launch_type == "FARGATE" ? "awsvpc" : "bridge"
+  network_mode              = "awsvpc"
   execution_role_arn        = var.ecs_task_role
 
   task_role_arn = "${var.ecs_task_role}"

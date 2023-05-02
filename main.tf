@@ -342,7 +342,7 @@ resource "aws_ecs_cluster" "uber" {
 
   setting {
     name  = "containerInsights"
-    value = "enabled"
+    value = "disabled"
   }
 }
 
