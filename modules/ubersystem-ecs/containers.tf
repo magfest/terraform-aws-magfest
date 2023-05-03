@@ -17,9 +17,10 @@ locals {
                 "containerPort": 8282
             }
         ],
-        "links": [
-          "redis"
-        ],
+        "links": var.layout == "single" ? [
+          "redis",
+          "rabbitmq"
+        ] : [],
         "environment": [
             {
                 "name": "CERT_NAME",
@@ -79,7 +80,6 @@ locals {
             }
         },
         "links": [
-          "redis",
           "rabbitmq"
         ],
         "command": [
@@ -132,7 +132,6 @@ locals {
             }
         },
         "links": [
-          "redis",
           "rabbitmq"
         ]
         "environment": [
@@ -175,6 +174,8 @@ locals {
         "memoryReservation": 128
     }
     container_rabbitmq = {
+        "containerName": "rabbitmq",
+        "containerPort": 5672,
         "logConfiguration": {
             "logDriver": "awslogs",
             "options": {
@@ -211,6 +212,8 @@ locals {
         "memoryReservation": 128
     }
     container_redis = {
+      "containerName": "redis",
+        "containerPort": 6379,
         "logConfiguration": {
             "logDriver": "awslogs",
             "options": {
