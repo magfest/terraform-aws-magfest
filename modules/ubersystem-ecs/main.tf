@@ -72,7 +72,7 @@ resource "aws_route53_record" "public" {
   ]
 }
 
-resource "aws_lb_target_group" "ubersystem_web" {
+resource "aws_lb_target_group" "ubersystem_http" {
   name                 = "${var.prefix}-http"
   port                 = 80
   protocol             = "HTTP"
@@ -106,7 +106,7 @@ resource "aws_lb_listener_rule" "uber" {
 
   action {
     type             = "forward"
-    target_group_arn = aws_lb_target_group.ubersystem_web.arn
+    target_group_arn = aws_lb_target_group.ubersystem_http.arn
   }
 
   condition {
