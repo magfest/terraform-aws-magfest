@@ -1,6 +1,6 @@
 locals {
-    session_host = var.layout == "single" ? "localhost" : "redis.${var.private_zone}"
-    broker_host = var.layout == "single" ? "localhost" : "rabbitmq.${var.private_zone}"
+    session_host = var.layout == "single" ? "redis" : "redis.${var.private_zone}"
+    broker_host = var.layout == "single" ? "rabbitmq" : "rabbitmq.${var.private_zone}"
     container_web = {
         "logConfiguration": {
             "logDriver": "awslogs",
@@ -16,6 +16,9 @@ locals {
                 "protocol": "tcp",
                 "containerPort": 8282
             }
+        ],
+        "links": [
+          "name:redis"
         ],
         "environment": [
             {
@@ -75,6 +78,10 @@ locals {
                 "awslogs-create-group": "true"
             }
         },
+        "links": [
+          "name:redis",
+          "name:rabbitmq"
+        ],
         "command": [
             "celery-beat"
         ],
@@ -104,7 +111,7 @@ locals {
         ],
         "image": "${var.ubersystem_container}@sha256:${module.uber_image.docker_digest}",
         "essential": true,
-        "name": "celery-beat",
+        "name": "celery-beats",
         "mountPoints": [
             {
                 "sourceVolume": "static",
@@ -124,6 +131,10 @@ locals {
                 "awslogs-create-group": "true"
             }
         },
+        "links": [
+          "name:redis",
+          "name:rabbitmq"
+        ]
         "environment": [
             {
                 "name": "DB_CONNECTION_STRING",
@@ -358,7 +369,7 @@ resource "aws_ecs_service" "rabbitmq" {
   launch_type            = var.launch_type
 
   service_registries {
-    registry_arn = aws_service_discovery_service.rabbitmq[count.index].arn
+    registry_arn = aws_service_discovery_service.rabbitmq.arn
   }
 }
 
@@ -397,7 +408,7 @@ resource "aws_ecs_service" "redis" {
   launch_type            = var.launch_type
   
   service_registries {
-    registry_arn = aws_service_discovery_service.redis[count.index].arn
+    registry_arn = aws_service_discovery_service.redis.arn
   }
 }
 
