@@ -101,7 +101,7 @@ resource "aws_lb_listener_certificate" "uber" {
   certificate_arn = aws_acm_certificate_validation.uber.certificate_arn
 }
 
-resource "aws_lb_listener_rule" "uber" {
+resource "aws_lb_listener_rule" "uber_http" {
   listener_arn = var.lb_web_listener_arn
 
   action {
