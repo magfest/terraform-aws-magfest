@@ -13,7 +13,6 @@ locals {
         },
         "portMappings": [
             {
-                "hostPort": 8282,
                 "protocol": "tcp",
                 "containerPort": 8282
             }
@@ -176,7 +175,6 @@ locals {
         },
         "portMappings": [
             {
-                "hostPort": 5672,
                 "protocol": "tcp",
                 "containerPort": 5672
             }
@@ -213,7 +211,6 @@ locals {
         },
         "portMappings": [
             {
-                "hostPort": 6379,
                 "protocol": "tcp",
                 "containerPort": 6379
             }

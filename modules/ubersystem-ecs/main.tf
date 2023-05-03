@@ -94,6 +94,10 @@ resource "aws_lb_target_group" "ubersystem_http" {
     path                = "/"
     matcher             = "200-499"
   }
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "aws_lb_listener_certificate" "uber" {
