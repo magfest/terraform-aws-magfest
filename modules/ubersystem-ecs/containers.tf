@@ -368,7 +368,7 @@ resource "aws_ecs_service" "rabbitmq" {
   launch_type            = var.launch_type
 
   service_registries {
-    registry_arn = aws_service_discovery_service.rabbitmq.arn,
+    registry_arn = aws_service_discovery_service.rabbitmq.arn
     container_name = "rabbitmq"
     container_port = 5672
   }
