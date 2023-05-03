@@ -73,7 +73,7 @@ resource "aws_route53_record" "public" {
 }
 
 resource "aws_lb_target_group" "ubersystem_web" {
-  name                 = "${var.prefix}-web"
+  name                 = "${var.prefix}-http"
   port                 = 80
   protocol             = "HTTP"
   target_type          = "instance"
