@@ -79,9 +79,9 @@ locals {
                 "awslogs-create-group": "true"
             }
         },
-        "links": [
+        "links": var.layout == "single" ? [
           "rabbitmq"
-        ],
+        ] : [],
         "command": [
             "celery-beat"
         ],
@@ -131,9 +131,9 @@ locals {
                 "awslogs-create-group": "true"
             }
         },
-        "links": [
+        "links": var.layout == "single" ? [
           "rabbitmq"
-        ]
+        ] : [],
         "environment": [
             {
                 "name": "DB_CONNECTION_STRING",
@@ -174,8 +174,6 @@ locals {
         "memoryReservation": 128
     }
     container_rabbitmq = {
-        "containerName": "rabbitmq",
-        "containerPort": 5672,
         "logConfiguration": {
             "logDriver": "awslogs",
             "options": {
@@ -212,8 +210,6 @@ locals {
         "memoryReservation": 128
     }
     container_redis = {
-      "containerName": "redis",
-        "containerPort": 6379,
         "logConfiguration": {
             "logDriver": "awslogs",
             "options": {
@@ -372,7 +368,9 @@ resource "aws_ecs_service" "rabbitmq" {
   launch_type            = var.launch_type
 
   service_registries {
-    registry_arn = aws_service_discovery_service.rabbitmq.arn
+    registry_arn = aws_service_discovery_service.rabbitmq.arn,
+    container_name = "rabbitmq"
+    container_port = 5672
   }
 }
 
@@ -412,6 +410,8 @@ resource "aws_ecs_service" "redis" {
   
   service_registries {
     registry_arn = aws_service_discovery_service.redis.arn
+    container_name = "redis"
+    container_port = 6379
   }
 }
 
