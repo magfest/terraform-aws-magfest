@@ -125,14 +125,12 @@ resource "aws_lb_listener_rule" "uber_http" {
 # -------------------------------------------------------------------
 
 resource "aws_service_discovery_private_dns_namespace" "uber" {
-  count = var.layout == "scalable" ? 1 : 0
   name        = var.private_zone
   description = "Uber Internal Services (${var.hostname})"
   vpc         = data.aws_vpc.uber.id
 }
 
 resource "aws_service_discovery_service" "redis" {
-  count = var.layout == "scalable" ? 1 : 0
   name          = "redis"
   force_destroy = true
 
@@ -141,7 +139,7 @@ resource "aws_service_discovery_service" "redis" {
 
     dns_records {
       ttl  = 10
-      type = "A"
+      type = "SRV"
     }
 
     routing_policy = "MULTIVALUE"
@@ -153,7 +151,6 @@ resource "aws_service_discovery_service" "redis" {
 }
 
 resource "aws_service_discovery_service" "rabbitmq" {
-  count = var.layout == "scalable" ? 1 : 0
   name          = "rabbitmq"
   force_destroy = true
 
@@ -162,7 +159,7 @@ resource "aws_service_discovery_service" "rabbitmq" {
 
     dns_records {
       ttl  = 10
-      type = "A"
+      type = "SRV"
     }
 
     routing_policy = "MULTIVALUE"
