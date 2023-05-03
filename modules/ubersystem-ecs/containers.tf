@@ -17,10 +17,10 @@ locals {
                 "containerPort": 8282
             }
         ],
-        "links": var.layout == "single" ? [
+        "links": var.layout == "single" ? (var.enable_workers ? [
           "redis",
           "rabbitmq"
-        ] : [],
+        ] : ["redis"]) : [],
         "environment": [
             {
                 "name": "CERT_NAME",
