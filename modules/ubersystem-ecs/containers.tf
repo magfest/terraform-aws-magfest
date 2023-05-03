@@ -252,12 +252,6 @@ resource "aws_ecs_service" "ubersystem_web" {
   enable_execute_command = true
   launch_type            = var.launch_type
 
-  network_configuration {
-    subnets           = var.subnet_ids
-    security_groups   = var.uber_web_securitygroups
-    assign_public_ip  = var.launch_type != "EC2"
-  }
-
   load_balancer {
     target_group_arn = aws_lb_target_group.ubersystem_http.arn
     container_name   = "web"
@@ -313,11 +307,6 @@ resource "aws_ecs_service" "ubersystem_celery" {
   desired_count          = var.celery_count
   enable_execute_command = true
   launch_type            = var.launch_type
-
-  network_configuration {
-    subnets           = var.subnet_ids
-    assign_public_ip  = var.launch_type != "EC2"
-  }
 }
 
 resource "aws_ecs_task_definition" "ubersystem_celery" {
@@ -368,12 +357,6 @@ resource "aws_ecs_service" "rabbitmq" {
   enable_execute_command = true
   launch_type            = var.launch_type
 
-  network_configuration {
-    subnets           = var.subnet_ids
-    security_groups   = var.rabbitmq_securitygroups
-    assign_public_ip  = var.launch_type != "EC2"
-  }
-
   service_registries {
     registry_arn = aws_service_discovery_service.rabbitmq[count.index].arn
   }
@@ -412,12 +395,6 @@ resource "aws_ecs_service" "redis" {
   desired_count          = var.redis_count
   enable_execute_command = true
   launch_type            = var.launch_type
-
-  network_configuration {
-    subnets           = var.subnet_ids
-    security_groups   = var.redis_securitygroups
-    assign_public_ip  = var.launch_type != "EC2"
-  }
   
   service_registries {
     registry_arn = aws_service_discovery_service.redis[count.index].arn
