@@ -12,6 +12,12 @@ staging:
     launch_type: EC2
     web_ram: null
     web_cpu: null
+    celery_ram: null
+    celery_cpu: null
+    redis_ram: null
+    redis_cpu: null
+    rabbitmq_ram: null
+    rabbitmq_cpu: null
 
   west:
     ubersystem_container: ghcr.io/magfest/magwest:main

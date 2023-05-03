@@ -80,11 +80,13 @@ variable "web_count" {
 variable "celery_cpu" {
     type = number
     default = 256
+    nullable = true
 }
 
 variable "celery_ram" {
     type = number
     default = 512
+    nullable = true
 }
 
 variable "celery_count" {
@@ -94,11 +96,13 @@ variable "celery_count" {
 variable "redis_cpu" {
     type = number
     default = 256
+    nullable = true
 }
 
 variable "redis_ram" {
     type = number
     default = 512
+    nullable = true
 }
 
 variable "redis_count" {
@@ -109,11 +113,13 @@ variable "redis_count" {
 variable "rabbitmq_cpu" {
     type = number
     default = 256
+    nullable = true
 }
 
 variable "rabbitmq_ram" {
     type = number
     default = 512
+    nullable = true
 }
 
 variable "rabbitmq_count" {
