@@ -18,7 +18,7 @@ locals {
             }
         ],
         "links": [
-          "name:redis"
+          "redis"
         ],
         "environment": [
             {
@@ -79,8 +79,8 @@ locals {
             }
         },
         "links": [
-          "name:redis",
-          "name:rabbitmq"
+          "redis",
+          "rabbitmq"
         ],
         "command": [
             "celery-beat"
@@ -132,8 +132,8 @@ locals {
             }
         },
         "links": [
-          "name:redis",
-          "name:rabbitmq"
+          "redis",
+          "rabbitmq"
         ]
         "environment": [
             {
