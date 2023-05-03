@@ -9,7 +9,6 @@ staging:
       - uber_config/events/stock/2023/staging
     enable_workers: true
     layout: scalable
-    launch_type: EC2
     web_ram: null
     web_cpu: null
     celery_ram: null
@@ -29,7 +28,6 @@ staging:
       - uber_config/events/west/2023/staging
     enable_workers: true
     layout: single
-    launch_type: EC2
     web_ram: null
     web_cpu: null
     
@@ -43,7 +41,6 @@ staging:
       - uber_config/events/super/2024/staging
     enable_workers: true
     layout: single
-    launch_type: EC2
     web_ram: null
     web_cpu: null
 
@@ -71,6 +68,14 @@ production:
       - uber_config/events/stock/2023
     enable_workers: true
     web_count: 1
+    web_ram: null
+    web_cpu: null
+    celery_ram: null
+    celery_cpu: null
+    redis_ram: null
+    redis_cpu: null
+    rabbitmq_ram: null
+    rabbitmq_cpu: null
 
   west2023:
     ubersystem_container: ghcr.io/magfest/magwest:main
@@ -82,6 +87,14 @@ production:
       - uber_config/events/west/2023
     enable_workers: true
     web_count: 1
+    web_ram: null
+    web_cpu: null
+    celery_ram: null
+    celery_cpu: null
+    redis_ram: null
+    redis_cpu: null
+    rabbitmq_ram: null
+    rabbitmq_cpu: null
 
   super2022:
     ubersystem_container: ghcr.io/magfest/magprime:super2022
@@ -93,7 +106,6 @@ production:
       - uber_config/events/super/2022
     enable_workers: false
     layout: single
-    launch_type: EC2
     web_ram: null
     web_cpu: null
 
@@ -107,6 +119,8 @@ production:
       - uber_config/events/west/2022
     enable_workers: false
     layout: single
+    web_ram: null
+    web_cpu: null
     
   west2021:
     ubersystem_container: ghcr.io/magfest/magwest:west2021
@@ -118,6 +132,8 @@ production:
       - uber_config/events/west/2021
     enable_workers: false
     layout: single
+    web_ram: null
+    web_cpu: null
 
   super2020:
     ubersystem_container: ghcr.io/magfest/magprime:super2020_migrated
@@ -129,8 +145,8 @@ production:
       - uber_config/events/super/2020
     enable_workers: false
     layout: single
-    web_ram: 1024
-    web_cpu: 512
+    web_ram: null
+    web_cpu: null
     
   west2020:
     ubersystem_container: ghcr.io/magfest/magwest:west2020
@@ -142,6 +158,8 @@ production:
       - uber_config/events/west/2020
     enable_workers: false
     layout: single
+    web_ram: null
+    web_cpu: null
     
   stock2019:
     ubersystem_container: ghcr.io/magfest/magstock:stock2019
@@ -153,6 +171,8 @@ production:
       - uber_config/events/stock/2019
     enable_workers: false
     layout: single
+    web_ram: null
+    web_cpu: null
     
   west2019:
     ubersystem_container: ghcr.io/magfest/magwest:west2019
@@ -164,3 +184,5 @@ production:
       - uber_config/events/west/2019
     enable_workers: false
     layout: single
+    web_ram: null
+    web_cpu: null
