@@ -135,7 +135,7 @@ resource "aws_service_discovery_service" "redis" {
   force_destroy = true
 
   dns_config {
-    namespace_id = aws_service_discovery_private_dns_namespace.uber[count.index].id
+    namespace_id = aws_service_discovery_private_dns_namespace.uber.id
 
     dns_records {
       ttl  = 10
@@ -155,7 +155,7 @@ resource "aws_service_discovery_service" "rabbitmq" {
   force_destroy = true
 
   dns_config {
-    namespace_id = aws_service_discovery_private_dns_namespace.uber[count.index].id
+    namespace_id = aws_service_discovery_private_dns_namespace.uber.id
 
     dns_records {
       ttl  = 10
