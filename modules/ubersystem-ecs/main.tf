@@ -76,7 +76,7 @@ resource "aws_lb_target_group" "ubersystem_web" {
   name                 = "${var.prefix}-web"
   port                 = 80
   protocol             = "HTTP"
-  target_type          = "ip"
+  target_type          = "instance"
   vpc_id               = data.aws_vpc.uber.id
   deregistration_delay = 10
 
