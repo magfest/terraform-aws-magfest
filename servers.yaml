@@ -8,7 +8,7 @@ staging:
       - uber_config/environments/staging
       - uber_config/events/stock/2023/staging
     enable_workers: true
-    layout: single
+    layout: scalable
     launch_type: EC2
     web_ram: null
     web_cpu: null
