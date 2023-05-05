@@ -81,7 +81,9 @@ resource "aws_lb_target_group" "ubersystem_http" {
   deregistration_delay = 10
 
   stickiness {
+    cookie_name = "session_id"
     enabled     = false
+    type        = "app_cookie"
   }
 
   health_check {
