@@ -1,3 +1,7 @@
+cherrypy:
+  server:
+    socket_timeout: 75
+
 plugins:
   uber:
     path: 'uber'
