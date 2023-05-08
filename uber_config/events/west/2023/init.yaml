@@ -199,7 +199,7 @@ plugins:
         
       tech_requirements:
         deadline: 2023-05-17
-        external_form_url: https://forms.gle/rJPSwmrmW2GUfHW89
+        external_form_url: https://forms.gle/5ouCmsF43CzRKY728
 
       approve_setup_teardown:
         name: Approve/Decline Additional Hotel Nights
