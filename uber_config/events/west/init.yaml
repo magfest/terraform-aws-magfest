@@ -265,5 +265,3 @@ plugins:
       "97": staffing/emergency_procedures_item.html
       "98": staffing/volunteer_agreement_item.html
       "99": staffing/shifts_item.html
-
-    techops_dept_checklist_form_url: https://forms.gle/MiPrDDC8wYVhu7qSA
