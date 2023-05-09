@@ -51,7 +51,7 @@ plugins:
     panels_email: MAGStock Panels <admin@magstock.org>
     developer_email: MAGFest Software <developers@magfest.org>
     security_email: MAGStock Security <security@magstock.org>
-    guest_email: MAGStock Guests <admin@magstock.org>
+    guest_email: MAGStock Music <music@magstock.org>
     band_email: MAGStock Music <music@magstock.org>
 
     band_email_signature: MAGStock Music Department
