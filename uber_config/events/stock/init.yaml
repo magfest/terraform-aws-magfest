@@ -59,7 +59,7 @@ plugins:
     stops_email_signature: MAGStock Staffing Operations
     marketplace_email_signature: MAGStock Marketplace Department
     peglegs_email_signature: MAGStock Events Department
-    guest_email_signature: MAGStock Guest Department
+    guest_email_signature: MAGStock Music Department
 
 
     badge_ranges:
