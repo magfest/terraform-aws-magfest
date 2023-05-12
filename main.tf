@@ -709,7 +709,8 @@ resource "aws_secretsmanager_secret_version" "password" {
 }
 
 resource "aws_db_instance" "uber" {
-  allocated_storage      = 10
+  allocated_storage      = 100
+  storage_type           = "gp3"
   db_name                = "uber"
   engine                 = "postgres"
   instance_class         = "db.t3.micro"
