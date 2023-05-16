@@ -11,7 +11,7 @@ plugins:
     event_year: 2023
     at_the_con: False
     post_con: False
-    shirt_stock: 40
+    shirt_stock: 100
     supporter_stock: 30
     season_stock: 40
     
@@ -30,7 +30,7 @@ plugins:
       epoch: 2023-06-08 11
       eschaton: 2023-06-11 18
       prereg_open: 2023-04-17 15
-      shirt_deadline: 2023-06-01
+      shirt_deadline: 2023-05-24
       supporter_deadline: 2023-06-01
       printed_badge_deadline: 2023-05-21
       badge_price_waived: ''
