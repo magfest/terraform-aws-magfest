@@ -41,3 +41,7 @@ variable "min_instances" {
 variable "ssh_key" {
     type    = string
 }
+
+variable "ssh_users" {
+    type    = string
+}

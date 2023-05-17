@@ -481,6 +481,22 @@ resource "aws_launch_configuration" "ecs_config_launch_config" {
 #!/bin/bash
 echo ECS_CLUSTER=${var.clustername} >> /etc/ecs/ecs.config
 echo ECS_ENABLE_AWSLOGS_EXECUTIONROLE_OVERRIDE=true >> /etc/ecs/ecs.config
+
+IFS=","
+USERS="${var.ssh_users}"
+for USER in $USERS; do
+    echo "Adding $USER..."
+    adduser -h "/home/$USER" -s /bin/bash -D "$USER"
+    adduser "$USER" wheel
+    passwd -u "$USER"
+    mkdir -p "/home/$USER/.ssh"
+    curl -so "/home/$USER/.ssh/authorized_keys" "https://github.com/$USER.keys"
+    chown -R "$USER:$USER" "/home/$USER/.ssh"
+    chmod 755 "/home/$USER/.ssh"
+    chmod 644 "/home/$USER/.ssh/authorized_keys"
+done
+
+echo "%wheel  ALL=(ALL)       NOPASSWD: ALL" > /etc/sudoers.d/wheel
 EOF
   security_groups      = [
     aws_security_group.uber_efs_ec2.id
