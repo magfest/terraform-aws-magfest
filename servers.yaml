@@ -61,6 +61,7 @@ production:
     celery_count: 0
     rabbitmq_count: 0
     launch_type: EC2
+    health_url: /
 
   stock2023:
     ubersystem_container: ghcr.io/magfest/magstock:main
@@ -115,6 +116,7 @@ production:
     web_ram: null
     web_cpu: null
     launch_type: EC2
+    health_url: /
 
   west2022:
     ubersystem_container: ghcr.io/magfest/magwest:west2022
@@ -129,6 +131,7 @@ production:
     web_ram: null
     web_cpu: null
     launch_type: EC2
+    health_url: /
     
   west2021:
     ubersystem_container: ghcr.io/magfest/magwest:west2021
@@ -143,6 +146,7 @@ production:
     web_ram: null
     web_cpu: null
     launch_type: EC2
+    health_url: /
 
   super2020:
     ubersystem_container: ghcr.io/magfest/magprime:super2020_migrated
@@ -157,6 +161,7 @@ production:
     web_ram: null
     web_cpu: null
     launch_type: EC2
+    health_url: /
     
   west2020:
     ubersystem_container: ghcr.io/magfest/magwest:west2020
@@ -171,6 +176,7 @@ production:
     web_ram: null
     web_cpu: null
     launch_type: EC2
+    health_url: /
     
   stock2019:
     ubersystem_container: ghcr.io/magfest/magstock:stock2019
@@ -185,6 +191,7 @@ production:
     web_ram: null
     web_cpu: null
     launch_type: EC2
+    health_url: /
     
   west2019:
     ubersystem_container: ghcr.io/magfest/magwest:west2019
@@ -199,3 +206,4 @@ production:
     web_ram: null
     web_cpu: null
     launch_type: EC2
+    health_url: /

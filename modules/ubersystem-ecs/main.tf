@@ -91,8 +91,8 @@ resource "aws_lb_target_group" "ubersystem_http" {
     interval            = 30
     unhealthy_threshold = 10
     timeout             = 5
-    path                = "/"
-    matcher             = "200-499"
+    path                = var.health_url
+    matcher             = "200"
   }
 
   lifecycle {

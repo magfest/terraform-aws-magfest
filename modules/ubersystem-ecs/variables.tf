@@ -175,3 +175,8 @@ variable "efs_id" {
 variable "efs_dir" {
     type    = string
 }
+
+variable "health_url" {
+    type    = string
+    default = "/uber/devtools/health"
+}
