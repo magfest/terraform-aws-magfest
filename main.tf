@@ -486,7 +486,7 @@ IFS=","
 USERS="${var.ssh_users}"
 for USER in $USERS; do
     echo "Adding $USER..."
-    adduser -d "/home/$USER" -s /bin/bash -m -G wheel "$USER"
+    adduser -d "/home/$USER" -s /bin/bash -m -G wheel,docker "$USER"
     passwd -u "$USER"
     mkdir -p "/home/$USER/.ssh"
     curl -so "/home/$USER/.ssh/authorized_keys" "https://github.com/$USER.keys"
