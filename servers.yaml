@@ -56,12 +56,17 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/super/2023
-    web_count: 0
-    redis_count: 0
-    celery_count: 0
-    rabbitmq_count: 0
+    enable_workers: true
+    web_count: 1
+    web_ram: null
+    web_cpu: null
+    celery_ram: null
+    celery_cpu: null
+    redis_ram: null
+    redis_cpu: null
+    rabbitmq_ram: null
+    rabbitmq_cpu: null
     launch_type: EC2
-    health_url: /
 
   stock2023:
     ubersystem_container: ghcr.io/magfest/magstock:main
