@@ -57,17 +57,17 @@ plugins:
       dealer_payment_due: 2023-06-01
       dealer_reg_deadline: ""  # Disable automatic waitlist
       dealer_waitlist_closed: ""  # If this is enabled, be sure to update the waitlist_closing.txt email
-      band_info_deadline: "" # A/V RFC (deadline not tracked by Reggie)
-      band_stage_plot_deadline: 2023-07-23 # A/V RFC (deadline not tracked by Reggie)
-      band_bio_deadline: 2023-07-09
-      band_panel_deadline: 2023-07-23 # Should be <= panel_app_deadline
-      band_taxes_deadline: 2023-07-30
-      band_badges_deadline: 2023-08-06 # Should be <= placeholder_deadline
+      band_info_deadline: ""
+      band_bio_deadline: 2023-05-26
+      band_panel_deadline: 2023-06-01 # Should be <= panel_app_deadline
+      band_stage_plot_deadline: 2023-06-01 # A/V RFC (deadline not tracked by Reggie)
+      band_taxes_deadline: ""
       band_charity_deadline: "" # No info on any charity auction this year; starting with this off.
-      band_mc_deadline: 2023-08-06
-      band_merch_deadline: 2023-07-30
+      band_merch_deadline: 2023-07-01
+      band_mc_deadline: 2023-07-01
       band_autograph_deadline: ""
-      band_rehearsal_deadline: 2023-08-06
+      band_rehearsal_deadline: 2023-07-01
+      band_badges_deadline: 2023-07-01 # Should be <= placeholder_deadline
       rock_island_deadline: "" # Rock Island not yet confirmed.
 
       # WARNING - everything below this is set to a temporary value just so
