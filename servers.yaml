@@ -42,9 +42,16 @@ staging:
       - uber_config/environments/staging
       - uber_config/events/super/2024/staging
     enable_workers: true
-    layout: single
+    layout: scalable
+    web_count: 5
     web_ram: null
     web_cpu: null
+    celery_ram: null
+    celery_cpu: null
+    redis_ram: null
+    redis_cpu: null
+    rabbitmq_ram: null
+    rabbitmq_cpu: null
     launch_type: EC2
 
 production:
