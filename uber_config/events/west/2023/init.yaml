@@ -208,7 +208,7 @@ plugins:
             Many staffers want to work setup and teardown shifts rather than work during the event. We have 
             more volunteers than we need to do this, so we require DH approval of volunteers who need hotel 
             space for those dates.
-        path: /hotel/requests?department_id={department_id}
+
 
       printed_signs:
         name: Room Signage
