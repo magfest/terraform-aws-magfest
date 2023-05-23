@@ -44,7 +44,7 @@ plugins:
       drop_shifts_deadline: 2023-07-07
       uber_takedown: 2023-08-18
 
-      printed_badge_deadline: 2023-07-15
+      printed_badge_deadline: 2023-05-15
 
       # Dealer registration automatically opens on DEALER_REG_START.  After DEALER_REG_DEADLINE
       # all dealer registration are automatically waitlisted.  After DEALER_REG_SHUTDOWN dealers
