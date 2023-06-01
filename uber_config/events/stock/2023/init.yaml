@@ -140,6 +140,7 @@ plugins:
         gym: Gym
         dininghall: Dining Hall
         publicsafety: Public Safety
+        lockpick: Lockpick Village
 
     dept_head_checklist:
       placeholders:
