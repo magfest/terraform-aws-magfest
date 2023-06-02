@@ -133,6 +133,7 @@ plugins:
         console_attendee: "Consoles (Attendee Tournaments)"
         tabletop_tournaments: "Tabletop"
         mages: "MAGES"
+        variety: "Variety Stage"
 
       food_restriction:
         gluten: No gluten
