@@ -2,7 +2,7 @@ plugins:
   uber:
     url_root: https://west2023.reg.magfest.org/
     shirt_stock: 40
-    supporter_stock: 100
+    supporter_stock: 50
     season_stock: 0
     shared_kickin_stocks: False
     event_year: 2023
