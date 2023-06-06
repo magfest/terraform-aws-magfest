@@ -178,6 +178,21 @@ plugins:
       #  link: ../static_views/super.html
 
     enums:
+      event_location:
+        panels_1: "Panels 1"
+        panels_2: "Panels 2"
+        arcade_tournaments_1: "Arcade (Tournaments 1)"
+        arcade_tournaments_2: "Arcade (Tournaments 2)"
+        concerts: "Concerts"
+        jamspace: "Jam Space"
+        chipspace: "Chipspace"
+        console_tournament: "Consoles (Tournaments)"
+        console_attendee: "Consoles (Attendee Tournaments)"
+        tabletop_tournaments: "Tabletop"
+        mages: "MAGES"
+        variety: "Variety Stage"
+        pool_party: "Pool Party"
+
       guest_merch:
         own_table: "Selling merch"
         
