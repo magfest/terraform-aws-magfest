@@ -14,8 +14,8 @@ plugins:
     shirt_stock: 100
     supporter_stock: 30
     season_stock: 40
-    only_prepay_at_door: false
     untransferable_attrs: ['first_name','last_name','legal_name','email','birthdate','zip_code','international','ec_name','ec_phone','cellphone','interests','age_group','staffing','requested_depts','onsite_contact','no_onsite_contact','license_plate','waiver_consent','waiver_signature','waiver_date','agreed_to_covid_policies','acknowledged_checkin_policy']
+    maps_enabled: False
     
     covid_policies_url: https://magstock.org/covid/
     extra_checkin_docs: " and proof of vaccination (https://magstock.org/covid/)"
