@@ -20,6 +20,7 @@ plugins:
     maps_enabled: false
     maps_dir: /tmp
     blank_staff_badges: 50
+    kiosk_cc_enabled: true
 
     panels_twilio_number: '+12405415595'
     tabletop_twilio_number: '+15713646627'
