@@ -29,7 +29,7 @@ plugins:
     volunteer_agreement_enabled: True
     emergency_procedures_enabled: True
 
-    numbered_badges: True
+    numbered_badges: False
     collect_exact_birthdate: True
     collect_extra_donation: True
     attractions_enabled: False
