@@ -131,6 +131,13 @@ plugins:
         min_age: 5
         max_age: 11
         can_volunteer: False
+        
+    integer_enums:
+      donation_tier:
+        No thanks: 0
+        T-Shirt Bundle: SHIRT_LEVEL
+        Supporter Package: SUPPORTER_LEVEL
+        Jet Tier: SEASON_LEVEL
 
     donation_tier_descriptions:
       no_thanks:
