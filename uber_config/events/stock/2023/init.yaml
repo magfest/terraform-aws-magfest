@@ -9,8 +9,8 @@ plugins:
   uber:
     url_root: https://stock2023.reg.magfest.org/
     event_year: 2023
-    at_the_con: True
-    post_con: False
+    at_the_con: False
+    post_con: True
     shirt_stock: 100
     supporter_stock: 30
     season_stock: 40
