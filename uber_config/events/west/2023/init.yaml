@@ -192,6 +192,9 @@ plugins:
         mages: "MAGES"
         variety: "Variety Stage"
         pool_party: "Pool Party"
+        lan: "LAN"
+        indie_games: "Indie Games"
+        marketplace: "Marketplace"
 
       guest_merch:
         own_table: "Selling merch"
