@@ -224,7 +224,6 @@ plugins:
         deadline: ''
         name: Treasury Information
         description: If you need cash and/or mpoints, tell us your department schedule and your specific cash needs.
-        path: /dept_checklist/treasury?department_id={department_id}
         
       tech_requirements:
         deadline: ''
