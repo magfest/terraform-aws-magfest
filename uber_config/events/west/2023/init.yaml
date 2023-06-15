@@ -195,6 +195,7 @@ plugins:
         lan: "LAN"
         indie_games: "Indie Games"
         marketplace: "Marketplace"
+        meet_greet: "Meet-and-Greet"
 
       guest_merch:
         own_table: "Selling merch"
