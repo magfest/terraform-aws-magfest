@@ -74,6 +74,7 @@ plugins:
       #           that we won't get an exception at import time.
       panels_deadline: 2023-04-30
       panel_app_deadline: 2023-07-23 # Is this actually used?
+      panels_confirm_deadline: ""
       mivs_round_one_deadline: 2023-08-01
       mivs_round_two_start: 2023-08-01
       mivs_round_two_deadline: 2023-08-01
