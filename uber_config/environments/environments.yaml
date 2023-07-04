@@ -41,7 +41,7 @@ plugins:
     marketplace_email_signature: '- MAGFest Marketplace'
 
     panels_email: MAGFest Panels <panels@magfest.org>
-    peglegs_email_signature: '- MAGFest Panels Department'
+    panels_email_signature: '- MAGFest Panels Department'
 
     guest_email: MAGFest Guests <guests@magfest.org>
     guest_email_signature: '- MAGFest Guest Department'
