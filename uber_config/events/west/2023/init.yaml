@@ -11,7 +11,6 @@ plugins:
     at_the_con: False
     post_con: False
     send_sms: False
-    send_emails: False
     emergency_procedures_enabled: True
     
     covid_policies_url: https://www.magwest.org/covid
