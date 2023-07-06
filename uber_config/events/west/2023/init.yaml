@@ -106,7 +106,8 @@ plugins:
       group_discount: 20
       dealer_badge_price: 60
       one_days_enabled: True
-      presell_one_days: False
+      presell_one_days: True
+      default_single_day: 50
 
       single_day:
         Friday: 50
