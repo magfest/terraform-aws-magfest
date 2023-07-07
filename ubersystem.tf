@@ -38,7 +38,7 @@ module "uberserver-ecs" {
     
     web_count               = lookup(each.value, "web_count", 1)
     web_cpu                 = lookup(each.value, "web_cpu", 256)
-    web_ram                 = lookup(each.value, "web_ram", 512)
+    web_ram                 = lookup(each.value, "web_ram", var.layout == "single" ? 1580 : 512)
     celery_count            = lookup(each.value, "celery_count", 1)
     celery_cpu              = lookup(each.value, "celery_cpu", 256)
     celery_ram              = lookup(each.value, "celery_ram", 512)

@@ -67,7 +67,7 @@ locals {
                 "readOnly": false
             }
         ],
-        "memoryReservation": 128
+        "memoryReservation": 512
     }
     container_celery_beat = {
         "logConfiguration": {
@@ -119,7 +119,7 @@ locals {
                 "readOnly": false
             }
         ],
-        "memoryReservation": 128
+        "memoryReservation": 256
     }
     container_celery_worker = {
         "logConfiguration": {
@@ -171,7 +171,7 @@ locals {
                 "readOnly": false
             }
         ],
-        "memoryReservation": 128
+        "memoryReservation": 256
     }
     container_rabbitmq = {
         "logConfiguration": {
@@ -235,7 +235,7 @@ locals {
         "essential": true,
         "name": "redis",
         "mountPoints": [],
-        "memoryReservation": 64
+        "memoryReservation": 128
     }
 }
 
