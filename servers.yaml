@@ -9,14 +9,6 @@ staging:
       - uber_config/events/stock/2023/staging
     enable_workers: true
     layout: scalable
-    web_ram: null
-    web_cpu: null
-    celery_ram: null
-    celery_cpu: null
-    redis_ram: null
-    redis_cpu: null
-    rabbitmq_ram: null
-    rabbitmq_cpu: null
     launch_type: EC2
 
   west:
@@ -29,8 +21,6 @@ staging:
       - uber_config/events/west/2023/staging
     enable_workers: true
     layout: single
-    web_ram: null
-    web_cpu: null
     launch_type: EC2
     
   super:
@@ -43,15 +33,7 @@ staging:
       - uber_config/events/super/2024/staging
     enable_workers: true
     layout: scalable
-    web_count: 5
-    web_ram: null
-    web_cpu: null
-    celery_ram: null
-    celery_cpu: null
-    redis_ram: null
-    redis_cpu: null
-    rabbitmq_ram: null
-    rabbitmq_cpu: null
+    web_count: 1
     launch_type: EC2
 
 production:
@@ -65,14 +47,6 @@ production:
       - uber_config/events/super/2023
     enable_workers: true
     web_count: 1
-    web_ram: null
-    web_cpu: null
-    celery_ram: null
-    celery_cpu: null
-    redis_ram: null
-    redis_cpu: null
-    rabbitmq_ram: null
-    rabbitmq_cpu: null
     launch_type: EC2
 
   stock2023:
@@ -85,14 +59,6 @@ production:
       - uber_config/events/stock/2023
     enable_workers: true
     web_count: 1
-    web_ram: null
-    web_cpu: null
-    celery_ram: null
-    celery_cpu: null
-    redis_ram: null
-    redis_cpu: null
-    rabbitmq_ram: null
-    rabbitmq_cpu: null
     launch_type: EC2
 
   west2023:
@@ -105,14 +71,6 @@ production:
       - uber_config/events/west/2023
     enable_workers: true
     web_count: 1
-    web_ram: null
-    web_cpu: null
-    celery_ram: null
-    celery_cpu: null
-    redis_ram: null
-    redis_cpu: null
-    rabbitmq_ram: null
-    rabbitmq_cpu: null
     launch_type: EC2
 
   super2022:
@@ -125,8 +83,6 @@ production:
       - uber_config/events/super/2022
     enable_workers: false
     layout: single
-    web_ram: null
-    web_cpu: null
     launch_type: EC2
     health_url: /
 
@@ -140,8 +96,6 @@ production:
       - uber_config/events/west/2022
     enable_workers: false
     layout: single
-    web_ram: null
-    web_cpu: null
     launch_type: EC2
     health_url: /
     
@@ -155,8 +109,6 @@ production:
       - uber_config/events/west/2021
     enable_workers: false
     layout: single
-    web_ram: null
-    web_cpu: null
     launch_type: EC2
     health_url: /
 
@@ -170,8 +122,6 @@ production:
       - uber_config/events/super/2020
     enable_workers: false
     layout: single
-    web_ram: null
-    web_cpu: null
     launch_type: EC2
     health_url: /
     
@@ -185,8 +135,6 @@ production:
       - uber_config/events/west/2020
     enable_workers: false
     layout: single
-    web_ram: null
-    web_cpu: null
     launch_type: EC2
     health_url: /
     
@@ -200,8 +148,6 @@ production:
       - uber_config/events/stock/2019
     enable_workers: false
     layout: single
-    web_ram: null
-    web_cpu: null
     launch_type: EC2
     health_url: /
     
@@ -215,7 +161,5 @@ production:
       - uber_config/events/west/2019
     enable_workers: false
     layout: single
-    web_ram: null
-    web_cpu: null
     launch_type: EC2
     health_url: /
