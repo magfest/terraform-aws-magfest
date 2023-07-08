@@ -71,8 +71,9 @@ production:
       - uber_config/events/west/2023
     enable_workers: true
     web_count: 1
-    celery_cpu: 512
+    celery_cpu: 1024
     celery_ram: 512
+    web_cpu: 1024
     launch_type: EC2
 
   super2022:
