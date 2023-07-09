@@ -34,7 +34,7 @@ module "uberserver-ecs" {
     layout                  = lookup(each.value, "layout", "scalable")
     launch_type             = lookup(each.value, "launch_type", null)
     enable_workers          = lookup(each.value, "enable_workers", true)
-    health_url              = lookup(each.value, "health_url", "/uber/devtools/health")
+    health_url              = lookup(each.value, "health_url", "/uber")
     
     web_count               = lookup(each.value, "web_count", 1)
     web_cpu                 = lookup(each.value, "web_cpu", 256)
