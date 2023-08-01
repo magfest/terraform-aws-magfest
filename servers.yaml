@@ -37,6 +37,18 @@ staging:
     launch_type: EC2
 
 production:
+  super2024:
+    ubersystem_container: ghcr.io/magfest/magprime:main
+    hostname: super2024.reg.magfest.org
+    zonename: reg.magfest.org
+    prefix: super24
+    config_paths:
+      - uber_config/environments/prod
+      - uber_config/events/super/2024
+    enable_workers: true
+    web_count: 1
+    launch_type: EC2
+
   super2023:
     ubersystem_container: ghcr.io/magfest/magprime:super2023
     hostname: super2023.reg.magfest.org
