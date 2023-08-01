@@ -28,7 +28,7 @@ resource "aws_security_group" "uber_redis" {
 }
 
 resource "aws_elasticache_subnet_group" "uber_subnets" {
-  name       = "uber_elasticache"
+  name       = "uber"
   subnet_ids = [
     aws_subnet.primary.id,
     aws_subnet.secondary.id
