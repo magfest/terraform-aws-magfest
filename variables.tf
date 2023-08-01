@@ -45,3 +45,8 @@ variable "ssh_key" {
 variable "ssh_users" {
     type    = string
 }
+
+variable "cidr_block" {
+    type    = string
+    default = "10.0.0.0/16"
+}

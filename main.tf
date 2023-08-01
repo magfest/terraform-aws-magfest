@@ -18,7 +18,7 @@ terraform {
 # -------------------------------------------------------------------
 
 resource "aws_vpc" "uber" {
-  cidr_block = "10.0.0.0/16"
+  cidr_block = var.cidr_block
   enable_dns_hostnames = true
   
   tags = {
@@ -32,7 +32,7 @@ resource "aws_vpc" "uber" {
 
 resource "aws_subnet" "primary" {
   vpc_id                  = aws_vpc.uber.id
-  cidr_block              = "10.0.0.0/24"
+  cidr_block              = cidrsubnet(var.cidr_block, 8, 0)
   availability_zone       = "us-east-1c"
   map_public_ip_on_launch = true
 
@@ -43,7 +43,7 @@ resource "aws_subnet" "primary" {
 
 resource "aws_subnet" "secondary" {
   vpc_id                  = aws_vpc.uber.id
-  cidr_block              = "10.0.1.0/24"
+  cidr_block              = cidrsubnet(var.cidr_block, 8, 1)
   availability_zone       = "us-east-1b"
   map_public_ip_on_launch = true
 
