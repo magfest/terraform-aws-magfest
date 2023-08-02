@@ -38,7 +38,7 @@ locals {
             },
             {
                 "name": "BROKER_PROTOCOL",
-                "value": "amqps"
+                "value": "kombu.transport.pyamqp:SSLTransport"
             },
             {
                 "name": "BROKER_PORT",
@@ -110,7 +110,7 @@ locals {
             },
             {
                 "name": "BROKER_PROTOCOL",
-                "value": "amqps"
+                "value": "kombu.transport.pyamqp:SSLTransport"
             },
             {
                 "name": "BROKER_PORT",
@@ -175,7 +175,7 @@ locals {
             },
             {
                 "name": "BROKER_PROTOCOL",
-                "value": "amqps"
+                "value": "kombu.transport.pyamqp:SSLTransport"
             },
             {
                 "name": "BROKER_PORT",
