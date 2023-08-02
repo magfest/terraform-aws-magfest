@@ -37,6 +37,14 @@ locals {
                 "value": "${data.aws_mq_broker.rabbitmq.id}.mq.${var.region}.amazonaws.com"
             },
             {
+                "name": "BROKER_PROTOCOL",
+                "value": "amqps"
+            },
+            {
+                "name": "BROKER_PORT",
+                "value": "5671"
+            },
+            {
                 "name": "BROKER_USER",
                 "value": var.prefix
             },
@@ -101,6 +109,14 @@ locals {
                 "value": "${data.aws_mq_broker.rabbitmq.id}.mq.${var.region}.amazonaws.com"
             },
             {
+                "name": "BROKER_PROTOCOL",
+                "value": "amqps"
+            },
+            {
+                "name": "BROKER_PORT",
+                "value": "5671"
+            },
+            {
                 "name": "BROKER_USER",
                 "value": var.prefix
             },
@@ -156,6 +172,14 @@ locals {
             {
                 "name": "BROKER_HOST",
                 "value": "${data.aws_mq_broker.rabbitmq.id}.mq.${var.region}.amazonaws.com"
+            },
+            {
+                "name": "BROKER_PROTOCOL",
+                "value": "amqps"
+            },
+            {
+                "name": "BROKER_PORT",
+                "value": "5671"
             },
             {
                 "name": "BROKER_USER",
