@@ -14,14 +14,6 @@ variable "uber_web_securitygroups" {
     type    = list(string)
 }
 
-variable "rabbitmq_securitygroups" {
-    type    = list(string)
-}
-
-variable "redis_securitygroups" {
-    type    = list(string)
-}
-
 variable "vpc_id" {
     type    = string
 }
@@ -44,20 +36,10 @@ variable "ubersystem_container" {
     default = "ghcr.io/magfest/magprime:main"
 }
 
-variable "layout" {
-    type    = string
-    default = "scalable"
-}
-
 variable "launch_type" {
     type     = string
     default  = null
     nullable = true
-}
-
-variable "enable_workers" {
-    type    = bool
-    default = true
 }
 
 variable "web_cpu" {
@@ -90,39 +72,6 @@ variable "celery_ram" {
 }
 
 variable "celery_count" {
-  type = number
-  default = 1
-}
-variable "redis_cpu" {
-    type = number
-    default = 256
-    nullable = true
-}
-
-variable "redis_ram" {
-    type = number
-    default = 512
-    nullable = true
-}
-
-variable "redis_count" {
-  type = number
-  default = 1
-}
-
-variable "rabbitmq_cpu" {
-    type = number
-    default = 256
-    nullable = true
-}
-
-variable "rabbitmq_ram" {
-    type = number
-    default = 512
-    nullable = true
-}
-
-variable "rabbitmq_count" {
   type = number
   default = 1
 }
@@ -179,4 +128,20 @@ variable "efs_dir" {
 variable "health_url" {
     type    = string
     default = "/uber/devtools/health"
+}
+
+variable "session_host" {
+    type    = string
+}
+
+variable "broker_endpoint" {
+    type    = string
+}
+
+variable "broker_user" {
+    type    = string
+}
+
+variable "broker_pass" {
+    type    = string
 }

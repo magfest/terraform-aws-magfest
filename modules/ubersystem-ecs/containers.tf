@@ -1,6 +1,4 @@
 locals {
-    session_host = var.layout == "single" ? "redis" : "redis.${var.private_zone}"
-    broker_host = var.layout == "single" ? "rabbitmq" : "rabbitmq.${var.private_zone}"
     container_web = {
         "logConfiguration": {
             "logDriver": "awslogs",
@@ -17,10 +15,6 @@ locals {
                 "containerPort": 8282
             }
         ],
-        "links": var.layout == "single" ? (var.enable_workers ? [
-          "redis",
-          "rabbitmq"
-        ] : ["redis"]) : [],
         "environment": [
             {
                 "name": "CERT_NAME",
@@ -32,11 +26,27 @@ locals {
             },
             {
                 "name": "SESSION_HOST",
-                "value": local.session_host
+                "value": aws_elasticache_cluster.redis.cluster_address
+            },
+            {
+                "name": "SESSION_PREFIX",
+                "value": var.prefix
             },
             {
                 "name": "BROKER_HOST",
-                "value": local.broker_host
+                "value": aws_mq_broker.rabbitmq.instances.0.ip_address
+            },
+            {
+                "name": "BROKER_USER",
+                "value": var.prefix
+            },
+            {
+                "name": "BROKER_PASS",
+                "value": random_password.rabbitmq.result
+            },
+            {
+                "name": "BROKER_VHOST",
+                "value": var.prefix
             },
             {
                 "name": "DB_CONNECTION_STRING",
@@ -79,9 +89,6 @@ locals {
                 "awslogs-create-group": "true"
             }
         },
-        "links": var.layout == "single" ? [
-          "rabbitmq"
-        ] : [],
         "command": [
             "celery-beat"
         ],
@@ -92,7 +99,19 @@ locals {
             },
             {
                 "name": "BROKER_HOST",
-                "value": local.broker_host
+                "value": var.broker_host
+            },
+            {
+                "name": "BROKER_USER",
+                "value": var.broker_user
+            },
+            {
+                "name": "BROKER_PASS",
+                "value": var.broker_pass
+            },
+            {
+                "name": "BROKER_VHOST",
+                "value": var.prefix
             },
             {
                 "name": "UBERSYSTEM_CONFIG_VERSION",
@@ -131,9 +150,6 @@ locals {
                 "awslogs-create-group": "true"
             }
         },
-        "links": var.layout == "single" ? [
-          "rabbitmq"
-        ] : [],
         "environment": [
             {
                 "name": "DB_CONNECTION_STRING",
@@ -173,70 +189,6 @@ locals {
         ],
         "memoryReservation": 256
     }
-    container_rabbitmq = {
-        "logConfiguration": {
-            "logDriver": "awslogs",
-            "options": {
-                "awslogs-group": "/ecs/Ubersystem",
-                "awslogs-region": "us-east-1",
-                "awslogs-stream-prefix": "ecs",
-                "awslogs-create-group": "true"
-            }
-        },
-        "portMappings": [
-            {
-                "protocol": "tcp",
-                "containerPort": 5672
-            }
-        ],
-        "environment": [
-            {
-                "name": "RABBITMQ_DEFAULT_PASS",
-                "value": "celery"
-            },
-            {
-                "name": "RABBITMQ_DEFAULT_USER",
-                "value": "celery"
-            },
-            {
-                "name": "RABBITMQ_DEFAULT_VHOST",
-                "value": "uber"
-            }
-        ],
-        "image": "public.ecr.aws/docker/library/rabbitmq:alpine",
-        "essential": true,
-        "name": "rabbitmq",
-        "mountPoints": [],
-        "memoryReservation": 128
-    }
-    container_redis = {
-        "logConfiguration": {
-            "logDriver": "awslogs",
-            "options": {
-                "awslogs-group": "/ecs/Ubersystem",
-                "awslogs-region": "us-east-1",
-                "awslogs-stream-prefix": "ecs",
-                "awslogs-create-group": "true"
-            }
-        },
-        "portMappings": [
-            {
-                "protocol": "tcp",
-                "containerPort": 6379
-            }
-        ],
-        "environment": [
-            {
-                "name": "ALLOW_EMPTY_PASSWORD",
-                "value": "true"
-            }
-        ],
-        "image": "public.ecr.aws/ubuntu/redis:latest",
-        "essential": true,
-        "name": "redis",
-        "mountPoints": [],
-        "memoryReservation": 128
-    }
 }
 
 resource "aws_secretsmanager_secret" "uber_config" {
@@ -254,7 +206,6 @@ resource "aws_secretsmanager_secret_version" "current_config" {
 # -------------------------------------------------------------------
 
 resource "aws_ecs_service" "ubersystem_web" {
-  count = 1
   name                   = "${var.prefix}_ubersystem_web"
   cluster                = var.ecs_cluster
   task_definition        = aws_ecs_task_definition.ubersystem_web.arn
@@ -271,19 +222,11 @@ resource "aws_ecs_service" "ubersystem_web" {
 
 resource "aws_ecs_task_definition" "ubersystem_web" {
   family                    = "${var.prefix}_ubersystem_web"
-  # There has to be a cleaner way to do this, but I don't really understand how types work here.
-  # Only deploy web/redis unless enable_workers is true
-  container_definitions     = jsonencode(slice(
+  container_definitions     = jsonencode(
     [
-      local.container_web,
-      local.container_redis,
-      local.container_rabbitmq,
-      local.container_celery_beat,
-      local.container_celery_worker
-    ],
-    0,
-    var.layout == "single" ? (var.enable_workers ? 5 : 2) : 1
-  ))
+      local.container_web
+    ]
+  )
 
   volume {
     name = "static"
@@ -309,22 +252,55 @@ resource "aws_ecs_task_definition" "ubersystem_web" {
 # MAGFest Ubersystem Containers (celery)
 # -------------------------------------------------------------------
 
-resource "aws_ecs_service" "ubersystem_celery" {
-  count = var.layout == "scalable" && var.enable_workers ? 1 : 0
-  name                   = "${var.prefix}_ubersystem_celery"
+resource "aws_ecs_service" "ubersystem_celery_beat" {
+  name                   = "${var.prefix}_ubersystem_celery_beat"
   cluster                = var.ecs_cluster
-  task_definition        = aws_ecs_task_definition.ubersystem_celery[count.index].arn
+  task_definition        = aws_ecs_task_definition.ubersystem_celery_beat.arn
+  desired_count          = 1
+  enable_execute_command = true
+  launch_type            = var.launch_type
+}
+
+resource "aws_ecs_task_definition" "ubersystem_celery_beat" {
+  family                    = "${var.prefix}_ubersystem_celery_beat"
+  container_definitions     = jsonencode(
+    [
+      local.container_celery_beat
+    ]
+  )
+
+  volume {
+    name = "static"
+
+    efs_volume_configuration {
+      file_system_id          = var.efs_id
+      transit_encryption      = "ENABLED"
+      authorization_config {
+        access_point_id = aws_efs_access_point.uber.id
+      }
+    }
+  }
+
+  cpu                       = var.celery_cpu
+  memory                    = var.celery_ram
+  network_mode              = "bridge"
+  execution_role_arn        = var.ecs_task_role
+  task_role_arn             = var.ecs_task_role
+}
+
+resource "aws_ecs_service" "ubersystem_celery_worker" {
+  name                   = "${var.prefix}_ubersystem_celery_worker"
+  cluster                = var.ecs_cluster
+  task_definition        = aws_ecs_task_definition.ubersystem_celery_worker.arn
   desired_count          = var.celery_count
   enable_execute_command = true
   launch_type            = var.launch_type
 }
 
-resource "aws_ecs_task_definition" "ubersystem_celery" {
-  count = var.layout == "scalable" && var.enable_workers ? 1 : 0
-  family                    = "${var.prefix}_ubersystem_celery"
+resource "aws_ecs_task_definition" "ubersystem_celery_worker" {
+  family                    = "${var.prefix}_ubersystem_celery_worker"
   container_definitions     = jsonencode(
     [
-      local.container_celery_beat,
       local.container_celery_worker
     ]
   )
@@ -346,92 +322,4 @@ resource "aws_ecs_task_definition" "ubersystem_celery" {
   network_mode              = "bridge"
   execution_role_arn        = var.ecs_task_role
   task_role_arn             = var.ecs_task_role
-
-  depends_on = [
-    aws_service_discovery_service.rabbitmq
-  ]
-}
-
-
-# -------------------------------------------------------------------
-# MAGFest Ubersystem Supporting Services (RabbitMQ)
-# -------------------------------------------------------------------
-
-
-resource "aws_ecs_service" "rabbitmq" {
-  count = var.layout == "scalable" ? 1 : 0
-  name                   = "${var.prefix}_rabbitmq"
-  cluster                = var.ecs_cluster
-  task_definition        = aws_ecs_task_definition.rabbitmq[count.index].arn
-  desired_count          = var.rabbitmq_count
-  enable_execute_command = true
-  launch_type            = var.launch_type
-
-  service_registries {
-    registry_arn = aws_service_discovery_service.rabbitmq.arn
-    container_name = "rabbitmq"
-    container_port = 5672
-  }
-}
-
-resource "aws_ecs_task_definition" "rabbitmq" {
-  count = var.layout == "scalable" ? 1 : 0
-  family                    = "${var.prefix}_rabbitmq"
-  container_definitions     = jsonencode(
-    [
-      local.container_rabbitmq
-    ]
-  )
-
-  cpu                       = var.rabbitmq_cpu
-  memory                    = var.rabbitmq_ram
-  network_mode              = "bridge"
-  execution_role_arn        = var.ecs_task_role
-
-  task_role_arn = var.ecs_task_role
-
-  depends_on = [
-    aws_service_discovery_service.rabbitmq
-  ]
-}
-
-# -------------------------------------------------------------------
-# MAGFest Ubersystem Supporting Services (Redis)
-# -------------------------------------------------------------------
-
-resource "aws_ecs_service" "redis" {
-  count = var.layout == "scalable" ? 1 : 0
-  name                   = "${var.prefix}_redis"
-  cluster                = var.ecs_cluster
-  task_definition        = aws_ecs_task_definition.redis[count.index].arn
-  desired_count          = var.redis_count
-  enable_execute_command = true
-  launch_type            = var.launch_type
-  
-  service_registries {
-    registry_arn = aws_service_discovery_service.redis.arn
-    container_name = "redis"
-    container_port = 6379
-  }
-}
-
-resource "aws_ecs_task_definition" "redis" {
-  count = var.layout == "scalable" ? 1 : 0
-  family                    = "${var.prefix}_redis"
-  container_definitions     = jsonencode(
-    [
-      local.container_redis
-    ]
-  )
-
-  cpu                       = var.redis_cpu
-  memory                    = var.redis_ram
-  network_mode              = "bridge"
-  execution_role_arn        = var.ecs_task_role
-
-  task_role_arn = "${var.ecs_task_role}"
-
-  depends_on = [
-    aws_service_discovery_service.redis
-  ]
 }

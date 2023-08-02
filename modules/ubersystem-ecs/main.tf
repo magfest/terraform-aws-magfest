@@ -10,6 +10,10 @@ terraform {
     curl = {
       source = "marcofranssen/curl"
     }
+    rabbitmq = {
+      source = "cyrilgdn/rabbitmq"
+      version = "1.8.0"
+    }
   }
 }
 
@@ -25,6 +29,14 @@ data "aws_route53_zone" "uber" {
   name = var.zonename
   private_zone = false
 }
+
+data "aws_elasticache_cluster" "redis" {
+  cluster_id = var.elasticache_id
+}
+
+data "aws_mq_broker" "rabbitmq" {
+  broker_id = var.rabbitmq_id
+} 
 
 module "uber_image" {
   source = "./modules/docker-resolve"
@@ -121,56 +133,6 @@ resource "aws_lb_listener_rule" "uber_http" {
 }
 
 # -------------------------------------------------------------------
-# DNS Service Discovery
-# -------------------------------------------------------------------
-
-resource "aws_service_discovery_private_dns_namespace" "uber" {
-  name        = var.private_zone
-  description = "Uber Internal Services (${var.hostname})"
-  vpc         = data.aws_vpc.uber.id
-}
-
-resource "aws_service_discovery_service" "redis" {
-  name          = "redis"
-  force_destroy = true
-
-  dns_config {
-    namespace_id = aws_service_discovery_private_dns_namespace.uber.id
-
-    dns_records {
-      ttl  = 10
-      type = "SRV"
-    }
-
-    routing_policy = "MULTIVALUE"
-  }
-
-  health_check_custom_config {
-    failure_threshold = 1
-  }
-}
-
-resource "aws_service_discovery_service" "rabbitmq" {
-  name          = "rabbitmq"
-  force_destroy = true
-
-  dns_config {
-    namespace_id = aws_service_discovery_private_dns_namespace.uber.id
-
-    dns_records {
-      ttl  = 10
-      type = "SRV"
-    }
-
-    routing_policy = "MULTIVALUE"
-  }
-
-  health_check_custom_config {
-    failure_threshold = 1
-  }
-}
-
-# -------------------------------------------------------------------
 # Database
 # -------------------------------------------------------------------
 
@@ -211,6 +173,18 @@ resource "postgresql_role" "uber" {
   password         = aws_secretsmanager_secret_version.password.secret_string
 }
 
+resource "postgresql_grant" "uber_allow" {
+  database    = var.uber_db_name
+  role        = var.uber_db_username
+  schema      = "public"
+  object_type = "database"
+  privileges  = [
+   "SELECT", "INSERT", "UPDATE", "DELETE", "TRUNCATE",
+   "REFERENCES", "TRIGGER", "CREATE", "CONNECT",
+   "TEMPORARY", "EXECUTE", "USAGE"
+  ]
+}
+
 # -------------------------------------------------------------------
 # EFS Filesystem
 # -------------------------------------------------------------------
@@ -239,4 +213,52 @@ resource "aws_efs_access_point" "uber" {
 resource "aws_secretsmanager_secret" "uber_secret" {
   name = "${var.prefix}-uber-secrets"
   recovery_window_in_days = 0
+}
+
+# -------------------------------------------------------------------
+# RabbitMQ
+# -------------------------------------------------------------------
+
+provider "rabbitmq" {
+  endpoint = aws_mq_broker.rabbitmq.instances.0.endpoints.0
+  username = var.broker_user
+  password = var.broker_pass
+}
+
+resource "rabbitmq_vhost" "uber_vhost" {
+  name = var.prefix
+}
+
+resource "random_password" "rabbitmq" {
+  length            = 40
+  special           = false
+  keepers           = {
+    pass_version  = 2
+  }
+}
+
+resource "aws_secretsmanager_secret" "rabbitmq_password" {
+  name = "${var.prefix}-rabbitmq-passwd"
+  recovery_window_in_days = 0
+}
+
+resource "aws_secretsmanager_secret_version" "rabbitmq_password" {
+  secret_id = aws_secretsmanager_secret.rabbitmq_password.id
+  secret_string = random_password.rabbitmq.result
+}
+
+resource "rabbitmq_user" "uber_user" {
+  name     = var.prefix
+  password = random_password.rabbitmq.result
+}
+
+resource "rabbitmq_permissions" "uber_permissions" {
+  user  = "${rabbitmq_user.uber_user.name}"
+  vhost = "${rabbitmq_vhost.uber_vhost.name}"
+
+  permissions {
+    configure = ".*"
+    write     = ".*"
+    read      = ".*"
+  }
 }
