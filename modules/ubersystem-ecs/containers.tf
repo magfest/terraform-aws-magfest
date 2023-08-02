@@ -25,8 +25,12 @@ locals {
                 "value": var.hostname
             },
             {
-                "name": "SESSION_HOST",
+                "name": "TESTING",
                 "value": "${data.aws_elasticache_cluster.redis.cluster_address}"
+            },
+            {
+                "name": "SESSION_HOST",
+                "value": "notredis"
             },
             {
                 "name": "SESSION_PREFIX",
