@@ -26,7 +26,7 @@ locals {
             },
             {
                 "name": "SESSION_HOST",
-                "value": data.aws_elasticache_cluster.redis.cluster_address
+                "value": "${data.aws_elasticache_cluster.redis.cluster_address}"
             },
             {
                 "name": "SESSION_PREFIX",
@@ -34,7 +34,7 @@ locals {
             },
             {
                 "name": "BROKER_HOST",
-                "value": data.aws_mq_broker.rabbitmq.instances.0.ip_address
+                "value": "${data.aws_mq_broker.rabbitmq.instances.0.ip_address}"
             },
             {
                 "name": "BROKER_USER",
