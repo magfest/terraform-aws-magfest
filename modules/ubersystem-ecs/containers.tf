@@ -38,7 +38,7 @@ locals {
             },
             {
                 "name": "BROKER_PROTOCOL",
-                "value": "amqp"
+                "value": "amqps"
             },
             {
                 "name": "BROKER_PORT",
