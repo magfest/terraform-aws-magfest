@@ -35,6 +35,7 @@ module "uberserver-ecs" {
     health_url              = lookup(each.value, "health_url", "/uber")
     elasticache_id          = aws_elasticache_cluster.uber_redis.id
     rabbitmq_id             = aws_mq_broker.rabbitmq.id
+    region                  = var.region
 
     web_count               = lookup(each.value, "web_count", 1)
     web_cpu                 = lookup(each.value, "web_cpu", 256)

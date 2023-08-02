@@ -137,3 +137,7 @@ variable "elasticache_id" {
 variable "rabbitmq_id" {
     type    = string
 }
+
+variable "region" {
+    type    = string
+}

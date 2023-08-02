@@ -4,7 +4,7 @@ locals {
             "logDriver": "awslogs",
             "options": {
                 "awslogs-group": "/ecs/Ubersystem",
-                "awslogs-region": "us-east-1",
+                "awslogs-region": "${var.region}",
                 "awslogs-stream-prefix": "ecs",
                 "awslogs-create-group": "true"
             }
@@ -26,7 +26,7 @@ locals {
             },
             {
                 "name": "TESTING",
-                "value": "${data.aws_elasticache_cluster.redis.cluster_address}"
+                "value": "${data.aws_elasticache_cluster.redis.cache_nodes.0.address}"
             },
             {
                 "name": "SESSION_HOST",
@@ -38,7 +38,7 @@ locals {
             },
             {
                 "name": "BROKER_HOST",
-                "value": "${data.aws_mq_broker.rabbitmq.instances.0.ip_address}"
+                "value": "${data.aws_mq_broker.rabbitmq.id}.mq.${var.region}.amazonaws.com"
             },
             {
                 "name": "BROKER_USER",
@@ -88,7 +88,7 @@ locals {
             "logDriver": "awslogs",
             "options": {
                 "awslogs-group": "/ecs/Ubersystem",
-                "awslogs-region": "us-east-1",
+                "awslogs-region": "${var.region}",
                 "awslogs-stream-prefix": "ecs",
                 "awslogs-create-group": "true"
             }
@@ -149,7 +149,7 @@ locals {
             "logDriver": "awslogs",
             "options": {
                 "awslogs-group": "/ecs/Ubersystem",
-                "awslogs-region": "us-east-1",
+                "awslogs-region": "${var.region}",
                 "awslogs-stream-prefix": "ecs",
                 "awslogs-create-group": "true"
             }
