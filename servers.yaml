@@ -7,7 +7,6 @@ staging:
     config_paths:
       - uber_config/environments/staging
       - uber_config/events/stock/2023/staging
-    launch_type: EC2
 
   west:
     ubersystem_container: ghcr.io/magfest/magwest:main
@@ -17,17 +16,15 @@ staging:
     config_paths:
       - uber_config/environments/staging
       - uber_config/events/west/2023/staging
-    launch_type: EC2
     
   super:
-    ubersystem_container: ghcr.io/magfest/ubersystem:config_update
+    ubersystem_container: ghcr.io/magfest/magprime:main
     hostname: super.dev.magevent.net
     zonename: dev.magevent.net
     prefix: super-staging
     config_paths:
       - uber_config/environments/staging
       - uber_config/events/super/2024/staging
-    launch_type: EC2
 
 production:
   super2024:
@@ -38,9 +35,6 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/super/2024
-    enable_workers: true
-    web_count: 1
-    launch_type: EC2
 
   super2023:
     ubersystem_container: ghcr.io/magfest/magprime:super2023
@@ -50,9 +44,6 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/super/2023
-    enable_workers: true
-    web_count: 1
-    launch_type: EC2
 
   stock2023:
     ubersystem_container: ghcr.io/magfest/magstock:stock2023
@@ -62,9 +53,6 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/stock/2023
-    enable_workers: true
-    web_count: 1
-    launch_type: EC2
 
   west2023:
     ubersystem_container: ghcr.io/magfest/magwest:west2023
@@ -74,12 +62,6 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/west/2023
-    enable_workers: true
-    web_count: 1
-    celery_cpu: 1024
-    celery_ram: 512
-    web_cpu: 1024
-    launch_type: EC2
 
   super2022:
     ubersystem_container: ghcr.io/magfest/magprime:super2022
@@ -89,10 +71,6 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/super/2022
-    enable_workers: false
-    layout: single
-    launch_type: EC2
-    health_url: /
 
   west2022:
     ubersystem_container: ghcr.io/magfest/magwest:west2022
@@ -102,10 +80,6 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/west/2022
-    enable_workers: false
-    layout: single
-    launch_type: EC2
-    health_url: /
     
   west2021:
     ubersystem_container: ghcr.io/magfest/magwest:west2021
@@ -115,10 +89,6 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/west/2021
-    enable_workers: false
-    layout: single
-    launch_type: EC2
-    health_url: /
 
   super2020:
     ubersystem_container: ghcr.io/magfest/magprime:super2020_migrated
@@ -128,10 +98,6 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/super/2020
-    enable_workers: false
-    layout: single
-    launch_type: EC2
-    health_url: /
     
   west2020:
     ubersystem_container: ghcr.io/magfest/magwest:west2020
@@ -141,10 +107,6 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/west/2020
-    enable_workers: false
-    layout: single
-    launch_type: EC2
-    health_url: /
     
   stock2019:
     ubersystem_container: ghcr.io/magfest/magstock:stock2019
@@ -154,10 +116,6 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/stock/2019
-    enable_workers: false
-    layout: single
-    launch_type: EC2
-    health_url: /
     
   west2019:
     ubersystem_container: ghcr.io/magfest/magwest:west2019
@@ -167,7 +125,3 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/west/2019
-    enable_workers: false
-    layout: single
-    launch_type: EC2
-    health_url: /

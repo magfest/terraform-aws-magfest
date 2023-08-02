@@ -36,12 +36,6 @@ variable "ubersystem_container" {
     default = "ghcr.io/magfest/magprime:main"
 }
 
-variable "launch_type" {
-    type     = string
-    default  = null
-    nullable = true
-}
-
 variable "web_cpu" {
     type = number
     default = 256

@@ -244,7 +244,7 @@ resource "aws_ecs_service" "ubersystem_web" {
   task_definition        = aws_ecs_task_definition.ubersystem_web.arn
   desired_count          = var.web_count
   enable_execute_command = true
-  launch_type            = var.launch_type
+  launch_type            = "EC2"
 
   load_balancer {
     target_group_arn = aws_lb_target_group.ubersystem_http.arn
@@ -291,7 +291,7 @@ resource "aws_ecs_service" "ubersystem_celery_beat" {
   task_definition        = aws_ecs_task_definition.ubersystem_celery_beat.arn
   desired_count          = 1
   enable_execute_command = true
-  launch_type            = var.launch_type
+  launch_type            = "EC2"
 }
 
 resource "aws_ecs_task_definition" "ubersystem_celery_beat" {
@@ -327,7 +327,7 @@ resource "aws_ecs_service" "ubersystem_celery_worker" {
   task_definition        = aws_ecs_task_definition.ubersystem_celery_worker.arn
   desired_count          = var.celery_count
   enable_execute_command = true
-  launch_type            = var.launch_type
+  launch_type            = "EC2"
 }
 
 resource "aws_ecs_task_definition" "ubersystem_celery_worker" {

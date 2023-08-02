@@ -31,7 +31,6 @@ module "uberserver-ecs" {
     efs_dir                 = lookup(each.value, "efs_dir", join("", ["/", each.key]))
     uber_db_name            = lookup(each.value, "uber_db_name", each.key)
     uber_db_username        = lookup(each.value, "uber_db_username", each.key)
-    launch_type             = lookup(each.value, "launch_type", null)
     health_url              = lookup(each.value, "health_url", "/uber")
     elasticache_id          = aws_elasticache_cluster.uber_redis.id
     rabbitmq_id             = aws_mq_broker.rabbitmq.id
