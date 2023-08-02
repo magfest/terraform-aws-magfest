@@ -179,9 +179,7 @@ resource "postgresql_grant" "uber_allow" {
   schema      = "public"
   object_type = "database"
   privileges  = [
-   "SELECT", "INSERT", "UPDATE", "DELETE", "TRUNCATE",
-   "REFERENCES", "TRIGGER", "CREATE", "CONNECT",
-   "TEMPORARY", "EXECUTE", "USAGE"
+   "CREATE", "USAGE"
   ]
 }
 
