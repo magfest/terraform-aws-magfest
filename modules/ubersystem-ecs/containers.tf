@@ -293,8 +293,8 @@ resource "aws_ecs_task_definition" "ubersystem_celery_beat" {
     }
   }
 
-  cpu                       = var.celery_cpu
-  memory                    = var.celery_ram
+  cpu                       = var.celery_beat_cpu
+  memory                    = var.celery_beat_ram
   network_mode              = "bridge"
   execution_role_arn        = var.ecs_task_role
   task_role_arn             = var.ecs_task_role

@@ -61,13 +61,25 @@ variable "web_count" {
 
 variable "celery_cpu" {
     type = number
-    default = 256
+    default = 128
     nullable = true
 }
 
 variable "celery_ram" {
     type = number
-    default = 512
+    default = 256
+    nullable = true
+}
+
+variable "celery_beat_cpu" {
+    type = number
+    default = 128
+    nullable = true
+}
+
+variable "celery_beat_ram" {
+    type = number
+    default = 128
     nullable = true
 }
 
