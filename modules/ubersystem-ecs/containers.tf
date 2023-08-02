@@ -26,7 +26,7 @@ locals {
             },
             {
                 "name": "SESSION_HOST",
-                "value": aws_elasticache_cluster.redis.cluster_address
+                "value": data.aws_elasticache_cluster.redis.cluster_address
             },
             {
                 "name": "SESSION_PREFIX",
@@ -99,15 +99,15 @@ locals {
             },
             {
                 "name": "BROKER_HOST",
-                "value": var.broker_host
+                "value": data.aws_mq_broker.rabbitmq.instances.0.ip_address
             },
             {
                 "name": "BROKER_USER",
-                "value": var.broker_user
+                "value": var.prefix
             },
             {
                 "name": "BROKER_PASS",
-                "value": var.broker_pass
+                "value": random_password.rabbitmq.result
             },
             {
                 "name": "BROKER_VHOST",
@@ -157,7 +157,19 @@ locals {
             },
             {
                 "name": "BROKER_HOST",
-                "value": local.broker_host
+                "value": data.aws_mq_broker.rabbitmq.instances.0.ip_address
+            },
+            {
+                "name": "BROKER_USER",
+                "value": var.prefix
+            },
+            {
+                "name": "BROKER_PASS",
+                "value": random_password.rabbitmq.result
+            },
+            {
+                "name": "BROKER_VHOST",
+                "value": var.prefix
             },
             {
                 "name": "UBERSYSTEM_CONFIG_VERSION",
