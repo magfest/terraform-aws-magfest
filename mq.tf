@@ -62,7 +62,7 @@ resource "aws_secretsmanager_secret_version" "rabbitmq_password" {
 }
 
 provider "rabbitmq" {
-  endpoint = aws_mq_broker.rabbitmq.instances.0.endpoints.0
+  endpoint = aws_mq_broker.rabbitmq.instances.0.console_url
   username = "admin"
   password = random_password.rabbitmq.result
 }
