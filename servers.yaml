@@ -24,7 +24,7 @@ staging:
     launch_type: EC2
     
   super:
-    ubersystem_container: ghcr.io/magfest/magprime:main
+    ubersystem_container: ghcr.io/magfest/ubersystem:config_update
     hostname: super.dev.magevent.net
     zonename: dev.magevent.net
     prefix: super-staging
