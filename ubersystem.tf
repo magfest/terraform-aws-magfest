@@ -52,12 +52,6 @@ module "uberserver-ecs" {
     uber_web_securitygroups = [
         aws_security_group.uber_backend.id
     ]
-    rabbitmq_securitygroups = [
-        aws_security_group.uber_rabbitmq.id
-    ]
-    redis_securitygroups    = [
-        aws_security_group.uber_redis.id
-    ]
     vpc_id                  = aws_vpc.uber.id
     loadbalancer_arn        = aws_lb.ubersystem.arn
     loadbalancer_dns_name   = aws_lb.ubersystem.dns_name
