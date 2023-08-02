@@ -76,8 +76,7 @@ locals {
                 "containerPath": "/app/plugins/uber/uploaded_files",
                 "readOnly": false
             }
-        ],
-        "memoryReservation": 512
+        ]
     }
     container_celery_beat = {
         "logConfiguration": {
@@ -137,8 +136,7 @@ locals {
                 "containerPath": "/app/plugins/uber/uploaded_files",
                 "readOnly": false
             }
-        ],
-        "memoryReservation": 256
+        ]
     }
     container_celery_worker = {
         "logConfiguration": {
@@ -198,8 +196,7 @@ locals {
                 "containerPath": "/app/plugins/uber/uploaded_files",
                 "readOnly": false
             }
-        ],
-        "memoryReservation": 256
+        ]
     }
 }
 
