@@ -173,11 +173,21 @@ resource "postgresql_role" "uber" {
   password         = aws_secretsmanager_secret_version.password.secret_string
 }
 
-resource "postgresql_grant" "uber_allow" {
+resource "postgresql_grant" "uber_allow_db" {
   database    = var.uber_db_name
   role        = var.uber_db_username
   schema      = "public"
   object_type = "database"
+  privileges  = [
+   "CREATE", "CONNECT"
+  ]
+}
+
+resource "postgresql_grant" "uber_allow_schema" {
+  database    = var.uber_db_name
+  role        = var.uber_db_username
+  schema      = "public"
+  object_type = "schema"
   privileges  = [
    "CREATE", "USAGE"
   ]
