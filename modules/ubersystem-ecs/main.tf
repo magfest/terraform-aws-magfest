@@ -174,14 +174,9 @@ resource "postgresql_role" "uber" {
 }
 
 resource "postgresql_schema" "uber_schema" {
-  name  = var.uber_db_username
-  owner = var.uber_db_username
-
-  policy {
-    create = true
-    usage  = true
-    role   = var.uber_db_username
-  }
+  name     = "public"
+  database = var.uber_db_name
+  owner    = var.uber_db_username
 }
 
 # -------------------------------------------------------------------
