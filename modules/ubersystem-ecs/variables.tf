@@ -130,18 +130,10 @@ variable "health_url" {
     default = "/uber/devtools/health"
 }
 
-variable "session_host" {
+variable "elasticache_id" {
     type    = string
 }
 
-variable "broker_endpoint" {
-    type    = string
-}
-
-variable "broker_user" {
-    type    = string
-}
-
-variable "broker_pass" {
+variable "rabbitmq_id" {
     type    = string
 }

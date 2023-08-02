@@ -59,3 +59,9 @@ resource "aws_secretsmanager_secret_version" "rabbitmq_password" {
   secret_id = aws_secretsmanager_secret.rabbitmq_password.id
   secret_string = random_password.rabbitmq.result
 }
+
+provider "rabbitmq" {
+  endpoint = aws_mq_broker.rabbitmq.instances.0.endpoints.0
+  username = "admin"
+  password = random_password.rabbitmq.result
+}

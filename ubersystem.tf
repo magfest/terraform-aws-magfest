@@ -31,23 +31,17 @@ module "uberserver-ecs" {
     efs_dir                 = lookup(each.value, "efs_dir", join("", ["/", each.key]))
     uber_db_name            = lookup(each.value, "uber_db_name", each.key)
     uber_db_username        = lookup(each.value, "uber_db_username", each.key)
-    layout                  = lookup(each.value, "layout", "scalable")
     launch_type             = lookup(each.value, "launch_type", null)
-    enable_workers          = lookup(each.value, "enable_workers", true)
     health_url              = lookup(each.value, "health_url", "/uber")
-    
+    elasticache_id          = aws_elasticache_cluster.uber_redis.id
+    rabbitmq_id             = aws_mq_broker.rabbitmq.id
+
     web_count               = lookup(each.value, "web_count", 1)
     web_cpu                 = lookup(each.value, "web_cpu", 256)
     web_ram                 = lookup(each.value, "web_ram", lookup(each.value, "layout", "scalable") == "single" ? 1580 : 512)
     celery_count            = lookup(each.value, "celery_count", 1)
     celery_cpu              = lookup(each.value, "celery_cpu", 256)
     celery_ram              = lookup(each.value, "celery_ram", 512)
-    redis_count             = lookup(each.value, "redis_count", 1)
-    redis_cpu               = lookup(each.value, "redis_cpu", 256)
-    redis_ram               = lookup(each.value, "redis_ram", 512)
-    rabbitmq_count          = lookup(each.value, "rabbitmq_count", 1)
-    rabbitmq_cpu            = lookup(each.value, "rabbitmq_cpu", 256)
-    rabbitmq_ram            = lookup(each.value, "rabbitmq_ram", 512)
 
     ecs_cluster             = aws_ecs_cluster.uber.arn
     ecs_task_role           = aws_iam_role.task_role.arn

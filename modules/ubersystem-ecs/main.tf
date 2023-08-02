@@ -219,12 +219,6 @@ resource "aws_secretsmanager_secret" "uber_secret" {
 # RabbitMQ
 # -------------------------------------------------------------------
 
-provider "rabbitmq" {
-  endpoint = aws_mq_broker.rabbitmq.instances.0.endpoints.0
-  username = var.broker_user
-  password = var.broker_pass
-}
-
 resource "rabbitmq_vhost" "uber_vhost" {
   name = var.prefix
 }
