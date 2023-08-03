@@ -1,5 +1,7 @@
 plugins:
   uber:
+    sentry:
+      environment: west2023
     url_root: https://west2023.reg.magfest.org/
     shirt_stock: 40
     supporter_stock: 50

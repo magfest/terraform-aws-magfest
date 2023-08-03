@@ -1,5 +1,7 @@
 plugins:
   uber:
+    sentry:
+      environment: super2024
     api_enabled: true
     url_root: https://super2024.reg.magfest.org/
     app_limit: 0

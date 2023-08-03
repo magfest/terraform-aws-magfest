@@ -7,6 +7,8 @@ plugins:
         half: 6
 
   uber:
+    sentry:
+      environment: stock2023
     url_root: https://stock2023.reg.magfest.org/
     event_year: 2023
     at_the_con: False

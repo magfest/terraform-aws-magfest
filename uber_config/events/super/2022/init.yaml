@@ -1,5 +1,7 @@
 plugins:
   uber:
+    sentry:
+      environment: super2022
     url_root: https://super2022.reg.magfest.org/
     app_limit: 0
     shirt_stock: 950
