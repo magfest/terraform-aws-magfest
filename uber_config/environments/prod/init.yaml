@@ -7,3 +7,4 @@ plugins:
     sentry:
       enabled: True
       dsn: https://0872645099aa40e67a4f3e7588ae5fe4@o4505507811295232.ingest.sentry.io/4505634233516032
+      release: prod
