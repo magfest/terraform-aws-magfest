@@ -158,6 +158,16 @@ locals {
     }
     container_celery_worker = {
         "cpu": var.celery_cpu,
+        "healthCheck": {
+          "retries": 3,
+          "command": [
+            "CMD-SHELL",
+            "/app/env/bin/celery -b amqps://${var.prefix}:${random_password.rabbitmq.result}@${data.aws_mq_broker.rabbitmq.id}.mq.${var.region}.amazonaws.com:5671/${var.prefix} inspect ping -d celery@$(cat /etc/hostname)"
+          ],
+          "timeout": 5,
+          "interval": 30,
+          "startPeriod": 30
+        },
         "logConfiguration": {
             "logDriver": "awslogs",
             "options": {
