@@ -1,5 +1,5 @@
 sideboard:
-  "/":
+  cherrypy:
     tools:
       sentry_end_transaction:
         on: True
