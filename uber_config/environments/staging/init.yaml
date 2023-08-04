@@ -3,6 +3,11 @@ plugins:
     send_emails: True
     dev_box: True
 
+    sentry:
+      enabled: True
+      dsn: https://0872645099aa40e67a4f3e7588ae5fe4@o4505507811295232.ingest.sentry.io/4505634233516032
+      release: staging
+
     secret:
       stripe_secret_key: 'sk_test_QHnlImUs68dQFxgTfVauz5Ue'
       stripe_public_key: 'pk_test_q4kSJVwk6LXKv2ahxuVn7VOK'
