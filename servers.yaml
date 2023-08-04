@@ -7,6 +7,7 @@ staging:
     config_paths:
       - uber_config/environments/staging
       - uber_config/events/super/2024/staging
+    web_cpu: 768
 
 production:
   super2024:
