@@ -82,6 +82,11 @@ variable "celery_count" {
   default = 1
 }
 
+variable "enable_celery" {
+    type    = bool
+    default = true
+}
+
 variable "loadbalancer_arn" {
     type    = string
 }

@@ -55,6 +55,7 @@ production:
       - uber_config/environments/prod
       - uber_config/events/super/2022
     health_url: /uber
+    enable_celery: false
 
   west2022:
     ubersystem_container: ghcr.io/magfest/magwest:west2022
@@ -65,3 +66,4 @@ production:
       - uber_config/environments/prod
       - uber_config/events/west/2022
     health_url: /uber
+    enable_celery: false

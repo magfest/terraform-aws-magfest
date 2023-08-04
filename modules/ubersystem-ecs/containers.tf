@@ -298,6 +298,7 @@ resource "aws_ecs_task_definition" "ubersystem_web" {
 # -------------------------------------------------------------------
 
 resource "aws_ecs_service" "ubersystem_celery_beat" {
+  count = var.enable_celery ? 1 : 0
   name                   = "${var.prefix}_ubersystem_celery_beat"
   cluster                = var.ecs_cluster
   task_definition        = aws_ecs_task_definition.ubersystem_celery_beat.arn
@@ -333,6 +334,7 @@ resource "aws_ecs_task_definition" "ubersystem_celery_beat" {
 }
 
 resource "aws_ecs_service" "ubersystem_celery_worker" {
+  count = var.enable_celery ? 1 : 0
   name                   = "${var.prefix}_ubersystem_celery_worker"
   cluster                = var.ecs_cluster
   task_definition        = aws_ecs_task_definition.ubersystem_celery_worker.arn
