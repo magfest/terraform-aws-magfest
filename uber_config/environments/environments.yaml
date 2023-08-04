@@ -1,6 +1,7 @@
 cherrypy:
   server:
     socket_timeout: 75
+    thread_pool: 10
 
 plugins:
   uber:
@@ -8,7 +9,7 @@ plugins:
     api_enabled: true
 
     sqlalchemy_pool_size: 5
-    sqlalchemy_max_overflow: 10
+    sqlalchemy_max_overflow: 0
 
     code_of_conduct_url: 'http://super.magfest.org/codeofconduct'
     consent_form_url: 'http://super.magfest.org/parentalconsentform'
