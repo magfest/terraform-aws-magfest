@@ -44,7 +44,7 @@ variable "web_cpu" {
 
 variable "web_ram" {
     type = number
-    default = 512
+    default = 256
     nullable = true
 }
 

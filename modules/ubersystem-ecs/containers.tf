@@ -1,5 +1,6 @@
 locals {
     container_web = {
+        "cpu": var.web_cpu,
         "logConfiguration": {
             "logDriver": "awslogs",
             "options": {
@@ -87,6 +88,7 @@ locals {
         ]
     }
     container_celery_beat = {
+        "cpu": var.celery_beat_cpu,
         "logConfiguration": {
             "logDriver": "awslogs",
             "options": {
@@ -155,6 +157,7 @@ locals {
         ]
     }
     container_celery_worker = {
+        "cpu": var.celery_cpu,
         "logConfiguration": {
             "logDriver": "awslogs",
             "options": {
@@ -273,7 +276,6 @@ resource "aws_ecs_task_definition" "ubersystem_web" {
     }
   }
 
-  cpu                       = var.web_cpu
   memory                    = var.web_ram
   network_mode              = "bridge"
   execution_role_arn        = var.ecs_task_role
@@ -314,7 +316,6 @@ resource "aws_ecs_task_definition" "ubersystem_celery_beat" {
     }
   }
 
-  cpu                       = var.celery_beat_cpu
   memory                    = var.celery_beat_ram
   network_mode              = "bridge"
   execution_role_arn        = var.ecs_task_role
@@ -350,7 +351,6 @@ resource "aws_ecs_task_definition" "ubersystem_celery_worker" {
     }
   }
 
-  cpu                       = var.celery_cpu
   memory                    = var.celery_ram
   network_mode              = "bridge"
   execution_role_arn        = var.ecs_task_role
