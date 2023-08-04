@@ -1,4 +1,5 @@
 sideboard:
+  ws.thread_pool: 5
   cherrypy:
     server.socket_timeout: 75
     server.thread_pool: 10
