@@ -1,9 +1,10 @@
-cherrypy:
-  tools:
-    sentry_end_transaction:
-      on: True
-    sentry_start_transaction:
-      on: True
+sideboard:
+  "/":
+    tools:
+      sentry_end_transaction:
+        on: True
+      sentry_start_transaction:
+        on: True
 
 plugins:
   uber:

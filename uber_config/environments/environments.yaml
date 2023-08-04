@@ -1,7 +1,8 @@
-cherrypy:
-  server:
-    socket_timeout: 75
-    thread_pool: 10
+sideboard:
+  "/":
+    server:
+      socket_timeout: 75
+      thread_pool: 10
 
 plugins:
   uber:
