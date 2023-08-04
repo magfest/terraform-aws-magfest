@@ -2,9 +2,9 @@ sideboard:
   cherrypy:
     tools:
       sentry_end_transaction:
-        on: True
+        on: "True"
       sentry_start_transaction:
-        on: True
+        on: "True"
 
 plugins:
   uber:
