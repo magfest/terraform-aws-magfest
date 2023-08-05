@@ -2,6 +2,10 @@
 # Load Balancer
 # -------------------------------------------------------------------
 
+data "aws_ec2_managed_prefix_list" "cloudfront" {
+  name = "com.amazonaws.global.cloudfront.origin-facing"
+}
+
 resource "aws_security_group" "uber_backend" {
   name        = "uber_backend"
   description = "Allow ALB to reach Uber"
@@ -33,7 +37,7 @@ resource "aws_security_group" "uber_backend" {
 
 resource "aws_security_group" "uber_public" {
   name        = "uber_public"
-  description = "Allow the Internet to reach Uber"
+  description = "Allow Cloudfront to reach Uber"
   vpc_id      = aws_vpc.uber.id
 
   ingress {
@@ -41,15 +45,7 @@ resource "aws_security_group" "uber_public" {
     from_port        = 80
     to_port          = 80
     protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    description      = "Ubersystem HTTPS"
-    from_port        = 443
-    to_port          = 443
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
+    prefix_list_ids  = [data.aws_ec2_managed_prefix_list.cloudfront.id]
   }
 
   egress {
@@ -63,38 +59,6 @@ resource "aws_security_group" "uber_public" {
   tags = {
     Name = "Ubersystem Public"
   }
-}
-
-resource "aws_acm_certificate" "uber" {
-  domain_name       = var.hostname
-  validation_method = "DNS"
-}
-
-data "aws_route53_zone" "uber" {
-  name         = var.zonename
-  private_zone = false
-}
-
-resource "aws_route53_record" "uber" {
-  for_each = {
-    for dvo in aws_acm_certificate.uber.domain_validation_options : dvo.domain_name => {
-      name   = dvo.resource_record_name
-      record = dvo.resource_record_value
-      type   = dvo.resource_record_type
-    }
-  }
-
-  allow_overwrite = true
-  name            = each.value.name
-  records         = [each.value.record]
-  ttl             = 60
-  type            = each.value.type
-  zone_id         = data.aws_route53_zone.uber.zone_id
-}
-
-resource "aws_acm_certificate_validation" "uber" {
-  certificate_arn         = aws_acm_certificate.uber.arn
-  validation_record_fqdns = [for record in aws_route53_record.uber : record.fqdn]
 }
 
 resource "aws_lb" "ubersystem" {
@@ -112,36 +76,10 @@ resource "aws_lb" "ubersystem" {
   enable_deletion_protection = false
 }
 
-resource "aws_route53_record" "default" {
-  zone_id = data.aws_route53_zone.uber.zone_id
-  name    = var.hostname
-  type    = "CNAME"
-  ttl     = 300
-  records = [aws_lb.ubersystem.dns_name]
-}
-
 resource "aws_lb_listener" "ubersystem_web_http" {
   load_balancer_arn = aws_lb.ubersystem.arn
   port              = "80"
   protocol          = "HTTP"
-
-  default_action {
-    type = "redirect"
-
-    redirect {
-      port        = "443"
-      protocol    = "HTTPS"
-      status_code = "HTTP_301"
-    }
-  }
-}
-
-resource "aws_lb_listener" "ubersystem_web_https" {
-  load_balancer_arn = aws_lb.ubersystem.arn
-  port              = "443"
-  protocol          = "HTTPS"
-  ssl_policy        = "ELBSecurityPolicy-2016-08"
-  certificate_arn   = aws_acm_certificate_validation.uber.certificate_arn
 
   default_action {
     type = "fixed-response"

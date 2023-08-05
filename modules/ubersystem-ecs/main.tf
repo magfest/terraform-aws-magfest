@@ -47,43 +47,6 @@ module "uber_image" {
 # MAGFest Ubersystem Load Balancer
 # -------------------------------------------------------------------
 
-resource "aws_acm_certificate" "uber" {
-  domain_name       = var.hostname
-  validation_method = "DNS"
-}
-
-resource "aws_route53_record" "uber" {
-  for_each = {
-    for dvo in aws_acm_certificate.uber.domain_validation_options : dvo.domain_name => {
-      name   = dvo.resource_record_name
-      record = dvo.resource_record_value
-      type   = dvo.resource_record_type
-    }
-  }
-
-  allow_overwrite = true
-  name            = each.value.name
-  records         = [each.value.record]
-  ttl             = 60
-  type            = each.value.type
-  zone_id         = data.aws_route53_zone.uber.zone_id
-}
-
-resource "aws_acm_certificate_validation" "uber" {
-  certificate_arn         = aws_acm_certificate.uber.arn
-  validation_record_fqdns = [for record in aws_route53_record.uber : record.fqdn]
-}
-
-resource "aws_route53_record" "public" {
-  zone_id = data.aws_route53_zone.uber.id
-  name    = var.hostname
-  type    = "CNAME"
-  ttl     = 5
-  records = [
-    var.loadbalancer_dns_name
-  ]
-}
-
 resource "aws_lb_target_group" "ubersystem_http" {
   name                 = "${var.prefix}-http"
   port                 = 80
@@ -112,11 +75,6 @@ resource "aws_lb_target_group" "ubersystem_http" {
   }
 }
 
-resource "aws_lb_listener_certificate" "uber" {
-  listener_arn    = var.lb_web_listener_arn
-  certificate_arn = aws_acm_certificate_validation.uber.certificate_arn
-}
-
 resource "aws_lb_listener_rule" "uber_http" {
   listener_arn = var.lb_web_listener_arn
 
@@ -130,6 +88,16 @@ resource "aws_lb_listener_rule" "uber_http" {
       values = [var.hostname]
     }
   }
+}
+
+resource "aws_route53_record" "public" {
+  zone_id = data.aws_route53_zone.uber.id
+  name    = var.hostname
+  type    = "CNAME"
+  ttl     = 5
+  records = [
+    var.loadbalancer_dns_name
+  ]
 }
 
 # -------------------------------------------------------------------

@@ -55,8 +55,8 @@ module "uberserver-ecs" {
     ]
     vpc_id                  = aws_vpc.uber.id
     loadbalancer_arn        = aws_lb.ubersystem.arn
-    loadbalancer_dns_name   = aws_lb.ubersystem.dns_name
-    lb_web_listener_arn     = aws_lb_listener.ubersystem_web_https.arn
+    loadbalancer_dns_name   = aws_cloudfront_distribution.ubersystem.dns_name
+    lb_web_listener_arn     = aws_lb_listener.ubersystem_web_http.arn
     db_endpoint             = aws_db_instance.uber.endpoint
     efs_id                  = aws_efs_file_system.ubersystem_static.id
 }
