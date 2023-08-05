@@ -9,6 +9,15 @@ staging:
       - uber_config/events/super/2024/staging
     web_cpu: 768
 
+  next:
+    ubersystem_container: ghcr.io/magfest/magprime:next
+    hostname: next.dev.magevent.net
+    zonename: dev.magevent.net
+    prefix: next-staging
+    config_paths:
+      - uber_config/environments/staging
+      - uber_config/events/super/2024/staging
+
 production:
   super2024:
     ubersystem_container: ghcr.io/magfest/magprime:main
