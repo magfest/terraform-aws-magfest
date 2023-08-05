@@ -10,7 +10,7 @@ staging:
     web_cpu: 768
 
   next:
-    ubersystem_container: ghcr.io/magfest/magprime:next
+    ubersystem_container: ghcr.io/magfest/magprime:shrinking_docker
     hostname: next.dev.magevent.net
     zonename: dev.magevent.net
     prefix: next-staging
