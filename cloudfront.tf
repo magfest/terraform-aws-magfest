@@ -2,9 +2,9 @@ resource "aws_cloudfront_distribution" "ubersystem" {
   origin {
     domain_name              = aws_lb.ubersystem.dns_name
     origin_id                = "Ubersystem"
-    origin_protocol_policy   = "http-only"
   }
 
+  origin_protocol_policy   = "http-only"
   enabled             = true
   is_ipv6_enabled     = true
 
@@ -38,6 +38,13 @@ resource "aws_cloudfront_distribution" "ubersystem" {
 
   viewer_certificate {
     cloudfront_default_certificate = true
+  }
+
+  restrictions {
+    geo_restriction {
+      restriction_type = "none"
+      locations        = []
+    }
   }
 }
 
