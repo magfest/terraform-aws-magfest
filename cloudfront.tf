@@ -61,6 +61,7 @@ resource "aws_cloudfront_distribution" "ubersystem" {
 
   viewer_certificate {
     acm_certificate_arn = aws_acm_certificate.uber.arn
+    ssl_support_method  = "sni-only"
   }
 
   restrictions {
