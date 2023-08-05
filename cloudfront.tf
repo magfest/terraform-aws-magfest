@@ -58,7 +58,7 @@ resource "aws_route53_record" "default" {
   name    = var.hostname
   type    = "CNAME"
   ttl     = 300
-  records = [aws_cloudfront_distribution.ubersystem.dns_name]
+  records = [aws_cloudfront_distribution.ubersystem.domain_name]
 }
 
 resource "aws_acm_certificate" "uber" {
