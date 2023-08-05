@@ -17,7 +17,7 @@ resource "aws_cloudfront_distribution" "ubersystem" {
 
   default_cache_behavior {
     allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
-    cached_methods   = ["HEAD", "OPTIONS"]
+    cached_methods   = ["GET", "HEAD", "OPTIONS"]
     target_origin_id = "Ubersystem"
 
     viewer_protocol_policy = "redirect-to-https"
