@@ -60,7 +60,7 @@ resource "aws_cloudfront_distribution" "ubersystem" {
   price_class = "PriceClass_100"
 
   viewer_certificate {
-    cloudfront_default_certificate = true
+    acm_certificate_arn = aws_acm_certificate.uber.arn
   }
 
   restrictions {
@@ -81,6 +81,7 @@ resource "aws_route53_record" "default" {
 
 resource "aws_acm_certificate" "uber" {
   domain_name       = var.hostname
+  subject_alternative_names = [for server in local.servers : server.hostname]
   validation_method = "DNS"
 }
 
