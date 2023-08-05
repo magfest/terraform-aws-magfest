@@ -1,10 +1,13 @@
 resource "aws_cloudfront_distribution" "ubersystem" {
   origin {
-    domain_name              = aws_lb.ubersystem.dns_name
-    origin_id                = "Ubersystem"
+    domain_name                = aws_lb.ubersystem.dns_name
+    origin_id                  = "Ubersystem"
+    custom_origin_config {
+        http_port              = 80
+        origin_protocol_policy = "http-only"
+    }
   }
 
-  origin_protocol_policy   = "http-only"
   enabled             = true
   is_ipv6_enabled     = true
 
