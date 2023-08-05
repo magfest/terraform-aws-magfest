@@ -4,6 +4,8 @@ resource "aws_cloudfront_distribution" "ubersystem" {
     origin_id                  = "Ubersystem"
     custom_origin_config {
         http_port              = 80
+        https_port             = 443
+        origin_ssl_protocols   = ["TLSv1.2"]
         origin_protocol_policy = "http-only"
     }
   }
