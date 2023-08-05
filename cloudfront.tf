@@ -24,6 +24,15 @@ resource "aws_cloudfront_distribution" "ubersystem" {
     min_ttl                = 0
     default_ttl            = 900
     max_ttl                = 3600
+
+    forwarded_values {
+      query_string = true
+      headers = ["*"]
+
+      cookies {
+        forward = "all"
+      }
+    }
   }
 
   ordered_cache_behavior {
@@ -37,6 +46,15 @@ resource "aws_cloudfront_distribution" "ubersystem" {
     max_ttl                = 3600
     compress               = true
     viewer_protocol_policy = "redirect-to-https"
+
+    forwarded_values {
+      query_string = false
+      headers = ["*"]
+
+      cookies {
+        forward = "all"
+      }
+    }
   }
 
   price_class = "PriceClass_100"
