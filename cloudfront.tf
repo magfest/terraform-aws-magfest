@@ -57,28 +57,6 @@ resource "aws_cloudfront_distribution" "ubersystem" {
     }
   }
 
-  ordered_cache_behavior {
-    path_pattern     = "/uber/preregistration/form"
-    allowed_methods  = ["GET", "HEAD", "OPTIONS"]
-    cached_methods   = ["GET", "HEAD", "OPTIONS"]
-    target_origin_id = "Ubersystem"
-
-    min_ttl                = 0
-    default_ttl            = 900
-    max_ttl                = 3600
-    compress               = true
-    viewer_protocol_policy = "redirect-to-https"
-
-    forwarded_values {
-      query_string = true
-      headers = ["Host"]
-
-      cookies {
-        forward = "none"
-      }
-    }
-  }
-
   price_class = "PriceClass_100"
 
   viewer_certificate {
