@@ -18,9 +18,6 @@ staging:
     config_paths:
       - uber_config/environments/staging
       - uber_config/events/super/2023/staging
-    web_cpu: 512
-    web_count: 0
-    enable_celery: false
 
 production:
   super2024:
