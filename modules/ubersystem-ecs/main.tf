@@ -142,9 +142,11 @@ resource "postgresql_role" "uber" {
 }
 
 resource "postgresql_schema" "uber_schema" {
-  name     = "public"
-  database = var.uber_db_name
-  owner    = var.uber_db_username
+  depends_on   = [ postgresql_database.uber ]
+  name         = "public"
+  database     = var.uber_db_name
+  owner        = var.uber_db_username
+  drop_cascade = true
 }
 
 # -------------------------------------------------------------------

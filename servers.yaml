@@ -8,7 +8,7 @@ staging:
       - uber_config/environments/staging
       - uber_config/events/super/2024/staging
     web_cpu: 512
-    web_count: 10
+    web_count: 1
 
 production:
   super2024:
