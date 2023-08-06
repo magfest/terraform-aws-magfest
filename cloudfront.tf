@@ -70,7 +70,7 @@ resource "aws_cloudfront_distribution" "ubersystem" {
     viewer_protocol_policy = "redirect-to-https"
 
     forwarded_values {
-      query_string = false
+      query_string = true
       headers = ["Host"]
 
       cookies {
