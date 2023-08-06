@@ -7,16 +7,8 @@ staging:
     config_paths:
       - uber_config/environments/staging
       - uber_config/events/super/2024/staging
-    web_cpu: 768
-
-  next:
-    ubersystem_container: ghcr.io/magfest/magprime:shrinking_docker
-    hostname: next.dev.magevent.net
-    zonename: dev.magevent.net
-    prefix: next-staging
-    config_paths:
-      - uber_config/environments/staging
-      - uber_config/events/super/2024/staging
+    web_cpu: 512
+    web_count: 10
 
 production:
   super2024:
