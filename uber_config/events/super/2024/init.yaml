@@ -173,11 +173,11 @@ plugins:
         child_badge: 1080
 
     table_prices:
-      default_price: 350
-      "1": 200
-      "2": 350
-      "3": 550
-      "4": 800
+      default_price: 400
+      "1": 240
+      "2": 400
+      "3": 600
+      "4": 1000
 
     age_groups:
       under_6:
