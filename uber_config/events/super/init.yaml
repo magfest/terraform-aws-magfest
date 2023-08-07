@@ -35,6 +35,7 @@ plugins:
     volunteer_agreement_enabled: True
     emergency_procedures_enabled: True
     require_dedicated_guest_table_presence: True
+    notify_dealer_applied: True
     rock_island_groups: ['band', 'guest', 'rock_island']
 
     admin_email: MAGFest Sys Admin <sysadmin@magfest.org>
