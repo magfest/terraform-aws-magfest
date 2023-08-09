@@ -19,7 +19,7 @@ plugins:
     post_con: False
     covid_policies_url: 'https://super.magfest.org/covid'
     prior_covid_policies_url: ''
-    preassigned_badge_types: []
+    accessibility_services_enabled: False
 
     event_year: 2024
     event_qr_id: sm23
