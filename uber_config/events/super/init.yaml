@@ -164,13 +164,23 @@ plugins:
         vegan: Vegan
         
       panel_dept:
-        panels: No Specific Department
+        panels: Panels
         mivs: Indie Developer Showcase
         mages: MAGES
         museum: Museum
         makerspace: Makerspace
         magmoves: MAGMoves (the Arena)
         tabletop: Tabletop
+
+      panel_content:
+        substances: Alcohol/Drug References
+        language: Mature Language
+        humor: Mature/Crude Humor
+        sex: Sexual Content/Themes
+        noods: Nudity
+        violence: Violence
+        gore: Blood and Gore
+        blood: Animated Blood
         
       noise_level:
         level_0: Level 0 (Just talking to the audience)
