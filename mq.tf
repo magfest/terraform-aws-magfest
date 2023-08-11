@@ -32,7 +32,7 @@ resource "aws_mq_broker" "rabbitmq" {
 
   engine_type         = "RabbitMQ"
   engine_version      = "3.11.16"
-  host_instance_type  = "mq.t3.micro"
+  host_instance_type  = var.mq_instance_size
   #security_groups     = [aws_security_group.uber_rabbitmq.id]
   subnet_ids          = [aws_subnet.primary.id]
   publicly_accessible = true

@@ -55,3 +55,13 @@ variable "region" {
     type    = string
     default = "us-east-1"
 }
+
+variable "rds_instance_size" {
+    type    = string
+    default = "db.t3.micro"
+}
+
+variable "mq_instance_size" {
+    type    = string
+    default = "mq.t3.micro"
+}
