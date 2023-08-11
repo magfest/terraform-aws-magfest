@@ -6,7 +6,7 @@ staging:
     prefix: super-staging
     config_paths:
       - uber_config/environments/prod
-      - uber_config/events/super/2024
+      - uber_config/events/super/2024/staging
     web_cpu: 512
     web_count: 1
 

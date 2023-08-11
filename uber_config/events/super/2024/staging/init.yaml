@@ -8,9 +8,7 @@ plugins:
     season_stock: 0
 
     dates:
-      prereg_open: 2023-01-01
-      dealer_reg_start: 2023-01-01
-      volunteer_checklist_open: 2023-01-01
-      mivs_start: 2023-01-01
-      panels_start: 2023-01-01
+      dealer_reg_start: 2023-08-11 19
+      dealer_reg_deadline: ''
+      dealer_reg_shutdown: 2023-08-11 20
       
