@@ -1,12 +1,12 @@
 staging:
   super:
-    ubersystem_container: ghcr.io/magfest/magprime:main
+    ubersystem_container: ghcr.io/magfest/magprime:reg_open_logic
     hostname: super.dev.magevent.net
     zonename: dev.magevent.net
     prefix: super-staging
     config_paths:
-      - uber_config/environments/staging
-      - uber_config/events/super/2024/staging
+      - uber_config/environments/prod
+      - uber_config/events/super/2024
     web_cpu: 512
     web_count: 1
 
