@@ -55,7 +55,7 @@ resource "aws_db_instance" "uber" {
   storage_type           = "gp3"
   db_name                = "uber"
   engine                 = "postgres"
-  instance_class         = "db.t3.micro"
+  instance_class         = "db.m5d.4xlarge"
   identifier             = "ubersystem"
   username               = "postgres"
   password               = aws_secretsmanager_secret_version.password.secret_string
