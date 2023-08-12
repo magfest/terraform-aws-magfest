@@ -10,6 +10,16 @@ terraform {
     curl = {
       source = "marcofranssen/curl"
     }
+    rabbitmq = {
+      source = "cyrilgdn/rabbitmq"
+      version = "1.8.0"
+    }
+  }
+  cloud {
+    organization = "magfest"
+    workspaces {
+      name = "ubersystem-staging"
+    }
   }
 }
 
