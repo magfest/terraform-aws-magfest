@@ -183,9 +183,9 @@ resource "aws_secretsmanager_secret" "uber_secret" {
 # RabbitMQ
 # -------------------------------------------------------------------
 
-#resource "rabbitmq_vhost" "uber_vhost" {
-#  name = var.prefix
-#}
+resource "rabbitmq_vhost" "uber_vhost" {
+  name = var.prefix
+}
 
 resource "random_password" "rabbitmq" {
   length            = 40
@@ -205,18 +205,18 @@ resource "aws_secretsmanager_secret_version" "rabbitmq_password" {
   secret_string = random_password.rabbitmq.result
 }
 
-#resource "rabbitmq_user" "uber_user" {
-#  name     = var.prefix
-#  password = random_password.rabbitmq.result
-#}
+resource "rabbitmq_user" "uber_user" {
+  name     = var.prefix
+  password = random_password.rabbitmq.result
+}
 
-#resource "rabbitmq_permissions" "uber_permissions" {
-#  user  = "${rabbitmq_user.uber_user.name}"
-#  vhost = "${rabbitmq_vhost.uber_vhost.name}"
+resource "rabbitmq_permissions" "uber_permissions" {
+  user  = "${rabbitmq_user.uber_user.name}"
+  vhost = "${rabbitmq_vhost.uber_vhost.name}"
 
-#  permissions {
-#    configure = ".*"
-#    write     = ".*"
-#    read      = ".*"
-#  }
-#}
+  permissions {
+    configure = ".*"
+    write     = ".*"
+    read      = ".*"
+  }
+}
