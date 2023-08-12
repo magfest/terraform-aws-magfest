@@ -75,8 +75,8 @@ plugins:
       supporter_deadline: 2023-12-31
       placeholder_deadline: 2023-12-31
       uber_takedown: 2024-01-05
-      epoch: 2024-01-05 08
-      eschaton: 2024-01-08 23
+      epoch: 2024-01-18 08
+      eschaton: 2024-01-21 23
       prereg_takedown: ''
       group_prereg_takedown: 2024-01-01
       badge_price_waived: 2024-01-08 12
