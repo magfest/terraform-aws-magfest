@@ -1,21 +1,15 @@
 locals {
-    container_web = {
-        "cpu": var.web_cpu,
-        "logConfiguration": {
-            "logDriver": "awslogs",
-            "options": {
-                "awslogs-group": "/ecs/Ubersystem",
-                "awslogs-region": "${var.region}",
-                "awslogs-stream-prefix": "ecs",
-                "awslogs-create-group": "true"
-            }
+    container_common = {
+        "healthCheck": {
+          "retries": 3,
+          "command": [
+            "CMD-SHELL",
+            "/app/plugins/uber/healthcheck.sh"
+          ],
+          "timeout": 5,
+          "interval": 30,
+          "startPeriod": 30
         },
-        "portMappings": [
-            {
-                "protocol": "tcp",
-                "containerPort": 8282
-            }
-        ],
         "environment": [
             {
                 "name": "CERT_NAME",
@@ -35,27 +29,31 @@ locals {
             },
             {
                 "name": "BROKER_HOST",
-                "value": "${data.aws_mq_broker.rabbitmq.id}.mq.${var.region}.amazonaws.com"
+                "value": "${data.aws_elasticache_cluster.redis.cache_nodes.0.address}"
             },
             {
                 "name": "BROKER_PROTOCOL",
-                "value": "amqps"
+                "value": "redis"
             },
             {
                 "name": "BROKER_PORT",
-                "value": "5671"
+                "value": "6379"
             },
             {
                 "name": "BROKER_USER",
-                "value": var.prefix
+                "value": ""
             },
             {
                 "name": "BROKER_PASS",
-                "value": random_password.rabbitmq.result
+                "value": ""
             },
             {
                 "name": "BROKER_VHOST",
-                "value": var.prefix
+                "value": "0"
+            },
+            {
+                "name": "BROKER_PREFIX",
+                "value": "${var.prefix}-"
             },
             {
                 "name": "DB_CONNECTION_STRING",
@@ -76,9 +74,6 @@ locals {
             "valueFrom": aws_secretsmanager_secret.uber_secret.arn
           }
         ],
-        "image": "${var.ubersystem_container}@sha256:${module.uber_image.docker_digest}",
-        "essential": true,
-        "name": "web",
         "mountPoints": [
             {
                 "sourceVolume": "static",
@@ -86,154 +81,60 @@ locals {
                 "readOnly": false
             }
         ]
+    }
+    container_web = {
+        "cpu": var.web_cpu,
+        "portMappings": [
+            {
+                "protocol": "tcp",
+                "containerPort": 8282
+            }
+        ],
+        "image": "${var.ubersystem_container}@sha256:${module.uber_image.docker_digest}",
+        "name": "web",
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-group": "/Uber/${var.prefix}/web/",
+                "awslogs-region": "${var.region}",
+                "awslogs-stream-prefix": "web",
+                "awslogs-create-group": "true"
+            }
+        },
     }
     container_celery_beat = {
         "cpu": var.celery_beat_cpu,
-        "logConfiguration": {
-            "logDriver": "awslogs",
-            "options": {
-                "awslogs-group": "/ecs/Ubersystem",
-                "awslogs-region": "${var.region}",
-                "awslogs-stream-prefix": "ecs",
-                "awslogs-create-group": "true"
-            }
-        },
         "command": [
             "celery-beat"
         ],
-        "environment": [
-            {
-                "name": "DB_CONNECTION_STRING",
-                "value": "postgresql://${var.uber_db_username}:${aws_secretsmanager_secret_version.password.secret_string}@${var.db_endpoint}/${var.uber_db_name}"
-            },
-            {
-                "name": "BROKER_HOST",
-                "value": "${data.aws_mq_broker.rabbitmq.id}.mq.${var.region}.amazonaws.com"
-            },
-            {
-                "name": "BROKER_PROTOCOL",
-                "value": "amqps"
-            },
-            {
-                "name": "BROKER_PORT",
-                "value": "5671"
-            },
-            {
-                "name": "BROKER_USER",
-                "value": var.prefix
-            },
-            {
-                "name": "BROKER_PASS",
-                "value": random_password.rabbitmq.result
-            },
-            {
-                "name": "BROKER_VHOST",
-                "value": var.prefix
-            },
-            {
-                "name": "UBERSYSTEM_CONFIG_VERSION",
-                "value": sha256(aws_secretsmanager_secret_version.current_config.secret_string)
-            }
-        ],
-        "secrets": [
-          {
-            "name": "UBERSYSTEM_CONFIG",
-            "valueFrom": aws_secretsmanager_secret.uber_config.arn
-          },
-          {
-            "name": "UBERSYSTEM_SECRETS",
-            "valueFrom": aws_secretsmanager_secret.uber_secret.arn
-          }
-        ],
         "image": "${var.ubersystem_container}@sha256:${module.uber_image.docker_digest}",
-        "essential": true,
         "name": "celery-beats",
-        "mountPoints": [
-            {
-                "sourceVolume": "static",
-                "containerPath": "/app/plugins/uber/uploaded_files",
-                "readOnly": false
-            }
-        ]
-    }
-    container_celery_worker = {
-        "cpu": var.celery_cpu,
-        "healthCheck": {
-          "retries": 3,
-          "command": [
-            "CMD-SHELL",
-            "/app/env/bin/celery -b amqps://${var.prefix}:${random_password.rabbitmq.result}@${data.aws_mq_broker.rabbitmq.id}.mq.${var.region}.amazonaws.com:5671/${var.prefix} inspect ping -d celery@$(cat /etc/hostname)"
-          ],
-          "timeout": 5,
-          "interval": 30,
-          "startPeriod": 30
-        },
         "logConfiguration": {
             "logDriver": "awslogs",
             "options": {
-                "awslogs-group": "/ecs/Ubersystem",
+                "awslogs-group": "/Uber/${var.prefix}/celery_beat/",
                 "awslogs-region": "${var.region}",
-                "awslogs-stream-prefix": "ecs",
+                "awslogs-stream-prefix": "beats",
                 "awslogs-create-group": "true"
             }
-        },
-        "environment": [
-            {
-                "name": "DB_CONNECTION_STRING",
-                "value": "postgresql://${var.uber_db_username}:${aws_secretsmanager_secret_version.password.secret_string}@${var.db_endpoint}/${var.uber_db_name}"
-            },
-            {
-                "name": "BROKER_HOST",
-                "value": "${data.aws_mq_broker.rabbitmq.id}.mq.${var.region}.amazonaws.com"
-            },
-            {
-                "name": "BROKER_PROTOCOL",
-                "value": "amqps"
-            },
-            {
-                "name": "BROKER_PORT",
-                "value": "5671"
-            },
-            {
-                "name": "BROKER_USER",
-                "value": var.prefix
-            },
-            {
-                "name": "BROKER_PASS",
-                "value": random_password.rabbitmq.result
-            },
-            {
-                "name": "BROKER_VHOST",
-                "value": var.prefix
-            },
-            {
-                "name": "UBERSYSTEM_CONFIG_VERSION",
-                "value": sha256(aws_secretsmanager_secret_version.current_config.secret_string)
-            }
-        ],
-        "secrets": [
-          {
-            "name": "UBERSYSTEM_CONFIG",
-            "valueFrom": aws_secretsmanager_secret.uber_config.arn
-          },
-          {
-            "name": "UBERSYSTEM_SECRETS",
-            "valueFrom": aws_secretsmanager_secret.uber_secret.arn
-          }
-        ],
+        }
+    }
+    container_celery_worker = {
+        "cpu": var.celery_cpu,
         "image": "${var.ubersystem_container}@sha256:${module.uber_image.docker_digest}",
         "command": [
              "celery-worker"
         ],
-        "essential": true,
         "name": "celery-worker",
-        "mountPoints": [
-            {
-                "sourceVolume": "static",
-                "containerPath": "/app/plugins/uber/uploaded_files",
-                "readOnly": false
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-group": "/Uber/${var.prefix}/celery_worker/",
+                "awslogs-region": "${var.region}",
+                "awslogs-stream-prefix": "celery",
+                "awslogs-create-group": "true"
             }
-        ]
+        }
     }
 }
 
@@ -252,7 +153,7 @@ resource "aws_secretsmanager_secret_version" "current_config" {
 # -------------------------------------------------------------------
 
 resource "aws_ecs_service" "ubersystem_web" {
-  name                   = "${var.prefix}_ubersystem_web"
+  name                   = "${var.prefix}_web"
   cluster                = var.ecs_cluster
   task_definition        = aws_ecs_task_definition.ubersystem_web.arn
   desired_count          = var.web_count
@@ -267,10 +168,10 @@ resource "aws_ecs_service" "ubersystem_web" {
 }
 
 resource "aws_ecs_task_definition" "ubersystem_web" {
-  family                    = "${var.prefix}_ubersystem_web"
+  family                    = "${var.prefix}_web"
   container_definitions     = jsonencode(
     [
-      local.container_web
+      merge(local.container_common, local.container_web)
     ]
   )
 
@@ -299,7 +200,7 @@ resource "aws_ecs_task_definition" "ubersystem_web" {
 
 resource "aws_ecs_service" "ubersystem_celery_beat" {
   count = var.enable_celery ? 1 : 0
-  name                   = "${var.prefix}_ubersystem_celery_beat"
+  name                   = "${var.prefix}_beats"
   cluster                = var.ecs_cluster
   task_definition        = aws_ecs_task_definition.ubersystem_celery_beat.arn
   desired_count          = 1
@@ -308,10 +209,10 @@ resource "aws_ecs_service" "ubersystem_celery_beat" {
 }
 
 resource "aws_ecs_task_definition" "ubersystem_celery_beat" {
-  family                    = "${var.prefix}_ubersystem_celery_beat"
+  family                    = "${var.prefix}_beats"
   container_definitions     = jsonencode(
     [
-      local.container_celery_beat
+      merge(local.container_common, local.container_celery_beat)
     ]
   )
 
@@ -335,7 +236,7 @@ resource "aws_ecs_task_definition" "ubersystem_celery_beat" {
 
 resource "aws_ecs_service" "ubersystem_celery_worker" {
   count = var.enable_celery ? 1 : 0
-  name                   = "${var.prefix}_ubersystem_celery_worker"
+  name                   = "${var.prefix}_worker"
   cluster                = var.ecs_cluster
   task_definition        = aws_ecs_task_definition.ubersystem_celery_worker.arn
   desired_count          = var.celery_count
@@ -344,10 +245,10 @@ resource "aws_ecs_service" "ubersystem_celery_worker" {
 }
 
 resource "aws_ecs_task_definition" "ubersystem_celery_worker" {
-  family                    = "${var.prefix}_ubersystem_celery_worker"
+  family                    = "${var.prefix}_worker"
   container_definitions     = jsonencode(
     [
-      local.container_celery_worker
+      merge(local.container_common, local.container_celery_worker)
     ]
   )
 

@@ -145,10 +145,6 @@ variable "elasticache_id" {
     type    = string
 }
 
-variable "rabbitmq_id" {
-    type    = string
-}
-
 variable "region" {
     type    = string
 }

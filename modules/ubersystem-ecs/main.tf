@@ -10,10 +10,6 @@ terraform {
     curl = {
       source = "marcofranssen/curl"
     }
-    rabbitmq = {
-      source = "cyrilgdn/rabbitmq"
-      version = "1.8.0"
-    }
   }
 }
 
@@ -33,10 +29,6 @@ data "aws_route53_zone" "uber" {
 data "aws_elasticache_cluster" "redis" {
   cluster_id = var.elasticache_id
 }
-
-data "aws_mq_broker" "rabbitmq" {
-  broker_id = var.rabbitmq_id
-} 
 
 module "uber_image" {
   source = "./modules/docker-resolve"
@@ -177,46 +169,4 @@ resource "aws_efs_access_point" "uber" {
 resource "aws_secretsmanager_secret" "uber_secret" {
   name = "${var.prefix}-uber-secrets"
   recovery_window_in_days = 0
-}
-
-# -------------------------------------------------------------------
-# RabbitMQ
-# -------------------------------------------------------------------
-
-resource "rabbitmq_vhost" "uber_vhost" {
-  name = var.prefix
-}
-
-resource "random_password" "rabbitmq" {
-  length            = 40
-  special           = false
-  keepers           = {
-    pass_version  = 2
-  }
-}
-
-resource "aws_secretsmanager_secret" "rabbitmq_password" {
-  name = "${var.prefix}-rabbitmq-passwd"
-  recovery_window_in_days = 0
-}
-
-resource "aws_secretsmanager_secret_version" "rabbitmq_password" {
-  secret_id = aws_secretsmanager_secret.rabbitmq_password.id
-  secret_string = random_password.rabbitmq.result
-}
-
-resource "rabbitmq_user" "uber_user" {
-  name     = var.prefix
-  password = random_password.rabbitmq.result
-}
-
-resource "rabbitmq_permissions" "uber_permissions" {
-  user  = "${rabbitmq_user.uber_user.name}"
-  vhost = "${rabbitmq_vhost.uber_vhost.name}"
-
-  permissions {
-    configure = ".*"
-    write     = ".*"
-    read      = ".*"
-  }
 }
