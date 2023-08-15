@@ -99,7 +99,7 @@ plugins:
       dealer_reg_public: ''
 
       mivs_start: 2023-08-15 09
-      mivs_deadline: 2023-09-17
+      mivs_deadline: 2023-09-10
       mivs_judging_deadline: 2023-10-15
       mivs_results_reveal: 2023-10-30
 
