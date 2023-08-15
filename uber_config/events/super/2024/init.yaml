@@ -46,7 +46,7 @@ plugins:
     # have to pay are not counted towards this cap. A value of 0 means no cap.
     max_dealer_apps: 0
 
-    mivs_confirm_deadline: 14
+    mivs_confirm_deadline: 7
     mivs_submission_grace_period: 10
     mivs_start_year: 2013
     mivs_training_password: 2RugOrNot2Rug?ThatIsTheQuestion!
@@ -99,8 +99,8 @@ plugins:
       dealer_reg_public: ''
 
       mivs_start: 2023-08-15 09
-      mivs_deadline: 2023-09-11
-      mivs_judging_deadline: 2023-10-09
+      mivs_deadline: 2023-09-17
+      mivs_judging_deadline: 2023-10-15
       mivs_results_reveal: 2023-10-30
 
       mits_submission_deadline: 2023-11-30
