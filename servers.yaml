@@ -68,6 +68,18 @@ production:
     health_url: /uber
     enable_celery: false
 
+  super2020:
+    ubersystem_container: ghcr.io/magfest/magprime:super2020
+    hostname: super2020.reg.magfest.org
+    zonename: reg.magfest.org
+    prefix: super22
+    config_paths:
+      - uber_config/environments/prod
+      - uber_config/events/super/2020
+    health_url: /uber
+    enable_celery: false
+    web_count: 0
+
   west2022:
     ubersystem_container: ghcr.io/magfest/magwest:west2022
     hostname: west2022.reg.magfest.org
