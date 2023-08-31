@@ -8,7 +8,7 @@ locals {
           ],
           "timeout": 5,
           "interval": 30,
-          "startPeriod": 30
+          "startPeriod": 60
         },
         "environment": [
             {
