@@ -73,7 +73,7 @@ variable "celery_beat_cpu" {
 
 variable "celery_beat_ram" {
     type = number
-    default = 128
+    default = 256
     nullable = true
 }
 
