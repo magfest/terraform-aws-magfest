@@ -73,7 +73,7 @@ plugins:
       drop_shifts_deadline: 2023-12-30
       shirt_deadline: 2023-12-31
       supporter_deadline: 2023-12-31
-      placeholder_deadline: 2023-12-31
+      placeholder_deadline: ''
       uber_takedown: 2024-01-05
       epoch: 2024-01-18 08
       eschaton: 2024-01-21 23
