@@ -71,6 +71,9 @@ plugins:
     band_email: MAGFest Music Department <music@magfest.org>
     band_email_signature: '- MAGFest Music Department'
 
+    merch_email: MAGFest Merch Team <merch@magfest.org>
+    merch_email_signature: '- MAGFest Merch Team'
+
     social_media: ["Social Media Info"]
 
     social_media_urls:
