@@ -64,8 +64,8 @@ plugins:
     music_rooms: ['concerts', 'chiptunes', 'pose_lounge', 'lobby_bar', 'jamspace', 'jam_clinic', 'jam_shop', 'rock_island']
 
     dates:
-      prereg_open: 2024-01-05 15
-      prereg_hotel_eligibility_cutoff: 2023-10-05
+      prereg_open: 2023-09-15 14
+      prereg_hotel_eligibility_cutoff: 2023-09-20
       volunteer_checklist_open: 2023-10-10
       shifts_created: 2023-11-16
       room_deadline: 2023-11-11
