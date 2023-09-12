@@ -28,6 +28,14 @@ locals {
                 "value": var.prefix
             },
             {
+                "name": "REDIS_HOST",
+                "value": "${data.aws_elasticache_cluster.redis.cache_nodes.0.address}"
+            },
+            {
+                "name": "REDIS_PREFIX",
+                "value": var.prefix
+            },
+            {
                 "name": "BROKER_HOST",
                 "value": "${data.aws_elasticache_cluster.redis.cache_nodes.0.address}"
             },
