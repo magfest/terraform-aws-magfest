@@ -207,19 +207,6 @@ plugins:
         Phazon Tier: SUPPORTER_LEVEL
         Omega Tier: SEASON_LEVEL
 
-      prereg_shirt:
-        No Shirt: 0
-        Unisex XS: 1
-        Unisex S: 2
-        Unisex M: 3
-        Unisex XL: 5
-        Unisex 2X: 6
-        Unisex 3X: 7
-        Women's S: 12
-        Women's M: 13
-        Women's XL: 15
-        Women's 4X: 18
-
       shirt:
         Unisex XS: 1
         Unisex S: 2
@@ -239,6 +226,26 @@ plugins:
         Women's 2X: 16
         Women's 3X: 17
         Women's 4X: 18
+
+      shirt_stock:
+        Unisex XS: 25
+        Unisex S: 200
+        Unisex M: 700
+        Unisex L: 750
+        Unisex XL: 550
+        Unisex 2X: 300
+        Unisex 3X: 150
+        Unisex 4X: 50
+        Unisex 5X: 30
+        Unisex 6X: 20
+        Women's XS: 15
+        Women's S: 50
+        Women's M: 80
+        Women's L: 75
+        Women's XL: 50
+        Women's 2X: 30
+        Women's 3X: 15
+        Women's 4X: 10
 
       staff_shirt:
         Unisex S: 1
