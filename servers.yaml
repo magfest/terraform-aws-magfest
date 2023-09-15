@@ -29,6 +29,8 @@ production:
       - uber_config/environments/prod
       - uber_config/events/super/2024
     web_count: 24
+    web_cpu: 768
+    web_ram: 1536
     celery_count: 2
 
   super2023:
