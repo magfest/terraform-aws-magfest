@@ -28,7 +28,8 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/super/2024
-    web_count: 8
+    web_count: 24
+    celery_count: 2
 
   super2023:
     ubersystem_container: ghcr.io/magfest/magprime:super2023
