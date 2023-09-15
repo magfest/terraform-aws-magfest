@@ -36,7 +36,7 @@ resource "aws_cloudfront_distribution" "ubersystem" {
   }
 
   ordered_cache_behavior {
-    path_pattern     = "/uber/static*"
+    path_pattern     = "/static*"
     allowed_methods  = ["GET", "HEAD", "OPTIONS"]
     cached_methods   = ["GET", "HEAD", "OPTIONS"]
     target_origin_id = "Ubersystem"
