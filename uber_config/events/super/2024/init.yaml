@@ -230,24 +230,24 @@ plugins:
         Women's 4X: 18
 
       shirt_stock:
-        Unisex XS: 25
-        Unisex S: 200
-        Unisex M: 700
-        Unisex L: 750
-        Unisex XL: 550
-        Unisex 2X: 300
-        Unisex 3X: 150
-        Unisex 4X: 50
-        Unisex 5X: 30
-        Unisex 6X: 20
-        Women's XS: 15
-        Women's S: 50
-        Women's M: 80
-        Women's L: 75
-        Women's XL: 50
-        Women's 2X: 30
-        Women's 3X: 15
-        Women's 4X: 10
+        Unisex XS: 20
+        Unisex S: 190
+        Unisex M: 690
+        Unisex L: 740
+        Unisex XL: 540
+        Unisex 2X: 290
+        Unisex 3X: 145
+        Unisex 4X: 45
+        Unisex 5X: 27
+        Unisex 6X: 18
+        Women's XS: 13
+        Women's S: 45
+        Women's M: 75
+        Women's L: 70
+        Women's XL: 45
+        Women's 2X: 27
+        Women's 3X: 13
+        Women's 4X: 8
 
       staff_shirt:
         Unisex S: 1
