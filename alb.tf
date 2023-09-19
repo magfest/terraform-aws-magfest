@@ -61,6 +61,35 @@ resource "aws_security_group" "uber_public" {
   }
 }
 
+resource "aws_security_group" "uber_internal" {
+  name        = "uber_public"
+  description = "Allow Cloudfront to reach Uber"
+  vpc_id      = aws_vpc.uber.id
+
+  ingress {
+    description      = "Ubersystem HTTP"
+    from_port        = 80
+    to_port          = 80
+    protocol         = "tcp"
+    cidr_blocks      = [
+      aws_subnet.primary.cidr_block,
+      aws_subnet.secondary.cidr_block
+    ]
+  }
+
+  egress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+
+  tags = {
+    Name = "Ubersystem Public"
+  }
+}
+
 resource "aws_lb" "ubersystem" {
   name               = "Ubersystem"
   internal           = false
