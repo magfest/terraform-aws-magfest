@@ -70,6 +70,7 @@ resource "aws_security_group" "uber_internal" {
     description      = "Ubersystem HTTP"
     from_port        = 80
     to_port          = 80
+    protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
   }
 
