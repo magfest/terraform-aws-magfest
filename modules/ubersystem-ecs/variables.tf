@@ -95,6 +95,10 @@ variable "loadbalancer_dns_name" {
     type    = string
 }
 
+variable "cloudfront_dns_name" {
+    type    = string
+}
+
 variable "lb_web_listener_arn" {
     type    = string
 }
