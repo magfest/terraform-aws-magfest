@@ -77,7 +77,10 @@ resource "aws_lb_listener_rule" "uber_http" {
 
   condition {
     host_header {
-      values = [var.hostname]
+      values = [
+        var.hostname,
+        "internal.${var.hostname}"
+      ]
     }
   }
 }
@@ -85,6 +88,16 @@ resource "aws_lb_listener_rule" "uber_http" {
 resource "aws_route53_record" "public" {
   zone_id = data.aws_route53_zone.uber.id
   name    = var.hostname
+  type    = "CNAME"
+  ttl     = 5
+  records = [
+    var.loadbalancer_dns_name
+  ]
+}
+
+resource "aws_route53_record" "public" {
+  zone_id = data.aws_route53_zone.uber.id
+  name    = "internal.${var.hostname}"
   type    = "CNAME"
   ttl     = 5
   records = [
