@@ -95,7 +95,8 @@ resource "aws_lb" "ubersystem" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [
-    aws_security_group.uber_public.id
+    aws_security_group.uber_public.id,
+    aws_security_group.uber_internal.id
   ]
   subnets            = [
     aws_subnet.primary.id,
