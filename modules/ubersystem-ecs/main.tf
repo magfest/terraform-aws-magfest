@@ -101,7 +101,7 @@ resource "aws_route53_record" "internal" {
   type    = "CNAME"
   ttl     = 5
   records = [
-    var.loadbalancer_dns_name
+    var.cloudfront_dns_name
   ]
 }
 
