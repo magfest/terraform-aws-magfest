@@ -95,7 +95,7 @@ resource "aws_route53_record" "public" {
   ]
 }
 
-resource "aws_route53_record" "public" {
+resource "aws_route53_record" "internal" {
   zone_id = data.aws_route53_zone.uber.id
   name    = "internal.${var.hostname}"
   type    = "CNAME"
