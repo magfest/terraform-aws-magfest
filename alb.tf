@@ -62,8 +62,8 @@ resource "aws_security_group" "uber_public" {
 }
 
 resource "aws_security_group" "uber_internal" {
-  name        = "uber_public"
-  description = "Allow Cloudfront to reach Uber"
+  name        = "uber_internal"
+  description = "Allow Uber to reach Uber"
   vpc_id      = aws_vpc.uber.id
 
   ingress {
@@ -86,7 +86,7 @@ resource "aws_security_group" "uber_internal" {
   }
 
   tags = {
-    Name = "Ubersystem Public"
+    Name = "Ubersystem Internal"
   }
 }
 
