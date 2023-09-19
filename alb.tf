@@ -70,8 +70,7 @@ resource "aws_security_group" "uber_internal" {
     description      = "Ubersystem HTTP"
     from_port        = 80
     to_port          = 80
-    protocol         = "tcp"
-    security_groups = [aws_security_group.uber_efs_ec2.id]
+    cidr_blocks      = ["0.0.0.0/0"]
   }
 
   egress {
