@@ -1,15 +1,5 @@
 locals {
     container_common = {
-        "healthCheck": {
-          "retries": 3,
-          "command": [
-            "CMD-SHELL",
-            "/app/plugins/uber/healthcheck.sh"
-          ],
-          "timeout": 5,
-          "interval": 30,
-          "startPeriod": 60
-        },
         "environment": [
             {
                 "name": "CERT_NAME",
@@ -91,6 +81,16 @@ locals {
         ]
     }
     container_web = {
+        "healthCheck": {
+          "retries": 3,
+          "command": [
+            "CMD-SHELL",
+            "/app/plugins/uber/healthcheck.sh"
+          ],
+          "timeout": 5,
+          "interval": 30,
+          "startPeriod": 60
+        },
         "cpu": var.web_cpu,
         "portMappings": [
             {
