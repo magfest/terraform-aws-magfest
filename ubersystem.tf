@@ -39,8 +39,8 @@ module "uberserver-ecs" {
     web_cpu                 = lookup(each.value, "web_cpu", 256)
     web_ram                 = lookup(each.value, "web_ram", lookup(each.value, "layout", "scalable") == "single" ? 1580 : 512)
     celery_count            = lookup(each.value, "celery_count", 1)
-    celery_cpu              = lookup(each.value, "celery_cpu", 256)
-    celery_ram              = lookup(each.value, "celery_ram", 512)
+    celery_cpu              = lookup(each.value, "celery_cpu", 384)
+    celery_ram              = lookup(each.value, "celery_ram", 768)
     enable_celery           = lookup(each.value, "enable_celery", true)
 
     ecs_cluster             = aws_ecs_cluster.uber.arn
