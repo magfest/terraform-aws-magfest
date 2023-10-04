@@ -105,8 +105,8 @@ plugins:
       mivs_judging_deadline: 2023-10-15
       mivs_results_reveal: 2023-10-30
 
-      mits_submission_deadline: 2023-09-30
-      mits_editing_deadline: 2023-10-31
+      mits_submission_deadline: 2023-10-31
+      mits_editing_deadline: 2023-11-15
 
       panels_start: 2023-08-18 18
       panels_deadline: 2023-10-15
@@ -116,17 +116,16 @@ plugins:
       # if any of these are unset or '', the corresponding section will not show up in the group type's checklist
       auction_start: 2024-01-08 11
 
+      band_panel_deadline: 2023-10-14
+      band_stage_plot_deadline: 2023-10-21
       band_bio_deadline: 2023-11-04
-      band_stage_plot_deadline: 2023-11-04
-      band_panel_deadline: 2023-11-04
-      band_autograph_deadline: 2023-11-11
+      band_autograph_deadline: 2023-11-04
+      band_merch_deadline: 2023-11-04
+      band_charity_deadline: 2023-11-04
       band_badges_deadline: 2023-11-11
-      band_merch_deadline: 2023-11-18
-      band_charity_deadline: 2023-11-18
-      band_rehearsal_deadline: 2023-11-25
-      band_travel_plans_deadline: 2023-11-25
-
-      band_taxes_deadline: 2023-11-25 # Always just set this to the latest checklist date
+      band_travel_plans_deadline: 2023-11-11
+      band_rehearsal_deadline: 2023-11-11
+      band_taxes_deadline: 2023-11-11 # Always just set this to the latest checklist date
 
       band_info_deadline: ''
       band_mc_deadline: ''
