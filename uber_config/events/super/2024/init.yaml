@@ -415,66 +415,88 @@ plugins:
 
     dept_head_checklist:
       placeholders:
-        deadline: 2023-10-19
+        deadline: 2023-10-20
 
       assigned_volunteers:
-        deadline: 2023-10-19
+        deadline: 2023-10-20
 
       creating_shifts:
-        deadline: 2023-11-02
+        deadline: 2023-10-27
+        full_description: >
+            We are able to import shifts from last year. If you want us to import last year's shifts, please email stops@magfest.org.
+            You will still need to approve these via the checklist after the import. If you want any shifts to be restricted
+            to certain staffers, please use the "roles" function when creating shifts. Shifts with a specific role will only be visible to
+            staff that you have assigned to that role.
+
+      treasury:
+        deadline: 2023-10-27
 
       hotel_setup:
-        deadline: 2023-11-09
-        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSd3Yvmso5btjIHUp0KQdj_G6N9UnuzmgvsXM5h0Fo6EanqiRg/viewform
+        deadline: 2023-11-03
+        external_form_url: https://forms.gle/CAyGTGoAKJ9nktNc7
+
+      magtv:
+        name: magTV Information
+        deadline: 2023-11-03
+        description: >
+            Does your department want to have content on Super magTV? Super magTV is our custom channel that broadcasted to all
+            hotel rooms in the Gaylord, as well as on our Twitch channel. There are options for pre-recorded content, as well as
+            promo videos or slides. Fill out this form if you will have content for Super magTV. Please reach out to magtv@magfest.org
+            or post in #magtv for more information.
+        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSdlKO7WdcTRvLmlxnZYoGhviVZPrbTFcjwXW91JYOf62Z9OeA/viewform
 
       tech_requirements:
-        deadline: 2023-11-09
-        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSf7NMe4mJDHHc-EOTKmYACpb4Y4WgDlx6KwpiWQUJyYnX_Y9Q/viewform
+        name: Tech and Operational Needs
+        description: What do you need in terms of laptops, projectors, cables, and internet access, as well as office supplies and PPE?
+        full_description: >
+            What do you need in terms of laptops, projectors, cables, and internet access, as well as office supplies and PPE?
+            Note: Your department must fill out the form, even if you don't need anything. If you have any questions, please 
+            contact TechOps on Slack ( #super-techops ) or via email ( techops@magfest.org )
+        deadline: 2023-11-10
+        external_form_url: https://forms.gle/iYFi9zZYuSCyAQpG8
+
+      social_media:
+        deadline: 2023-11-10
+        external_form_url: https://forms.gle/mLPJFK8eCHncAgrC9
 
       approve_setup_teardown:
-        deadline: 2023-11-16
+        deadline: ''
 
       printed_signs:
         full_description: >
           Other than a sign for your area, what printed coroplast signs or banners do you need?
-          Do you require any signage about COVID precautions or protocol changes?
-        deadline: 2023-11-16
+        deadline: 2023-11-17
 
       logistics:
-        deadline: 2023-11-16
-        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLScdIlQgivHX6gWb5_KNrY6keWkmAw4QvgwgwxQPi0jU2jUINQ/viewform
+        deadline: 2023-11-17
+        external_form_url: https://forms.gle/FNwisKXYzm1QFaN7A
 
       mediatron:
-        deadline: 2023-11-30
-        external_form_url: https://forms.gle/FfjCPCmaRRQwj1B58
-
-      office_supplies:
-        deadline: 2023-11-30
-        external_form_url: https://forms.gle/dzhTkHsfrNUE9aya7
+        deadline: 2023-12-01
+        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLScyBsYXoiRpFkSs4D_2wW2fR2RXDWcKxzphpgWxbwlCrLIMAQ/viewform
 
       guidebook_schedule:
-        deadline: 2023-11-30
+        deadline: 2023-12-01
+
+      office_supplies:
+        deadline: ''
+        external_form_url: https://forms.gle/dzhTkHsfrNUE9aya7
 
       water_requests:
+        name: Water and Sports Drinks Requests
         deadline: 2023-12-07
-        external_form_url: https://docs.google.com/forms/d/1txm6bho9Vzso7FdgpDS7dDkwdd9nbEFmhL5avfIo63Q/edit?usp=sharing
+        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSeLoUec5d2BLwYjB17RvIP2n6H_324vPBS5cEcHMxtcjaKWJA/viewform
 
       ppe_requests:
-        deadline: 2023-12-07
+        deadline: ''
         name: Bulk PPE & Sanitizing Supplies
         description: >
           MAGFest is providing basic PPE for departments for Super 2024. Please let us know what you need and we will do our best to accommodate.
         external_form_url: https://forms.gle/BihzhdCWXp7juwSC9
 
-      social_media:
-        deadline: 2023-12-07
-        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSdas7NaPR_s4vllpcQL696nZ1qLq3yGRJuyKnvXn8MZPYP7Dw/viewform
-
       bulk_print_jobs:
-        deadline: 2023-12-07
-
-      treasury:
-        deadline: 2023-12-14
+        name: Bulk Printing Requests (large qty, 8.5x11")
+        deadline: 2023-12-08
 
       postcon_hours:
-        deadline: 2024-01-18
+        deadline: 2024-02-02
