@@ -16,6 +16,7 @@ plugins:
     mits_enabled: True
     mivs_enabled: True
     panels_enabled: True
+    hotels_enabled: True
     row_load_limit: 1000
 
     volunteer_perks_url: 'https://www.notion.so/magfest/MAGFest-Super-Perks-f001221c31484ef4957a6513c54a6fd6'
