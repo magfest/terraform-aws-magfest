@@ -420,9 +420,10 @@ plugins:
       assigned_volunteers:
         deadline: 2023-10-20
 
+      # NOTE: Full description is not used for this step, as it has its own page
       creating_shifts:
         deadline: 2023-10-27
-        full_description: >
+        description: >
             We are able to import shifts from last year. If you want us to import last year's shifts, please email stops@magfest.org.
             You will still need to approve these via the checklist after the import. If you want any shifts to be restricted
             to certain staffers, please use the "roles" function when creating shifts. Shifts with a specific role will only be visible to
