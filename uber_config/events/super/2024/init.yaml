@@ -130,16 +130,16 @@ plugins:
       band_info_deadline: ''
       band_mc_deadline: ''
 
-      guest_badges_deadline: 2023-11-21
-      guest_bio_deadline: 2023-11-21
-      guest_panel_deadline: 2023-11-21
-      guest_charity_deadline: 2023-12-05
-      guest_autograph_deadline: 2023-12-05
-      guest_interview_deadline: 2023-12-05
-      guest_travel_plans_deadline: 2023-12-05
+      guest_bio_deadline: 2023-10-31
+      guest_charity_deadline: 2023-10-31
+      guest_panel_deadline: 2023-10-31
+      guest_badges_deadline: 2023-11-12
+      guest_autograph_deadline: 2023-11-12
+      guest_travel_plans_deadline: 2023-12-01
+      guest_hospitality_deadline: 2023-12-01
+      guest_taxes_deadline: 2023-12-01 # Set this to the latest checklist date if not otherwise specified
 
-      guest_taxes_deadline: 2023-12-05 # Always just set this to the latest checklist date
-
+      guest_interview_deadline: ''
       guest_info_deadline: ''
       guest_merch_deadline: ''
 
