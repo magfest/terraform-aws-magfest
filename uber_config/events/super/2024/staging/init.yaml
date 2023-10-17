@@ -6,6 +6,7 @@ plugins:
     shirt_stock: 5
     supporter_stock: 5
     season_stock: 5
+    treasury_dept_checklist_form_url: https://super.dev.magevent.net/static_views/treasury_form.html
 
     dates:
       panels_start: 2023-08-11
