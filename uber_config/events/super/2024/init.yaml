@@ -191,6 +191,7 @@ plugins:
         desc: "Between 6 and 12"
         min_age: 6
         max_age: 11
+        consent_form: True
         can_volunteer: False
 
       under_13:
