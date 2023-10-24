@@ -114,7 +114,7 @@ plugins:
       rock_island_deadline: 2023-12-10
 
       # if any of these are unset or '', the corresponding section will not show up in the group type's checklist
-      auction_start: 2024-01-08 11
+      auction_start: 2024-01-21 11
 
       band_panel_deadline: 2023-10-28
       band_stage_plot_deadline: 2023-10-28
