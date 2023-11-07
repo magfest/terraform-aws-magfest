@@ -1,3 +1,9 @@
+sideboard:
+  cherrypy:
+    tools.sentry_end_transaction.on: True
+    tools.sentry_start_transaction.on: True
+    tools.profiler.on: True
+    
 plugins:
   uber:
     sentry:
