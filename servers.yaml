@@ -1,6 +1,6 @@
 staging:
   super:
-    ubersystem_container: ghcr.io/magfest/magprime:main
+    ubersystem_container: ghcr.io/magfest/magprime:profiler
     hostname: super.dev.magevent.net
     zonename: dev.magevent.net
     prefix: super-staging
@@ -11,7 +11,7 @@ staging:
     web_count: 1
 
   super2023:
-    ubersystem_container: ghcr.io/magfest/magprime:main
+    ubersystem_container: ghcr.io/magfest/magprime:profiler
     hostname: super2023.dev.magevent.net
     zonename: dev.magevent.net
     prefix: super2023-staging
