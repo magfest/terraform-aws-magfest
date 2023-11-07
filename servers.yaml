@@ -21,7 +21,7 @@ staging:
 
 production:
   super2024:
-    ubersystem_container: ghcr.io/magfest/magprime:main
+    ubersystem_container: ghcr.io/magfest/magprime:profiler
     hostname: super2024.reg.magfest.org
     zonename: reg.magfest.org
     prefix: super24
