@@ -23,6 +23,7 @@ plugins:
     prior_covid_policies_url: ''
     accessibility_services_enabled: False
     slow_load_check: False
+    tracking_params: fbclid, hsmi, utm_source, utm_medium, utm_campaign, utm_term, utm_content
 
     event_year: 2024
     event_qr_id: sm23
@@ -85,7 +86,7 @@ plugins:
       refund_start: ''
       refund_cutoff: ''
 
-      printed_badge_deadline: 2023-11-05
+      printed_badge_deadline: 2023-11-24
 
       # Dealer registration automatically opens on DEALER_REG_START.  After DEALER_REG_DEADLINE
       # all dealer registration are automatically waitlisted.  After DEALER_REG_SHUTDOWN dealers
