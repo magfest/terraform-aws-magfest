@@ -273,7 +273,6 @@ plugins:
         soapbox: Makerspace Social Space (Eastern Shore 2)
         autographs: Autographs Red (Expo Hall E)
         autographs_1: Autographs Blue (Expo Hall E)
-        film_fest: Jam Clinic 2 (Baltimore 1,2)
         console_stage: Arena (Maryland C)
         starship_horizons: Simulations - Starship Horizons (National Harbor 10,11)
         console_tournament: Consoles (Pokemon Events)
@@ -311,7 +310,9 @@ plugins:
         pose_lounge: POSE Lounge
         lobby_bar: Belvedere Lobby Bar
         jamspace: Jamspace + Community Curated Stage (Chesapeake 10,11,12)
-        jam_clinic: Jam Clinic 1 (Baltimore 4,5)
+        jam_clinic: Jam Clinic (Baltimore 1,2)
+        film_fest: Jam Audio Lounge (Baltimore 3)
+        jam_orchestra: Orchestra Room (Baltimore 4,5)
         jam_shop: Indie Games Tournaments (Expo Hall C)
         mag_series_tournaments: MAG Series Tournaments (Expo Hall C - Central)
         vrzone: VRZone (Maryland Hallway)
