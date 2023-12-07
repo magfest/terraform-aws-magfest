@@ -147,8 +147,8 @@ plugins:
       rock_island_merch_deadline: 2023-11-18
 
     badge_ranges:
-      # Staff_badge and contractor_badge should be split to start with, then merged after we send badges to the printer
-      staff_badge: [25, 1500]
+      # Staff_badge and contractor_badge should be split at the start of the year, then merged right before running the badge export
+      staff_badge: [25, 2999]
       contractor_badge: [1501, 2999]
       guest_badge: [3000, 3499]
       attendee_badge: [3500, 29999]
