@@ -48,6 +48,7 @@ plugins:
     # Dealers who have been waitlisted/approved/declined and dealers who do not
     # have to pay are not counted towards this cap. A value of 0 means no cap.
     max_dealer_apps: 0
+    delete_declined_groups: True
 
     mivs_confirm_deadline: 7
     mivs_submission_grace_period: 10
