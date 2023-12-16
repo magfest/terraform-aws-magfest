@@ -18,6 +18,7 @@ staging:
     config_paths:
       - uber_config/environments/staging
       - uber_config/events/super/2023/staging
+    enable_celery: false
 
 production:
   super2024:
