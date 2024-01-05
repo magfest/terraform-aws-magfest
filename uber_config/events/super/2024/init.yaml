@@ -23,7 +23,7 @@ plugins:
     prior_covid_policies_url: ''
     accessibility_services_enabled: False
     slow_load_check: False
-    tracking_params: ['fbclid', 'hsmi', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']
+    tracking_params: ['fbclid', 'hsmi', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', '_hsmi']
 
     event_year: 2024
     event_qr_id: sm23
