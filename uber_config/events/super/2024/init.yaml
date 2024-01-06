@@ -24,6 +24,7 @@ plugins:
     accessibility_services_enabled: False
     slow_load_check: False
     tracking_params: ['fbclid', 'hsmi', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', '_hsmi', '_home', '_hsenc']
+    untransferable_attrs: ['first_name','last_name','legal_name','email','birthdate','zip_code','international','ec_name','ec_phone','cellphone','interests','age_group','staffing','requested_depts','special_merch','group_name','onsite_contact','no_onsite_contact']
 
     event_year: 2024
     event_qr_id: sm23
