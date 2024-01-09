@@ -21,6 +21,7 @@ plugins:
     post_con: False
     covid_policies_url: 'https://super.magfest.org/covid'
     prior_covid_policies_url: ''
+    kiosk_redirect_url: ''
     accessibility_services_enabled: False
     slow_load_check: False
     tracking_params: ['fbclid', 'hsmi', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', '_hsmi', '_home', '_hsenc']
