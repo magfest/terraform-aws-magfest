@@ -9,7 +9,7 @@ plugins:
     url_base: https://super2024.reg.magfest.org
     app_limit: 0
     shirt_stock: 1250
-    supporter_stock: 950
+    supporter_stock: 957
     season_stock: 715
     shared_kickin_stocks: False
     groups_enabled: True
