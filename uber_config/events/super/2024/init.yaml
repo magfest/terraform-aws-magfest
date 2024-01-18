@@ -176,7 +176,7 @@ plugins:
         "2024-01-21": 35
 
       stocks:
-        attendee_badge: 22500
+        attendee_badge: 20000 #22500, hard capping so we don't un-sell out
         child_badge: 1080
 
     table_prices:
