@@ -29,9 +29,9 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/super/2024
-    web_count: 8
-    web_cpu: 768
-    web_ram: 1536
+    web_count: 3
+    web_cpu: 7680
+    web_ram: 4096
     celery_cpu: 768
     celery_ram: 1536
 
