@@ -32,8 +32,8 @@ production:
     web_count: 2
     web_cpu: 256
     web_ram: 512
-    celery_cpu: 256
-    celery_ram: 512
+    celery_cpu: 768
+    celery_ram: 1536
 
   super2023:
     ubersystem_container: ghcr.io/magfest/magprime:super2023
