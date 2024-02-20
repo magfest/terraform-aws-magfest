@@ -21,8 +21,8 @@ plugins:
     organization_name: MAGFest INC
     event_name: MAGStock
     event_timezone: US/Eastern
-    event_venue: Camp Ramblewood
-    event_venue_address: 2564 Silver Rd, Darlington, MD 21034
+    event_venue: Ramblewood
+    event_venue_address: Ramblewood, 2564 Silver Rd, Darlington, MD 21034
     
     volunteer_perks_url: https://magstock.org/volunteer
     

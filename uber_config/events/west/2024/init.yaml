@@ -1,0 +1,324 @@
+plugins:
+  uber:
+    sentry:
+      environment: west2024
+    url_root: https://west2024.reg.magfest.org/
+    shirt_stock: 0
+    supporter_stock: 0
+    season_stock: 0
+    shared_kickin_stocks: False
+    event_year: 2024
+    max_dealers: 5
+    max_badge_sales: 2000
+    at_the_con: False
+    post_con: True
+    send_sms: False
+    emergency_procedures_enabled: True
+    
+    covid_policies_url: https://www.magwest.org/covid
+    
+    treasury_dept_checklist_form_url: 'https://forms.gle/vS26HZQiFaTjvuwn8'
+    expected_response: "May 31st" # displayed on panels app text
+    mivs_video_response_expected: "no later than September 17th"
+    
+    volunteer_placeholder_deadline: "May 12"
+    volunteer_food_deadline: "May 19"
+    volunteer_checklist_deadline: "June 30"
+    emergency_procedures_deadline: "June 30"
+    
+    require_dedicated_guest_table_presence: False
+    expected_rehearsal_response: "August 5th"
+
+    untransferable_attrs: ['first_name','last_name','legal_name','email','birthdate','zip_code','international','ec_name','ec_phone','cellphone','interests','age_group','staffing','requested_depts','onsite_contact','no_onsite_contact','hotel_pin','regdesk_info']
+
+    dates:
+      epoch: 2024-07-14 08
+      eschaton: 2024-07-16 16
+      badge_price_waived: 2024-07-16 12
+      prereg_takedown: 2024-07-13
+      group_prereg_takedown: 2024-07-13
+      placeholder_deadline: 2024-07-16
+      prereg_open: 2024-07-14 08
+      volunteer_checklist_open: 2024-05-01
+      shifts_created: 2024-05-15
+      shirt_deadline: 2024-07-16
+      volunteer_shirt_deadline: 2024-05-19
+      supporter_deadline: 2024-07-16
+      room_deadline: 2024-05-19
+      drop_shifts_deadline: 2024-07-07
+      uber_takedown: 2024-08-18
+
+      printed_badge_deadline: 2024-05-15
+
+      # Dealer registration automatically opens on DEALER_REG_START.  After DEALER_REG_DEADLINE
+      # all dealer registration are automatically waitlisted.  After DEALER_REG_SHUTDOWN dealers
+      # can no longer even add themselves to the waitlist.  Dealer payment reminder emails are
+      # sent in the days and weeks leading up to DEALER_PAYMENT_DUE.  All waitlisted dealers will
+      # be emailed when the waitlist has been exhausted and all available positions have been
+      # filled, as defined by DEALER_WAITLIST_CLOSED.
+      dealer_reg_start: 2024-07-14 08
+      dealer_reg_shutdown: 2024-04-15
+      dealer_payment_due: 2024-06-01
+      dealer_reg_deadline: ""  # Disable automatic waitlist
+      dealer_waitlist_closed: ""  # If this is enabled, be sure to update the waitlist_closing.txt email
+      band_info_deadline: ""
+      band_bio_deadline: 2024-05-26
+      band_panel_deadline: 2024-06-01 # Should be <= panel_app_deadline
+      band_stage_plot_deadline: 2024-06-01 # A/V RFC (deadline not tracked by Reggie)
+      band_taxes_deadline: ""
+      band_charity_deadline: "" # No info on any charity auction this year; starting with this off.
+      band_merch_deadline: 2024-07-01
+      band_mc_deadline: 2024-07-01
+      band_autograph_deadline: ""
+      band_rehearsal_deadline: 2024-07-01
+      band_badges_deadline: 2024-07-01 # Should be <= placeholder_deadline
+      rock_island_deadline: "" # Rock Island not yet confirmed.
+
+      # WARNING - everything below this is set to a temporary value just so
+      #           that we won't get an exception at import time.
+      panels_deadline: 2024-04-30
+      panel_app_deadline: 2024-07-23 # Is this actually used?
+      panels_confirm_deadline: ""
+      mivs_round_one_deadline: 2024-08-01
+      mivs_round_two_start: 2024-08-01
+      mivs_round_two_deadline: 2024-08-01
+      mivs_judging_deadline: 2024-08-01
+      mivs_round_two_complete: 2024-08-01
+      guest_panel_deadline: 2024-08-01
+      guest_bio_deadline: 2024-08-01
+      guest_info_deadline: ""
+      guest_taxes_deadline: 2024-08-01
+      guest_merch_deadline: 2024-08-01
+      guest_charity_deadline: ""
+      guest_badges_deadline: 2024-08-01
+      guest_autograph_deadline: ""
+      guest_interview_deadline: 2024-08-01
+      guest_travel_plans_deadline: ""
+
+    badge_ranges:
+      staff_badge: [7, 999]
+      contractor_badge: [7, 999]
+      guest_badge: [2000, 9999]
+      attendee_badge: [2000, 9999]
+      one_day_badge: [2000, 9999]
+      child_badge: [2000, 9999]
+      
+    badge_prices:
+      initial_attendee: 90
+      group_discount: 20
+      dealer_badge_price: 60
+      one_days_enabled: True
+      presell_one_days: True
+      default_single_day: 50
+
+      single_day:
+        Friday: 50
+        Saturday: 60
+        Sunday: 30
+      
+    table_prices:
+      default_price: 200
+      "1": 60
+      "2": 100
+      "3": 200
+      "4": 275
+      
+    age_groups:
+      under_6:
+        desc: "Under 6"
+        min_age: 0
+        max_age: 5
+        can_register: True
+
+      under_13:
+        desc: "Between 6 and 13"
+        min_age: 6
+        max_age: 11
+        can_volunteer: False
+        
+    integer_enums:
+      shirt_level: 35
+      supporter_level: 199
+      #season_level: 180
+
+      donation_tier:
+        No thanks: 0
+        T-Shirt Tier: SHIRT_LEVEL
+        Splat! Tier: SUPPORTER_LEVEL
+        #Season Tier: SEASON_LEVEL
+        
+      shirt:
+        Unisex XS: 1
+        Unisex S: 2
+        Unisex M: 3
+        Unisex L: 4
+        Unisex XL: 5
+        Unisex 2X: 6
+        Unisex 3X: 7
+        Unisex 4X: 8
+        Unisex 5X: 9
+
+    donation_tier_descriptions:
+      no_thanks:
+        name: No thanks
+        icon: ''
+        description: No thanks
+        link: ''
+
+      shirt:
+        name: T-Shirt Tier
+        icon: ../static/icons/shirt.png
+        description: Event T-Shirt|Lanyard|Enamel Pin
+        link: ../static_views/merch.html|../static_views/merch.html|../static_views/merch.html
+
+      supporter_package:
+        name: Splat! Tier
+        icon: ../static/icons/supporter.png
+        description: Water Gun|Slap Bracelet|Custom Hat|Messenger Bag|Hydration Backpack
+        link: ../static_views/merch.html|../static_views/merch.html|../static_views/merch.html|../static_views/merch.html|../static_views/merch.html
+
+      #super_supporter:
+      #  name: Jet Tier
+      #  icon: ../static/icons/super.png
+      #  description: Crazy Exclusive Swag
+      #  link: ../static_views/super.html
+
+    enums:
+      event_location:
+        panels_1: "Panels 1"
+        panels_2: "Panels 2"
+        arcade_tournaments_1: "Arcade (Tournaments 1)"
+        arcade_tournaments_2: "Arcade (Tournaments 2)"
+        concerts: "Concerts"
+        jamspace: "Jam Space"
+        chipspace: "Chipspace"
+        console_tournament: "Consoles (Tournaments)"
+        console_attendee: "Consoles (Attendee Tournaments)"
+        tabletop_tournaments: "Tabletop"
+        mages: "MAGES"
+        variety: "Variety Stage"
+        pool_party: "Pool Party"
+        lan: "LAN"
+        indie_games: "Indie Games"
+        marketplace: "Marketplace"
+        meet_greet: "Meet-and-Greet"
+
+      guest_merch:
+        own_table: "Selling merch"
+        
+    dept_head_checklist:
+      placeholders:
+        deadline: 2024-04-19
+
+      assigned_volunteers:
+        deadline: 2024-04-19
+        path: /shifts_admin/staffers?department_id={department_id}
+
+      creating_shifts:
+        deadline: 2024-05-10
+        description: >
+            STOPS is happy to assist you in creating shifts. Please let us know if you need assistance 
+            with this step. If you want us to import last year's shifts, please email stops@magwest.org.
+            You will still need to approve these via the checklist after the import.
+        path: /shifts_admin/index?department_id={department_id}
+        
+      tech_requirements:
+        deadline: 2024-05-17
+        external_form_url: https://forms.gle/5ouCmsF43CzRKY728
+
+      approve_setup_teardown:
+        name: Approve/Decline Additional Hotel Nights
+        deadline: 2024-05-24
+        description: >
+            Many staffers want to work setup and teardown shifts rather than work during the event. We have 
+            more volunteers than we need to do this, so we require DH approval of volunteers who need hotel 
+            space for those dates.
+
+
+      printed_signs:
+        name: Room Signage
+        deadline: 2024-06-01
+        description: Other than a sign for your area, what printed signage do you need?
+        full_description: >
+            <div class="text-left">All attendee-facing rooms will automatically receive a 24"x36" coroplast sign for outside of the room. Please submit requests for <strong>additional</strong> signage here.
+            <br/><br/>We will compare all requests against our known signage inventory, so please include your complete list of needs. (If you store any signs with your department supplies, however, we will not have records of them in our signage inventory, so DON'T include those here--this helps us avoid double-ordering.)
+            <br/><br/>Signage comes in two types: 12"x18" coroplast and 24"x36" coroplast. Be sure to specify FOR EACH SIGN:
+            <ul><li>Number needed</li>
+            <li>Size of sign</li>
+            <li>Primary text of sign</li>
+            <li>Sub text of sign (if applicable)</li>
+            <li>Intended placement location for sign</li>
+            <li>Link to any custom artwork that is needed</li>
+            <li>Any additional notes</li></ul>
+            <br/>The signage department reserves the right to reduce or decline requests according to their discretion. We will contact you if significant changes to your order are necessary.
+            <br/><br/>Note: This checklist item is NOT for printed materials such as sign-up forms, waivers, or anything else that goes on standard office paper. STOPS has a paper cutter and a printer for small jobs (less than 50 pages). Anything more than 50 pages needs to go into the Bulk Print Jobs checklist item.
+        
+      mediatron:
+        deadline: 2024-06-01
+        full_description: >
+            If you have something especially cool happening that you would like Mediatron! to capture, let us know here so 
+            they can do their best to get your event on their schedule. For detailed or special requests, please contact 
+            mediatron@magwest.org.
+            
+      ppe_requests:
+        deadline: 2024-06-08
+        name: Bulk PPE & Sanitizing Supplies
+        description: >
+          MAGFest is providing basic PPE for departments for MAGWest 2024. Please let us know what you need and we will do our best to accommodate.
+        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSc-w7naGwD2fNycj26XZZMHL1x7hDd4Bb5zc8p2XY0QL8uUNQ/viewform?usp=sharing
+            
+      office_supplies:
+        deadline: ''
+        description: >
+            STOPS can provide the following office supplies: pens, sharpies, paper, whiteboard, whiteboard markers, 
+            sticky notes, scissors, painters tape, scotch tape, staplers, clipboards, flip charts/easel pads. List 
+            WHICH ITEMS you need and HOW MANY you need of each item (if you request an item but don't give a quantity, 
+            you will get 1). If you need a very specific office item, you will need to purchase it yourself using your 
+            department's budget. Note 1: STOPS has a paper cutter and a printer for small jobs (less than 50 pages). 
+            Anything more than 50 pages needs to go into 'Bulk Print Jobs.' Note 2: A ream of paper is 500 sheets.
+
+      hotel_setup:
+        deadline: 2024-06-08
+        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSfYQZNnvX__ykuk6t7Ul7Z_zzxGjTnpun_6RqL3gZ1lNjOhhA/viewform
+
+      logistics:
+        deadline: ''
+            
+      guidebook_schedule:
+        deadline: 2024-06-15
+        name: Public-Facing Schedule
+        description: Make sure your public-facing events or open hours are on our Uber schedule so they can be exported to our attendee schedule.
+        path: /dept_checklist/guidebook_schedule?department_id={department_id}
+        
+      bulk_print_jobs:
+        deadline: 2024-06-22
+        full_description: >
+            STOPS has a printer for small jobs (less than 50 pages). Anything more than 50 pages should go 
+            here! For EACH item you need printed, please include a link to the document and the number of copies.
+            
+      treasury:
+        deadline: 2024-06-22
+        external_form_url: https://forms.gle/4BEHuj3gjCWdfVPq9
+            
+      social_media:
+        deadline: 2024-06-29
+        full_description: >
+            If you have a guest or event that you believe is worth promoting on social media beforehand, 
+            # let us know! For detailed or special requests, please contact socialmedia@magfest.org/ or post 
+            in #socialmedia-requests in Slack.
+
+      postcon_hours:
+        name: (After the Event) Marking + Rating Shifts
+        deadline: 2024-07-30
+        path: /shifts_admin/signups?department_id={department_id}
+        description: >
+            Please go through your volunteers' shifts carefully. This ensures that they receive the appropriate perks, 
+            are imported as staff next year.
+
+    volunteer_checklist:
+      "2": staffing/food_item.html
+      "3": staffing/shirt_item.html
+      "4": staffing/hotel_item.html
+      "97": staffing/volunteer_agreement_item.html
+      "98": staffing/emergency_procedures_item.html
+      "99": staffing/shifts_item.html
