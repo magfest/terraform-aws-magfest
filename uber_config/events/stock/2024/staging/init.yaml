@@ -1,0 +1,15 @@
+plugins:
+  uber:
+    url_root: https://stock.dev.magevent.net/
+    at_the_con: False
+    post_con: False
+    shirt_stock: 5
+    supporter_stock: 5
+    season_stock: 5
+
+    dates:
+      prereg_open: 2024-01-01
+      dealer_reg_start: 2024-01-01
+      volunteer_checklist_open: 2024-01-01
+      mivs_start: 2024-01-01
+      panels_start: 2024-01-01

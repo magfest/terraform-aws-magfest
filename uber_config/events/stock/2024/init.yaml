@@ -1,0 +1,173 @@
+plugins:
+  magstock:
+    food_price: 18
+    
+    enums:
+      cabin_type_stocks:
+        half: 6
+
+  uber:
+    sentry:
+      environment: stock2024
+    url_root: https://stock2024.reg.magfest.org/
+    event_year: 2024
+    at_the_con: False
+    post_con: True
+    shirt_stock: 0
+    supporter_stock: 0
+    season_stock: 0
+    untransferable_attrs: ['first_name','last_name','legal_name','email','birthdate','zip_code','international','ec_name','ec_phone','cellphone','interests','age_group','staffing','requested_depts','onsite_contact','no_onsite_contact','license_plate','waiver_consent','waiver_signature','waiver_date','acknowledged_checkin_policy','hotel_pin','regdesk_info']
+    maps_enabled: False
+    
+    shirts_per_staffer: 0
+    volunteer_placeholder_deadline: April 12
+    volunteer_food_deadline: May 19
+    volunteer_checklist_deadline: May 26
+    emergency_procedures_deadline: May 26
+    
+    dealer_loc_term: artist alley
+
+    dates:
+      epoch: 2024-06-06 11
+      eschaton: 2024-06-09 12
+      prereg_open: 2024-06-06 11
+      shirt_deadline: 2024-05-24
+      supporter_deadline: 2024-06-01
+      printed_badge_deadline: 2024-05-21
+      badge_price_waived: ''
+      refund_start: ''
+      refund_cutoff: ''
+      
+      volunteer_checklist_open: 2024-04-24
+      shifts_created: 2024-05-04
+      room_deadline: ''
+      volunteer_shirt_deadline: ''
+      drop_shifts_deadline: 2024-05-31
+      placeholder_deadline: ''
+      
+      dealer_reg_start: 2024-06-06
+      dealer_reg_shutdown: 2024-06-09
+      dealer_payment_due: 2024-06-01
+      dealer_reg_deadline: ""  # Disable automatic waitlist
+      dealer_waitlist_closed: ""  # If this is enabled, be sure to update the waitlist_closing.txt email
+      
+      band_panel_deadline: ""
+      band_merch_deadline: ""
+      band_charity_deadline: ""
+      band_info_deadline: ""
+      band_taxes_deadline: ""
+      band_bio_deadline: 2024-05-15
+      band_stage_plot_deadline: 2024-05-22
+      band_badges_deadline: 2024-05-29
+      
+    badge_prices:
+      initial_attendee: 180
+      dealer_badge_price: 110
+      
+      attendee:
+        # Unlike all other dates, these dates indicate the start of the day, not 11:59pm
+        "2024-04-26": 190
+        "2024-05-09": 200
+        "2024-06-08": 210
+        "2024-06-09": 180
+        "2024-06-10": 150
+        "2024-06-11": 30
+        
+    table_prices:
+      default_price: 20
+      
+    integer_enums:
+      shirt_level: 30
+      supporter_level: 70
+      season_level: 180
+
+      donation_tier:
+        No thanks: 0
+        T-Shirt Tier: SHIRT_LEVEL
+        Iridium Tier: SUPPORTER_LEVEL
+        Prairie King Tier: SEASON_LEVEL
+        
+      shirt:
+        Unisex XS: 1
+        Unisex S: 2
+        Unisex M: 3
+        Unisex L: 4
+        Unisex XL: 5
+        Unisex 2X: 6
+        Unisex 3X: 7
+        Unisex 4X: 8
+        Unisex 5X: 9
+
+    donation_tier_descriptions:
+      no_thanks:
+        name: No thanks
+        icon: ''
+        description: No thanks
+        link: ''
+
+      shirt:
+        name: T-Shirt Tier
+        icon: ../static/icons/shirt.png
+        description: Event T-Shirt|Carabiner/Bottle Opener|Enamel Pin
+        link: ../static_views/merch.html|../static_views/merch.html|../static_views/merch.html
+
+      supporter:
+        name: Iridium Tier
+        icon: ../static/icons/supporter.png
+        description: Bandana|Koozie|Cooler Tote Bag|Fredward Plushy
+        link: ../static_views/merch.html|../static_views/merch.html|../static_views/merch.html|../static_views/merch.html
+
+      season:
+        name: Prairie King Tier
+        icon: ../static/icons/super.png
+        description: Custom Print Blanket|MAGStock LED Flashlight|Full Print Nalgene|Custom Fanny Pack|A Custom Surprise!
+        link: ../static_views/merch.html|../static_views/merch.html|../static_views/merch.html|../static_views/merch.html|../static_views/merch.html
+
+    enums:
+      event_location:
+        saloon: Saloon
+        pool: Pool
+        craftbarn: Craft Barn
+        concerts: Main Stage
+        artistalley: Artist Alley
+        gameroom: Game Room
+        merch: Merch
+        registration: Registration
+        bonfire: Bonfire
+        projectiles: Projectiles
+        tennis: Tennis Court
+        amphitheater: Amphitheater
+        gym: Gym
+        dininghall: Dining Hall
+        publicsafety: Public Safety
+        lockpick: Lockpick Village
+
+    dept_head_checklist:
+      placeholders:
+        deadline: 2024-04-05
+
+      assigned_volunteers:
+        deadline: 2024-04-05
+        
+      function_space:
+        deadline: 2024-04-21
+        external_form_url: https://forms.gle/SBcTk7XUCWdBPtzt7
+
+      creating_shifts:
+        deadline: 2024-05-02
+
+      printed_signs:
+        deadline: 2024-05-19
+        description: Other than a sign for your area, what printed signs/banners/forms do you need?
+
+      office_supplies:
+        name: Office Supplies and PPE
+        deadline: 2024-05-19
+        external_form_url: https://forms.gle/DoAUBfu93fMzTV6dA
+
+      guidebook_schedule:
+        name: Public-Facing Schedule
+        deadline: 2024-05-26
+
+      postcon_hours:
+        deadline: 2024-06-26
