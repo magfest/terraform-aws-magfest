@@ -1,3 +1,6 @@
+sideboard:
+  priority_plugins: ['uber','covid']
+
 plugins:
   magstock:
     food_price: 18

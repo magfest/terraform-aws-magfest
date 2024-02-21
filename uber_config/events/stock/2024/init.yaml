@@ -24,6 +24,9 @@ plugins:
     volunteer_food_deadline: May 19
     volunteer_checklist_deadline: May 26
     emergency_procedures_deadline: May 26
+
+    covid_policies_url: ''
+    prior_covid_policies_url: ''
     
     dealer_loc_term: artist alley
 

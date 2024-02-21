@@ -15,7 +15,8 @@ plugins:
     send_sms: False
     emergency_procedures_enabled: True
     
-    covid_policies_url: https://www.magwest.org/covid
+    covid_policies_url: ''
+    prior_covid_policies_url: ''
     
     treasury_dept_checklist_form_url: 'https://forms.gle/vS26HZQiFaTjvuwn8'
     expected_response: "May 31st" # displayed on panels app text
