@@ -43,6 +43,16 @@ staging:
     enable_celery: false
 
 production:
+  stock2024:
+    ubersystem_container: ghcr.io/magfest/magstock:stock2024
+    hostname: stock2024.reg.magfest.org
+    zonename: reg.magfest.org
+    prefix: stock24
+    config_paths:
+      - uber_config/environments/prod
+      - uber_config/events/stock/2024
+    enable_celery: false
+
   super2024:
     ubersystem_container: ghcr.io/magfest/magprime:super2024
     hostname: super2024.reg.magfest.org
