@@ -27,11 +27,20 @@ plugins:
 
     covid_policies_url: ''
     prior_covid_policies_url: ''
-    
+
+    dealer_term: artist
+    dealer_reg_term: artist registration
     dealer_loc_term: artist alley
+    dealer_helper_term: helper
+    dealer_app_term: artist application
+    max_tables: 1
+    max_dealers: 3
+    marketplace_email_signature: |
+        MAGStock Artist Alley Team
+        artist-alley@magstock.org
 
     dates:
-      epoch: 2024-06-06 11
+      epoch: 2024-06-06 12
       eschaton: 2024-06-09 12
       prereg_open: 2024-06-06 11
       shirt_deadline: 2024-05-24
@@ -48,10 +57,11 @@ plugins:
       drop_shifts_deadline: 2024-05-31
       placeholder_deadline: ''
       
-      dealer_reg_start: 2024-06-06
+      dealer_reg_start: 2024-03-15
+      dealer_reg_public: ""
       dealer_reg_shutdown: 2024-06-09
-      dealer_payment_due: 2024-06-01
-      dealer_reg_deadline: ""  # Disable automatic waitlist
+      dealer_payment_due: 2024-05-25
+      dealer_reg_deadline: 2024-03-31
       dealer_waitlist_closed: ""  # If this is enabled, be sure to update the waitlist_closing.txt email
       
       band_panel_deadline: ""
@@ -78,6 +88,9 @@ plugins:
         
     table_prices:
       default_price: 20
+
+    cabin_type_prices:
+      private: 1400
       
     integer_enums:
       shirt_level: 30
