@@ -10,27 +10,27 @@ staging:
     web_cpu: 512
     web_count: 1
 
-  stock:
-    ubersystem_container: ghcr.io/magfest/magstock:stock2024
-    hostname: stock.dev.magevent.net
-    zonename: dev.magevent.net
-    prefix: stock-staging
-    config_paths:
-      - uber_config/environments/staging
-      - uber_config/events/stock/2024/staging
-    web_cpu: 512
-    web_count: 1
+#  stock:
+#    ubersystem_container: ghcr.io/magfest/magstock:main
+#    hostname: stock.dev.magevent.net
+#    zonename: dev.magevent.net
+#    prefix: stock-staging
+#    config_paths:
+#      - uber_config/environments/staging
+#      - uber_config/events/stock/2024/staging
+#    web_cpu: 512
+#    web_count: 1
 
-  west:
-    ubersystem_container: ghcr.io/magfest/magwest:west2024
-    hostname: west.dev.magevent.net
-    zonename: dev.magevent.net
-    prefix: west-staging
-    config_paths:
-      - uber_config/environments/staging
-      - uber_config/events/west/2024/staging
-    web_cpu: 512
-    web_count: 1
+#  west:
+#    ubersystem_container: ghcr.io/magfest/magwest:main
+#    hostname: west.dev.magevent.net
+#    zonename: dev.magevent.net
+#    prefix: west-staging
+#    config_paths:
+#      - uber_config/environments/staging
+#      - uber_config/events/west/2024/staging
+#    web_cpu: 512
+#    web_count: 1
 
   super2023:
     ubersystem_container: ghcr.io/magfest/magprime:shifts_ical
