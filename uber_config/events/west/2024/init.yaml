@@ -11,7 +11,7 @@ plugins:
     max_dealers: 5
     max_badge_sales: 2000
     at_the_con: False
-    post_con: True
+    post_con: False
     send_sms: False
     emergency_procedures_enabled: True
     
@@ -29,6 +29,23 @@ plugins:
     
     require_dedicated_guest_table_presence: False
     expected_rehearsal_response: "August 5th"
+
+    marketplace_email_signature: |
+        ---
+        Natasha Singha
+        Marketplace Department Head
+        Programming Division, MAGWest
+        www.magwest.org
+        marketplace@magwest.org
+    panels_email_signature: |
+        ---
+        Gerado "G" Paz
+        Panels Department Head
+        Programming Division, MAGWest
+        www.magwest.org
+        panels@magwest.org
+        ---
+        Looking to Volunteer? Contact chairs@magwest.org
 
     untransferable_attrs: ['first_name','last_name','legal_name','email','birthdate','zip_code','international','ec_name','ec_phone','cellphone','interests','age_group','staffing','requested_depts','onsite_contact','no_onsite_contact','hotel_pin','regdesk_info']
 
