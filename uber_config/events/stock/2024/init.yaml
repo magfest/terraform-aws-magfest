@@ -57,11 +57,11 @@ plugins:
       drop_shifts_deadline: 2024-05-31
       placeholder_deadline: ''
       
-      dealer_reg_start: 2024-03-15
+      dealer_reg_start: 2024-03-17
       dealer_reg_public: ""
       dealer_reg_shutdown: 2024-06-09
       dealer_payment_due: 2024-05-25
-      dealer_reg_deadline: 2024-03-31
+      dealer_reg_deadline: 2024-03-24
       dealer_waitlist_closed: ""  # If this is enabled, be sure to update the waitlist_closing.txt email
       
       band_panel_deadline: ""
