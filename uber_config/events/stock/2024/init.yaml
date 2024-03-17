@@ -57,7 +57,7 @@ plugins:
       drop_shifts_deadline: 2024-05-31
       placeholder_deadline: ''
       
-      dealer_reg_start: 2024-03-17
+      dealer_reg_start: 2024-03-16
       dealer_reg_public: ""
       dealer_reg_shutdown: 2024-06-09
       dealer_payment_due: 2024-05-25
