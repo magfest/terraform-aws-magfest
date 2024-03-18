@@ -75,17 +75,17 @@ plugins:
       band_badges_deadline: 2024-05-29
       
     badge_prices:
-      initial_attendee: 180
+      initial_attendee: 185
       dealer_badge_price: 110
       
       attendee:
         # Unlike all other dates, these dates indicate the start of the day, not 11:59pm
-        "2024-04-26": 190
-        "2024-05-09": 200
-        "2024-06-08": 210
-        "2024-06-09": 180
-        "2024-06-10": 150
-        "2024-06-11": 30
+        "2024-04-29": 195
+        "2024-05-27": 205
+        "2024-06-06": 215
+        "2024-06-07": 185
+        "2024-06-08": 155
+        "2024-06-09": 35
         
     table_prices:
       default_price: 20
