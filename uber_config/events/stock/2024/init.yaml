@@ -142,7 +142,7 @@ plugins:
 
     enums:
       event_location:
-        saloon: Saloon
+        canteen: Canteen
         pool: Pool
         craftbarn: Craft Barn
         concerts: Main Stage
@@ -150,7 +150,7 @@ plugins:
         gameroom: Game Room
         merch: Merch
         registration: Registration
-        bonfire: Bonfire
+        campfire: Campfire
         projectiles: Projectiles
         tennis: Tennis Court
         amphitheater: Amphitheater
@@ -168,19 +168,27 @@ plugins:
         
       function_space:
         deadline: 2024-04-21
-        external_form_url: https://forms.gle/SBcTk7XUCWdBPtzt7
+        external_form_url: https://forms.gle/hQ5s7cYU9sd29w6t9
 
       creating_shifts:
         deadline: 2024-05-02
+        description: >
+            We are able to import shifts from last year. If you want us to import last year's shifts, please email 
+            stops@magstock.org. You will still need to approve these via the checklist after the import. If you want 
+            any shifts to be restricted to certain staffers, please use the "roles" function when creating shifts. 
+            Shifts with a specific role will only be visible to staff that you have assigned to that role.
 
       printed_signs:
         deadline: 2024-05-19
         description: Other than a sign for your area, what printed signs/banners/forms do you need?
 
       office_supplies:
-        name: Office Supplies and PPE
+        name: Supplies (Office, PPE, etc.)
         deadline: 2024-05-19
-        external_form_url: https://forms.gle/DoAUBfu93fMzTV6dA
+        description: >
+            MAGStock is providing basic PPE and office supplies for departments. Please let us know what you need and 
+            we will do our best to accommodate.
+        external_form_url: https://forms.gle/oNoQidGQ2rMWC2zDA
 
       guidebook_schedule:
         name: Public-Facing Schedule
