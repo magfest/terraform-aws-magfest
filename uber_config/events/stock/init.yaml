@@ -76,7 +76,7 @@ plugins:
       shirt_level: 20
       supporter_level: 50
       season_level: 100
-      supporter_stock: 200
+      supporter_stock: 200 # TODO: Remove
       group_discount: 10
       staff_event_shirt:
         "Generic MAGStock Shirt": 0
