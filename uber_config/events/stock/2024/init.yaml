@@ -6,6 +6,9 @@ plugins:
       cabin_type_stocks:
         half: 6
 
+      cabin_type_prices:
+        private: 1400
+
   uber:
     sentry:
       environment: stock2024
@@ -20,10 +23,10 @@ plugins:
     slow_load_check: False
     
     shirts_per_staffer: 0
-    volunteer_placeholder_deadline: April 12
-    volunteer_food_deadline: May 19
-    volunteer_checklist_deadline: May 26
-    emergency_procedures_deadline: May 26
+    volunteer_placeholder_deadline: April 18
+    volunteer_food_deadline: May 16
+    volunteer_checklist_deadline: May 23
+    emergency_procedures_deadline: May 23
 
     covid_policies_url: ''
     prior_covid_policies_url: ''
@@ -54,7 +57,7 @@ plugins:
       shifts_created: 2024-05-04
       room_deadline: ''
       volunteer_shirt_deadline: ''
-      drop_shifts_deadline: 2024-05-31
+      drop_shifts_deadline: 2024-05-30
       placeholder_deadline: ''
       
       dealer_reg_start: 2024-03-16
@@ -88,9 +91,6 @@ plugins:
         
     table_prices:
       default_price: 20
-
-    cabin_type_prices:
-      private: 1400
       
     integer_enums:
       shirt_level: 30
@@ -151,17 +151,17 @@ plugins:
 
     dept_head_checklist:
       placeholders:
-        deadline: 2024-04-05
+        deadline: 2024-04-10
 
       assigned_volunteers:
-        deadline: 2024-04-05
+        deadline: 2024-04-10
         
       function_space:
-        deadline: 2024-04-21
+        deadline: 2024-04-17
         external_form_url: https://forms.gle/hQ5s7cYU9sd29w6t9
 
       creating_shifts:
-        deadline: 2024-05-02
+        deadline: 2024-05-01
         description: >
             We are able to import shifts from last year. If you want us to import last year's shifts, please email 
             stops@magstock.org. You will still need to approve these via the checklist after the import. If you want 
@@ -169,20 +169,20 @@ plugins:
             Shifts with a specific role will only be visible to staff that you have assigned to that role.
 
       printed_signs:
-        deadline: 2024-05-19
+        deadline: 2024-05-15
         description: Other than a sign for your area, what printed signs/banners/forms do you need?
 
       office_supplies:
         name: Supplies (Office, PPE, etc.)
-        deadline: 2024-05-19
+        deadline: 2024-05-15
         description: >
             MAGStock is providing basic PPE and office supplies for departments. Please let us know what you need and 
             we will do our best to accommodate.
         external_form_url: https://forms.gle/oNoQidGQ2rMWC2zDA
 
       guidebook_schedule:
-        name: Public-Facing Schedule
-        deadline: 2024-05-26
+        name: Public Schedule
+        deadline: 2024-05-22
 
       postcon_hours:
         deadline: 2024-06-26
