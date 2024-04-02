@@ -45,7 +45,7 @@ plugins:
     dates:
       epoch: 2024-06-06 12
       eschaton: 2024-06-09 12
-      prereg_open: 2024-06-06 11
+      prereg_open: 2024-04-03 16
       shirt_deadline: 2024-05-24
       supporter_deadline: 2024-06-01
       printed_badge_deadline: 2024-05-21
