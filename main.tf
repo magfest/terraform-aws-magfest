@@ -122,32 +122,6 @@ provider "curl" {
 }
 
 moved {
-  from = module.uberserver-ecs.postgresql_database
-  to = module.postgres-db.postgresql_database
+  from = module.uberserver-ecs
+  to = module.postgres-db
 }
-
-moved {
-  from = module.uberserver-ecs.postgresql_schema
-  to = module.postgres-db.postgresql_schema
-}
-
-moved {
-  from = module.uberserver-ecs.postgresql_role
-  to = module.postgres-db.postgresql_role
-}
-
-moved {
-  from = module.uberserver-ecs.random_password
-  to = module.postgres-db.random_password
-}
-
-moved {
-  from = module.uberserver-ecs.aws_secretsmanager_secret
-  to = module.postgres-db.aws_secretsmanager_secret
-}
-
-moved {
-  from = module.uberserver-ecs.aws_secretsmanager_secret_version
-  to = module.postgres-db.aws_secretsmanager_secret_version
-}
-
