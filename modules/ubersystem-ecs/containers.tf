@@ -73,7 +73,7 @@ locals {
           },
           {
             "name": "UBERSYSTEM_SECRETS",
-            "valueFrom": aws_secretsmanager_secret.uber_secret.arn
+            "valueFrom": aws_secretsmanager_secret.uber.arn
           }
         ],
         "mountPoints": [
