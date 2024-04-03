@@ -63,7 +63,7 @@ locals {
             },
             {
                 "name": "CELERY_ENABLED",
-                "value": var.enable_celery
+                "value": tostring(var.enable_celery)
             }
         ],
         "secrets": [
