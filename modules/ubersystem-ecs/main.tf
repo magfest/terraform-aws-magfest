@@ -23,10 +23,6 @@ data "aws_route53_zone" "uber" {
   private_zone = false
 }
 
-data "aws_secretsmanager_secret_version" "uber_secret_current" {
-  secret_id = aws_secretsmanager_secret.uber_secret.id
-}
-
 module "uber_image" {
   source = "./modules/docker-resolve"
   image = var.ubersystem_container
@@ -143,10 +139,6 @@ resource "aws_efs_access_point" "uber" {
 # Configuration Secrets
 # -------------------------------------------------------------------
 
-resource "aws_secretsmanager_secret" "uber_secret" {
-  name = "${var.secretprefix}-uber-secrets"
-  recovery_window_in_days = 0
-}
 
 resource "aws_secretsmanager_secret" "uber" {
   name                    = "${var.prefix}-uber-secrets"
@@ -155,5 +147,11 @@ resource "aws_secretsmanager_secret" "uber" {
 
 resource "aws_secretsmanager_secret_version" "initial" {
   secret_id     = aws_secretsmanager_secret.uber.id
-  secret_string = data.aws_secretsmanager_secret_version.uber_secret_current.secret_string
+  secret_string = <<-EOF
+  data:
+    secrets: {}
+  EOF
+  lifecycle {
+    ignore_changes = all
+  }
 }
