@@ -16,21 +16,17 @@ terraform {
 
 resource "postgresql_database" "uber" {
   name              = var.name
-  owner             = var.name
+  owner             = postgresql_role.uber.name
   template          = "template0"
   lc_collate        = "C"
   connection_limit  = -1
   allow_connections = true
-  depends_on = [
-    postgresql_role.uber
-  ]
 }
 
 resource "postgresql_schema" "uber_schema" {
-  depends_on   = [ postgresql_database.uber ]
   name         = "public"
-  database     = var.name
-  owner        = var.name
+  database     = postgresql_database.uber.name
+  owner        = postgresql_role.uber.name
   drop_cascade = true
 }
 
