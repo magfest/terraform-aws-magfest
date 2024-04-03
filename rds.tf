@@ -3,7 +3,7 @@
 # -------------------------------------------------------------------
 
 locals {
-    servers = lookup(yamldecode(file("databases.yaml")), var.environment, [])
+    db_servers = lookup(yamldecode(file("databases.yaml")), var.environment, [])
 }
 
 resource "aws_security_group" "uber_rds" {
@@ -85,7 +85,7 @@ provider "postgresql" {
 
 module "postgres-db" {
   source    = "./modules/postgres-db"
-  for_each  = local.servers
+  for_each  = local.db_servers
   providers = {
     postgresql = postgresql
   }
