@@ -11,7 +11,7 @@ locals {
             },
             {
                 "name": "SESSION_HOST",
-                "value": "${data.aws_elasticache_cluster.redis.cache_nodes.0.address}"
+                "value": "${aws_elasticache_cluster.redis.cache_nodes.0.address}"
             },
             {
                 "name": "SESSION_PREFIX",
@@ -19,7 +19,7 @@ locals {
             },
             {
                 "name": "REDIS_HOST",
-                "value": "${data.aws_elasticache_cluster.redis.cache_nodes.0.address}"
+                "value": "${aws_elasticache_cluster.redis.cache_nodes.0.address}"
             },
             {
                 "name": "REDIS_PREFIX",
@@ -27,7 +27,7 @@ locals {
             },
             {
                 "name": "BROKER_HOST",
-                "value": "${data.aws_elasticache_cluster.redis.cache_nodes.0.address}"
+                "value": "${aws_elasticache_cluster.redis.cache_nodes.0.address}"
             },
             {
                 "name": "BROKER_PROTOCOL",
