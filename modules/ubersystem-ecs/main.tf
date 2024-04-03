@@ -24,7 +24,7 @@ data "aws_route53_zone" "uber" {
 }
 
 data "aws_secretsmanager_secret_version" "uber_secret_current" {
-  secret_id = aws_secretsmanager_secret.uber_secret.secrets.id
+  secret_id = aws_secretsmanager_secret.uber_secret.id
 }
 
 module "uber_image" {
@@ -156,6 +156,6 @@ resource "aws_secretsmanager_secret_version" "initial" {
   secret_id     = aws_secretsmanager_secret.uber.id
   secret_string = data.aws_secretsmanager_secret_version.uber_secret_current.secret_string
   lifecycle {
-    ignore_changes = [ "all" ]
+    ignore_changes = [ all ]
   }
 }
