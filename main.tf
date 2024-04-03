@@ -120,8 +120,3 @@ provider "curl" {
   alias = "ghcr"
   token = jsondecode(data.curl_request.ghcr_token.response_body).token
 }
-
-moved {
-  from = module.uberserver-ecs
-  to = module.postgres-db
-}
