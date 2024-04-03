@@ -2,6 +2,10 @@
 # RDS
 # -------------------------------------------------------------------
 
+locals {
+    servers = lookup(yamldecode(file("databases.yaml")), var.environment, [])
+}
+
 resource "aws_security_group" "uber_rds" {
   name        = "uber_rds"
   description = "Allow access to Uber RDS"
@@ -77,4 +81,59 @@ provider "postgresql" {
   username   = aws_db_instance.uber.username
   password   = aws_secretsmanager_secret_version.password.secret_string
   superuser  = false
+}
+
+# -------------------------------------------------------------------
+# Postgres Databases
+# -------------------------------------------------------------------
+
+resource "postgresql_database" "uber" {
+  for_each          = local.servers
+  name              = each.key
+  owner             = each.key
+  template          = "template0"
+  lc_collate        = "C"
+  connection_limit  = -1
+  allow_connections = true
+  depends_on = [
+    postgresql_role.uber[each.key]
+  ]
+}
+
+resource "postgresql_schema" "uber_schema" {
+  for_each     = local.servers
+  depends_on   = [ postgresql_database.uber[each.key] ]
+  name         = "public"
+  database     = each.key
+  owner        = each.key
+  drop_cascade = true
+}
+
+resource "postgresql_role" "uber" {
+  for_each         = local.servers
+  name             = each.key
+  login            = true
+  connection_limit = -1
+  password         = aws_secretsmanager_secret_version.password[each.key].secret_string
+}
+
+resource "random_password" "uber" {
+  for_each          = local.servers
+  length            = 40
+  special           = false
+  keepers           = {
+    pass_version  = 2
+  }
+}
+
+resource "aws_secretsmanager_secret" "db_password" {
+  for_each                = local.servers
+  name                    = "${each.key}-rds-passwd"
+  recovery_window_in_days = 0
+}
+
+resource "aws_secretsmanager_secret_version" "password" {
+  for_each      = local.servers
+  secret_id     = aws_secretsmanager_secret.db_password[each.key].id
+  secret_string = random_password.uber[each.key].result
 }

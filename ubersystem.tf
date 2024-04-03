@@ -31,6 +31,7 @@ module "uberserver-ecs" {
     efs_dir                 = lookup(each.value, "efs_dir", join("", ["/", each.key]))
     uber_db_name            = lookup(each.value, "uber_db_name", each.key)
     uber_db_username        = lookup(each.value, "uber_db_username", each.key)
+    uber_db_password        = aws_secretsmanager_secret_version.password[each.key].secret_string
     health_url              = lookup(each.value, "health_url", "/uber/devtools/health")
     region                  = var.region
     redis_sg_id             = aws_security_group.uber_redis.id

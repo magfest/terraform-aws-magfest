@@ -1,0 +1,14 @@
+staging:
+  - stock
+  - super
+  - west
+  - super2023
+
+production:
+  - stock2024
+  - super2024
+  - super2023
+  - west2023
+  - super2022
+  - super2020
+  - west2022

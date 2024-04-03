@@ -132,6 +132,10 @@ variable "uber_db_username" {
     type    = string
 }
 
+variable "uber_db_password" {
+    type    = string
+}
+
 variable "efs_id" {
     type    = string
 }

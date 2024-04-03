@@ -55,7 +55,7 @@ locals {
             },
             {
                 "name": "DB_CONNECTION_STRING",
-                "value": "postgresql://${var.uber_db_username}:${aws_secretsmanager_secret_version.password.secret_string}@${var.db_endpoint}/${var.uber_db_name}"
+                "value": "postgresql://${var.uber_db_username}:${var.uber_db_password}@${var.db_endpoint}/${var.uber_db_name}"
             },
             {
                 "name": "UBERSYSTEM_CONFIG_VERSION",
