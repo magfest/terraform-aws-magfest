@@ -26,13 +26,25 @@ data "aws_route53_zone" "uber" {
   private_zone = false
 }
 
-data "aws_elasticache_cluster" "redis" {
-  cluster_id = var.elasticache_id
-}
-
 module "uber_image" {
   source = "./modules/docker-resolve"
   image = var.ubersystem_container
+}
+
+# -------------------------------------------------------------------
+# MAGFest Ubersystem Load Balancer
+# -------------------------------------------------------------------
+
+resource "aws_elasticache_cluster" "redis" {
+  cluster_id           = "${var.prefix}-uber"
+  engine               = "redis"
+  node_type            = "cache.t4g.micro"
+  num_cache_nodes      = 1
+  parameter_group_name = "default.redis7"
+  engine_version       = "7.0"
+  port                 = 6379
+  security_group_ids   = [aws_security_group.uber_redis.id]
+  subnet_group_name    = aws_elasticache_subnet_group.uber_subnets.name
 }
 
 # -------------------------------------------------------------------

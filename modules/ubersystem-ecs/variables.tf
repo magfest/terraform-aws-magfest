@@ -145,10 +145,14 @@ variable "health_url" {
     default = "/uber/devtools/health"
 }
 
-variable "elasticache_id" {
+variable "region" {
     type    = string
 }
 
-variable "region" {
+variable "redis_sg_id" {
+    type    = string
+}
+
+variable "redis_subnet_group_name" {
     type    = string
 }
