@@ -50,7 +50,7 @@ resource "random_password" "uber" {
 }
 
 resource "aws_secretsmanager_secret" "db_password" {
-  name                    = "${var.name}-rds-passwd"
+  name                    = "${var.prefix}-rds-passwd"
   recovery_window_in_days = 0
 }
 

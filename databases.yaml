@@ -1,15 +1,27 @@
 staging:
-  - stock
-  - super
-  - west
-  - super2023
+  stock:
+    prefix: stock-staging
+  super:
+    prefix: super-staging
+  west:
+    prefix: west-staging
+  super2023:
+    prefix: super2023-staging
 
 production:
-  - stock2024
-  - super2024
-  - super2023
-  - stock2023
-  - west2023
-  - super2022
-  - super2020
-  - west2022
+  stock2024:
+    prefix: stock24
+  super2024:
+    prefix: super24
+  super2023:
+    prefix: super23
+  stock2023:
+    prefix: stock23
+  west2023:
+    prefix: west23
+  super2022:
+    prefix: super22
+  super2020:
+    prefix: super20
+  west2022:
+    prefix: west22

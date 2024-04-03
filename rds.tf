@@ -3,7 +3,7 @@
 # -------------------------------------------------------------------
 
 locals {
-    db_servers = toset(lookup(yamldecode(file("databases.yaml")), var.environment, []))
+    db_servers = lookup(yamldecode(file("databases.yaml")), var.environment, [])
 }
 
 resource "aws_security_group" "uber_rds" {
@@ -91,4 +91,5 @@ module "postgres-db" {
   }
 
   name      = each.key
+  prefix    = lookup(each.value, "prefix")
 }
