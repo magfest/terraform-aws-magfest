@@ -87,6 +87,9 @@ resource "aws_acm_certificate" "uber" {
   domain_name       = var.hostname
   subject_alternative_names = [for server in local.servers : server.hostname]
   validation_method = "DNS"
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 data "aws_route53_zone" "uber" {
