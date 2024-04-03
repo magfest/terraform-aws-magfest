@@ -1,5 +1,5 @@
 staging:
-  superv2:
+  super:
     ubersystem_container: ghcr.io/magfest/magprime:main
     hostname: super.dev.magevent.net
     zonename: dev.magevent.net
