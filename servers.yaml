@@ -9,7 +9,6 @@ staging:
       - uber_config/events/super/2024/staging
     web_cpu: 512
     web_count: 1
-    enable_celery: false
 
   stock:
     ubersystem_container: ghcr.io/magfest/magstock:main
@@ -21,7 +20,6 @@ staging:
       - uber_config/events/stock/2024/staging
     web_cpu: 512
     web_count: 1
-    enable_celery: false
 
   west:
     ubersystem_container: ghcr.io/magfest/magwest:main
@@ -33,7 +31,6 @@ staging:
       - uber_config/events/west/2024/staging
     web_cpu: 512
     web_count: 1
-    enable_celery: false
 
   super2023:
     ubersystem_container: ghcr.io/magfest/magprime:shifts_ical
@@ -43,7 +40,6 @@ staging:
     config_paths:
       - uber_config/environments/staging
       - uber_config/events/super/2023/staging
-    enable_celery: false
 
 production:
   stock2024:
@@ -66,7 +62,6 @@ production:
     web_count: 2
     web_cpu: 768
     web_ram: 1536
-    enable_celery: false
 
   super2023:
     ubersystem_container: ghcr.io/magfest/magprime:super2023
