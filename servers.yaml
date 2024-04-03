@@ -32,15 +32,6 @@ staging:
     web_cpu: 512
     web_count: 1
 
-  super2023:
-    ubersystem_container: ghcr.io/magfest/magprime:shifts_ical
-    hostname: super2023.dev.magevent.net
-    zonename: dev.magevent.net
-    prefix: super2023-staging
-    config_paths:
-      - uber_config/environments/staging
-      - uber_config/events/super/2023/staging
-
 production:
   stock2024:
     ubersystem_container: ghcr.io/magfest/magstock:main
@@ -103,17 +94,6 @@ production:
       - uber_config/events/super/2022
     health_url: /uber
     enable_celery: false
-
-  super2020:
-    ubersystem_container: ghcr.io/magfest/magprime:super2020
-    hostname: super2020.reg.magfest.org
-    zonename: reg.magfest.org
-    prefix: super20
-    config_paths:
-      - uber_config/environments/prod
-      - uber_config/events/super/2020
-    enable_celery: false
-    health_url: /uber
 
   west2022:
     ubersystem_container: ghcr.io/magfest/magwest:west2022
