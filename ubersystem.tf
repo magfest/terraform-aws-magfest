@@ -24,7 +24,7 @@ module "uberserver-ecs" {
     private_zone            = lookup(each.value, "private_zone", join("", [each.key,".local"]))
     ubersystem_container    = each.value.ubersystem_container
     lb_priority             = lookup(each.value, "lb_priority", index(local.server_names, each.key))*10+50
-    prefix                  = each.value.prefix
+    prefix                  = each.key
     ubersystem_config       = jsonencode([for path in lookup(local.paths, each.key, []): base64gzip(file(path))])
     ubersystem_secrets      = ""
     efs_dir                 = lookup(each.value, "efs_dir", join("", ["/", each.key]))
