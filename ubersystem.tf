@@ -25,7 +25,6 @@ module "uberserver-ecs" {
     ubersystem_container    = each.value.ubersystem_container
     lb_priority             = lookup(each.value, "lb_priority", index(local.server_names, each.key))*10+50
     prefix                  = each.key
-    secretprefix            = each.value.prefix
     ubersystem_config       = jsonencode([for path in lookup(local.paths, each.key, []): base64gzip(file(path))])
     ubersystem_secrets      = ""
     efs_dir                 = lookup(each.value, "efs_dir", join("", ["/", each.key]))

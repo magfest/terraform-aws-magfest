@@ -3,7 +3,6 @@ staging:
     ubersystem_container: ghcr.io/magfest/magprime:main
     hostname: super.dev.magevent.net
     zonename: dev.magevent.net
-    prefix: super-staging
     config_paths:
       - uber_config/environments/staging
       - uber_config/events/super/2024/staging
@@ -14,7 +13,6 @@ staging:
     ubersystem_container: ghcr.io/magfest/magstock:main
     hostname: stock.dev.magevent.net
     zonename: dev.magevent.net
-    prefix: stock-staging
     config_paths:
       - uber_config/environments/staging
       - uber_config/events/stock/2024/staging
@@ -25,7 +23,6 @@ staging:
     ubersystem_container: ghcr.io/magfest/magwest:main
     hostname: west.dev.magevent.net
     zonename: dev.magevent.net
-    prefix: west-staging
     config_paths:
       - uber_config/environments/staging
       - uber_config/events/west/2024/staging
@@ -37,7 +34,6 @@ production:
     ubersystem_container: ghcr.io/magfest/magstock:main
     hostname: stock2024.reg.magfest.org
     zonename: reg.magfest.org
-    prefix: stock24
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/stock/2024
@@ -46,7 +42,6 @@ production:
     ubersystem_container: ghcr.io/magfest/magprime:super2024
     hostname: super2024.reg.magfest.org
     zonename: reg.magfest.org
-    prefix: super24
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/super/2024
@@ -58,7 +53,6 @@ production:
     ubersystem_container: ghcr.io/magfest/magprime:super2023
     hostname: super2023.reg.magfest.org
     zonename: reg.magfest.org
-    prefix: super23
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/super/2023
@@ -68,7 +62,6 @@ production:
     ubersystem_container: ghcr.io/magfest/magstock:stock2023
     hostname: stock2023.reg.magfest.org
     zonename: reg.magfest.org
-    prefix: stock23
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/stock/2023
@@ -78,7 +71,6 @@ production:
     ubersystem_container: ghcr.io/magfest/magwest:west2023
     hostname: west2023.reg.magfest.org
     zonename: reg.magfest.org
-    prefix: west23
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/west/2023
@@ -88,7 +80,6 @@ production:
     ubersystem_container: ghcr.io/magfest/magprime:super2022
     hostname: super2022.reg.magfest.org
     zonename: reg.magfest.org
-    prefix: super22
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/super/2022
@@ -99,7 +90,6 @@ production:
     ubersystem_container: ghcr.io/magfest/magwest:west2022
     hostname: west2022.reg.magfest.org
     zonename: reg.magfest.org
-    prefix: west22
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/west/2022
