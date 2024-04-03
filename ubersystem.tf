@@ -17,7 +17,6 @@ module "uberserver-ecs" {
     for_each = local.servers
     providers = {
         curl = curl.ghcr
-        postgresql = postgresql
     }
 
     hostname                = each.value.hostname
