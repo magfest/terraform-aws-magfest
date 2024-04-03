@@ -3,7 +3,7 @@ staging:
     ubersystem_container: ghcr.io/magfest/magprime:main
     hostname: super.dev.magevent.net
     zonename: dev.magevent.net
-    prefix: superv2
+    prefix: super-staging
     config_paths:
       - uber_config/environments/staging
       - uber_config/events/super/2024/staging
