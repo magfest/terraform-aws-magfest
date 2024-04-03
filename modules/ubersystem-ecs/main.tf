@@ -4,9 +4,6 @@ terraform {
       source  = "hashicorp/aws"
       version = ">= 4.38.0"
     }
-    postgresql = {
-      source = "cyrilgdn/postgresql"
-    }
     curl = {
       source = "marcofranssen/curl"
     }
