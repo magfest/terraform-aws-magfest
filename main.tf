@@ -122,6 +122,37 @@ provider "curl" {
 }
 
 moved {
+  from = module.uberserver-ecs["super"].postgresql_database.uber
+  to = module.postgres-db["super"].postgresql_database.uber
+}
+
+moved {
+  from = module.uberserver-ecs["super"].postgresql_schema.uber_schema
+  to = module.postgres-db["super"].postgresql_schema.uber_schema
+}
+
+moved {
+  from = module.uberserver-ecs["super"].postgresql_role.uber
+  to = module.postgres-db["super"].postgresql_role.uber
+}
+
+moved {
+  from = module.uberserver-ecs["super"].random_password.uber
+  to = module.postgres-db["super"].random_password.uber
+}
+
+moved {
+  from = module.uberserver-ecs["super"].aws_secretsmanager_secret.db_password
+  to = module.postgres-db["super"].aws_secretsmanager_secret.db_password
+}
+
+moved {
+  from = module.uberserver-ecs["super"].aws_secretsmanager_secret_version.password
+  to = module.postgres-db["super"].aws_secretsmanager_secret_version.password
+}
+
+
+moved {
   from = module.uberserver-ecs["stock"].postgresql_database.uber
   to = module.postgres-db["stock"].postgresql_database.uber
 }
@@ -149,4 +180,314 @@ moved {
 moved {
   from = module.uberserver-ecs["stock"].aws_secretsmanager_secret_version.password
   to = module.postgres-db["stock"].aws_secretsmanager_secret_version.password
+}
+
+
+moved {
+  from = module.uberserver-ecs["west"].postgresql_database.uber
+  to = module.postgres-db["west"].postgresql_database.uber
+}
+
+moved {
+  from = module.uberserver-ecs["west"].postgresql_schema.uber_schema
+  to = module.postgres-db["west"].postgresql_schema.uber_schema
+}
+
+moved {
+  from = module.uberserver-ecs["west"].postgresql_role.uber
+  to = module.postgres-db["west"].postgresql_role.uber
+}
+
+moved {
+  from = module.uberserver-ecs["west"].random_password.uber
+  to = module.postgres-db["west"].random_password.uber
+}
+
+moved {
+  from = module.uberserver-ecs["west"].aws_secretsmanager_secret.db_password
+  to = module.postgres-db["west"].aws_secretsmanager_secret.db_password
+}
+
+moved {
+  from = module.uberserver-ecs["west"].aws_secretsmanager_secret_version.password
+  to = module.postgres-db["west"].aws_secretsmanager_secret_version.password
+}
+
+
+moved {
+  from = module.uberserver-ecs["super2023"].postgresql_database.uber
+  to = module.postgres-db["super2023"].postgresql_database.uber
+}
+
+moved {
+  from = module.uberserver-ecs["super2023"].postgresql_schema.uber_schema
+  to = module.postgres-db["super2023"].postgresql_schema.uber_schema
+}
+
+moved {
+  from = module.uberserver-ecs["super2023"].postgresql_role.uber
+  to = module.postgres-db["super2023"].postgresql_role.uber
+}
+
+moved {
+  from = module.uberserver-ecs["super2023"].random_password.uber
+  to = module.postgres-db["super2023"].random_password.uber
+}
+
+moved {
+  from = module.uberserver-ecs["super2023"].aws_secretsmanager_secret.db_password
+  to = module.postgres-db["super2023"].aws_secretsmanager_secret.db_password
+}
+
+moved {
+  from = module.uberserver-ecs["super2023"].aws_secretsmanager_secret_version.password
+  to = module.postgres-db["super2023"].aws_secretsmanager_secret_version.password
+}
+
+
+moved {
+  from = module.uberserver-ecs["stock2024"].postgresql_database.uber
+  to = module.postgres-db["stock2024"].postgresql_database.uber
+}
+
+moved {
+  from = module.uberserver-ecs["stock2024"].postgresql_schema.uber_schema
+  to = module.postgres-db["stock2024"].postgresql_schema.uber_schema
+}
+
+moved {
+  from = module.uberserver-ecs["stock2024"].postgresql_role.uber
+  to = module.postgres-db["stock2024"].postgresql_role.uber
+}
+
+moved {
+  from = module.uberserver-ecs["stock2024"].random_password.uber
+  to = module.postgres-db["stock2024"].random_password.uber
+}
+
+moved {
+  from = module.uberserver-ecs["stock2024"].aws_secretsmanager_secret.db_password
+  to = module.postgres-db["stock2024"].aws_secretsmanager_secret.db_password
+}
+
+moved {
+  from = module.uberserver-ecs["stock2024"].aws_secretsmanager_secret_version.password
+  to = module.postgres-db["stock2024"].aws_secretsmanager_secret_version.password
+}
+
+
+moved {
+  from = module.uberserver-ecs["super2024"].postgresql_database.uber
+  to = module.postgres-db["super2024"].postgresql_database.uber
+}
+
+moved {
+  from = module.uberserver-ecs["super2024"].postgresql_schema.uber_schema
+  to = module.postgres-db["super2024"].postgresql_schema.uber_schema
+}
+
+moved {
+  from = module.uberserver-ecs["super2024"].postgresql_role.uber
+  to = module.postgres-db["super2024"].postgresql_role.uber
+}
+
+moved {
+  from = module.uberserver-ecs["super2024"].random_password.uber
+  to = module.postgres-db["super2024"].random_password.uber
+}
+
+moved {
+  from = module.uberserver-ecs["super2024"].aws_secretsmanager_secret.db_password
+  to = module.postgres-db["super2024"].aws_secretsmanager_secret.db_password
+}
+
+moved {
+  from = module.uberserver-ecs["super2024"].aws_secretsmanager_secret_version.password
+  to = module.postgres-db["super2024"].aws_secretsmanager_secret_version.password
+}
+
+
+moved {
+  from = module.uberserver-ecs["super2023"].postgresql_database.uber
+  to = module.postgres-db["super2023"].postgresql_database.uber
+}
+
+moved {
+  from = module.uberserver-ecs["super2023"].postgresql_schema.uber_schema
+  to = module.postgres-db["super2023"].postgresql_schema.uber_schema
+}
+
+moved {
+  from = module.uberserver-ecs["super2023"].postgresql_role.uber
+  to = module.postgres-db["super2023"].postgresql_role.uber
+}
+
+moved {
+  from = module.uberserver-ecs["super2023"].random_password.uber
+  to = module.postgres-db["super2023"].random_password.uber
+}
+
+moved {
+  from = module.uberserver-ecs["super2023"].aws_secretsmanager_secret.db_password
+  to = module.postgres-db["super2023"].aws_secretsmanager_secret.db_password
+}
+
+moved {
+  from = module.uberserver-ecs["super2023"].aws_secretsmanager_secret_version.password
+  to = module.postgres-db["super2023"].aws_secretsmanager_secret_version.password
+}
+
+
+moved {
+  from = module.uberserver-ecs["stock2023"].postgresql_database.uber
+  to = module.postgres-db["stock2023"].postgresql_database.uber
+}
+
+moved {
+  from = module.uberserver-ecs["stock2023"].postgresql_schema.uber_schema
+  to = module.postgres-db["stock2023"].postgresql_schema.uber_schema
+}
+
+moved {
+  from = module.uberserver-ecs["stock2023"].postgresql_role.uber
+  to = module.postgres-db["stock2023"].postgresql_role.uber
+}
+
+moved {
+  from = module.uberserver-ecs["stock2023"].random_password.uber
+  to = module.postgres-db["stock2023"].random_password.uber
+}
+
+moved {
+  from = module.uberserver-ecs["stock2023"].aws_secretsmanager_secret.db_password
+  to = module.postgres-db["stock2023"].aws_secretsmanager_secret.db_password
+}
+
+moved {
+  from = module.uberserver-ecs["stock2023"].aws_secretsmanager_secret_version.password
+  to = module.postgres-db["stock2023"].aws_secretsmanager_secret_version.password
+}
+
+
+moved {
+  from = module.uberserver-ecs["west2023"].postgresql_database.uber
+  to = module.postgres-db["west2023"].postgresql_database.uber
+}
+
+moved {
+  from = module.uberserver-ecs["west2023"].postgresql_schema.uber_schema
+  to = module.postgres-db["west2023"].postgresql_schema.uber_schema
+}
+
+moved {
+  from = module.uberserver-ecs["west2023"].postgresql_role.uber
+  to = module.postgres-db["west2023"].postgresql_role.uber
+}
+
+moved {
+  from = module.uberserver-ecs["west2023"].random_password.uber
+  to = module.postgres-db["west2023"].random_password.uber
+}
+
+moved {
+  from = module.uberserver-ecs["west2023"].aws_secretsmanager_secret.db_password
+  to = module.postgres-db["west2023"].aws_secretsmanager_secret.db_password
+}
+
+moved {
+  from = module.uberserver-ecs["west2023"].aws_secretsmanager_secret_version.password
+  to = module.postgres-db["west2023"].aws_secretsmanager_secret_version.password
+}
+
+
+moved {
+  from = module.uberserver-ecs["super2022"].postgresql_database.uber
+  to = module.postgres-db["super2022"].postgresql_database.uber
+}
+
+moved {
+  from = module.uberserver-ecs["super2022"].postgresql_schema.uber_schema
+  to = module.postgres-db["super2022"].postgresql_schema.uber_schema
+}
+
+moved {
+  from = module.uberserver-ecs["super2022"].postgresql_role.uber
+  to = module.postgres-db["super2022"].postgresql_role.uber
+}
+
+moved {
+  from = module.uberserver-ecs["super2022"].random_password.uber
+  to = module.postgres-db["super2022"].random_password.uber
+}
+
+moved {
+  from = module.uberserver-ecs["super2022"].aws_secretsmanager_secret.db_password
+  to = module.postgres-db["super2022"].aws_secretsmanager_secret.db_password
+}
+
+moved {
+  from = module.uberserver-ecs["super2022"].aws_secretsmanager_secret_version.password
+  to = module.postgres-db["super2022"].aws_secretsmanager_secret_version.password
+}
+
+
+moved {
+  from = module.uberserver-ecs["super2020"].postgresql_database.uber
+  to = module.postgres-db["super2020"].postgresql_database.uber
+}
+
+moved {
+  from = module.uberserver-ecs["super2020"].postgresql_schema.uber_schema
+  to = module.postgres-db["super2020"].postgresql_schema.uber_schema
+}
+
+moved {
+  from = module.uberserver-ecs["super2020"].postgresql_role.uber
+  to = module.postgres-db["super2020"].postgresql_role.uber
+}
+
+moved {
+  from = module.uberserver-ecs["super2020"].random_password.uber
+  to = module.postgres-db["super2020"].random_password.uber
+}
+
+moved {
+  from = module.uberserver-ecs["super2020"].aws_secretsmanager_secret.db_password
+  to = module.postgres-db["super2020"].aws_secretsmanager_secret.db_password
+}
+
+moved {
+  from = module.uberserver-ecs["super2020"].aws_secretsmanager_secret_version.password
+  to = module.postgres-db["super2020"].aws_secretsmanager_secret_version.password
+}
+
+
+moved {
+  from = module.uberserver-ecs["west2022"].postgresql_database.uber
+  to = module.postgres-db["west2022"].postgresql_database.uber
+}
+
+moved {
+  from = module.uberserver-ecs["west2022"].postgresql_schema.uber_schema
+  to = module.postgres-db["west2022"].postgresql_schema.uber_schema
+}
+
+moved {
+  from = module.uberserver-ecs["west2022"].postgresql_role.uber
+  to = module.postgres-db["west2022"].postgresql_role.uber
+}
+
+moved {
+  from = module.uberserver-ecs["west2022"].random_password.uber
+  to = module.postgres-db["west2022"].random_password.uber
+}
+
+moved {
+  from = module.uberserver-ecs["west2022"].aws_secretsmanager_secret.db_password
+  to = module.postgres-db["west2022"].aws_secretsmanager_secret.db_password
+}
+
+moved {
+  from = module.uberserver-ecs["west2022"].aws_secretsmanager_secret_version.password
+  to = module.postgres-db["west2022"].aws_secretsmanager_secret_version.password
 }
