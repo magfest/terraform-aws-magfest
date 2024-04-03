@@ -120,3 +120,34 @@ provider "curl" {
   alias = "ghcr"
   token = jsondecode(data.curl_request.ghcr_token.response_body).token
 }
+
+moved {
+  from = module.uberserver-ecs.postgresql_database.uber
+  to = module.postgres-db.postgresql_database.uber
+}
+
+moved {
+  from = module.uberserver-ecs.postgresql_schema.uber_schema
+  to = module.postgres-db.postgresql_schema.uber_schema
+}
+
+moved {
+  from = module.uberserver-ecs.postgresql_role.uber
+  to = module.postgres-db.postgresql_role.uber
+}
+
+moved {
+  from = module.uberserver-ecs.random_password.uber
+  to = module.postgres-db.random_password.uber
+}
+
+moved {
+  from = module.uberserver-ecs.aws_secretsmanager_secret.db_password
+  to = module.postgres-db.aws_secretsmanager_secret.db_password
+}
+
+moved {
+  from = module.uberserver-ecs.aws_secretsmanager_secret_version.password
+  to = module.postgres-db.aws_secretsmanager_secret_version.password
+}
+
