@@ -148,3 +148,12 @@ resource "aws_secretsmanager_secret" "uber_secret" {
   recovery_window_in_days = 0
 }
 
+resource "aws_secretsmanager_secret" "uber" {
+  name                    = "${var.prefix}-uber-secrets"
+  recovery_window_in_days = 0
+}
+
+resource "aws_secretsmanager_secret_version" "initial" {
+  secret_id     = aws_secretsmanager_secret.uber.id
+  secret_string = data.aws_secretsmanager_secret_version.uber_secret_current.secret_string
+}
