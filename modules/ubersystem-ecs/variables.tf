@@ -112,6 +112,10 @@ variable "prefix" {
     default = "uber"
 }
 
+variable "secretprefix" {
+    type    = string
+}
+
 variable "ubersystem_config" {
     type    = string
 }

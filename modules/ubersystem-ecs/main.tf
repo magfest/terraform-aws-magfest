@@ -140,6 +140,14 @@ resource "aws_efs_access_point" "uber" {
 # -------------------------------------------------------------------
 
 resource "aws_secretsmanager_secret" "uber_secret" {
-  name = "${var.prefix}-uber-secrets"
+  name = "${var.secretprefix}-uber-secrets"
   recovery_window_in_days = 0
+}
+
+resource "aws_secretsmanager_secret_version" "initial" {
+  secret_id     = aws_secretsmanager_secret.uber_secret.id
+  secret_string = <<-EOF
+  uber:
+    secret: {}
+  EOF
 }
