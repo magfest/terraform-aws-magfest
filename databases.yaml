@@ -1,7 +1,7 @@
 staging:
   stock:
     prefix: stock-staging
-  super:
+  superv2:
     prefix: super-staging
   west:
     prefix: west-staging
