@@ -1,5 +1,16 @@
 # Docs: https://aws.amazon.com/blogs/mt/packaging-to-distribution-using-aws-systems-manager-distributor-to-deploy-datadog/
 
+resource "aws_ssm_association" "datadog_install" {
+  name = aws_ssm_document.datadog_install[0].name
+
+  targets {
+    key    = "tag:randomized-cluster-name"
+    values = [ random_string.ecs_cluster.result ]
+  }
+
+  count = var.datadog_api_key != null ? 1 : 0
+}
+
 resource "aws_ssm_document" "datadog_install" {
   name          = "DatadogInstall"
   document_type = "Command"

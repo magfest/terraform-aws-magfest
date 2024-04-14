@@ -191,6 +191,11 @@ resource "aws_ecs_account_setting_default" "account_settings" {
   value = "enabled"
 }
 
+resource "random_string" "ecs_cluster" {
+  length           = 16
+  special          = false
+}
+
 resource "aws_autoscaling_group" "ecs_cluster" {
   name_prefix = "${var.clustername}_asg_"
   termination_policies = [
@@ -213,6 +218,11 @@ resource "aws_autoscaling_group" "ecs_cluster" {
   tag {
     key                 = "AmazonECSManaged"
     value               = true
+    propagate_at_launch = true
+  }
+  tag {
+    key                 = "randomized-cluster-name"
+    value               = random_string.ecs_cluster.result
     propagate_at_launch = true
   }
 }
