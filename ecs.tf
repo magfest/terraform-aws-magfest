@@ -166,6 +166,9 @@ for USER in $USERS; do
 done
 
 echo "%wheel  ALL=(ALL)       NOPASSWD: ALL" > /etc/sudoers.d/wheel
+
+sudo yum install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
+
 EOF
   security_groups      = [
     aws_security_group.uber_efs_ec2.id
