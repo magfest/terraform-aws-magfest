@@ -12,7 +12,7 @@ resource "aws_ssm_document" "datadog_install" {
         "action": "aws:runShellScript",
         "name": "install",
         "inputs": {
-          "runCommand": [
+          "runCommand": [ 
             "DD_API_KEY=$(aws secretsmanager get-secret-value --secret-id ${aws_secretsmanager_secret.datadog_api_key[0].name}) DD_SITE="datadoghq.com" bash -c \"$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script_agent7.sh)\""
           ]
         }
