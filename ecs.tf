@@ -124,6 +124,11 @@ resource "aws_iam_role_policy_attachment" "ecs_agent" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceforEC2Role"
 }
 
+resource "aws_iam_role_policy_attachment" "AmazonSSMManagedInstanceCore" {
+  role       = aws_iam_role.ecs_agent.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+}
+
 resource "aws_iam_instance_profile" "ecs_agent" {
   name = "ecs-agent"
   role = aws_iam_role.ecs_agent.name
@@ -191,11 +196,6 @@ resource "aws_ecs_account_setting_default" "account_settings" {
   value = "enabled"
 }
 
-resource "random_string" "ecs_cluster" {
-  length           = 16
-  special          = false
-}
-
 resource "aws_autoscaling_group" "ecs_cluster" {
   name_prefix = "${var.clustername}_asg_"
   termination_policies = [
@@ -218,11 +218,6 @@ resource "aws_autoscaling_group" "ecs_cluster" {
   tag {
     key                 = "AmazonECSManaged"
     value               = true
-    propagate_at_launch = true
-  }
-  tag {
-    key                 = "randomized-cluster-name"
-    value               = random_string.ecs_cluster.result
     propagate_at_launch = true
   }
 }

@@ -4,8 +4,8 @@ resource "aws_ssm_association" "datadog_install" {
   name = aws_ssm_document.datadog_install[0].name
 
   targets {
-    key    = "tag:randomized-cluster-name"
-    values = [ random_string.ecs_cluster.result ]
+    key    = "tag:aws:autoscaling:groupName"
+    values = [ aws_autoscaling_group.ecs_cluster.name ]
   }
 
   count = var.datadog_api_key != null ? 1 : 0
