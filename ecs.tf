@@ -142,7 +142,7 @@ resource "aws_iam_role_policy_attachment" "ecs_agent" {
 
 resource "aws_iam_role_policy_attachment" "ec2_secrets" {
   role       = aws_iam_role.ecs_agent.name
-  policy_arn = aws_iam.policy.ec2_role_secrets.arn
+  policy_arn = aws_iam_policy.ec2_role_secrets.arn
 }
 
 resource "aws_iam_role_policy_attachment" "AmazonSSMManagedInstanceCore" {
