@@ -22,18 +22,18 @@ resource "aws_ssm_document" "datadog_install" {
   EOF
 
   depends_on = [ aws_secretsmanager_secret_version.datadog_api_key[0] ]
-  count = var.datadog_api_key != null ? 0 : 1
+  count = var.datadog_api_key != null ? 1 : 0
 }
 
 resource "aws_secretsmanager_secret" "datadog_api_key" {
   name_prefix = "datadog-"
 
-  count = var.datadog_api_key != null ? 0 : 1
+  count = var.datadog_api_key != null ? 1 : 0
 }
 
 resource "aws_secretsmanager_secret_version" "datadog_api_key" {
   secret_id     = aws_secretsmanager_secret.datadog_api_key[0].id
   secret_string = var.datadog_api_key
 
-  count = var.datadog_api_key != null ? 0 : 1
+  count = var.datadog_api_key != null ? 1 : 0
 }
