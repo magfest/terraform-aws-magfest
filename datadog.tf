@@ -24,7 +24,7 @@ resource "aws_ssm_document" "datadog_install" {
         "name": "install",
         "inputs": {
           "runCommand": [ 
-            "DD_API_KEY=$(aws secretsmanager get-secret-value --secret-id ${aws_secretsmanager_secret.datadog_api_key[0].name}) DD_SITE=\"datadoghq.com\" bash -c \"$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script_agent7.sh)\""
+            "DD_API_KEY=$(aws secretsmanager get-secret-value --secret-id ${aws_secretsmanager_secret.datadog_api_key[0].name} --query SecretString --output text) DD_SITE=\"datadoghq.com\" bash -c \"$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script_agent7.sh)\""
           ]
         }
       }
