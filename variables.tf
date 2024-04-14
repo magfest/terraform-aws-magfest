@@ -65,3 +65,10 @@ variable "mq_instance_size" {
     type    = string
     default = "mq.t3.micro"
 }
+
+variable "datadog_api_key" {
+    type        = string
+    description = "If set, the Datadog agent will be installed and configured with this API key."
+    sensitive   = true
+    default     = null
+}
