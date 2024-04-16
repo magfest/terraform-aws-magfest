@@ -27,7 +27,7 @@ module "uberserver-ecs" {
     prefix                  = each.key
     ubersystem_config       = jsonencode([for path in lookup(local.paths, each.key, []): base64gzip(file(path))])
     config_repo             = "https://github.com/magfest/terraform-aws-magfest.git"
-    config_paths            = join(" " each.value.config_paths)
+    config_paths            = join(" ", each.value.config_paths)
     efs_dir                 = lookup(each.value, "efs_dir", join("", ["/", each.key]))
     uber_db_name            = lookup(each.value, "uber_db_name", each.key)
     uber_db_username        = lookup(each.value, "uber_db_username", each.key)
