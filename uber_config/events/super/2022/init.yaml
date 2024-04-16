@@ -179,6 +179,7 @@ plugins:
       under_13:
         desc: "12"
         min_age: 12
+        max_age: 13
 
     integer_enums:
       shirt_level: 35
