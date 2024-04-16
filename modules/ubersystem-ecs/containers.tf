@@ -47,7 +47,7 @@ locals {
             },
             {
                 "name": "UBERSYSTEM_CONFIG_VERSION",
-                "value": sha256(aws_secretsmanager_secret_version.current_config.secret_string)
+                "value": sha256(var.ubersystem_config)
             },
             {
                 "name": "CELERY_ENABLED",
