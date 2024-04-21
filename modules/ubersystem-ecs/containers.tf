@@ -2,55 +2,43 @@ locals {
     container_common = {
         "environment": [
             {
-                "name": "CERT_NAME",
-                "value": "ssl"
+                "name": "CONFIG_REPO",
+                "value": var.config_repo
             },
             {
-                "name": "VIRTUAL_HOST",
+                "name": "CONFIG_PATHS",
+                "value": var.config_paths
+            },
+            {
+                "name": "uber_hostname",
                 "value": var.hostname
             },
             {
-                "name": "SESSION_HOST",
+                "name": "uber_url_root",
+                "value": "https://${var.hostname}"
+            },
+            {
+                "name": "sideboard_cherrypy_tools_sessions_host",
                 "value": "${aws_elasticache_cluster.redis.cache_nodes.0.address}"
             },
             {
-                "name": "SESSION_PREFIX",
+                "name": "sideboard_cherrypy_tools_sessions_prefix",
                 "value": var.prefix
             },
             {
-                "name": "REDIS_HOST",
+                "name": "uber_redis_host",
                 "value": "${aws_elasticache_cluster.redis.cache_nodes.0.address}"
             },
             {
-                "name": "REDIS_PREFIX",
+                "name": "uber_redis_prefix",
                 "value": var.prefix
             },
             {
-                "name": "BROKER_HOST",
-                "value": "${aws_elasticache_cluster.redis.cache_nodes.0.address}"
+                "name": "uber_secret_broker_url",
+                "value": "redis://${aws_elasticache_cluster.redis.cache_nodes.0.address}:6379/0"
             },
             {
-                "name": "BROKER_PROTOCOL",
-                "value": "redis"
-            },
-            {
-                "name": "BROKER_PORT",
-                "value": "6379"
-            },
-            {
-                "name": "BROKER_USER",
-                "value": ""
-            },
-            {
-                "name": "BROKER_PASS",
-                "value": ""
-            },
-            {
-                "name": "BROKER_VHOST",
-                "value": "0"
-            },
-            {
-                "name": "BROKER_PREFIX",
+                "name": "uber_secret_broker_prefix",
                 "value": "${var.prefix}-"
             },
             {
@@ -59,7 +47,7 @@ locals {
             },
             {
                 "name": "UBERSYSTEM_CONFIG_VERSION",
-                "value": sha256(aws_secretsmanager_secret_version.current_config.secret_string)
+                "value": sha256(var.ubersystem_config)
             },
             {
                 "name": "CELERY_ENABLED",
@@ -67,10 +55,6 @@ locals {
             }
         ],
         "secrets": [
-          {
-            "name": "UBERSYSTEM_CONFIG",
-            "valueFrom": aws_secretsmanager_secret.uber_config.arn
-          },
           {
             "name": "UBERSYSTEM_SECRETS",
             "valueFrom": aws_secretsmanager_secret.uber.arn
@@ -148,16 +132,6 @@ locals {
             }
         }
     }
-}
-
-resource "aws_secretsmanager_secret" "uber_config" {
-  name = "${var.prefix}-uber-config"
-  recovery_window_in_days = 0
-}
-
-resource "aws_secretsmanager_secret_version" "current_config" {
-  secret_id = aws_secretsmanager_secret.uber_config.id
-  secret_string = var.ubersystem_config
 }
 
 # -------------------------------------------------------------------

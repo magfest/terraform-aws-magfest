@@ -116,7 +116,11 @@ variable "ubersystem_config" {
     type    = string
 }
 
-variable "ubersystem_secrets" {
+variable "config_repo" {
+    type    = string
+}
+
+variable "config_paths" {
     type    = string
 }
 
