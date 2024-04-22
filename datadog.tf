@@ -24,7 +24,7 @@ resource "aws_ssm_document" "datadog_install" {
         "name": "install",
         "inputs": {
           "runCommand": [ 
-            "DD_API_KEY=$(aws secretsmanager get-secret-value --secret-id ${aws_secretsmanager_secret.datadog_api_key[0].name} --query SecretString --output text) DD_SITE=\"datadoghq.com\" DD_APM_INSTRUMENTATION_ENABLED=host DD_APM_INSTRUMENTATION_LIBRARIES=\"python\" DD_ENV=\"${var.environment}\" bash -c \"$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script_agent7.sh)\"",
+            "DD_API_KEY=$(aws secretsmanager get-secret-value --secret-id ${aws_secretsmanager_secret.datadog_api_key[0].name} --query SecretString --output text) DD_SITE=\"datadoghq.com\" DD_LOGS_ENABLED=true DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true DD_APM_INSTRUMENTATION_ENABLED=host DD_APM_INSTRUMENTATION_LIBRARIES=\"python\" DD_ENV=\"${var.environment}\" bash -c \"$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script_agent7.sh)\"",
             "sudo usermod -a -G docker dd-agent"
           ]
         }
