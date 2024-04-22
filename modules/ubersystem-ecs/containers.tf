@@ -97,6 +97,9 @@ locals {
                 "awslogs-create-group": "true"
             }
         },
+        "dockerLabels": {
+            "com.datadoghq.ad.logs": "[{\"source\": \"web\", \"service\": \"${var.prefix}-uber\"}]"
+        }
     }
     container_celery_beat = {
         "cpu": var.celery_beat_cpu,
@@ -113,6 +116,9 @@ locals {
                 "awslogs-stream-prefix": "beats",
                 "awslogs-create-group": "true"
             }
+        },
+        "dockerLabels": {
+            "com.datadoghq.ad.logs": "[{\"source\": \"celery-beat\", \"service\": \"${var.prefix}-uber\"}]"
         }
     }
     container_celery_worker = {
@@ -130,6 +136,9 @@ locals {
                 "awslogs-stream-prefix": "celery",
                 "awslogs-create-group": "true"
             }
+        },
+        "dockerLabels": {
+            "com.datadoghq.ad.logs": "[{\"source\": \"celery-worker\", \"service\": \"${var.prefix}-uber\"}]"
         }
     }
 }
