@@ -30,6 +30,10 @@ locals {
                 "value": var.prefix
             },
             {
+                "name": "uber_cherrypy_tools_sessions_storage_type",
+                "value": "redis"
+            },
+            {
                 "name": "uber_redis_host",
                 "value": "${aws_elasticache_cluster.redis.cache_nodes.0.address}"
             },
