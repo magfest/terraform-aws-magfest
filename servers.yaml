@@ -10,7 +10,7 @@ staging:
     web_count: 1
 
   stock:
-    ubersystem_container: ghcr.io/magfest/magstock:main
+    ubersystem_container: ghcr.io/magfest/magstock:cleanup
     hostname: stock.dev.magevent.net
     zonename: dev.magevent.net
     config_paths:
@@ -20,7 +20,7 @@ staging:
     web_count: 1
 
   west:
-    ubersystem_container: ghcr.io/magfest/magwest:main
+    ubersystem_container: ghcr.io/magfest/magwest:cleanup
     hostname: west.dev.magevent.net
     zonename: dev.magevent.net
     config_paths:
