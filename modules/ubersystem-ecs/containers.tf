@@ -18,11 +18,15 @@ locals {
                 "value": "https://${var.hostname}"
             },
             {
-                "name": "sideboard_cherrypy_tools_sessions_host",
+                "name": "uber_cherrypy_server_socket_host",
+                "value": "0.0.0.0"
+            },
+            {
+                "name": "uber_cherrypy_tools_sessions_host",
                 "value": "${aws_elasticache_cluster.redis.cache_nodes.0.address}"
             },
             {
-                "name": "sideboard_cherrypy_tools_sessions_prefix",
+                "name": "uber_cherrypy_tools_sessions_prefix",
                 "value": var.prefix
             },
             {
