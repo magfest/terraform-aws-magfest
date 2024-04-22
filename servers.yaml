@@ -1,6 +1,6 @@
 staging:
   super:
-    ubersystem_container: ghcr.io/magfest/magprime:next
+    ubersystem_container: ghcr.io/magfest/magprime:cleanup
     hostname: super.dev.magevent.net
     zonename: dev.magevent.net
     config_paths:
