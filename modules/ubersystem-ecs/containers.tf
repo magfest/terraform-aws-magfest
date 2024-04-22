@@ -2,6 +2,10 @@ locals {
     container_common = {
         "environment": [
             {
+                "name": "LOG_CONFIG",
+                "value": "true"
+            },
+            {
                 "name": "CONFIG_REPO",
                 "value": var.config_repo
             },
