@@ -186,7 +186,7 @@ resource "aws_ecs_service" "ubersystem_web" {
   load_balancer {
     target_group_arn = aws_lb_target_group.ubersystem_http.arn
     container_name   = "web"
-    container_port   = 8282
+    container_port   = 80
   }
 }
 
