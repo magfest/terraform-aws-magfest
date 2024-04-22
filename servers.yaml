@@ -6,7 +6,7 @@ staging:
     config_paths:
       - uber_config/environments/staging
       - uber_config/events/super/2024/staging
-    web_cpu: 512
+    web_cpu: 1024
     web_count: 1
 
   stock:
