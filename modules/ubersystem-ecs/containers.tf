@@ -77,7 +77,7 @@ locals {
           "retries": 3,
           "command": [
             "CMD-SHELL",
-            "/app/plugins/uber/healthcheck.sh"
+            "/app/healthcheck.sh"
           ],
           "timeout": 5,
           "interval": 30,
@@ -106,6 +106,16 @@ locals {
         }
     }
     container_celery_beat = {
+        "healthCheck": {
+          "retries": 3,
+          "command": [
+            "CMD-SHELL",
+            "/app/healthcheck.sh"
+          ],
+          "timeout": 5,
+          "interval": 30,
+          "startPeriod": 60
+        },
         "cpu": var.celery_beat_cpu,
         "command": [
             "celery-beat"
@@ -126,6 +136,16 @@ locals {
         }
     }
     container_celery_worker = {
+        "healthCheck": {
+          "retries": 3,
+          "command": [
+            "CMD-SHELL",
+            "/app/healthcheck.sh"
+          ],
+          "timeout": 5,
+          "interval": 30,
+          "startPeriod": 60
+        },
         "cpu": var.celery_cpu,
         "image": "${var.ubersystem_container}@sha256:${module.uber_image.docker_digest}",
         "command": [
