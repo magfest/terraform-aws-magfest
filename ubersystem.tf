@@ -32,7 +32,7 @@ module "uberserver-ecs" {
     uber_db_name            = lookup(each.value, "uber_db_name", each.key)
     uber_db_username        = lookup(each.value, "uber_db_username", each.key)
     uber_db_password        = lookup(each.value, "uber_db_password", module.postgres-db[each.key].db_password)
-    health_url              = lookup(each.value, "health_url", "/uber/devtools/health")
+    health_url              = lookup(each.value, "health_url", "/devtools/health")
     region                  = var.region
     redis_sg_id             = aws_security_group.uber_redis.id
     redis_subnet_group_name = aws_elasticache_subnet_group.uber_subnets.name
