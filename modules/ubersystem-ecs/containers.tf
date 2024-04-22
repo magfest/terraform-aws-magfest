@@ -91,7 +91,7 @@ locals {
         "portMappings": [
             {
                 "protocol": "tcp",
-                "containerPort": 8282
+                "containerPort": 80
             }
         ],
         "image": "${var.ubersystem_container}@sha256:${module.uber_image.docker_digest}",

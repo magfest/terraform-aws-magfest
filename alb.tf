@@ -13,8 +13,8 @@ resource "aws_security_group" "uber_backend" {
 
   ingress {
     description      = "HTTP to Ubersystem Web"
-    from_port        = 8282
-    to_port          = 8282
+    from_port        = 80
+    to_port          = 80
     protocol         = "tcp"
     cidr_blocks      = [
       aws_subnet.primary.cidr_block,
