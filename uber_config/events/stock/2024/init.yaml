@@ -82,7 +82,7 @@ plugins:
       
       attendee:
         # Unlike all other dates, these dates indicate the start of the day, not 11:59pm
-        "2024-04-29": 195
+        "2024-05-06": 195
         "2024-05-27": 205
         "2024-06-06": 215
         "2024-06-07": 185
