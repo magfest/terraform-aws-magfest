@@ -30,6 +30,16 @@ staging:
     web_count: 1
 
 production:
+  west2024:
+    ubersystem_container: ghcr.io/magfest/magwest:main
+    hostname: west2024.reg.magfest.org
+    zonename: reg.magfest.org
+    config_paths:
+      - uber_config/environments/prod
+      - uber_config/events/west/2024
+    web_count: 2
+    web_cpu: 512
+
   stock2024:
     ubersystem_container: ghcr.io/magfest/magstock:main
     hostname: stock2024.reg.magfest.org
