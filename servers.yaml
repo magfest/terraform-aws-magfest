@@ -1,6 +1,6 @@
 staging:
   super:
-    ubersystem_container: ghcr.io/magfest/magprime:cleanup
+    ubersystem_container: ghcr.io/magfest/magprime:main
     hostname: super.dev.magevent.net
     zonename: dev.magevent.net
     config_paths:
@@ -10,7 +10,7 @@ staging:
     web_count: 1
 
   stock:
-    ubersystem_container: ghcr.io/magfest/magstock:cleanup
+    ubersystem_container: ghcr.io/magfest/magstock:main
     hostname: stock.dev.magevent.net
     zonename: dev.magevent.net
     config_paths:
@@ -20,7 +20,7 @@ staging:
     web_count: 1
 
   west:
-    ubersystem_container: ghcr.io/magfest/magwest:cleanup
+    ubersystem_container: ghcr.io/magfest/magwest:main
     hostname: west.dev.magevent.net
     zonename: dev.magevent.net
     config_paths:
@@ -30,6 +30,16 @@ staging:
     web_count: 1
 
 production:
+  super2025:
+    ubersystem_container: ghcr.io/magfest/magprime:main
+    hostname: super2025.reg.magfest.org
+    zonename: reg.magfest.org
+    config_paths:
+      - uber_config/environments/prod
+      - uber_config/events/super/2025
+    web_count: 2
+    web_cpu: 512
+
   west2024:
     ubersystem_container: ghcr.io/magfest/magwest:main
     hostname: west2024.reg.magfest.org

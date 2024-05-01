@@ -76,8 +76,8 @@ plugins:
       # sent in the days and weeks leading up to DEALER_PAYMENT_DUE.  All waitlisted dealers will
       # be emailed when the waitlist has been exhausted and all available positions have been
       # filled, as defined by DEALER_WAITLIST_CLOSED.
-      dealer_reg_start: 2024-05-01
-      dealer_reg_public: 2024-05-01
+      dealer_reg_start: 2024-05-01 12
+      dealer_reg_public: 2024-05-01 12
       dealer_reg_shutdown: 2024-05-31
       dealer_payment_due: 2024-07-31
       dealer_reg_deadline: ""  # Disable automatic waitlist
