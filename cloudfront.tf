@@ -35,8 +35,6 @@ resource "aws_cloudfront_distribution" "ubersystem" {
     }
   }
 
-/*
-# Disabling static asset cache until Cookie handling is fixed
   ordered_cache_behavior {
     path_pattern     = "/static*"
     allowed_methods  = ["GET", "HEAD", "OPTIONS"]
@@ -58,7 +56,6 @@ resource "aws_cloudfront_distribution" "ubersystem" {
       }
     }
   }
-*/
 
   price_class = "PriceClass_100"
 
@@ -73,6 +70,10 @@ resource "aws_cloudfront_distribution" "ubersystem" {
       locations        = []
     }
   }
+
+  depends_on = [
+    aws_acm_certificate_validation.uber
+  ]
 }
 
 resource "aws_route53_record" "default" {
