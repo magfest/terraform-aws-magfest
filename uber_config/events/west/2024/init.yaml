@@ -10,11 +10,13 @@ plugins:
     event_year: 2024
     max_dealers: 5
     max_badge_sales: 2000
+    shirts_per_staffer: 1
     at_the_con: False
     post_con: False
     send_sms: False
     emergency_procedures_enabled: True
     
+    code_of_conduct_url: 'https://www.magwest.org/codeofconduct/'
     covid_policies_url: ''
     prior_covid_policies_url: ''
     
@@ -50,23 +52,23 @@ plugins:
     untransferable_attrs: ['first_name','last_name','legal_name','email','birthdate','zip_code','international','ec_name','ec_phone','cellphone','interests','age_group','staffing','requested_depts','onsite_contact','no_onsite_contact','hotel_pin','regdesk_info']
 
     dates:
-      epoch: 2024-07-14 08
-      eschaton: 2024-07-16 16
-      badge_price_waived: 2024-07-16 12
-      prereg_takedown: 2024-07-13
-      group_prereg_takedown: 2024-07-13
-      placeholder_deadline: 2024-07-16
-      prereg_open: 2024-07-14 08
+      epoch: 2024-09-27 08
+      eschaton: 2024-09-29 17
+      badge_price_waived: 2024-09-29 16
+      prereg_takedown: 2024-09-27
+      group_prereg_takedown: 2024-09-27
+      placeholder_deadline: 2024-09-27
+      prereg_open: 2024-05-22
       volunteer_checklist_open: 2024-05-01
-      shifts_created: 2024-05-15
-      shirt_deadline: 2024-07-16
+      shifts_created: 2024-05-14
+      shirt_deadline: ''
       volunteer_shirt_deadline: 2024-05-19
-      supporter_deadline: 2024-07-16
-      room_deadline: 2024-05-19
+      supporter_deadline: ''
+      room_deadline: 2024-07-31
       drop_shifts_deadline: 2024-07-07
       uber_takedown: 2024-08-18
 
-      printed_badge_deadline: 2024-05-15
+      printed_badge_deadline: 2024-08-01
 
       # Dealer registration automatically opens on DEALER_REG_START.  After DEALER_REG_DEADLINE
       # all dealer registration are automatically waitlisted.  After DEALER_REG_SHUTDOWN dealers
@@ -74,9 +76,10 @@ plugins:
       # sent in the days and weeks leading up to DEALER_PAYMENT_DUE.  All waitlisted dealers will
       # be emailed when the waitlist has been exhausted and all available positions have been
       # filled, as defined by DEALER_WAITLIST_CLOSED.
-      dealer_reg_start: 2024-07-14 08
-      dealer_reg_shutdown: 2024-04-15
-      dealer_payment_due: 2024-06-01
+      dealer_reg_start: 2024-05-01
+      dealer_reg_public: 2024-05-01
+      dealer_reg_shutdown: 2024-05-31
+      dealer_payment_due: 2024-07-31
       dealer_reg_deadline: ""  # Disable automatic waitlist
       dealer_waitlist_closed: ""  # If this is enabled, be sure to update the waitlist_closing.txt email
       band_info_deadline: ""
@@ -92,10 +95,7 @@ plugins:
       band_badges_deadline: 2024-07-01 # Should be <= placeholder_deadline
       rock_island_deadline: "" # Rock Island not yet confirmed.
 
-      # WARNING - everything below this is set to a temporary value just so
-      #           that we won't get an exception at import time.
-      panels_deadline: 2024-04-30
-      panel_app_deadline: 2024-07-23 # Is this actually used?
+      panels_deadline: 2024-05-31
       panels_confirm_deadline: ""
       mivs_round_one_deadline: 2024-08-01
       mivs_round_two_start: 2024-08-01
@@ -124,9 +124,10 @@ plugins:
     badge_prices:
       initial_attendee: 90
       group_discount: 20
-      dealer_badge_price: 60
+      dealer_badge_price: 70
       one_days_enabled: True
-      presell_one_days: True
+      presell_one_days: False
+      price_bumps_enabled: False
       default_single_day: 50
 
       single_day:
