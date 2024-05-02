@@ -98,7 +98,7 @@ locals {
                 "value": sha256(var.ubersystem_config)
             },
             {
-                "name": "CELERY_ENABLED",
+                "name": "ENABLE_CELERY",
                 "value": tostring(var.enable_celery)
             }
         ],
