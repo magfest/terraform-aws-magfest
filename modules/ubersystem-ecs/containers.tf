@@ -2,6 +2,42 @@ locals {
     container_common = {
         "environment": [
             {
+                "name": "SESSION_HOST",
+                "value": "${aws_elasticache_cluster.redis.cache_nodes.0.address}"
+            },
+            {
+                "name": "BROKER_HOST",
+                "value": "${aws_elasticache_cluster.redis.cache_nodes.0.address}"
+            },
+            {
+                "name": "BROKER_PORT",
+                "value": "6379"
+            },
+            {
+                "name": "BROKER_PROTOCOL",
+                "value": "redis"
+            },
+            {
+                "name": "BROKER_USER",
+                "value": ""
+            },
+            {
+                "name": "BROKER_PASS",
+                "value": ""
+            },
+            {
+                "name": "BROKER_VHOST",
+                "value": "0"
+            },
+            {
+                "name": "SESSION_PREFIX",
+                "value": var.prefix
+            },
+            {
+                "name": "SESSION_PORT",
+                "value": "6379"
+            },
+            {
                 "name": "LOG_CONFIG",
                 "value": "true"
             },
@@ -62,7 +98,7 @@ locals {
                 "value": sha256(var.ubersystem_config)
             },
             {
-                "name": "CELERY_ENABLED",
+                "name": "ENABLE_CELERY",
                 "value": tostring(var.enable_celery)
             }
         ],
