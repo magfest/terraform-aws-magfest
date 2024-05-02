@@ -60,7 +60,7 @@ resource "aws_cloudfront_distribution" "ubersystem" {
   price_class = "PriceClass_100"
 
   viewer_certificate {
-    acm_certificate_arn = aws_acm_certificate.uber.arn
+    acm_certificate_arn = aws_acm_certificate_validation.uber.certificate_arn
     ssl_support_method  = "sni-only"
   }
 
@@ -70,10 +70,6 @@ resource "aws_cloudfront_distribution" "ubersystem" {
       locations        = []
     }
   }
-
-  depends_on = [
-    aws_acm_certificate_validation.uber
-  ]
 }
 
 resource "aws_route53_record" "default" {
