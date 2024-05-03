@@ -3,7 +3,7 @@ plugins:
     sentry:
       environment: west2024
     url_root: https://west2024.reg.magfest.org/
-    url_base: https://west2024.reg.magfest.org/
+    url_base: https://west2024.reg.magfest.org
     shirt_stock: 0
     supporter_stock: 0
     season_stock: 0
