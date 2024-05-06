@@ -16,6 +16,7 @@ plugins:
     post_con: False
     send_sms: False
     emergency_procedures_enabled: True
+    slow_load_check: False
     
     code_of_conduct_url: 'https://www.magwest.org/codeofconduct/'
     covid_policies_url: ''
