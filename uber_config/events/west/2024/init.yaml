@@ -22,7 +22,7 @@ plugins:
     prior_covid_policies_url: ''
     
     treasury_dept_checklist_form_url: 'https://forms.gle/vS26HZQiFaTjvuwn8'
-    expected_response: "May 31st" # displayed on panels app text
+    expected_response: "July 15th" # displayed on panels app text
     mivs_video_response_expected: "no later than September 17th"
     
     volunteer_placeholder_deadline: "May 12"
@@ -96,7 +96,7 @@ plugins:
       band_badges_deadline: 2024-07-01 # Should be <= placeholder_deadline
       rock_island_deadline: "" # Rock Island not yet confirmed.
 
-      panels_deadline: 2024-05-31
+      panels_deadline: 2024-06-16
       panels_confirm_deadline: ""
       mivs_round_one_deadline: 2024-08-01
       mivs_round_two_start: 2024-08-01
@@ -121,7 +121,7 @@ plugins:
       attendee_badge: [2000, 9999]
       one_day_badge: [2000, 9999]
       child_badge: [2000, 9999]
-      
+
     badge_prices:
       initial_attendee: 90
       group_discount: 20
@@ -135,10 +135,10 @@ plugins:
         Friday: 50
         Saturday: 60
         Sunday: 30
-      
+
     table_prices:
       default_price: 200
-      "1": 60
+      "1": 70
       "2": 100
       "3": 200
       "4": 275
