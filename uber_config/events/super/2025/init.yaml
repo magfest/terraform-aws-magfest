@@ -54,7 +54,7 @@ plugins:
     # have to pay are not counted towards this cap. A value of 0 means no cap.
     max_dealer_apps: 0
     delete_declined_groups: True
-    dealer_cancellable_status_list: ,
+    dealer_cancellable_status_list: []
 
     mivs_confirm_deadline: 7
     mivs_submission_grace_period: 10
