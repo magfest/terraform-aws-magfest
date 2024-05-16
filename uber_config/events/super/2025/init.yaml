@@ -23,7 +23,8 @@ plugins:
     covid_policies_url: 'https://super.magfest.org/covid'
     prior_covid_policies_url: ''
     kiosk_redirect_url: ''
-    accessibility_services_enabled: False
+    accessibility_services_enabled: True
+    prereg_confirm_email_enabled: True
     slow_load_check: False
     tracking_params: ['fbclid', 'hsmi', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', '_hsmi', '_home', '_hsenc']
     untransferable_attrs: ['first_name','last_name','legal_name','email','birthdate','zip_code','international','ec_name','ec_phone','cellphone','interests','age_group','staffing','requested_depts','special_merch','group_name','onsite_contact','no_onsite_contact','hotel_pin','regdesk_info']
@@ -53,6 +54,7 @@ plugins:
     # have to pay are not counted towards this cap. A value of 0 means no cap.
     max_dealer_apps: 0
     delete_declined_groups: True
+    dealer_cancellable_status_list: ,
 
     mivs_confirm_deadline: 7
     mivs_submission_grace_period: 10

@@ -4,8 +4,8 @@ plugins:
       environment: west2024
     url_root: https://west2024.reg.magfest.org/
     url_base: https://west2024.reg.magfest.org
-    shirt_stock: 0
-    supporter_stock: 0
+    shirt_stock: 70
+    supporter_stock: 50
     season_stock: 0
     shared_kickin_stocks: False
     event_year: 2024
@@ -158,7 +158,7 @@ plugins:
         can_volunteer: False
         
     integer_enums:
-      shirt_level: 35
+      shirt_level: 40
       supporter_level: 199
       #season_level: 180
 
@@ -189,14 +189,14 @@ plugins:
       shirt:
         name: T-Shirt Tier
         icon: ../static/icons/shirt.png
-        description: Event T-Shirt|Lanyard|Enamel Pin
-        link: ../static_views/merch.html|../static_views/merch.html|../static_views/merch.html
+        description: MAGWest Shirt|Themed Lanyard|Themed Pin|Sticker Sheet
+        link: ../static_views/merch.html
 
       supporter_package:
-        name: Splat! Tier
+        name: Phantom Tier
         icon: ../static/icons/supporter.png
-        description: Water Gun|Slap Bracelet|Custom Hat|Messenger Bag|Hydration Backpack
-        link: ../static_views/merch.html|../static_views/merch.html|../static_views/merch.html|../static_views/merch.html|../static_views/merch.html
+        description: Everything in the T-Shirt Tier|Custom MAGWest Blanket|Travel Mug|Customizable Mask|MAGFest Gunship Swadge|And more!
+        link: ../static_views/merch.html
 
       #super_supporter:
       #  name: Jet Tier

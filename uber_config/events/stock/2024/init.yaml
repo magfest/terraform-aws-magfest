@@ -127,12 +127,12 @@ plugins:
       supporter:
         name: Korok Tier
         icon: ../static/icons/supporter.png
-        description: Themed T-Shirt|Themed Patch|Themed Sticker Sheet|MAGStock-branded Bandana|MAGStock-branded Sunglasses
+        description: Themed T-Shirt|Themed Patch|Themed Sticker Sheet|MAGStock Bandana|MAGStock Sunglasses
         link: ../static_views/supporter.html
       season:
         name: Hylian Tier
         icon: ../static/icons/super.png
-        description: Everything in the Korok Tier|Themed Enamel Pin|Themed Koozie|Themed Marshmallow|MAGStock-branded Camp Chair & Camping Supplies
+        description: Everything in the Korok Tier|Themed Enamel Pin|Themed Koozie|Themed Marshmallow|MAGStock Camp Chair & Camping Supplies
         link: ../static_views/super.html
 
     enums:
