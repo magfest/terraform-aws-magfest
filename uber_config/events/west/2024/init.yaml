@@ -165,7 +165,7 @@ plugins:
       donation_tier:
         No thanks: 0
         T-Shirt Tier: SHIRT_LEVEL
-        Splat! Tier: SUPPORTER_LEVEL
+        Phantom Tier: SUPPORTER_LEVEL
         #Season Tier: SEASON_LEVEL
         
       shirt:
