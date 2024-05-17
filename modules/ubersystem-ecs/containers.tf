@@ -111,7 +111,7 @@ locals {
         "mountPoints": [
             {
                 "sourceVolume": "static",
-                "containerPath": "/app/plugins/uber/uploaded_files",
+                "containerPath": "/app/uploaded_files",
                 "readOnly": false
             }
         ]
