@@ -47,7 +47,7 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/west/2024
-    web_count: 2
+    web_count: 4
     web_cpu: 512
 
   stock2024:
