@@ -156,12 +156,12 @@ plugins:
         registration: Registration
         campfire: Campfire
         projectiles: Projectiles
-        tennis: Tennis Court
+        tennis: Other
         amphitheater: Amphitheater
-        gym: Gym
+        field_games: Field Games
         dininghall: Dining Hall
         publicsafety: Public Safety
-        lockpick: Lockpick Village
+        arg: ARG Help Desk
 
     dept_head_checklist:
       placeholders:
