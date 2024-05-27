@@ -17,8 +17,8 @@ plugins:
     event_year: 2024
     at_the_con: False
     post_con: False
-    supporter_stock: 50
-    season_stock: 75
+    supporter_stock: 55
+    season_stock: 70
     car_stock: 30
     rv_stock: 10
     untransferable_attrs: ['first_name','last_name','legal_name','email','birthdate','zip_code','international','ec_name','ec_phone','cellphone','interests','age_group','staffing','requested_depts','onsite_contact','no_onsite_contact','license_plate','waiver_consent','waiver_signature','waiver_date','acknowledged_checkin_policy','hotel_pin','regdesk_info']
@@ -108,7 +108,6 @@ plugins:
         Hylian Tier: SEASON_LEVEL
         
       shirt:
-        Unisex XS: 1
         Unisex S: 2
         Unisex M: 3
         Unisex L: 4
@@ -117,6 +116,16 @@ plugins:
         Unisex 3X: 7
         Unisex 4X: 8
         Unisex 5X: 9
+      
+      shirt_stock:
+        Unisex S: 12
+        Unisex M: 49
+        Unisex L: 55
+        Unisex XL: 35
+        Unisex 2X: 30
+        Unisex 3X: 12
+        Unisex 4X: 3
+        Unisex 5X: 4
 
     donation_tier_descriptions:
       no_thanks:
