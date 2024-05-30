@@ -27,6 +27,7 @@ plugins:
     music_rooms: ['concerts', 'pool']
     
     shirts_per_staffer: 0
+    hours_for_shirt: 0
     volunteer_placeholder_deadline: April 18
     volunteer_food_deadline: May 16
     volunteer_checklist_deadline: May 23

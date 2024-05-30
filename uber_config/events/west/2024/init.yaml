@@ -11,7 +11,6 @@ plugins:
     event_year: 2024
     max_dealers: 5
     max_badge_sales: 2000
-    shirts_per_staffer: 1
     at_the_con: False
     post_con: False
     send_sms: False
@@ -86,17 +85,17 @@ plugins:
       dealer_reg_deadline: ""  # Disable automatic waitlist
       dealer_waitlist_closed: ""  # If this is enabled, be sure to update the waitlist_closing.txt email
       band_info_deadline: ""
-      band_bio_deadline: 2024-05-26
-      band_panel_deadline: 2024-06-01 # Should be <= panel_app_deadline
-      band_stage_plot_deadline: 2024-06-01 # A/V RFC (deadline not tracked by Reggie)
+      band_bio_deadline: 2024-07-01
+      band_panel_deadline: 2024-08-16 # Should be <= panels_deadline
+      band_stage_plot_deadline: 2024-07-31
       band_taxes_deadline: ""
-      band_charity_deadline: "" # No info on any charity auction this year; starting with this off.
-      band_merch_deadline: 2024-07-01
-      band_mc_deadline: 2024-07-01
+      band_charity_deadline: ""
+      band_merch_deadline: 2024-09-10
+      band_mc_deadline: 2024-09-11
       band_autograph_deadline: ""
-      band_rehearsal_deadline: 2024-07-01
-      band_badges_deadline: 2024-07-01 # Should be <= placeholder_deadline
-      rock_island_deadline: "" # Rock Island not yet confirmed.
+      band_rehearsal_deadline: 2024-09-01
+      band_badges_deadline: 2024-09-01 # Should be <= placeholder_deadline
+      rock_island_deadline: ""
 
       panels_deadline: 2024-06-16
       panels_confirm_deadline: ""
@@ -262,7 +261,7 @@ plugins:
         description: Other than a sign for your area, what printed signage do you need?
         full_description: >
             <div class="text-left">All attendee-facing rooms will automatically receive a 24"x36" coroplast sign for outside of the room. Please submit requests for <strong>additional</strong> signage here.
-            <br/><br/>We will compare all requests against our known signage inventory, so please include your complete list of needs. (If you store any signs with your department supplies, however, we will not have records of them in our signage inventory, so DON'T include those here--this helps us avoid double-ordering.)
+            <br/><br/>We will compare all requests against <a href="https://docs.google.com/spreadsheets/d/1JSpM_CzbLM2vEC46DG03c3xq1oF5pdbMwq55MNg6y0Y/edit?usp=sharing" target="_blank">our known signage inventory</a>, so please include your complete list of needs. (If you store any signs with your department supplies, however, we will not have records of them in our signage inventory, so DON'T include those here--this helps us avoid double-ordering.)
             <br/><br/>Signage comes in two types: 12"x18" coroplast and 24"x36" coroplast. Be sure to specify FOR EACH SIGN:
             <ul><li>Number needed</li>
             <li>Size of sign</li>
