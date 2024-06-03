@@ -1,6 +1,9 @@
 plugins:
   magstock:
     food_price: 18
+
+    dates:
+      meal_plan_deadline: 2024-06-04
     
     enums:
       cabin_type_stocks:
