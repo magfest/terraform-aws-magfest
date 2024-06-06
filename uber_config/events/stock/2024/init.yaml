@@ -27,6 +27,7 @@ plugins:
     untransferable_attrs: ['first_name','last_name','legal_name','email','birthdate','zip_code','international','ec_name','ec_phone','cellphone','interests','age_group','staffing','requested_depts','onsite_contact','no_onsite_contact','license_plate','waiver_consent','waiver_signature','waiver_date','acknowledged_checkin_policy','hotel_pin','regdesk_info']
     maps_enabled: False
     slow_load_check: False
+    kiosk_redirect_url: ''
     music_rooms: ['concerts', 'pool']
     
     shirts_per_staffer: 0
