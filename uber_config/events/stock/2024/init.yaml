@@ -101,6 +101,36 @@ plugins:
         
     table_prices:
       default_price: 20
+
+    age_groups:
+      under_6:
+        desc: "Under 6"
+        min_age: 0
+        max_age: 5
+        discount: 9999
+        can_register: True
+        can_volunteer: False
+
+      under_13:
+        desc: "Between 6 and 13"
+        min_age: 6
+        max_age: 12
+        can_volunteer: False
+      
+      under_18:
+        desc: "Under 18"
+        min_age: 13
+        max_age: 17
+
+      under_21:
+        desc: "between 18 and 21"
+        min_age: 18
+        max_age: 20
+      
+      over_21:
+        desc: "21 and over"
+        min_age: 21
+        max_age: 99
       
     integer_enums:
       shirt_level: 30
