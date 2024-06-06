@@ -18,7 +18,7 @@ plugins:
     url_root: https://stock2024.reg.magfest.org/
     url_base: https://stock2024.reg.magfest.org
     event_year: 2024
-    at_the_con: False
+    at_the_con: True
     post_con: False
     supporter_stock: 55
     season_stock: 70
