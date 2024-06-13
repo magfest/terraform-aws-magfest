@@ -97,7 +97,7 @@ plugins:
       band_badges_deadline: 2024-09-01 # Should be <= placeholder_deadline
       rock_island_deadline: ""
 
-      panels_deadline: 2024-06-16
+      panels_deadline: 2024-07-01
       panels_confirm_deadline: ""
       mivs_round_one_deadline: 2024-08-01
       mivs_round_two_start: 2024-08-01
