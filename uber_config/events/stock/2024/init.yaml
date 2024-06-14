@@ -36,6 +36,7 @@ plugins:
     volunteer_food_deadline: May 16
     volunteer_checklist_deadline: May 23
     emergency_procedures_deadline: May 23
+    emergency_procedures_ready: True
 
     covid_policies_url: ''
     prior_covid_policies_url: ''

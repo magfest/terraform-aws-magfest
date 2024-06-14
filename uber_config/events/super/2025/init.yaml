@@ -47,6 +47,7 @@ plugins:
     volunteer_food_deadline: November 17
     volunteer_checklist_deadline: December 15
     emergency_procedures_deadline: December 15
+    emergency_procedures_ready: False
 
     # The number of dealer apps we will accept before auto-waitlisting further
     # applications. If dealer_reg_deadline is also set, we will auto-wailist

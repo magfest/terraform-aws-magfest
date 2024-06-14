@@ -15,6 +15,7 @@ plugins:
     post_con: False
     send_sms: False
     emergency_procedures_enabled: True
+    emergency_procedures_ready: False
     slow_load_check: False
     enable_pending_emails_report: False
     
@@ -262,15 +263,15 @@ plugins:
 
       treasury:
         deadline: 2024-07-24
-        external_form_url: https://forms.gle/4BEHuj3gjCWdfVPq9
+        external_form_url: https://forms.gle/WZD3RaMUQVk9ardA9
 
       hotel_setup:
         deadline: 2024-07-31
-        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSfYQZNnvX__ykuk6t7Ul7Z_zzxGjTnpun_6RqL3gZ1lNjOhhA/viewform
+        external_form_url: https://forms.gle/FaHTdnscjAA3CGBD8
         
       tech_requirements:
         deadline: 2024-07-31
-        external_form_url: https://forms.gle/5ouCmsF43CzRKY728
+        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSeNB-1ziywwvFrjZvyAjfdRyLU_d8AVnDWaEpcrLUAx_GfQOg/viewform
 
       printed_signs:
         name: Room Signage
@@ -299,10 +300,10 @@ plugins:
 
       ppe_requests:
         deadline: 2024-08-21
-        name: Bulk PPE & Sanitizing Supplies
+        name: Office Supplies, PPE, and Water Requests
         description: >
           MAGFest is providing basic PPE for departments for MAGWest 2024. Please let us know what you need and we will do our best to accommodate.
-        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSc-w7naGwD2fNycj26XZZMHL1x7hDd4Bb5zc8p2XY0QL8uUNQ/viewform?usp=sharing
+        external_form_url: https://forms.gle/ighhbmoXc4zoQwSdA
 
       guidebook_schedule:
         deadline: 2024-08-28
