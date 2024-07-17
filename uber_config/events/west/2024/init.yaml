@@ -15,7 +15,7 @@ plugins:
     post_con: False
     send_sms: False
     emergency_procedures_enabled: True
-    emergency_procedures_ready: False
+    emergency_procedures_ready: True
     slow_load_check: False
     enable_pending_emails_report: False
     
@@ -233,6 +233,7 @@ plugins:
         chipspace: "Chipspace"
         console_tournament: "Consoles (Tournaments)"
         console_attendee: "Consoles (Attendee Tournaments)"
+        craft_cove: "Craft Cove"
         tabletop_tournaments: "Tabletop"
         mages: "MAGES"
         variety: "Variety Stage"
