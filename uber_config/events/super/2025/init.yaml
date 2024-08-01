@@ -11,6 +11,7 @@ plugins:
     shirt_stock: 0
     supporter_stock: 0
     season_stock: 0
+    hide_prereg_open_date: True
     shared_kickin_stocks: False
     groups_enabled: True
     blank_staff_badges: 200
