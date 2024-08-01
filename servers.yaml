@@ -31,7 +31,7 @@ staging:
 
 production:
   super2025:
-    ubersystem_container: ghcr.io/magfest/magprime:main
+    ubersystem_container: ghcr.io/magfest/magprime:super2025
     hostname: super2025.reg.magfest.org
     zonename: reg.magfest.org
     config_paths:

@@ -111,8 +111,8 @@ plugins:
       dealer_waitlist_closed: ''  # If this is enabled, be sure to update the waitlist_closing.txt email
       dealer_reg_public: ''
 
-      mivs_start: 2024-08-15 09
-      mivs_deadline: 2024-09-17
+      mivs_start: 2024-08-01 09
+      mivs_deadline: 2024-08-31
       mivs_judging_deadline: 2024-10-15
       mivs_results_reveal: 2024-10-30
 
