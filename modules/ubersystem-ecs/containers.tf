@@ -38,6 +38,14 @@ locals {
                 "value": "6379"
             },
             {
+                "name": "REDIS_HOST",
+                "value": "${aws_elasticache_cluster.redis.cache_nodes.0.address}"
+            },
+            {
+                "name": "REDIS_PREFIX",
+                "value": var.prefix
+            },
+            {
                 "name": "LOG_CONFIG",
                 "value": "true"
             },
