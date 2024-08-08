@@ -9,7 +9,7 @@ plugins:
     treasury_dept_checklist_form_url: https://super.dev.magevent.net/static_views/treasury_form.html
 
     dates:
-      panels_start: 2024-08-11
+      panels_start: 2024-07-11
       dealer_reg_start: 2024-08-11 19
       dealer_reg_deadline: ''
       dealer_reg_shutdown: 2024-08-11 20
