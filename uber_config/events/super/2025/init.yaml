@@ -41,7 +41,7 @@ plugins:
     volunteer_perks_url: https://www.notion.so/magfest/MAGFest-Super-Perks-f001221c31484ef4957a6513c54a6fd6
     staff_room_faq_url: https://www.notion.so/magfest/Staff-Room-FAQ-656edde68e324dae97891c2002439465
 
-    expected_response: December 2024
+    expected_response: November 2024
     panels_confirm_deadline: 14
 
     volunteer_placeholder_deadline: November 3
@@ -120,8 +120,8 @@ plugins:
       mits_submission_deadline: 2024-10-31
       mits_editing_deadline: 2024-11-15
 
-      panels_start: 2024-08-18 18
-      panels_deadline: 2024-10-15
+      panels_start: 2024-08-09 12
+      panels_deadline: 2024-08-31
 
       # if any of these are unset or '', the corresponding section will not show up in the group type's checklist
       rock_island_deadline: 2024-12-30 # RI Inventory deadline
@@ -353,6 +353,10 @@ plugins:
         public_safety: Public Safety (Camellia 1,2)
         attendee_services: MAG Attendee Services/Info Desk (Potomac Coat Check)
         quiet_room: Quiet Room (Azalea 3)
+
+      livestream:
+        opt_in: "Yes"
+        opt_out: "No"
 
     donation_tier_descriptions:
       no_thanks:

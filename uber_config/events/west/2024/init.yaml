@@ -245,6 +245,10 @@ plugins:
 
       guest_merch:
         own_table: "Selling merch"
+
+      livestream:
+        record_only: Recording for the public is okay, but not livestreaming
+        private_record: Recording is okay, but please don't post it publicly
         
     dept_head_checklist:
       placeholders:

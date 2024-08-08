@@ -199,6 +199,10 @@ plugins:
         publicsafety: Public Safety
         arg: ARG Help Desk
 
+      livestream:
+        record_only: Recording for the public is okay, but not livestreaming
+        private_record: Recording is okay, but please don't post it publicly
+
     dept_head_checklist:
       placeholders:
         deadline: 2024-04-10
