@@ -120,8 +120,8 @@ plugins:
       mits_submission_deadline: 2024-10-31
       mits_editing_deadline: 2024-11-15
 
-      panels_start: 2024-08-09 12
-      panels_deadline: 2024-08-31
+      panels_start: 2024-08-11 12
+      panels_deadline: 2024-10-15
 
       # if any of these are unset or '', the corresponding section will not show up in the group type's checklist
       rock_island_deadline: 2024-12-30 # RI Inventory deadline
