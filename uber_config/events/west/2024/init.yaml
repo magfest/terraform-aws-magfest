@@ -5,7 +5,7 @@ plugins:
     url_root: https://west2024.reg.magfest.org/
     url_base: https://west2024.reg.magfest.org
     shirt_stock: 70
-    supporter_stock: 50
+    supporter_stock: 48
     season_stock: 0
     shared_kickin_stocks: False
     event_year: 2024
