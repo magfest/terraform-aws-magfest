@@ -113,7 +113,7 @@ plugins:
       dealer_reg_public: ''
 
       mivs_start: 2024-08-01 09
-      mivs_deadline: 2024-08-31
+      mivs_deadline: 2024-09-04
       mivs_judging_deadline: 2024-09-29
       mivs_results_reveal: 2024-10-30
 
@@ -300,8 +300,10 @@ plugins:
         console_stage: Arena (Maryland C)
         starship_horizons: Simulations - Starship Horizons (National Harbor 10,11)
         console_tournament: Consoles (Pokemon Events)
+        console_special: Consoles (Special Events)
         console_attendee: Consoles (Console Tournaments 1)
         console_tournament_2: Consoles (Console Tournaments 2)
+        console_tournament_3: Consoles (Console Tournaments 3)
         console_tournament_4: Consoles (Fighting Tournaments)
         console_tournament_5: Consoles (Smash Bros Tournaments)
         arcade_tournaments_1: Arcade (Tournaments 1)
