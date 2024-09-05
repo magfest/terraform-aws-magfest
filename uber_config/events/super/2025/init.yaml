@@ -78,8 +78,8 @@ plugins:
     music_rooms: ['concerts', 'chiptunes', 'pose_lounge', 'lobby_bar', 'jamspace', 'jam_clinic', 'jam_shop', 'rock_island']
 
     dates:
-      prereg_open: 2024-09-15 14
-      prereg_hotel_eligibility_cutoff: 2024-09-20
+      prereg_open: 2024-09-18 14
+      prereg_hotel_eligibility_cutoff: 2024-09-25
       volunteer_checklist_open: 2024-10-10
       shifts_created: 2024-11-06 15
       room_deadline: 2024-11-17
@@ -108,7 +108,7 @@ plugins:
       dealer_reg_start: 2024-05-10 20:30
       dealer_reg_deadline: ''
       dealer_reg_shutdown: 2024-05-10 21
-      dealer_payment_due: 2024-12-06
+      dealer_payment_due: 2024-09-30
       dealer_waitlist_closed: ''  # If this is enabled, be sure to update the waitlist_closing.txt email
       dealer_reg_public: ''
 
