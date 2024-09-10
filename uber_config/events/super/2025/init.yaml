@@ -8,12 +8,12 @@ plugins:
     url_root: https://super2025.reg.magfest.org/
     url_base: https://super2025.reg.magfest.org
     app_limit: 0
-    shirt_stock: 0
-    supporter_stock: 0
-    season_stock: 0
-    hide_prereg_open_date: True
+    shirt_stock: 1200
+    supporter_stock: 850
+    season_stock: 830
+    hide_prereg_open_date: False
     shared_kickin_stocks: False
-    groups_enabled: True
+    groups_enabled: False
     blank_staff_badges: 200
     shirts_per_staffer: 1
     hours_for_shirt: 0
@@ -98,6 +98,7 @@ plugins:
       refund_cutoff: ''
 
       printed_badge_deadline: 2024-11-24
+      superstar_deadline: 2024-12-01
 
       # Dealer registration automatically opens on DEALER_REG_START.  After DEALER_REG_DEADLINE
       # all dealer registration are automatically waitlisted.  After DEALER_REG_SHUTDOWN dealers
@@ -231,8 +232,8 @@ plugins:
       donation_tier:
         No thanks: 0
         T-Shirt Tier: SHIRT_LEVEL
-        Phazon Tier: SUPPORTER_LEVEL
-        Omega Tier: SEASON_LEVEL
+        Emerald Tier: SUPPORTER_LEVEL
+        Maniac Tier: SEASON_LEVEL
 
       shirt:
         Unisex XS: 1
@@ -255,22 +256,22 @@ plugins:
         Women's 4X: 18
 
       shirt_stock:
-        Unisex XS: 20
-        Unisex S: 190
-        Unisex M: 690
-        Unisex L: 740
-        Unisex XL: 540
-        Unisex 2X: 290
-        Unisex 3X: 145
-        Unisex 4X: 45
-        Unisex 5X: 27
-        Unisex 6X: 18
+        Unisex XS: 18
+        Unisex S: 115
+        Unisex M: 600
+        Unisex L: 750
+        Unisex XL: 550
+        Unisex 2X: 300
+        Unisex 3X: 150
+        Unisex 4X: 50
+        Unisex 5X: 32
+        Unisex 6X: 22
         Women's XS: 13
-        Women's S: 45
-        Women's M: 75
+        Women's S: 38
+        Women's M: 65
         Women's L: 70
         Women's XL: 45
-        Women's 2X: 27
+        Women's 2X: 28
         Women's 3X: 13
         Women's 4X: 8
 
@@ -371,19 +372,19 @@ plugins:
       shirt:
         name: T-Shirt Tier
         icon: ../static/icons/shirt.png
-        description: Event T-Shirt|Themed Lanyard|Spinner Pin
+        description: Event T-Shirt|MAG Logo Pin|Super Lanyard
         link: ../static_views/tshirt.html
 
       supporter:
-        name: Phazon Tier
+        name: Emerald Tier
         icon: ../static/icons/supporter.png
-        description: All T-Shirt Tier Items|Gunship Swadge|MAGTroid Squeezy Ball|Galactic Passport|Floaty Pen|Arm Cannon Mug|Ship Luggage Tag|MAG Prime Bag|Sticker Sheet|And more!
+        description: All T-Shirt Tier Items|Hot Dog Swadge|Drive-In Coozie|Melty Ice Pop Stress Toy|Pango Go Kart|Event Tattoo Sheet|And more!
         link: ../static_views/supporter.html
 
       super_supporter:
-        name: Omega Tier
+        name: Maniac Tier
         icon: ../static/icons/super.png
-        description: All Previous Tier Items|Zip Puppet Plushy|Spaceship Tech Backpack|MAGCube Bento Box|Body DeVillowcase|MAGTroid Bottle Opener|Gunship Swadge Shell|AND MORE!
+        description: All Previous Tier Items|Messenger Bag|Speedy Socks|Dr. Garbotnik Plush|Emerald Tumbler|Character Acrylic Standee|AND MORE!
         link: ../static_views/super.html
 
     volunteer_checklist:
