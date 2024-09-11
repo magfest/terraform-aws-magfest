@@ -20,6 +20,7 @@ plugins:
     groups_enabled: False
     blank_staff_badges: 200
     shirts_per_staffer: 1
+    staff_shirts_optional: True
     hours_for_shirt: 0
     self_service_deferrals_open: False
     merch_shipping_fee: 15
