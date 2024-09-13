@@ -17,6 +17,7 @@ plugins:
     season_stock: 830
     hide_prereg_open_date: False
     shared_kickin_stocks: False
+    shift_custom_badges: False
     groups_enabled: False
     blank_staff_badges: 200
     shirts_per_staffer: 1
@@ -164,7 +165,7 @@ plugins:
 
     badge_ranges:
       # Staff_badge and contractor_badge should be split at the start of the year, then merged right before running the badge export
-      staff_badge: [25, 2999]
+      staff_badge: [25, 1500]
       contractor_badge: [1501, 2999]
       guest_badge: [3000, 3499]
       attendee_badge: [3500, 29999]
