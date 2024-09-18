@@ -37,7 +37,7 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/super/2025
-    web_count: 30
+    web_count: 4
     web_cpu: 512
 
   west2024:
