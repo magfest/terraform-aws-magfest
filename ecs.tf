@@ -257,7 +257,8 @@ resource "aws_ecs_capacity_provider" "ec2_cluster" {
 
   auto_scaling_group_provider {
     auto_scaling_group_arn         = aws_autoscaling_group.ecs_cluster.arn
-    managed_termination_protection = "DISABLED"
+    managed_termination_protection = "ENABLED"
+    managed_draining               = "ENABLED"
 
     managed_scaling {
       status = "DISABLED"
