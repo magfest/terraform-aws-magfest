@@ -37,7 +37,7 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/super/2025
-    web_count: 2
+    web_count: 30
     web_cpu: 512
 
   west2024:
@@ -47,7 +47,7 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/west/2024
-    web_count: 4
+    web_count: 2
     web_cpu: 512
 
   stock2024:
@@ -57,8 +57,8 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/stock/2024
-    web_count: 2
-    web_cpu: 512
+    web_count: 1
+    enable_celery: false
 
   super2024:
     ubersystem_container: ghcr.io/magfest/magprime:super2024
