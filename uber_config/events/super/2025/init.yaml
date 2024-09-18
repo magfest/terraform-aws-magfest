@@ -14,7 +14,7 @@ plugins:
     app_limit: 0
     shirt_stock: 1200
     supporter_stock: 850
-    season_stock: 830
+    season_stock: 820
     hide_prereg_open_date: False
     shared_kickin_stocks: False
     shift_custom_badges: False
