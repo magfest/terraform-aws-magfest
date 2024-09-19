@@ -44,7 +44,7 @@ module "uberserver-ecs" {
     celery_cpu              = lookup(each.value, "celery_cpu", 512)
     celery_ram              = lookup(each.value, "celery_ram", 1024)
     celery_beat_cpu         = lookup(each.value, "celery_cpu", 64)
-    celery_beat_ram         = lookup(each.value, "celery_ram", 256)
+    celery_beat_ram         = lookup(each.value, "celery_ram", 384)
     enable_celery           = lookup(each.value, "enable_celery", true)
 
     ecs_cluster             = aws_ecs_cluster.uber.arn
