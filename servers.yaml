@@ -6,7 +6,6 @@ staging:
     config_paths:
       - uber_config/environments/staging
       - uber_config/events/super/2025/staging
-    web_cpu: 512
     web_count: 1
 
   stock:
@@ -16,7 +15,6 @@ staging:
     config_paths:
       - uber_config/environments/staging
       - uber_config/events/stock/2024/staging
-    web_cpu: 512
     web_count: 1
 
   west:
@@ -26,7 +24,6 @@ staging:
     config_paths:
       - uber_config/environments/staging
       - uber_config/events/west/2024/staging
-    web_cpu: 512
     web_count: 1
 
 production:
@@ -37,8 +34,7 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/super/2025
-    web_count: 4
-    web_cpu: 512
+    web_count: 1
 
   west2024:
     ubersystem_container: ghcr.io/magfest/magwest:main
@@ -47,8 +43,7 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/west/2024
-    web_count: 2
-    web_cpu: 512
+    web_count: 1
 
   stock2024:
     ubersystem_container: ghcr.io/magfest/magstock:main
