@@ -18,7 +18,7 @@ staging:
     web_count: 1
 
   west:
-    ubersystem_container: ghcr.io/magfest/magwest:main
+    ubersystem_container: ghcr.io/magfest/magwest:attendee_fix
     hostname: west.dev.magevent.net
     zonename: dev.magevent.net
     config_paths:

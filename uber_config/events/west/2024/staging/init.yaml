@@ -1,7 +1,7 @@
 plugins:
   uber:
     url_root: https://west.dev.magevent.net/
-    at_the_con: False
+    at_the_con: True
     post_con: False
     shirt_stock: 5
     supporter_stock: 5
