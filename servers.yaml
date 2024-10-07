@@ -8,14 +8,14 @@ staging:
       - uber_config/events/super/2025/staging
     web_count: 1
 
-  stock:
-    ubersystem_container: ghcr.io/magfest/magstock:main
-    hostname: stock.dev.magevent.net
-    zonename: dev.magevent.net
-    config_paths:
-      - uber_config/environments/staging
-      - uber_config/events/stock/2024/staging
-    web_count: 1
+#  stock:
+#    ubersystem_container: ghcr.io/magfest/magstock:main
+#    hostname: stock.dev.magevent.net
+#    zonename: dev.magevent.net
+#    config_paths:
+#      - uber_config/environments/staging
+#      - uber_config/events/stock/2024/staging
+#    web_count: 1
 
   west:
     ubersystem_container: ghcr.io/magfest/magwest:main
