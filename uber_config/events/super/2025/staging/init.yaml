@@ -13,6 +13,7 @@ plugins:
       dealer_reg_start: 2024-08-11 19
       dealer_reg_deadline: ''
       dealer_reg_shutdown: 2024-08-11 20
+      refund_start: 2024-10-01
 
     integer_enums:
       shirt_stock:
