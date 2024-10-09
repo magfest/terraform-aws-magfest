@@ -46,7 +46,7 @@ production:
       - uber_config/environments/prod
       - uber_config/events/west/2024
     web_count: 1
-    enable_celery: false
+    enable_celery: true
 
   stock2024:
     ubersystem_container: ghcr.io/magfest/magstock:stock2024
