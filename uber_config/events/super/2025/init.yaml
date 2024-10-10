@@ -100,8 +100,8 @@ plugins:
       prereg_takedown: ''
       group_prereg_takedown: 2025-01-01
       badge_price_waived: 2025-01-30 12
-      refund_start: 2025-10-09
-      refund_cutoff: 2025-10-23
+      refund_start: 2024-10-09
+      refund_cutoff: 2024-10-23
 
       printed_badge_deadline: 2024-11-24
 
