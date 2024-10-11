@@ -19,6 +19,7 @@ plugins:
     shared_kickin_stocks: False
     shift_custom_badges: False
     groups_enabled: False
+    admin_badges_need_approval: True
     blank_staff_badges: 200
     shirts_per_staffer: 1
     staff_shirts_optional: True
