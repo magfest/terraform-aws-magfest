@@ -89,13 +89,13 @@ plugins:
       prereg_hotel_eligibility_cutoff: 2024-09-25
       volunteer_checklist_open: 2024-10-10
       shifts_created: 2024-11-06 15
-      room_deadline: 2024-11-17
+      room_deadline: 2024-11-13
       volunteer_shirt_deadline: 2024-11-03
-      drop_shifts_deadline: 2025-01-11
+      drop_shifts_deadline: 2025-01-16
       shirt_deadline: 2024-12-31
       supporter_deadline: 2024-12-31
       placeholder_deadline: ''
-      uber_takedown: 2025-01-21
+      uber_takedown: 2025-01-26
       epoch: 2025-01-23 08
       eschaton: 2025-01-26 23
       prereg_takedown: ''
@@ -104,7 +104,7 @@ plugins:
       refund_start: 2024-10-09
       refund_cutoff: 2024-10-23
 
-      printed_badge_deadline: 2024-11-24
+      printed_badge_deadline: 2024-11-06
 
       # Dealer registration automatically opens on DEALER_REG_START.  After DEALER_REG_DEADLINE
       # all dealer registration are automatically waitlisted.  After DEALER_REG_SHUTDOWN dealers
@@ -463,10 +463,10 @@ plugins:
 
     dept_head_checklist:
       placeholders:
-        deadline: 2024-10-20
+        deadline: 2024-10-27
 
       assigned_volunteers:
-        deadline: 2024-10-20
+        deadline: 2024-10-27
 
       # NOTE: Full description is not used for this step, as it has its own page
       creating_shifts:
@@ -480,19 +480,24 @@ plugins:
       treasury:
         deadline: 2024-10-27
 
-      hotel_setup:
-        deadline: 2024-11-03
-        external_form_url: https://forms.gle/CAyGTGoAKJ9nktNc7
+      accessibility:
+        deadline: 2024-10-27
+        description: Let the Accessibility department know about your function space or content needs!
+        external_form_url: https://forms.gle/vaE4czsAPmLLdZri6
 
       magtv:
         name: magTV Information
-        deadline: 2024-11-03
+        deadline: 2024-11-10
         description: >
-            Does your department want to have content on Super magTV? Super magTV is our custom channel that broadcasted to all
-            hotel rooms in the Gaylord, as well as on our Twitch channel. There are options for pre-recorded content, as well as
-            promo videos or slides. Fill out this form if you will have content for Super magTV. Please reach out to magtv@magfest.org
-            or post in #magtv for more information.
-        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSdlKO7WdcTRvLmlxnZYoGhviVZPrbTFcjwXW91JYOf62Z9OeA/viewform
+            Does your department want to have content on Super magTV? Super magTV is our custom channel that is broadcasted to all hotel 
+            rooms in the Gaylord, as well as on our Twitch channel. There are options for pre-recorded content, as well as promo videos 
+            or slides. Fill out this form if you will have content for Super magTV. Please reach out to magtv@magfest.org or post in 
+            #magtv for more information.
+        external_form_url: https://forms.gle/xBFGq6G2AFsEhtnq8
+      
+      hotel_setup:
+        deadline: 2024-11-10
+        external_form_url: https://forms.gle/nkFE1CXq2R9Jhk9U6
 
       tech_requirements:
         name: Tech and Operational Needs
@@ -502,39 +507,49 @@ plugins:
             Note: Your department must fill out the form, even if you don't need anything. If you have any questions, please 
             contact TechOps on Slack ( #super-techops ) or via email ( techops@magfest.org )
         deadline: 2024-11-10
-        external_form_url: https://forms.gle/iYFi9zZYuSCyAQpG8
+        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSeJsnNb8K9XpBP6JBhnE6-2Ud1fCGTV6tZGo0DMVvsIEBuuvQ/viewform?usp=sf_link
 
       social_media:
         deadline: 2024-11-10
-        external_form_url: https://forms.gle/mLPJFK8eCHncAgrC9
-
-      approve_setup_teardown:
-        deadline: ''
+        external_form_url: https://forms.gle/Zb5D4K8QwbX8PXv87
 
       printed_signs:
         full_description: >
           Other than a sign for your area, what printed coroplast signs or banners do you need?
-        deadline: 2024-11-17
+        deadline: 2024-11-24
 
       logistics:
-        deadline: 2024-11-17
-        external_form_url: https://forms.gle/FNwisKXYzm1QFaN7A
+        deadline: 2024-11-24
+        external_form_url: https://forms.gle/UoHtSECzu4SvU1WbA
 
       mediatron:
-        deadline: 2024-12-01
-        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLScyBsYXoiRpFkSs4D_2wW2fR2RXDWcKxzphpgWxbwlCrLIMAQ/viewform
+        deadline: 2024-11-24
+        external_form_url: https://forms.gle/xBFGq6G2AFsEhtnq8
 
       guidebook_schedule:
-        deadline: 2024-12-01
-
-      office_supplies:
-        deadline: ''
-        external_form_url: https://forms.gle/dzhTkHsfrNUE9aya7
+        deadline: 2024-12-09
 
       water_requests:
         name: Water and Sports Drinks Requests
-        deadline: 2024-12-07
-        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSeLoUec5d2BLwYjB17RvIP2n6H_324vPBS5cEcHMxtcjaKWJA/viewform
+        deadline: 2024-12-09
+        description: >
+          Please let us know how much water or sports drinks you need ordered for your staff. Note: Departments are responsible for 
+          picking up their own water and sports drinks in a timely fashion. Water/drink orders will be adjusted at the discretion of 
+          STOPS if needed.
+        external_form_url: https://forms.gle/eX9PiVXvFZetNs6B7
+
+      bulk_print_jobs:
+        name: Bulk Printing Requests (large qty, 8.5x11")
+        deadline: 2024-12-09
+
+      staff_suite:
+        name: Tuber Eats/Carryout Set-Up
+        deadline: 2024-12-09
+        description: Set up your Tuber Eats page so that Staff Suite will be able to contact you when your meals are ready for pick-up.
+        external_form_url: food.magevent.net
+
+      postcon_hours:
+        deadline: 2025-02-10
 
       ppe_requests:
         deadline: ''
@@ -543,9 +558,9 @@ plugins:
           MAGFest is providing basic PPE for departments for Super 2025. Please let us know what you need and we will do our best to accommodate.
         external_form_url: https://forms.gle/BihzhdCWXp7juwSC9
 
-      bulk_print_jobs:
-        name: Bulk Printing Requests (large qty, 8.5x11")
-        deadline: 2024-12-08
+      office_supplies:
+        deadline: ''
+        external_form_url: https://forms.gle/dzhTkHsfrNUE9aya7
 
-      postcon_hours:
-        deadline: 2025-02-02
+      approve_setup_teardown:
+        deadline: ''
