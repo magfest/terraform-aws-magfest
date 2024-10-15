@@ -51,10 +51,10 @@ plugins:
     expected_response: November 2024
     panels_confirm_deadline: 14
 
-    volunteer_placeholder_deadline: November 3
-    volunteer_food_deadline: November 17
-    volunteer_checklist_deadline: December 15
-    emergency_procedures_deadline: December 15
+    volunteer_placeholder_deadline: October 30
+    volunteer_food_deadline: November 13
+    volunteer_checklist_deadline: December 18
+    emergency_procedures_deadline: December 18
     emergency_procedures_ready: False
 
     # The number of dealer apps we will accept before auto-waitlisting further
@@ -90,7 +90,7 @@ plugins:
       volunteer_checklist_open: 2024-10-10
       shifts_created: 2024-11-06 15
       room_deadline: 2024-11-13
-      volunteer_shirt_deadline: 2024-11-03
+      volunteer_shirt_deadline: 2024-10-30
       drop_shifts_deadline: 2025-01-16
       shirt_deadline: 2024-12-31
       supporter_deadline: 2024-12-31
@@ -464,13 +464,16 @@ plugins:
     dept_head_checklist:
       placeholders:
         deadline: 2024-10-27
+        order: 1
 
       assigned_volunteers:
         deadline: 2024-10-27
+        order: 2
 
       # NOTE: Full description is not used for this step, as it has its own page
       creating_shifts:
         deadline: 2024-10-27
+        order: 3
         description: >
             We are able to import shifts from last year. If you want us to import last year's shifts, please email stops@magfest.org.
             You will still need to approve these via the checklist after the import. If you want any shifts to be restricted
