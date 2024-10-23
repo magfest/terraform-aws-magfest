@@ -531,6 +531,9 @@ plugins:
 
       guidebook_schedule:
         deadline: 2024-12-09
+        description: >
+          Ensure all public-facing events or hours are in Uber by the deadline for the first Guidebook release. After the deadline,
+          keep updating Uber; any changes will be manually synced to Guidebook. Visit the #super-guidebook in Slack if you have any questions.
 
       water_requests:
         name: Water and Sports Drinks Requests
