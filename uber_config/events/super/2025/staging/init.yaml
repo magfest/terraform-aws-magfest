@@ -36,3 +36,25 @@ plugins:
         Women's 2X: 6
         Women's 3X: 7
         Women's 4X: 8
+
+    mivs_checklist:
+      core_hours:
+        start: 2023-12-01
+
+      discussion:
+        start: 2023-12-01
+
+      hotel_space:
+        start: 2023-12-01
+
+      show_info:
+        start: 2023-12-01
+
+      selling_at_event:
+        start: 2023-12-01
+
+      handbook:
+        start: 2023-12-01
+
+      training:
+        start: 2023-12-01
