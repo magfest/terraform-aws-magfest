@@ -433,7 +433,7 @@ plugins:
           by MAGFest. Dropping out of MIVS may cause your room to be canceled.
 
       show_info:
-        start: 2024-12-01
+        start: 2024-11-04
         deadline: 2024-11-20
         name: Update Studio and Game Information
         editable: True
