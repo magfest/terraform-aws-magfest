@@ -79,7 +79,7 @@ plugins:
     mits_email: "MAGFest Indie Tabletop Showcase <mits@magfest.org>"
     mits_email_signature: "The MITS team"
 
-    panel_rooms: ['panels_1', 'panels_2', 'panels_3', 'panels_4', 'panels_5', 'mages_1', 'panels_7', 'the_forge', 'film_fest', 'console_stage']
+    panel_rooms: ['panels_1', 'panels_2', 'panels_3', 'panels_4', 'panels_5', 'panels_6', 'panels_7', 'the_forge', 'console_stage']
     tabletop_locations: ['tabletop_indie', 'tabletop_tournaments', 'tabletop_tournaments_2', 'tabletop_panels',
                         'tabletop_ccg', 'pathfinder', 'pathfinder_freeplay', 'ddal']
     music_rooms: ['concerts', 'chiptunes', 'pose_lounge', 'lobby_bar', 'jamspace', 'jam_clinic', 'jam_shop', 'rock_island']
@@ -303,8 +303,6 @@ plugins:
         panels_4: Panels 4 (Chesapeake A,B,C)
         panels_5: Panels 5 (Chesapeake 7,8,9)
         panels_6: Panels 6 (Chesapeake 10,11,12)
-        mages_1: Panels 6 (TEMP)
-        film_fest: Film Fest (TEMP)
         panels_7: Panels 7 (Chesapeake G&H)
         the_forge: Makerspace Classroom (Eastern Shore 1)
         soapbox2: Makerspace Social Space (Eastern Shore 2)
