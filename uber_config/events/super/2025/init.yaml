@@ -557,7 +557,7 @@ plugins:
         name: Tuber Eats/Carryout Set-Up
         deadline: 2024-12-09
         description: Set up your Tuber Eats page so that Staff Suite will be able to contact you when your meals are ready for pick-up.
-        external_form_url: https://food.magevent.net
+        external_form_url: https://food.magevent.net/dept_contact
 
       postcon_hours:
         deadline: 2025-02-10
