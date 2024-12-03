@@ -1,5 +1,11 @@
 plugins:
   uber:
+    sentry:
+      environment: superdev
+      enabled: False
+    redis:
+      prefix: superdev
+
     url_root: https://super.dev.magevent.net/
     at_the_con: True
     post_con: False
