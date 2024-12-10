@@ -355,7 +355,8 @@ plugins:
         lobby_bar: Belvedere Lobby Bar
         jamspace: Jamspace Studio (Chesapeake 10,11,12)
         jam_clinic: Jam Clinic (Baltimore 1,2)
-        jam_orchestra: Orchestra Room (Woodrow Wilson B&C)
+        jam_orchestra: Orchestra Room (Woodrow Wilson B)
+        jam_orchestra2: Orchestra Room 2 (Woodrow Wilson C)
         jam_shop: Indie Games Tournaments (Expo Hall C)
         mag_series_tournaments: Large Tournament Collider (Expo Hall A - Exterior)
         vrzone: VRZone (MD Ballroom C)
