@@ -170,6 +170,7 @@ plugins:
       contractor_badge: [25, 2999]
       guest_badge: [3000, 3499]
       attendee_badge: [3500, 29999]
+      visitor_badge: [3500, 29999]
       one_day_badge: [40000, 49999]
       child_badge: [50000, 50999]
 
@@ -292,6 +293,9 @@ plugins:
         Unisex 5X: 8
 
     enums:
+      badge:
+        visitor_badge: Visitor
+
       event_location:
         xpansion: Xpansion Pack Stage (Annapolis 2,3,4)
         magpie: MAGPIE Nest (National Harbor 14)
