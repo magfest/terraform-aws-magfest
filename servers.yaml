@@ -37,6 +37,8 @@ production:
     web_count: 6
     web_ram: 768
     web_cpu: 512
+    celery_ram: 1024
+    celery_cpu: 768
 
   west2024:
     ubersystem_container: ghcr.io/magfest/magwest:west2024
