@@ -192,7 +192,7 @@ plugins:
 
       stocks:
         attendee_badge: 22500
-        child_badge: 1080
+        child_badge: 600
 
     table_prices:
       default_price: 400
