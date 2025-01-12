@@ -192,7 +192,7 @@ plugins:
         "2025-01-21": 35
 
       stocks:
-        attendee_badge: 22750
+        attendee_badge: 22500
         child_badge: 580
 
     table_prices:
