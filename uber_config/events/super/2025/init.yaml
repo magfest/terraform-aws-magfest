@@ -118,6 +118,7 @@ plugins:
       dealer_payment_due: 2024-09-30
       dealer_waitlist_closed: ''  # If this is enabled, be sure to update the waitlist_closing.txt email
       dealer_reg_public: ''
+      dealer_badge_deadline: 2025-01-15
 
       mivs_start: 2024-08-01 09
       mivs_deadline: 2024-09-04
@@ -192,7 +193,7 @@ plugins:
 
       stocks:
         attendee_badge: 22500
-        child_badge: 600
+        child_badge: 580
 
     table_prices:
       default_price: 400
@@ -326,6 +327,7 @@ plugins:
         arcade_tournaments_3: Arcade (Tournaments 3)
         arcade_tournaments_5: Arcade (Tournaments 4)
         arcade_tournaments_4: Arcade (Pinball)
+        magscouts_arcade: MAGScouts (Arcade)
         lan_1: LAN Tournaments (Maryland A,B,D)
         lan_2: LAN Events (Maryland A,B,D)
         lan_theater: LAN Theater (Maryland A,B,D)
