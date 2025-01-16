@@ -38,6 +38,7 @@ plugins:
     untransferable_attrs: ['first_name','last_name','legal_name','email','birthdate','zip_code','international','ec_name','ec_phone','cellphone','interests','age_group','staffing','requested_depts','special_merch','group_name','onsite_contact','no_onsite_contact','hotel_pin','regdesk_info','transfer_code']
     use_checkin_barcode: True
     enable_pending_emails_report: False
+    guidebook_updates_email: gb-ops@magfest.org
 
     event_year: 2025
     event_qr_id: sm23
