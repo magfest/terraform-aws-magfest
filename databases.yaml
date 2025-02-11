@@ -5,6 +5,7 @@ staging:
   - super2023
 
 production:
+  - west2025
   - super2025
   - west2024
   - stock2024

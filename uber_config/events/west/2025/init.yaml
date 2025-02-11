@@ -1,0 +1,360 @@
+plugins:
+  uber:
+    sentry:
+      environment: west2025
+    url_root: https://west2025.reg.magfest.org/
+    url_base: https://west2025.reg.magfest.org
+    shirt_stock: 0
+    supporter_stock: 0
+    season_stock: 0
+    shared_kickin_stocks: False
+    event_year: 2025
+    max_dealers: 5
+    max_badge_sales: 2000
+    at_the_con: False
+    post_con: True
+    send_sms: False
+    emergency_procedures_enabled: True
+    emergency_procedures_ready: True
+    slow_load_check: False
+    enable_pending_emails_report: False
+    
+    code_of_conduct_url: 'https://www.magwest.org/codeofconduct/'
+    covid_policies_url: ''
+    prior_covid_policies_url: ''
+    kiosk_redirect_url: ''
+    
+    treasury_dept_checklist_form_url: 'https://forms.gle/vS26HZQiFaTjvuwn8'
+    expected_response: "July 15th" # displayed on panels app text
+    mivs_video_response_expected: "no later than September 17th"
+    
+    volunteer_placeholder_deadline: "July 11"
+    volunteer_food_deadline: "July 18"
+    volunteer_checklist_deadline: "September 12"
+    emergency_procedures_deadline: "September 12"
+    
+    require_dedicated_guest_table_presence: False
+    expected_rehearsal_response: "August 5th"
+
+    marketplace_email_signature: |
+        ---
+        Natasha Singha
+        Marketplace Department Head
+        Programming Division, MAGWest
+        www.magwest.org
+        marketplace@magwest.org
+    panels_email_signature: |
+        ---
+        Gerado "G" Paz
+        Panels Department Head
+        Programming Division, MAGWest
+        www.magwest.org
+        panels@magwest.org
+        ---
+        Looking to Volunteer? Contact chairs@magwest.org
+
+    tracking_params: ['fbclid', 'hsmi', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', '_hsmi', '_home', '_hsenc']
+    untransferable_attrs: ['first_name','last_name','legal_name','email','birthdate','zip_code','international','ec_name','ec_phone','cellphone','interests','age_group','staffing','requested_depts','onsite_contact','no_onsite_contact','hotel_pin','regdesk_info','transfer_code']
+
+    dates:
+      epoch: 2025-08-08 8
+      eschaton: 2025-08-10 17
+      badge_price_waived: 2025-09-29 16
+      prereg_takedown: 2025-09-27
+      group_prereg_takedown: 2025-09-27
+      placeholder_deadline: 2025-09-27
+      prereg_open: 2025-05-22 12:30
+      volunteer_checklist_open: 2025-05-01
+      shifts_created: 2025-07-15
+      shirt_deadline: ''
+      volunteer_shirt_deadline: 2025-07-18
+      supporter_deadline: ''
+      room_deadline: 2025-07-25
+      drop_shifts_deadline: 2025-09-19
+      uber_takedown: 2025-08-18
+
+      printed_badge_deadline: 2025-08-01
+
+      # Dealer registration automatically opens on DEALER_REG_START.  After DEALER_REG_DEADLINE
+      # all dealer registration are automatically waitlisted.  After DEALER_REG_SHUTDOWN dealers
+      # can no longer even add themselves to the waitlist.  Dealer payment reminder emails are
+      # sent in the days and weeks leading up to DEALER_PAYMENT_DUE.  All waitlisted dealers will
+      # be emailed when the waitlist has been exhausted and all available positions have been
+      # filled, as defined by DEALER_WAITLIST_CLOSED.
+      dealer_reg_start: 2025-05-01 12
+      dealer_reg_public: 2025-05-01 12
+      dealer_reg_shutdown: 2025-05-31
+      dealer_payment_due: 2025-07-31
+      dealer_reg_deadline: ""  # Disable automatic waitlist
+      dealer_waitlist_closed: ""  # If this is enabled, be sure to update the waitlist_closing.txt email
+      band_info_deadline: ""
+      band_bio_deadline: 2025-07-01
+      band_panel_deadline: 2025-08-16 # Should be <= panels_deadline
+      band_stage_plot_deadline: 2025-07-31
+      band_taxes_deadline: ""
+      band_charity_deadline: ""
+      band_merch_deadline: 2025-09-10
+      band_mc_deadline: 2025-09-11
+      band_autograph_deadline: ""
+      band_rehearsal_deadline: 2025-09-01
+      band_badges_deadline: 2025-09-01 # Should be <= placeholder_deadline
+      rock_island_deadline: ""
+
+      panels_deadline: 2025-07-01
+      panels_confirm_deadline: ""
+      mivs_round_one_deadline: 2025-08-01
+      mivs_round_two_start: 2025-08-01
+      mivs_round_two_deadline: 2025-08-01
+      mivs_judging_deadline: 2025-08-01
+      mivs_round_two_complete: 2025-08-01
+      guest_panel_deadline: 2025-08-01
+      guest_bio_deadline: 2025-08-01
+      guest_info_deadline: ""
+      guest_taxes_deadline: 2025-08-01
+      guest_merch_deadline: 2025-08-01
+      guest_charity_deadline: ""
+      guest_badges_deadline: 2025-08-01
+      guest_autograph_deadline: ""
+      guest_interview_deadline: 2025-08-01
+      guest_travel_plans_deadline: ""
+
+    badge_ranges:
+      staff_badge: [7, 999]
+      contractor_badge: [7, 999]
+      guest_badge: [2000, 9999]
+      attendee_badge: [2000, 9999]
+      one_day_badge: [2000, 9999]
+      child_badge: [2000, 9999]
+
+    badge_prices:
+      initial_attendee: 90
+      group_discount: 20
+      dealer_badge_price: 70
+      one_days_enabled: True
+      presell_one_days: False
+      price_bumps_enabled: False
+      default_single_day: 50
+
+      single_day:
+        Friday: 50
+        Saturday: 60
+        Sunday: 30
+
+    table_prices:
+      default_price: 200
+      "1": 70
+      "2": 100
+      "3": 200
+      "4": 275
+      
+    age_groups:
+      under_6:
+        desc: "Under 6"
+        min_age: 0
+        max_age: 5
+        discount: 9999
+        can_register: True
+        can_volunteer: False
+
+      under_13:
+        desc: "Between 6 and 13"
+        min_age: 6
+        max_age: 12
+        can_volunteer: False
+      
+      under_18:
+        desc: "Under 18"
+        min_age: 13
+        max_age: 17
+
+      under_21:
+        desc: "between 18 and 21"
+        min_age: 18
+        max_age: 20
+      
+      over_21:
+        desc: "21 and over"
+        min_age: 21
+        max_age: 99
+        
+    integer_enums:
+      shirt_level: 40
+      supporter_level: 199
+      #season_level: 180
+
+      donation_tier:
+        No thanks: 0
+        T-Shirt Tier: SHIRT_LEVEL
+        Phantom Tier: SUPPORTER_LEVEL
+        #Season Tier: SEASON_LEVEL
+        
+      shirt:
+        Unisex XS: 1
+        Unisex S: 2
+        Unisex M: 3
+        Unisex L: 4
+        Unisex XL: 5
+        Unisex 2X: 6
+        Unisex 3X: 7
+        Unisex 4X: 8
+        Unisex 5X: 9
+
+    donation_tier_descriptions:
+      no_thanks:
+        name: No thanks
+        icon: ''
+        description: No thanks
+        link: ''
+
+      shirt:
+        name: T-Shirt Tier
+        icon: ../static/icons/shirt.png
+        description: MAGWest Shirt|Themed Lanyard|Themed Pin|Sticker Sheet
+        link: ../static_views/merch.html
+
+      supporter_package:
+        name: Phantom Tier
+        icon: ../static/icons/supporter.png
+        description: Everything in the T-Shirt Tier|Custom MAGWest Blanket|Travel Mug|Customizable Mask|MAGFest Gunship Swadge|And more!
+        link: ../static_views/merch.html
+
+      #super_supporter:
+      #  name: Jet Tier
+      #  icon: ../static/icons/super.png
+      #  description: Crazy Exclusive Swag
+      #  link: ../static_views/super.html
+
+    enums:
+      event_location:
+        panels_1: "Panels 1"
+        panels_2: "Panels 2"
+        arcade_tournaments_1: "Arcade (Tournaments 1)"
+        arcade_tournaments_2: "Arcade (Tournaments 2)"
+        arcade_tournaments_3: "Arcade (Tournaments 3)"
+        concerts: "Concerts"
+        jamspace: "Jam Space"
+        chipspace: "Chipspace"
+        console_tournament: "Consoles (Tournaments 1)"
+        console_tournament_2: "Consoles (Tournaments 2)"
+        console_tournament_3: "Consoles (Tournaments 3)"
+        console_attendee: "Consoles (Attendee Tournaments)"
+        craft_cove: "Craft Cove"
+        tabletop_tournaments: "Tabletop"
+        mages: "MAGES"
+        variety: "Variety Stage"
+        pool_party: "Pool Party"
+        lan: "LAN"
+        indie_games: "Indie Games"
+        marketplace: "Marketplace"
+        meet_greet: "Meet-and-Greet"
+
+      guest_merch:
+        own_table: "Selling merch"
+
+      livestream:
+        record_only: Recording for the public is okay, but not livestreaming
+        private_record: Recording is okay, but please don't post it publicly
+        
+    dept_head_checklist:
+      placeholders:
+        deadline: 2025-07-03
+
+      assigned_volunteers:
+        deadline: 2025-07-03
+        path: /shifts_admin/staffers?department_id={department_id}
+
+      creating_shifts:
+        deadline: 2025-07-10
+        description: >
+            STOPS is happy to assist you in creating shifts. Please let us know if you need assistance 
+            with this step. If you want us to import last year's shifts, please email stops@magwest.org.
+            You will still need to approve these via the checklist after the import.
+        path: /shifts_admin/index?department_id={department_id}
+
+      treasury:
+        deadline: 2025-07-24
+        external_form_url: https://forms.gle/WZD3RaMUQVk9ardA9
+
+      hotel_setup:
+        deadline: 2025-07-31
+        external_form_url: https://forms.gle/FaHTdnscjAA3CGBD8
+        
+      tech_requirements:
+        deadline: 2025-07-31
+        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSeNB-1ziywwvFrjZvyAjfdRyLU_d8AVnDWaEpcrLUAx_GfQOg/viewform
+
+      printed_signs:
+        name: Room Signage
+        deadline: 2025-08-14
+        description: Other than a sign for your area, what printed signage do you need?
+        full_description: >
+            <div class="text-left">All attendee-facing rooms will automatically receive a 24"x36" coroplast sign for outside of the room. Please submit requests for <strong>additional</strong> signage here.
+            <br/><br/>We will compare all requests against <a href="https://docs.google.com/spreadsheets/d/1JSpM_CzbLM2vEC46DG03c3xq1oF5pdbMwq55MNg6y0Y/edit?usp=sharing" target="_blank">our known signage inventory</a>, so please include your complete list of needs. (If you store any signs with your department supplies, however, we will not have records of them in our signage inventory, so DON'T include those here--this helps us avoid double-ordering.)
+            <br/><br/>Signage comes in two types: 12"x18" coroplast and 24"x36" coroplast. Be sure to specify FOR EACH SIGN:
+            <ul><li>Number needed</li>
+            <li>Size of sign</li>
+            <li>Primary text of sign</li>
+            <li>Sub text of sign (if applicable)</li>
+            <li>Intended placement location for sign</li>
+            <li>Link to any custom artwork that is needed</li>
+            <li>Any additional notes</li></ul>
+            <br/>The signage department reserves the right to reduce or decline requests according to their discretion. We will contact you if significant changes to your order are necessary.
+            <br/><br/>Note: This checklist item is NOT for printed materials such as sign-up forms, waivers, or anything else that goes on standard office paper. STOPS has a paper cutter and a printer for small jobs (less than 50 pages). Anything more than 50 pages needs to go into the Bulk Print Jobs checklist item.
+
+      social_media:
+        deadline: 2025-08-14
+        full_description: >
+            If you have a guest or event that you believe is worth promoting on social media beforehand, 
+            # let us know! For detailed or special requests, please contact socialmedia@magfest.org/ or post 
+            in #socialmedia-requests in Slack.
+
+      ppe_requests:
+        deadline: 2025-08-21
+        name: Office Supplies, PPE, and Water Requests
+        description: >
+          MAGFest is providing basic PPE for departments for MAGWest 2025. Please let us know what you need and we will do our best to accommodate.
+        external_form_url: https://forms.gle/ighhbmoXc4zoQwSdA
+
+      guidebook_schedule:
+        deadline: 2025-08-28
+        name: Public-Facing Schedule
+        description: Make sure your public-facing events or open hours are on our Uber schedule so they can be exported to our attendee schedule.
+        path: /dept_checklist/guidebook_schedule?department_id={department_id}
+
+      mediatron:
+        deadline: 2025-09-04
+        full_description: >
+            If you have something especially cool happening that you would like Mediatron! to capture, let us know here so 
+            they can do their best to get your event on their schedule. For detailed or special requests, please contact 
+            mediatron@magwest.org.
+
+      bulk_print_jobs:
+        deadline: 2025-09-18
+        full_description: >
+            STOPS has a printer for small jobs (less than 50 pages). Anything more than 50 pages should go 
+            here! For EACH item you need printed, please include a link to the document and the number of copies.
+
+      postcon_hours:
+        name: (After the Event) Marking + Rating Shifts
+        deadline: 2025-10-16
+        path: /shifts_admin/signups?department_id={department_id}
+        description: >
+            Please go through your volunteers' shifts carefully. This ensures that they receive the appropriate perks, 
+            are imported as staff next year.
+
+      approve_setup_teardown:
+        deadline: ''
+
+      office_supplies:
+        deadline: ''
+
+      logistics:
+        deadline: ''
+
+    volunteer_checklist:
+      "2": staffing/food_item.html
+      "3": staffing/shirt_item.html
+      "4": staffing/hotel_item.html
+      "97": staffing/volunteer_agreement_item.html
+      "98": staffing/emergency_procedures_item.html
+      "99": staffing/shifts_item.html
