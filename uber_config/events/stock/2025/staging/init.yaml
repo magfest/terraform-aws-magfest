@@ -1,5 +1,11 @@
 plugins:
   uber:
+    sentry:
+      environment: stockdev
+      enabled: False
+    redis:
+      prefix: stockdev
+
     url_root: https://stock.dev.magevent.net/
     at_the_con: False
     post_con: False

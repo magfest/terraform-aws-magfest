@@ -1,5 +1,11 @@
 plugins:
   uber:
+    sentry:
+      environment: westdev
+      enabled: False
+    redis:
+      prefix: westdev
+
     url_root: https://west.dev.magevent.net/
     at_the_con: False
     post_con: False
