@@ -1,0 +1,237 @@
+plugins:
+  magstock:
+    food_price: 18
+
+    dates:
+      meal_plan_deadline: 2025-06-04
+    
+    enums:
+      cabin_type_stocks:
+        half: 6
+
+      cabin_type_prices:
+        private: 1400
+
+  uber:
+    sentry:
+      environment: stock2025
+    url_root: https://stock2025.reg.magfest.org/
+    url_base: https://stock2025.reg.magfest.org
+    event_year: 2025
+    at_the_con: False
+    post_con: True
+    supporter_stock: 0
+    season_stock: 0
+    car_stock: 0
+    rv_stock: 0
+    untransferable_attrs: ['first_name','last_name','legal_name','email','birthdate','zip_code','international','ec_name','ec_phone','cellphone','interests','age_group','staffing','requested_depts','onsite_contact','no_onsite_contact','license_plate','site_number','waiver_consent','waiver_signature','waiver_date','agreed_to_covid_policies','acknowledged_checkin_policy','transfer_code']
+    maps_enabled: False
+    slow_load_check: False
+    kiosk_redirect_url: ''
+    music_rooms: ['concerts', 'pool']
+    
+    shirts_per_staffer: 0
+    hours_for_shirt: 0
+    volunteer_placeholder_deadline: April 18
+    volunteer_food_deadline: May 16
+    volunteer_checklist_deadline: May 23
+    emergency_procedures_deadline: May 23
+    emergency_procedures_ready: True
+
+    covid_policies_url: ''
+    prior_covid_policies_url: ''
+
+    dealer_term: artist
+    dealer_reg_term: artist registration
+    dealer_loc_term: artist alley
+    dealer_helper_term: helper
+    dealer_app_term: artist application
+    max_tables: 1
+    max_dealers: 3
+    marketplace_email_signature: |
+        MAGStock Artist Alley Team
+        artist-alley@magstock.org
+
+    dates:
+      epoch: 2025-06-12 12
+      eschaton: 2025-06-15 12
+      panels_eschaton: 2025-06-15 16
+      prereg_open: 2025-06-12 12
+      shirt_deadline: 2025-05-24
+      supporter_deadline: 2025-06-01
+      printed_badge_deadline: 2025-05-21
+      badge_price_waived: ''
+      refund_start: ''
+      refund_cutoff: ''
+      
+      volunteer_checklist_open: 2025-04-24
+      shifts_created: 2025-05-04
+      room_deadline: ''
+      volunteer_shirt_deadline: ''
+      drop_shifts_deadline: 2025-05-30
+      placeholder_deadline: ''
+      
+      dealer_reg_start: 2025-02-19
+      dealer_reg_public: ""
+      dealer_reg_deadline: 2025-03-05
+      dealer_reg_shutdown: 2025-03-12
+      dealer_payment_due: 2025-03-26
+      dealer_waitlist_closed: ""  # If this is enabled, be sure to update the waitlist_closing.txt email
+      
+      band_panel_deadline: ""
+      band_merch_deadline: ""
+      band_charity_deadline: ""
+      band_info_deadline: ""
+      band_taxes_deadline: ""
+      band_bio_deadline: 2025-05-15
+      band_stage_plot_deadline: 2025-05-22
+      band_badges_deadline: 2025-05-29
+      
+    badge_prices:
+      initial_attendee: 190
+      dealer_badge_price: 115
+      
+      attendee:
+        # Unlike all other dates, these dates indicate the start of the day, not 11:59pm
+        "2025-04-14": 200
+        "2025-05-12": 210
+        "2025-06-12": 220
+        "2025-06-13": 190
+        "2025-06-14": 160
+        "2025-06-15": 40
+        
+    table_prices:
+      default_price: 20
+
+    age_groups:
+      under_6:
+        desc: "Under 6"
+        min_age: 0
+        max_age: 5
+        discount: 9999
+        can_register: True
+        can_volunteer: False
+
+      under_13:
+        desc: "Under 13"
+        min_age: 6
+        max_age: 12
+        can_volunteer: False
+      
+      under_18:
+        desc: "Under 18"
+        min_age: 13
+        max_age: 17
+
+      over_18:
+        desc: "18 and over"
+        min_age: 18
+        max_age: 99
+      
+    integer_enums:
+      shirt_level: 30
+      supporter_level: 60
+      season_level: 200
+
+      donation_tier:
+        No thanks: 0
+        Korok Tier: SUPPORTER_LEVEL
+        Hylian Tier: SEASON_LEVEL
+        
+      shirt:
+        Unisex S: 2
+        Unisex M: 3
+        Unisex L: 4
+        Unisex XL: 5
+        Unisex 2X: 6
+        Unisex 3X: 7
+        Unisex 4X: 8
+        Unisex 5X: 9
+      
+      shirt_stock:
+        Unisex S: 12
+        Unisex M: 49
+        Unisex L: 55
+        Unisex XL: 35
+        Unisex 2X: 30
+        Unisex 3X: 12
+        Unisex 4X: 3
+        Unisex 5X: 4
+
+    donation_tier_descriptions:
+      no_thanks:
+        name: No thanks
+        icon: ''
+        description: No thanks
+        link: ''
+      supporter:
+        name: Korok Tier
+        icon: ../static/icons/supporter.png
+        description: Themed T-Shirt|Themed Patch|Themed Sticker Sheet|MAGStock Bandana|MAGStock Sunglasses
+        link: ../static_views/supporter.html
+      season:
+        name: Hylian Tier
+        icon: ../static/icons/super.png
+        description: Everything in the Korok Tier|Themed Enamel Pin|Themed Koozie|Themed Marshmallow|MAGStock Camp Chair & Camping Supplies
+        link: ../static_views/super.html
+
+    enums:
+      event_location:
+        canteen: Canteen
+        pool: Pool (Stage)
+        craftbarn: Craft Barn
+        concerts: Main Stage
+        artistalley: Artist Alley
+        gameroom: Game Room
+        merch: Merch
+        registration: Registration
+        campfire: Campfire
+        projectiles: Projectiles
+        tennis: Other
+        amphitheater: Amphitheater
+        field_games: Field Games
+        dininghall: Dining Hall
+        publicsafety: Public Safety
+        arg: ARG Help Desk
+
+      livestream:
+        record_only: Recording for the public is okay, but not livestreaming
+        private_record: Recording is okay, but please don't post it publicly
+
+    dept_head_checklist:
+      placeholders:
+        deadline: 2025-04-10
+
+      assigned_volunteers:
+        deadline: 2025-04-10
+        
+      function_space:
+        deadline: 2025-04-17
+        external_form_url: https://forms.gle/hQ5s7cYU9sd29w6t9
+
+      creating_shifts:
+        deadline: 2025-05-01
+        description: >
+            We are able to import shifts from last year. If you want us to import last year's shifts, please email 
+            stops@magstock.org. You will still need to approve these via the checklist after the import. If you want 
+            any shifts to be restricted to certain staffers, please use the "roles" function when creating shifts. 
+            Shifts with a specific role will only be visible to staff that you have assigned to that role.
+
+      printed_signs:
+        deadline: 2025-05-15
+        description: Other than a sign for your area, what printed signs/banners/forms do you need?
+
+      office_supplies:
+        name: Supplies (Office, PPE, etc.)
+        deadline: 2025-05-15
+        description: >
+            MAGStock is providing basic PPE and office supplies for departments. Please let us know what you need and 
+            we will do our best to accommodate.
+        external_form_url: https://forms.gle/oNoQidGQ2rMWC2zDA
+
+      guidebook_schedule:
+        name: Public Schedule
+        deadline: 2025-05-22
+
+      postcon_hours:
+        deadline: 2025-06-26
