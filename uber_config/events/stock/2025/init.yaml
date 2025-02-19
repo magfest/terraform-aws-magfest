@@ -20,6 +20,8 @@ plugins:
     event_year: 2025
     at_the_con: False
     post_con: False
+    addons_enabled: False
+    collect_extra_donation: False
     supporter_stock: 0
     season_stock: 0
     car_stock: 0
@@ -46,7 +48,7 @@ plugins:
     dealer_loc_term: artist alley
     dealer_helper_term: helper
     dealer_app_term: artist application
-    max_tables: 1
+    max_tables: 2
     max_dealers: 3
     marketplace_email_signature: |
         MAGStock Artist Alley Team
