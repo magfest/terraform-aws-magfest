@@ -34,10 +34,10 @@ plugins:
     
     shirts_per_staffer: 0
     hours_for_shirt: 0
-    volunteer_placeholder_deadline: April 18
-    volunteer_food_deadline: May 16
-    volunteer_checklist_deadline: May 23
-    emergency_procedures_deadline: May 23
+    volunteer_placeholder_deadline: April 23
+    volunteer_food_deadline: May 21
+    volunteer_checklist_deadline: May 21
+    emergency_procedures_deadline: May 21
     emergency_procedures_ready: True
 
     covid_policies_url: ''
@@ -70,7 +70,7 @@ plugins:
       shifts_created: 2025-05-04
       room_deadline: ''
       volunteer_shirt_deadline: ''
-      drop_shifts_deadline: 2025-05-30
+      drop_shifts_deadline: 2025-06-05
       placeholder_deadline: ''
       
       dealer_reg_start: 2025-02-19 10
@@ -202,17 +202,17 @@ plugins:
 
     dept_head_checklist:
       placeholders:
-        deadline: 2025-04-10
+        deadline: 2025-04-13
 
       assigned_volunteers:
-        deadline: 2025-04-10
+        deadline: 2025-04-13
         
       function_space:
-        deadline: 2025-04-17
+        deadline: 2025-04-27
         external_form_url: https://forms.gle/hQ5s7cYU9sd29w6t9
 
       creating_shifts:
-        deadline: 2025-05-01
+        deadline: 2025-04-27
         description: >
             We are able to import shifts from last year. If you want us to import last year's shifts, please email 
             stops@magstock.org. You will still need to approve these via the checklist after the import. If you want 
@@ -220,12 +220,12 @@ plugins:
             Shifts with a specific role will only be visible to staff that you have assigned to that role.
 
       printed_signs:
-        deadline: 2025-05-15
+        deadline: 2025-05-11
         description: Other than a sign for your area, what printed signs/banners/forms do you need?
 
       office_supplies:
         name: Supplies (Office, PPE, etc.)
-        deadline: 2025-05-15
+        deadline: 2025-05-11
         description: >
             MAGStock is providing basic PPE and office supplies for departments. Please let us know what you need and 
             we will do our best to accommodate.
@@ -233,7 +233,7 @@ plugins:
 
       guidebook_schedule:
         name: Public Schedule
-        deadline: 2025-05-22
+        deadline: 2025-05-18
 
       postcon_hours:
-        deadline: 2025-06-26
+        deadline: 2025-06-22
