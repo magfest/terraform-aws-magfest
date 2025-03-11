@@ -54,7 +54,9 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/super/2025
-    web_count: 1
+    web_count: 4
+    web_ram: 1500
+    web_cpu: 1024
     enable_celery: false
 
   west2024:
