@@ -18,6 +18,7 @@ plugins:
     emergency_procedures_ready: True
     slow_load_check: False
     enable_pending_emails_report: False
+    mivs_enabled: True
     
     code_of_conduct_url: 'https://www.magwest.org/codeofconduct/'
     covid_policies_url: ''
