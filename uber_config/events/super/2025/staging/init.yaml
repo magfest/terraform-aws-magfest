@@ -16,6 +16,7 @@ plugins:
 
     dates:
       panels_start: 2024-07-11
+      panels_deadline: 2025-10-15
       dealer_reg_start: 2024-08-11 19
       dealer_reg_deadline: ''
       dealer_reg_shutdown: 2024-08-11 20

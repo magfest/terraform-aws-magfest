@@ -1,15 +1,24 @@
 plugins:
   magstock:
-    food_price: 18
-
     dates:
       meal_plan_deadline: 2025-06-04
     
     enums:
+      meal_plan_prices:
+        beverage: 25
+        full_food: 130
+      
+      camping_type_prices:
+        car: 20
+        rv: 60
+
       cabin_type_stocks:
-        half: 6
+        quarter: 8
+        half: 8
+        private: 3
 
       cabin_type_prices:
+        horseshoe: 1100
         private: 1400
 
   uber:
@@ -20,10 +29,10 @@ plugins:
     event_year: 2025
     at_the_con: False
     post_con: False
-    addons_enabled: False
+    addons_enabled: True
     collect_extra_donation: False
-    supporter_stock: 0
-    season_stock: 0
+    supporter_stock: 70
+    season_stock: 70
     car_stock: 0
     rv_stock: 0
     untransferable_attrs: ['first_name','last_name','legal_name','email','birthdate','zip_code','international','ec_name','ec_phone','cellphone','interests','age_group','staffing','requested_depts','onsite_contact','no_onsite_contact','license_plate','site_number','waiver_consent','waiver_signature','waiver_date','agreed_to_covid_policies','acknowledged_checkin_policy','transfer_code']
@@ -61,7 +70,7 @@ plugins:
       prereg_open: 2025-06-12 12
       shirt_deadline: 2025-05-24
       supporter_deadline: 2025-06-01
-      printed_badge_deadline: 2025-05-21
+      #printed_badge_deadline: 2025-05-21
       badge_price_waived: ''
       refund_start: ''
       refund_cutoff: ''
@@ -137,8 +146,8 @@ plugins:
 
       donation_tier:
         No thanks: 0
-        Korok Tier: SUPPORTER_LEVEL
-        Hylian Tier: SEASON_LEVEL
+        Chasin' Jason: SUPPORTER_LEVEL
+        Scream Queen: SEASON_LEVEL
         
       shirt:
         Unisex S: 2
@@ -151,13 +160,13 @@ plugins:
         Unisex 5X: 9
       
       shirt_stock:
-        Unisex S: 12
-        Unisex M: 49
-        Unisex L: 55
-        Unisex XL: 35
-        Unisex 2X: 30
+        Unisex S: 8
+        Unisex M: 40
+        Unisex L: 40
+        Unisex XL: 24
+        Unisex 2X: 8
         Unisex 3X: 12
-        Unisex 4X: 3
+        Unisex 4X: 4
         Unisex 5X: 4
 
     donation_tier_descriptions:
@@ -167,14 +176,14 @@ plugins:
         description: No thanks
         link: ''
       supporter:
-        name: Korok Tier
+        name: Chasin' Jason
         icon: ../static/icons/supporter.png
-        description: Themed T-Shirt|Themed Patch|Themed Sticker Sheet|MAGStock Bandana|MAGStock Sunglasses
+        description: Themed Ringer T-Shirt|Themed Bandana|Themed Enamel Pin|Mascot Sticker Pack|Secret Item!
         link: ../static_views/supporter.html
       season:
-        name: Hylian Tier
+        name: Scream Queen
         icon: ../static/icons/super.png
-        description: Everything in the Korok Tier|Themed Enamel Pin|Themed Koozie|Themed Marshmallow|MAGStock Camp Chair & Camping Supplies
+        description: Everything in Chasin' Jason|Themed Patch|Tube Socks|Sweatband|Wet/Dry Bag|MORE Secret Items!
         link: ../static_views/super.html
 
     enums:
