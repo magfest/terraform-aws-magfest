@@ -86,7 +86,7 @@ plugins:
       dealer_reg_public: ""
       dealer_reg_deadline: 2025-03-05
       dealer_reg_shutdown: 2025-03-12
-      dealer_payment_due: 2025-03-26
+      dealer_payment_due: 2025-04-14
       dealer_waitlist_closed: ""  # If this is enabled, be sure to update the waitlist_closing.txt email
       
       band_panel_deadline: ""
