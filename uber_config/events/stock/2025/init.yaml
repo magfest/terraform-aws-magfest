@@ -95,9 +95,9 @@ plugins:
       band_charity_deadline: ""
       band_info_deadline: ""
       band_taxes_deadline: ""
-      band_bio_deadline: 2025-05-15
-      band_stage_plot_deadline: 2025-05-22
-      band_badges_deadline: 2025-05-29
+      band_bio_deadline: 2025-04-18
+      band_stage_plot_deadline: 2025-04-25
+      band_badges_deadline: 2025-05-209
       
     badge_prices:
       initial_attendee: 190
