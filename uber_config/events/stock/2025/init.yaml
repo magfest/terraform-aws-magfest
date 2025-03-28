@@ -16,6 +16,7 @@ plugins:
         quarter: 8
         half: 8
         private: 3
+        horseshoe: 7
 
       cabin_type_prices:
         horseshoe: 1100
