@@ -97,7 +97,7 @@ plugins:
       band_taxes_deadline: ""
       band_bio_deadline: 2025-04-18
       band_stage_plot_deadline: 2025-04-25
-      band_badges_deadline: 2025-05-209
+      band_badges_deadline: 2025-05-09
       
     badge_prices:
       initial_attendee: 190
@@ -219,7 +219,7 @@ plugins:
         
       function_space:
         deadline: 2025-04-27
-        external_form_url: https://forms.gle/hQ5s7cYU9sd29w6t9
+        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSfDgNRY1oxWM23kPbzRi0DVFiEESABMxe9sJKY5SnmTpozsjw/viewform?usp=dialog
 
       creating_shifts:
         deadline: 2025-04-27
@@ -239,7 +239,7 @@ plugins:
         description: >
             MAGStock is providing basic PPE and office supplies for departments. Please let us know what you need and 
             we will do our best to accommodate.
-        external_form_url: https://forms.gle/oNoQidGQ2rMWC2zDA
+        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSc8V6BC2YbQnTXuHLU0cP5yOl8wEU-oR3lLIvUxAqre_JTASQ/viewform?usp=sharing
 
       guidebook_schedule:
         name: Public Schedule
