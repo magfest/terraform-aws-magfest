@@ -1,7 +1,7 @@
 plugins:
   magwest:
     dates:
-      panels_initial_confirm_deadline: 2025-05-01
+      panels_initial_confirm_deadline: 2025-06-30
 
   uber:
     sentry:
@@ -17,6 +17,7 @@ plugins:
     max_badge_sales: 2000
     at_the_con: False
     post_con: False
+    addons_enabled: False
     send_sms: False
     emergency_procedures_enabled: True
     emergency_procedures_ready: True
@@ -30,8 +31,7 @@ plugins:
     kiosk_redirect_url: ''
     
     treasury_dept_checklist_form_url: 'https://forms.gle/vS26HZQiFaTjvuwn8'
-    expected_response: "July 15th" # displayed on panels app text
-    mivs_video_response_expected: "no later than September 17th"
+    expected_response: "June 15th" # displayed on panels app text
     
     volunteer_placeholder_deadline: "May 28"
     volunteer_food_deadline: "June 11"
@@ -88,9 +88,8 @@ plugins:
       # sent in the days and weeks leading up to DEALER_PAYMENT_DUE.  All waitlisted dealers will
       # be emailed when the waitlist has been exhausted and all available positions have been
       # filled, as defined by DEALER_WAITLIST_CLOSED.
-      dealer_reg_start: 2025-05-01 12
-      dealer_reg_public: 2025-05-01 12
-      dealer_reg_shutdown: 2025-05-31
+      dealer_reg_start: 2025-04-01 12
+      dealer_reg_shutdown: 2025-04-30
       dealer_payment_due: 2025-07-31
       dealer_reg_deadline: ""  # Disable automatic waitlist
       dealer_waitlist_closed: ""  # If this is enabled, be sure to update the waitlist_closing.txt email
@@ -107,7 +106,7 @@ plugins:
       band_badges_deadline: 2025-09-01 # Should be <= placeholder_deadline
       rock_island_deadline: ""
 
-      panels_deadline: 2025-07-01
+      panels_deadline: 2025-05-15
       panels_confirm_deadline: ""
       mivs_round_one_deadline: 2025-08-01
       mivs_round_two_start: 2025-08-01
@@ -148,9 +147,9 @@ plugins:
         Sunday: 30
 
     table_prices:
-      default_price: 200
-      "1": 70
-      "2": 100
+      default_price: 210
+      "1": 80
+      "2": 110
       
     age_groups:
       under_6:
