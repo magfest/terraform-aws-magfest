@@ -14,6 +14,7 @@ plugins:
     shared_kickin_stocks: False
     event_year: 2025
     max_dealers: 5
+    max_tables: 2
     max_badge_sales: 2000
     at_the_con: False
     post_con: False
