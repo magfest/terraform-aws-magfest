@@ -31,7 +31,7 @@ plugins:
     prior_covid_policies_url: ''
     kiosk_redirect_url: ''
     
-    treasury_dept_checklist_form_url: 'https://forms.gle/vS26HZQiFaTjvuwn8'
+    treasury_dept_checklist_form_url: 'https://forms.gle/DzhzXNBCSDKGxiZo8'
     expected_response: "June 15th" # displayed on panels app text
     
     volunteer_placeholder_deadline: "May 28"
@@ -278,11 +278,11 @@ plugins:
 
       hotel_setup:
         deadline: 2025-06-01
-        external_form_url: https://forms.gle/FaHTdnscjAA3CGBD8
+        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSdibxMEbcAFvkSep-Tu0w2sIywIQhDif-JTF4Yt8Jq0xCinMg/viewform?usp=dialog
         
       tech_requirements:
         deadline: 2025-06-01
-        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSeNB-1ziywwvFrjZvyAjfdRyLU_d8AVnDWaEpcrLUAx_GfQOg/viewform
+        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSeBZUbT3OotJ0UX-DXDGe4hoJwF63nGIbSp7mDhDqano1eImA/viewform
 
       printed_signs:
         name: Room Signage
@@ -304,7 +304,7 @@ plugins:
 
       treasury:
         deadline: 2025-06-15
-        external_form_url: https://forms.gle/WZD3RaMUQVk9ardA9
+        external_form_url: https://forms.gle/DzhzXNBCSDKGxiZo8
 
       social_media:
         deadline: 2025-06-15
@@ -312,13 +312,14 @@ plugins:
             If you have a guest or event that you believe is worth promoting on social media beforehand, 
             # let us know! For detailed or special requests, please contact socialmedia@magfest.org/ or post 
             in #socialmedia-requests in Slack.
+        external_form_url: https://forms.gle/AT6bhvMQzbDo7kR99
 
       ppe_requests:
         deadline: 2025-06-29
         name: Office Supplies, PPE, and Water Requests
         description: >
           MAGFest is providing basic PPE for departments for MAGWest 2025. Please let us know what you need and we will do our best to accommodate.
-        external_form_url: https://forms.gle/ighhbmoXc4zoQwSdA
+        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSfpGz8t6h8CKPwyQws7to-RSWtwtG6PBfGan4EvL581raFHAA/viewform?usp=dialog
 
       guidebook_schedule:
         deadline: 2025-06-29
