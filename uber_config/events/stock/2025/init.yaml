@@ -39,6 +39,7 @@ plugins:
     untransferable_attrs: ['first_name','last_name','legal_name','email','birthdate','zip_code','international','ec_name','ec_phone','cellphone','interests','age_group','staffing','requested_depts','onsite_contact','no_onsite_contact','license_plate','site_number','waiver_consent','waiver_signature','waiver_date','agreed_to_covid_policies','acknowledged_checkin_policy','transfer_code']
     maps_enabled: False
     slow_load_check: False
+    merch_at_checkin: False
     kiosk_redirect_url: ''
     music_rooms: ['concerts', 'pool']
     
@@ -60,6 +61,7 @@ plugins:
     dealer_app_term: artist application
     max_tables: 2
     max_dealers: 3
+    dealer_reg_public: False
     marketplace_email_signature: |
         MAGStock Artist Alley Team
         artist-alley@magstock.org
@@ -84,7 +86,6 @@ plugins:
       placeholder_deadline: ''
       
       dealer_reg_start: 2025-02-19 10
-      dealer_reg_public: ""
       dealer_reg_deadline: 2025-03-05
       dealer_reg_shutdown: 2025-03-12
       dealer_payment_due: 2025-04-14
