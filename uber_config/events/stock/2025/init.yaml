@@ -36,7 +36,7 @@ plugins:
     season_stock: 70
     car_stock: 50
     rv_stock: 15
-    untransferable_attrs: ['first_name','last_name','legal_name','email','birthdate','zip_code','international','ec_name','ec_phone','cellphone','interests','age_group','staffing','requested_depts','onsite_contact','no_onsite_contact','license_plate','site_number','waiver_consent','waiver_signature','waiver_date','agreed_to_covid_policies','acknowledged_checkin_policy','transfer_code']
+    untransferable_attrs: ['first_name','last_name','legal_name','email','birthdate','zip_code','international','ec_name','ec_phone','cellphone','interests','age_group','staffing','requested_depts','onsite_contact','no_onsite_contact','license_plate','waiver_consent','waiver_signature','waiver_date','agreed_to_covid_policies','acknowledged_checkin_policy','transfer_code']
     maps_enabled: False
     slow_load_check: False
     merch_at_checkin: False
