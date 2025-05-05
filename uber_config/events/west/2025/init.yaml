@@ -262,14 +262,14 @@ plugins:
         
     dept_head_checklist:
       placeholders:
-        deadline: 2025-05-18
+        deadline: 2025-05-25
 
       assigned_volunteers:
-        deadline: 2025-05-18
+        deadline: 2025-05-25
         path: /shifts_admin/staffers?department_id={department_id}
 
       creating_shifts:
-        deadline: 2025-05-18
+        deadline: 2025-05-25
         description: >
             STOPS is happy to assist you in creating shifts. Please let us know if you need assistance 
             with this step. If you want us to import last year's shifts, please email stops@magwest.org.
