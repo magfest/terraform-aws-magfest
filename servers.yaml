@@ -28,7 +28,7 @@ staging:
 
 production:
   west2025:
-    ubersystem_container: ghcr.io/magfest/magwest:main
+    ubersystem_container: ghcr.io/magfest/magwest:west2025
     hostname: west2025.reg.magfest.org
     zonename: reg.magfest.org
     config_paths:
@@ -38,7 +38,7 @@ production:
     enable_celery: true
 
   stock2025:
-    ubersystem_container: ghcr.io/magfest/magstock:main
+    ubersystem_container: ghcr.io/magfest/magstock:stock2025
     hostname: stock2025.reg.magfest.org
     zonename: reg.magfest.org
     config_paths:
