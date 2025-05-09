@@ -8,8 +8,8 @@ plugins:
       environment: west2025
     url_root: https://west2025.reg.magfest.org/
     url_base: https://west2025.reg.magfest.org
-    shirt_stock: 0
-    supporter_stock: 0
+    shirt_stock: 200
+    supporter_stock: 50
     season_stock: 0
     shared_kickin_stocks: False
     event_year: 2025
@@ -18,7 +18,7 @@ plugins:
     max_badge_sales: 2000
     at_the_con: False
     post_con: False
-    addons_enabled: False
+    addons_enabled: True
     send_sms: False
     emergency_procedures_enabled: True
     emergency_procedures_ready: True
