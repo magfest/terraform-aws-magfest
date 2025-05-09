@@ -193,6 +193,7 @@ plugins:
         canteen: Canteen
         pool: Pool (Stage)
         craftbarn: Craft Barn
+        crafttent: Craft Tent
         concerts: Main Stage
         artistalley: Artist Alley
         gameroom: Game Room

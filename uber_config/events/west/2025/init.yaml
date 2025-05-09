@@ -190,7 +190,7 @@ plugins:
       donation_tier:
         No thanks: 0
         T-Shirt Tier: SHIRT_LEVEL
-        Phantom Tier: SUPPORTER_LEVEL
+        Limit Break Tier: SUPPORTER_LEVEL
         #Season Tier: SEASON_LEVEL
         
       shirt:
@@ -214,13 +214,13 @@ plugins:
       shirt:
         name: T-Shirt Tier
         icon: ../static/icons/shirt.png
-        description: MAGWest Shirt|Themed Lanyard|Themed Pin|Sticker Sheet
+        description: Themed Shirt|Custom Lanyard|Event Pin
         link: ../static_views/merch.html
 
       supporter_package:
-        name: Phantom Tier
+        name: Limit Break Tier
         icon: ../static/icons/supporter.png
-        description: Everything in the T-Shirt Tier|Custom MAGWest Blanket|Travel Mug|Customizable Mask|MAGFest Gunship Swadge|And more!
+        description: Everything in the T-Shirt Tier|Dice Set w/ Custom D20|Messenger Bag|MAGWest Tea Towel|Omega Water Cannon|And more!
         link: ../static_views/merch.html
 
       #super_supporter:
