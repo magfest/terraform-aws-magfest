@@ -9,6 +9,7 @@ plugins:
     url_root: https://west.dev.magevent.net/
     at_the_con: False
     post_con: False
+    addons_enabled: True
     shirt_stock: 5
     supporter_stock: 5
     season_stock: 0

@@ -1,0 +1,603 @@
+plugins:
+  magprime:
+    dates:
+      superstar_deadline: 2025-12-01
+
+  uber:
+    sentry:
+      environment: super2026
+    redis:
+      prefix: super2026
+    api_enabled: true
+    url_root: https://super2026.reg.magfest.org/
+    url_base: https://super2026.reg.magfest.org
+    app_limit: 0
+    addons_enabled: False
+    shirt_stock: 1375
+    supporter_stock: 850
+    season_stock: 820
+    hide_prereg_open_date: False
+    shared_kickin_stocks: False
+    shift_custom_badges: False
+    can_livestream: True
+    groups_enabled: False
+    admin_badges_need_approval: True
+    blank_staff_badges: 200
+    shirts_per_staffer: 1
+    staff_shirts_optional: True
+    hours_for_shirt: 0
+    self_service_deferrals_open: False
+    merch_shipping_fee: 15
+    at_the_con: False
+    post_con: True
+    covid_policies_url: 'https://super.magfest.org/covid'
+    prior_covid_policies_url: ''
+    kiosk_redirect_url: ''
+    accessibility_services_enabled: True
+    prereg_confirm_email_enabled: True
+    dealer_reg_public: False
+    tracking_params: ['fbclid', 'hsmi', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', '_hsmi', '_home', '_hsenc']
+    untransferable_attrs: ['first_name','last_name','legal_name','email','birthdate','zip_code','international','ec_name','ec_phone','cellphone','interests','age_group','staffing','requested_depts','special_merch','group_name','onsite_contact','no_onsite_contact','hotel_pin','regdesk_info','transfer_code']
+    use_checkin_barcode: True
+    enable_pending_emails_report: False
+    guidebook_updates_email: gb-ops@magfest.org
+
+    event_year: 2026
+    event_qr_id: sm23
+
+    alt_schedule_url: https://guidebook.com/guide/101720/schedule
+
+    treasury_dept_checklist_form_url: https://super2026.reg.magfest.org/static_views/treasury_form.html
+    volunteer_perks_url: https://www.notion.so/magfest/MAGFest-Super-Perks-f001221c31484ef4957a6513c54a6fd6
+    staff_room_faq_url: https://www.notion.so/magfest/Staff-Room-FAQ-656edde68e324dae97891c2002439465
+
+    expected_response: November 2025
+    panels_confirm_deadline: 14
+
+    volunteer_placeholder_deadline: October 30
+    volunteer_food_deadline: November 13
+    volunteer_checklist_deadline: December 18
+    emergency_procedures_deadline: December 18
+    emergency_procedures_ready: True
+
+    # The number of dealer apps we will accept before auto-waitlisting further
+    # applications. If dealer_reg_deadline is also set, we will auto-wailist
+    # dealers if either the deadline has passed or this number has been reached.
+    # Dealers who have been waitlisted/approved/declined and dealers who do not
+    # have to pay are not counted towards this cap. A value of 0 means no cap.
+    max_dealer_apps: 0
+    delete_declined_groups: True
+    dealer_cancellable_status_list: []
+
+    mivs_confirm_deadline: 7
+    mivs_submission_grace_period: 10
+    mivs_start_year: 2013
+    mivs_training_password: 2RugOrNot2Rug?ThatIsTheQuestion!
+    mivs_handbook_url: https://super.magfest.org/s/MIVS-Handbook-2026.pdf
+    mivs_training_url: https://forms.gle/FypdqFPcSrX6XBwUA
+    mivs_selling_url: https://docs.google.com/forms/d/e/1FAIpQLSdM8QS6kxXYbJQAdrCbvW55frFKSukjWPvL2xI2VSegCBtEDw/viewform
+    extra_donation_url: ''
+
+    mits_badges_per_team: 2
+    mits_email: "MAGFest Indie Tabletop Showcase <mits@magfest.org>"
+    mits_email_signature: "The MITS team"
+
+    panel_rooms: ['panels_1', 'panels_2', 'panels_3', 'panels_4', 'panels_5', 'panels_6', 'panels_7', 'the_forge', 'console_stage']
+    tabletop_locations: ['tabletop_indie', 'tabletop_tournaments', 'tabletop_tournaments_2', 'tabletop_panels',
+                        'tabletop_ccg', 'pathfinder', 'pathfinder_freeplay', 'ddal']
+    music_rooms: ['concerts', 'chiptunes', 'pose_lounge', 'lobby_bar', 'jamspace', 'jam_clinic', 'jam_shop', 'rock_island']
+
+    dates:
+      prereg_open: 2025-09-18 14
+      prereg_hotel_eligibility_cutoff: 2025-09-25
+      volunteer_checklist_open: 2025-10-10
+      shifts_created: 2025-11-06 15
+      room_deadline: 2025-11-13
+      volunteer_shirt_deadline: 2025-10-30
+      drop_shifts_deadline: 2026-01-16
+      shirt_deadline: 2025-12-31
+      supporter_deadline: 2025-12-31
+      placeholder_deadline: ''
+      uber_takedown: 2026-01-26
+      epoch: 2026-01-23 08
+      eschaton: 2026-01-26 16
+      prereg_takedown: ''
+      group_prereg_takedown: 2026-01-01
+      badge_price_waived: 2026-01-30 12
+      refund_start: 2025-10-09
+      refund_cutoff: 2025-10-23
+
+      printed_badge_deadline: 2025-11-06
+
+      # Dealer registration automatically opens on DEALER_REG_START.  After DEALER_REG_DEADLINE
+      # all dealer registration are automatically waitlisted.  After DEALER_REG_SHUTDOWN dealers
+      # can no longer even add themselves to the waitlist.  Dealer payment reminder emails are
+      # sent in the days and weeks leading up to DEALER_PAYMENT_DUE.  All waitlisted dealers will
+      # be emailed when the waitlist has been exhausted and all available positions have been
+      # filled, as defined by DEALER_WAITLIST_CLOSED.
+      dealer_reg_start: 2025-05-10 20:30
+      dealer_reg_deadline: ''
+      dealer_reg_shutdown: 2025-05-10 21
+      dealer_payment_due: 2025-09-30
+      dealer_waitlist_closed: ''  # If this is enabled, be sure to update the waitlist_closing.txt email
+      dealer_badge_deadline: 2026-01-15
+
+      mivs_start: 2025-08-01 09
+      mivs_deadline: 2025-09-04
+      mivs_judging_deadline: 2025-09-29
+      mivs_results_reveal: 2025-10-30
+
+      mits_submission_deadline: 2025-10-31
+      mits_editing_deadline: 2025-11-15
+
+      panels_start: 2025-08-11 12
+      panels_deadline: 2025-10-15
+
+      # if any of these are unset or '', the corresponding section will not show up in the group type's checklist
+      rock_island_deadline: 2025-12-31 # RI Inventory deadline
+      auction_start: 2026-01-26 11
+
+      band_panel_deadline: 2025-09-30
+      band_bio_deadline: 2025-09-30
+      band_autograph_deadline: 2025-09-30
+      band_performer_badges_deadline: 2025-09-30
+      band_stage_plot_deadline: 2025-11-01
+      band_merch_deadline: 2025-11-30
+      band_badges_deadline: 2025-12-01
+      band_travel_plans_deadline: 2025-12-15
+      band_charity_deadline: 2025-12-31
+      band_rehearsal_deadline: ''
+      band_taxes_deadline: 2025-12-31 # Always just set this to the latest checklist date
+
+      band_info_deadline: ''
+      band_mc_deadline: ''
+
+      guest_panel_deadline: 2025-09-30
+      guest_bio_deadline: 2025-09-30
+      guest_autograph_deadline: 2025-09-30
+      guest_charity_deadline: 2025-12-31
+      guest_merch_deadline: 2025-11-30
+      guest_hospitality_deadline: 2025-12-01
+      guest_badges_deadline: 2025-12-01
+      guest_travel_plans_deadline: 2025-12-15
+      guest_taxes_deadline: 2025-12-31 # Set this to the latest checklist date if not otherwise specified
+
+      guest_interview_deadline: ''
+      guest_info_deadline: ''
+
+      rock_island_merch_deadline: 2025-11-30 # Merch deadline for "Rock Island" groups
+
+    badge_ranges:
+      # Staff_badge and contractor_badge should be split at the start of the year, then merged right before running the badge export
+      staff_badge: [25, 2999]
+      contractor_badge: [25, 2999]
+      guest_badge: [3000, 3499]
+      attendee_badge: [3500, 29999]
+      visitor_badge: [3500, 29999]
+      one_day_badge: [40000, 49999]
+      child_badge: [50000, 50999]
+
+    badge_prices:
+      one_days_enabled: False
+      initial_attendee: 125
+      dealer_badge_price: 100
+      group_discount: 10
+      presell_one_days: False
+
+      attendee:
+        # Unlike all other dates, these dates indicate the start of the day, not 11:59pm
+        "2025-11-01": 135
+        "2025-12-01": 145
+        "2026-01-01": 155
+        "2026-01-24": 135
+        "2026-01-25": 120
+        "2026-01-26": 35
+
+      stocks:
+        attendee_badge: 21500
+        child_badge: 600
+
+    table_prices:
+      default_price: 400
+      "1": 250
+      "2": 450
+      "3": 700
+      "4": 1100
+
+    age_groups:
+      under_6:
+        desc: "Under 6"
+        min_age: 0
+        max_age: 5
+        discount: 9999
+        can_register: True
+        can_volunteer: False
+
+      under_13:
+        desc: "Between 6 and 13"
+        min_age: 6
+        max_age: 12
+        can_volunteer: False
+      
+      under_18:
+        desc: "Under 18"
+        min_age: 13
+        max_age: 17
+
+      under_21:
+        desc: "between 18 and 21"
+        min_age: 18
+        max_age: 20
+      
+      over_21:
+        desc: "21 and over"
+        min_age: 21
+        max_age: 99
+
+    integer_enums:
+      shirt_level: 35
+      supporter_level: 99
+      season_level: 200
+
+      donation_tier:
+        No thanks: 0
+        T-Shirt Tier: SHIRT_LEVEL
+        Emerald Tier: SUPPORTER_LEVEL
+        Maniac Tier: SEASON_LEVEL
+
+      shirt:
+        Unisex XS: 1
+        Unisex S: 2
+        Unisex M: 3
+        Unisex L: 4
+        Unisex XL: 5
+        Unisex 2X: 6
+        Unisex 3X: 7
+        Unisex 4X: 8
+        Unisex 5X: 9
+        Unisex 6X: 10
+        Women's XS: 11
+        Women's S: 12
+        Women's M: 13
+        Women's L: 14
+        Women's XL: 15
+        Women's 2X: 16
+        Women's 3X: 17
+        Women's 4X: 18
+
+      shirt_stock:
+        Unisex XS: 22
+        Unisex S: 115
+        Unisex M: 600
+        Unisex L: 750
+        Unisex XL: 600
+        Unisex 2X: 350
+        Unisex 3X: 175
+        Unisex 4X: 75
+        Unisex 5X: 42
+        Unisex 6X: 32
+        Women's XS: 14
+        Women's S: 38
+        Women's M: 65
+        Women's L: 70
+        Women's XL: 47
+        Women's 2X: 30
+        Women's 3X: 16
+        Women's 4X: 11
+
+      staff_shirt:
+        Unisex S: 1
+        Unisex M: 2
+        Unisex L: 3
+        Unisex XL: 4
+        Unisex 2X: 5
+        Unisex 3X: 6
+        Unisex 4X: 7
+        Unisex 5X: 8
+
+    enums:
+      badge:
+        visitor_badge: Visitor
+
+      event_location:
+        xpansion: Xpansion Pack Stage (Annapolis 2,3,4)
+        magpie: MAGPIE Nest (National Harbor 14)
+        soapbox: Soapbox (Maryland Hallway)
+        marketplace: Marketplace (Expo Hall B)
+        panels_1: Panels 1 (Cherry Blossom Ballroom)
+        panels_2: Panels 2 (Baltimore 3,4,5)
+        panels_3: Panels 3 (Chesapeake 1,2,3)
+        panels_4: Panels 4 (Chesapeake A,B,C)
+        panels_5: Panels 5 (Chesapeake 7,8,9)
+        panels_6: Panels 6 (Chesapeake 10,11,12)
+        panels_7: Panels 7 (Chesapeake G&H)
+        the_forge: Makerspace Classroom (Eastern Shore 1)
+        soapbox2: Makerspace Social Space (Eastern Shore 2)
+        autographs: Autographs Red (Potomac Ballroom)
+        autographs_1: Autographs Blue (Potomac Ballroom)
+        console_stage: Arena (Woodrow Wilson A)
+        starship_horizons: Simulations - Starship Horizons (National Harbor 10,11)
+        console_tournament: Consoles (Pokemon Events)
+        console_special: Consoles (Special Events)
+        console_attendee: Consoles (Console Tournaments 1)
+        console_tournament_2: Consoles (Console Tournaments 2)
+        console_tournament_3: Consoles (Console Tournaments 3)
+        console_tournament_4: Consoles (Fighting Tournaments)
+        console_tournament_5: Consoles (Smash Bros Tournaments)
+        arcade_tournaments_1: Arcade (Tournaments 1)
+        arcade_tournaments_2: Arcade (Tournaments 2)
+        arcade_tournaments_3: Arcade (Tournaments 3)
+        arcade_tournaments_5: Arcade (Tournaments 4)
+        arcade_tournaments_4: Arcade (Pinball)
+        magscouts_arcade: MAGScouts (Arcade)
+        lan_1: LAN Tournaments (Maryland A,B,D)
+        lan_2: LAN Events (Maryland A,B,D)
+        lan_theater: LAN Theater (Maryland A,B,D)
+        larp: LARP (Magnolia 1,2)
+        laser_tag: Cosplay Photoshoots (Atrium Fountains)
+        cosplay_repair: Cosplay Repair Table & Prop Check (Expo Hall E - Front)
+        tabletop_indie: Tabletop Indie Showcase (MITS) (Riverview Ballroom 4,5)
+        tabletop_tournaments: Tabletop Tournaments 1 (Riverview Ballroom 2,3)
+        tabletop_tournaments_2: Tabletop Tournaments 2 (Riverview Ballroom 2,3)
+        tabletop_panels: Tabletop Panels/Discussions (Riverview Ballroom 1)
+        tabletop_ccg: Tabletop CCG (National Harbor 1)
+        tabletop_ccg2: Tabletop CCG 2 (National Harbor 2)
+        tabletop_ccg3: Tabletop CCG 3 (National Harbor 3)
+        tabletop_1: Tabletop Freeplay 1 (Riverview Ballroom A,B)
+        tabletop_2: Tabletop Freeplay 2 (Riverview Ballroom A,B)
+        toool: TOOOL Lockpick Village (Eastern Shore 3)
+        pathfinder: Pathfinder 1 (National Harbor 12,13)
+        pathfinder2: Pathfinder 2 (National Harbor 12,13)
+        pathfinder_freeplay: Pathfinder Freeplay 1 (National Harbor 15)
+        pathfinder_freeplay2: Pathfinder Freeplay 2 (National Harbor 15)
+        pathfinder_hq: TTRPG HQ (National Harbor 8)
+        ddal: D&D Adventurers League Other (National Harbor 4,5)
+        ddal2: D&D Adventurers League Walk-In (National Harbor 4,5)
+        ddal3: D&D Adventurers League Level 1-4 (National Harbor 4,5)
+        ddal4: D&D Adventurers League Level 5-10 (National Harbor 4,5)
+        ddal5: D&D Adventurers League EPIC! (National Harbor 4,5)
+        magscouts_rpg: MAGScouts Role-Playing Games (National Harbor 4,5,6,7)
+        dd_freeplay: D&D Homebrew Adventures (National Harbor 6,7)
+        dd_freeplay2: Role-Playing Games (National Harbor 6,7)
+        dd_freeplay3: Role-Playing Games Special Events (National Harbor 6,7)
+        concerts: Main Concerts (Potomac Ballroom)
+        chiptunes: Chipspace (Potomac Hallway)
+        zombie_tag: Zombie Tag (Magnolia 3)
+        MegaManathon: magFAST (Chesapeake 4,5,6)
+        pose_lounge: POSE Lounge
+        lobby_bar: Belvedere Lobby Bar
+        jamspace: Jamspace Studio (Woodrow Wilson D)
+        jam_clinic: Jam Clinic (Baltimore 1,2)
+        jam_orchestra: Orchestra Room (Woodrow Wilson B)
+        jam_orchestra2: Orchestra Room 2 (Woodrow Wilson C)
+        jam_shop: Indie Retro (Expo Hall C - Middle)
+        indie_2: Indie Games (Expo Hall C - Middle)
+        indie_3: Indie Arcade (Expo Hall C - Rear)
+        mag_series_tournaments: Large Tournament Collider (Expo Hall A - Exterior)
+        vrzone: VRZone (MD Ballroom C)
+        vr_chat: VRChat (Maryland Hallway)
+        museum_arcade: Retro Arcade Museum (Chesapeake G)
+        museum_multiplayer: Museum Main Room (Chesapeake D,E,F)
+        museum_magfest: History of MAGFest (Chesapeake D Hallway)
+        rock_island: Rock Island - Performer Merch (Potomac 1,2)
+        super_magfest_show: Promo Tables (Chesapeake Pre-Function Space)
+        merch: MAGFest Merch (Expo Hall E)
+        charity: Charity (Expo Hall C - Front)
+        registration: Registration (Expo Hall E)
+        accessibility: Accessibility Services (Expo Hall E Reg Desk)
+        security: Security (Camellia 3,4)
+        public_safety: Public Safety (Camellia 1,2)
+        attendee_services: MAG Attendee Services/Info Desk (Potomac Coat Check)
+        quiet_room: Quiet Room (Azalea 3)
+
+      livestream:
+        opt_in: "Yes"
+        opt_out: "No"
+      
+      panel_length:
+        two_hr: "120 Minutes"
+
+    donation_tier_descriptions:
+      no_thanks:
+        name: No thanks
+        icon: ''
+        description: No thanks
+        link: ''
+
+      shirt:
+        name: T-Shirt Tier
+        icon: ../static/icons/shirt.png
+        description: Event T-Shirt|MAG Logo Pin|Super Lanyard
+        link: ../static_views/tshirt.html
+
+      supporter:
+        name: Emerald Tier
+        icon: ../static/icons/supporter.png
+        description: All T-Shirt Tier Items|Hot Dog Swadge|Drive-In Coozie|Melty Ice Pop Stress Toy|Pango Go Kart|Event Tattoo Sheet|And more!
+        link: ../static_views/supporter.html
+
+      super_supporter:
+        name: Maniac Tier
+        icon: ../static/icons/super.png
+        description: All Previous Tier Items|Messenger Bag|Speedy Socks|Dr. Garbotnik Plush|Emerald Tumbler|Character Acrylic Standee|AND MORE!
+        link: ../static_views/super.html
+
+    volunteer_checklist:
+      "2": staffing/shirt_item.html
+      "3": staffing/hotel_item.html
+      "4": staffing/food_item.html
+      "5": staffing/volunteer_agreement_item.html
+      "6": staffing/emergency_procedures_item.html
+      "7": ""
+
+
+    mivs_checklist:
+      core_hours:
+        start: 2025-10-28
+        deadline: 2025-11-22
+        name: Accept Core Hours
+        description: >
+          In exchange for your space and two free badges, MIVS expects your development team to have your booth area
+          up-and-running during core hours. You also must have at least one representative from your development team present,
+          in your booth, during core hours.
+
+      discussion:
+        start: 2025-10-28
+        deadline: 2025-12-06
+        name: Google Group and Discord
+        editable: True
+        description: >
+          The primary contact for your game will be added to a MIVS Google group to allow us to send out mass communications.
+          You may enter emails for any other team members associated with your game who you think should also be added to the
+          group. We also have a Discord server used as primary communication during the event.
+
+      hotel_space:
+        start: 2025-10-28
+        deadline: 2025-11-22
+        name: Hotel Signups
+        editable: True
+        description: >
+          As a part of MIVS, you may purchase one hotel room for the Gaylord. This room is for your
+          use and you are not allowed to transfer your reservation to someone else unless authorized
+          by MAGFest. Dropping out of MIVS may cause your room to be canceled.
+
+      show_info:
+        start: 2025-11-04
+        deadline: 2025-11-20
+        name: Update Studio and Game Information
+        editable: True
+        description: Please make sure your studio and game information is up to date so it can be displayed on the MAGFest website.
+
+      selling_at_event:
+        start: 2025-12-01
+        deadline: 2025-12-27
+        name: Selling at MAGFest
+        editable: True
+        description: >
+          We are allowing Indies to sell items directly related to your game or studio in MIVS.
+          Studios will need to sign a waiver and provide some information for tax purposes.
+
+      handbook:
+        start: 2025-10-28
+        deadline: 2025-11-22
+        name: Indie Handbook
+        editable: True
+        description: The MIVS Indie Handbook is here to give you information about being a MIVS Participant.
+
+      training:
+        start: 2025-10-28
+        deadline: 2026-11-22
+        name: MIVS Training
+        editable: True
+        description: MIVS Training is a google form to help you learn about being an Indie at MAGFest.
+
+
+    dept_head_checklist:
+      placeholders:
+        deadline: 2025-10-27
+        order: 1
+
+      assigned_volunteers:
+        deadline: 2025-10-27
+        order: 2
+
+      # NOTE: Full description is not used for this step, as it has its own page
+      creating_shifts:
+        deadline: 2025-10-27
+        order: 3
+        description: >
+            We are able to import shifts from last year. If you want us to import last year's shifts, please email stops@magfest.org.
+            You will still need to approve these via the checklist after the import. If you want any shifts to be restricted
+            to certain staffers, please use the "roles" function when creating shifts. Shifts with a specific role will only be visible to
+            staff that you have assigned to that role.
+
+      treasury:
+        deadline: 2025-10-27
+
+      accessibility:
+        deadline: 2025-10-27
+        description: Let the Accessibility department know about your function space or content needs!
+        external_form_url: https://forms.gle/vaE4czsAPmLLdZri6
+
+      magtv:
+        name: magTV Information
+        deadline: 2025-11-10
+        description: >
+            Does your department want to have content on Super magTV? Super magTV is our custom channel that is broadcasted to all hotel 
+            rooms in the Gaylord, as well as on our Twitch channel. There are options for pre-recorded content, as well as promo videos 
+            or slides. Fill out this form if you will have content for Super magTV. Please reach out to magtv@magfest.org or post in 
+            #magtv for more information.
+        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSc3UKwPlun1YBvXWP3rO7GazGyb0Nr5o9GJK0eNLe-OnRhdPg/viewform
+      
+      hotel_setup:
+        deadline: 2025-11-10
+        external_form_url: https://forms.gle/nkFE1CXq2R9Jhk9U6
+
+      tech_requirements:
+        name: Tech and Operational Needs
+        description: What do you need in terms of laptops, projectors, cables, and internet access, as well as office supplies and PPE?
+        full_description: >
+            What do you need in terms of laptops, projectors, cables, and internet access, as well as office supplies and PPE?
+            Note: Your department must fill out the form, even if you don't need anything. If you have any questions, please 
+            contact TechOps on Slack ( #super-techops ) or via email ( techops@magfest.org )
+        deadline: 2025-11-10
+        external_form_url: https://docs.google.com/forms/d/e/1FAIpQLSeJsnNb8K9XpBP6JBhnE6-2Ud1fCGTV6tZGo0DMVvsIEBuuvQ/viewform?usp=sf_link
+
+      social_media:
+        deadline: 2025-11-10
+        external_form_url: https://forms.gle/Zb5D4K8QwbX8PXv87
+
+      printed_signs:
+        full_description: >
+          Other than a sign for your area, what printed coroplast signs or banners do you need?
+        deadline: 2025-11-24
+
+      logistics:
+        deadline: 2025-11-24
+        external_form_url: https://forms.gle/UoHtSECzu4SvU1WbA
+
+      mediatron:
+        deadline: 2025-11-24
+        external_form_url: https://forms.gle/xBFGq6G2AFsEhtnq8
+
+      guidebook_schedule:
+        deadline: 2025-12-09
+        description: >
+          Ensure all public-facing events or hours are in Uber by the deadline for the first Guidebook release. After the deadline,
+          keep updating Uber; any changes will be manually synced to Guidebook. Visit the #super-guidebook in Slack if you have any questions.
+
+      water_requests:
+        name: Water and Sports Drinks Requests
+        deadline: 2025-12-09
+        description: >
+          Please let us know how much water or sports drinks you need ordered for your staff. Note: Departments are responsible for 
+          picking up their own water and sports drinks in a timely fashion. Water/drink orders will be adjusted at the discretion of 
+          STOPS if needed.
+        external_form_url: https://forms.gle/eX9PiVXvFZetNs6B7
+
+      bulk_print_jobs:
+        name: Bulk Printing Requests (large qty, 8.5x11")
+        deadline: 2025-12-09
+
+      staff_suite:
+        name: Tuber Eats/Carryout Set-Up
+        deadline: 2025-12-09
+        description: Set up your Tuber Eats page so that Staff Suite will be able to contact you when your meals are ready for pick-up.
+        external_form_url: https://food.magevent.net/dept_contact
+
+      postcon_hours:
+        deadline: 2026-02-10
+
+      ppe_requests:
+        deadline: ''
+        name: Bulk PPE & Sanitizing Supplies
+        description: >
+          MAGFest is providing basic PPE for departments for Super 2026. Please let us know what you need and we will do our best to accommodate.
+        external_form_url: https://forms.gle/BihzhdCWXp7juwSC9
+
+      office_supplies:
+        deadline: ''
+        external_form_url: https://forms.gle/dzhTkHsfrNUE9aya7
+
+      approve_setup_teardown:
+        deadline: ''

@@ -1,0 +1,68 @@
+plugins:
+  uber:
+    sentry:
+      environment: superdev
+      enabled: False
+    redis:
+      prefix: superdev
+
+    url_root: https://super.dev.magevent.net/
+    at_the_con: False
+    post_con: False
+    addons_enabled: True
+    shirt_stock: 5
+    supporter_stock: 5
+    season_stock: 5
+    treasury_dept_checklist_form_url: https://super.dev.magevent.net/static_views/treasury_form.html
+
+    dates:
+      panels_start: 2025-07-11
+      panels_deadline: 2025-10-15
+      dealer_reg_start: 2025-08-11 19
+      dealer_reg_deadline: ''
+      dealer_reg_shutdown: 2025-08-11 20
+      refund_start: 2025-10-01
+      shifts_created: 2025-10-06 15
+
+    integer_enums:
+      shirt_stock:
+        Unisex XS: 1
+        Unisex S: 2
+        Unisex M: 3
+        Unisex L: 4
+        Unisex XL: 5
+        Unisex 2X: 6
+        Unisex 3X: 7
+        Unisex 4X: 8
+        Unisex 5X: 9
+        Unisex 6X: 10
+        Women's XS: 1
+        Women's S: 2
+        Women's M: 3
+        Women's L: 4
+        Women's XL: 5
+        Women's 2X: 6
+        Women's 3X: 7
+        Women's 4X: 8
+
+    mivs_checklist:
+      core_hours:
+        start: 2024-12-01
+
+      discussion:
+        start: 2024-12-01
+
+      hotel_space:
+        start: 2024-12-01
+
+      show_info:
+        start: 2024-12-01
+
+      selling_at_event:
+        start: 2024-12-01
+
+      handbook:
+        start: 2024-12-01
+
+      training:
+        start: 2024-12-01
