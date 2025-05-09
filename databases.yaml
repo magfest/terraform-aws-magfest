@@ -1,6 +1,6 @@
 staging:
   - stock
-  - super
+#  - super
   - west
   - super2023
 
