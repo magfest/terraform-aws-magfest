@@ -91,7 +91,7 @@ plugins:
       # be emailed when the waitlist has been exhausted and all available positions have been
       # filled, as defined by DEALER_WAITLIST_CLOSED.
       dealer_reg_start: 2025-04-01 12
-      dealer_reg_shutdown: 2025-04-30
+      dealer_reg_shutdown: 2025-05-21
       dealer_payment_due: 2025-07-31
       dealer_reg_deadline: ""  # Disable automatic waitlist
       dealer_waitlist_closed: ""  # If this is enabled, be sure to update the waitlist_closing.txt email
