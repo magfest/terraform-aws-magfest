@@ -204,6 +204,7 @@ plugins:
         tennis: Other
         amphitheater: Amphitheater
         field_games: Field Games
+        lawn_games: Lawn Games
         dininghall: Dining Hall
         publicsafety: Public Safety
         arg: ARG Help Desk
