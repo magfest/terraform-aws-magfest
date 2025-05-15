@@ -27,6 +27,7 @@ plugins:
     mivs_enabled: True
     
     code_of_conduct_url: 'https://www.magwest.org/codeofconduct/'
+    contact_url: 'https://www.magwest.org/contact-us'
     covid_policies_url: ''
     prior_covid_policies_url: ''
     kiosk_redirect_url: ''
