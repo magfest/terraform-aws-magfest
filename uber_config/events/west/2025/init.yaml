@@ -9,7 +9,7 @@ plugins:
     url_root: https://west2025.reg.magfest.org/
     url_base: https://west2025.reg.magfest.org
     shirt_stock: 200
-    supporter_stock: 50
+    supporter_stock: 46
     season_stock: 0
     shared_kickin_stocks: False
     event_year: 2025
