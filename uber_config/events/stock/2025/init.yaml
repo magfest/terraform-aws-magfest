@@ -53,6 +53,7 @@ plugins:
 
     covid_policies_url: ''
     prior_covid_policies_url: ''
+    setup_shift_days: 6
 
     dealer_term: artist
     dealer_reg_term: artist registration
