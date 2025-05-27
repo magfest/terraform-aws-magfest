@@ -43,7 +43,7 @@ plugins:
     guidebook_updates_email: gb-ops@magfest.org
 
     event_year: 2026
-    event_qr_id: sm23
+    event_qr_id: sm26
 
     alt_schedule_url: https://guidebook.com/guide/101720/schedule
 
@@ -99,8 +99,8 @@ plugins:
       supporter_deadline: 2025-12-31
       placeholder_deadline: ''
       uber_takedown: 2026-01-26
-      epoch: 2026-01-23 08
-      eschaton: 2026-01-26 16
+      epoch: 2026-01-08 08
+      eschaton: 2026-01-11 16
       prereg_takedown: ''
       group_prereg_takedown: 2026-01-01
       badge_price_waived: 2026-01-30 12
@@ -115,12 +115,12 @@ plugins:
       # sent in the days and weeks leading up to DEALER_PAYMENT_DUE.  All waitlisted dealers will
       # be emailed when the waitlist has been exhausted and all available positions have been
       # filled, as defined by DEALER_WAITLIST_CLOSED.
-      dealer_reg_start: 2025-05-10 20:30
+      dealer_reg_start: 2025-05-30 20:30
       dealer_reg_deadline: ''
-      dealer_reg_shutdown: 2025-05-10 21
-      dealer_payment_due: 2025-09-30
+      dealer_reg_shutdown: 2025-05-30 21
+      dealer_payment_due: 2025-10-15
       dealer_waitlist_closed: ''  # If this is enabled, be sure to update the waitlist_closing.txt email
-      dealer_badge_deadline: 2026-01-15
+      dealer_badge_deadline: 2025-12-15
 
       mivs_start: 2025-08-01 09
       mivs_deadline: 2025-09-04
@@ -180,7 +180,7 @@ plugins:
     badge_prices:
       one_days_enabled: False
       initial_attendee: 125
-      dealer_badge_price: 100
+      dealer_badge_price: 110
       group_discount: 10
       presell_one_days: False
 
@@ -201,8 +201,8 @@ plugins:
       default_price: 400
       "1": 250
       "2": 450
-      "3": 700
-      "4": 1100
+      "3": 725
+      "4": 1125
 
     age_groups:
       under_6:
