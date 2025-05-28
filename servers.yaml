@@ -27,7 +27,16 @@ staging:
     web_count: 1
 
 production:
-
+  super2026:
+    ubersystem_container: ghcr.io/magfest/magprime:main
+    hostname: super2026.reg.magfest.org
+    zonename: reg.magfest.org
+    config_paths:
+      - uber_config/environments/prod
+      - uber_config/events/super/2026
+    web_count: 5
+    web_cpu: 512
+    enable_celery: true
 
   west2025:
     ubersystem_container: ghcr.io/magfest/magwest:west2025
