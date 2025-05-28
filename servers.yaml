@@ -28,7 +28,7 @@ staging:
 
 production:
   super2026:
-    ubersystem_container: ghcr.io/magfest/magwest:main
+    ubersystem_container: ghcr.io/magfest/magprime:main
     hostname: super2026.reg.magfest.org
     zonename: reg.magfest.org
     config_paths:
