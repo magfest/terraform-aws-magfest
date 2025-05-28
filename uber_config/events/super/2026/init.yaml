@@ -11,12 +11,16 @@ plugins:
     api_enabled: true
     url_root: https://super2026.reg.magfest.org/
     url_base: https://super2026.reg.magfest.org
-    app_limit: 0
+    at_the_con: False
+    post_con: False
     addons_enabled: False
+    enable_pending_emails_report: False
+    hide_prereg_open_date: True
     shirt_stock: 1375
     supporter_stock: 850
     season_stock: 820
-    hide_prereg_open_date: False
+
+    app_limit: 0
     shared_kickin_stocks: False
     shift_custom_badges: False
     can_livestream: True
@@ -28,8 +32,6 @@ plugins:
     hours_for_shirt: 0
     self_service_deferrals_open: False
     merch_shipping_fee: 15
-    at_the_con: False
-    post_con: True
     covid_policies_url: 'https://super.magfest.org/covid'
     prior_covid_policies_url: ''
     kiosk_redirect_url: ''
@@ -39,7 +41,6 @@ plugins:
     tracking_params: ['fbclid', 'hsmi', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', '_hsmi', '_home', '_hsenc']
     untransferable_attrs: ['first_name','last_name','legal_name','email','birthdate','zip_code','international','ec_name','ec_phone','cellphone','interests','age_group','staffing','requested_depts','special_merch','group_name','onsite_contact','no_onsite_contact','hotel_pin','regdesk_info','transfer_code']
     use_checkin_barcode: True
-    enable_pending_emails_report: False
     guidebook_updates_email: gb-ops@magfest.org
 
     event_year: 2026
