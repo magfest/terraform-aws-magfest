@@ -34,11 +34,11 @@ production:
     config_paths:
       - uber_config/environments/prod
       - uber_config/events/super/2026
-    web_count: 5
-    web_ram: 1500
-    web_cpu: 1024
-    celery_ram: 2048
-    celery_cpu: 768
+    web_count: 3
+#    web_ram: 1500
+#    web_cpu: 1024
+#    celery_ram: 2048
+#    celery_cpu: 768
     enable_celery: true
 
   west2025:
