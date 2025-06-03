@@ -1,36 +1,3 @@
 staging: {}
 
-production:
-  super2026:
-    ubersystem_container: ghcr.io/magfest/magprime:main
-    hostname: super2026.reg.magfest.org
-    zonename: reg.magfest.org
-    config_paths:
-      - uber_config/environments/prod
-      - uber_config/events/super/2026
-    web_count: 3
-#    web_ram: 1500
-#    web_cpu: 1024
-#    celery_ram: 2048
-#    celery_cpu: 768
-    enable_celery: true
-
-  west2025:
-    ubersystem_container: ghcr.io/magfest/magwest:west2025
-    hostname: west2025.reg.magfest.org
-    zonename: reg.magfest.org
-    config_paths:
-      - uber_config/environments/prod
-      - uber_config/events/west/2025
-    web_count: 1
-    enable_celery: true
-
-  stock2025:
-    ubersystem_container: ghcr.io/magfest/magstock:stock2025
-    hostname: stock2025.reg.magfest.org
-    zonename: reg.magfest.org
-    config_paths:
-      - uber_config/environments/prod
-      - uber_config/events/stock/2025
-    web_count: 1
-    enable_celery: true
+production: {}
