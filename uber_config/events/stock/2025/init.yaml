@@ -33,7 +33,7 @@ plugins:
     addons_enabled: True
     collect_extra_donation: False
     supporter_stock: 70
-    season_stock: 70
+    season_stock: 67
     car_stock: 50
     rv_stock: 15
     untransferable_attrs: ['first_name','last_name','legal_name','email','birthdate','zip_code','international','ec_name','ec_phone','cellphone','interests','age_group','staffing','requested_depts','onsite_contact','no_onsite_contact','license_plate','waiver_consent','waiver_signature','waiver_date','acknowledged_checkin_policy','transfer_code']
