@@ -21,7 +21,7 @@ plugins:
     addons_enabled: True
     send_sms: False
     emergency_procedures_enabled: True
-    emergency_procedures_ready: False
+    emergency_procedures_ready: True
     dealer_reg_public: True
     enable_pending_emails_report: False
     mivs_enabled: True
