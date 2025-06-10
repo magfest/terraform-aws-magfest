@@ -66,6 +66,8 @@ plugins:
     marketplace_email_signature: |
         MAGStock Artist Alley Team
         artist-alley@magstock.org
+    
+    tracking_params: ['fbclid', 'hsmi', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', '_hsmi', '_home', '_hsenc']
 
     dates:
       epoch: 2025-06-12 12
