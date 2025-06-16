@@ -28,8 +28,8 @@ plugins:
     url_root: https://stock2025.reg.magfest.org/
     url_base: https://stock2025.reg.magfest.org
     event_year: 2025
-    at_the_con: True
-    post_con: False
+    at_the_con: False
+    post_con: True
     addons_enabled: True
     collect_extra_donation: False
     supporter_stock: 70
