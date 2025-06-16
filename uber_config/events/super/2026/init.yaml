@@ -72,7 +72,6 @@ plugins:
 
     mivs_confirm_deadline: 7
     mivs_submission_grace_period: 10
-    mivs_start_year: 2013
     mivs_training_password: 2RugOrNot2Rug?ThatIsTheQuestion!
     mivs_handbook_url: https://super.magfest.org/s/MIVS-Handbook-2026.pdf
     mivs_training_url: https://forms.gle/FypdqFPcSrX6XBwUA
@@ -81,7 +80,6 @@ plugins:
 
     mits_badges_per_team: 2
     mits_email: "MAGFest Indie Tabletop Showcase <mits@magfest.org>"
-    mits_email_signature: "The MITS team"
 
     panel_rooms: ['panels_1', 'panels_2', 'panels_3', 'panels_4', 'panels_5', 'panels_6', 'panels_7', 'the_forge', 'console_stage']
     tabletop_locations: ['tabletop_indie', 'tabletop_tournaments', 'tabletop_tournaments_2', 'tabletop_panels',
@@ -127,6 +125,11 @@ plugins:
       mivs_deadline: 2025-09-04
       mivs_judging_deadline: 2025-09-29
       mivs_results_reveal: 2025-10-30
+
+      indie_arcade_start: 2025-08-01 09
+      indie_arcade_deadline: 2025-09-04
+      indie_arcade_judging_deadline: 2025-09-29
+      indie_arcade_results_reveal: 2025-10-30
 
       mits_submission_deadline: 2025-10-31
       mits_editing_deadline: 2025-11-15
@@ -397,6 +400,28 @@ plugins:
       
       panel_length:
         two_hr: "120 Minutes"
+      
+      email_signatures:
+        regsupport: |
+          MAGFest Registration Department
+          MAGFest Inc.
+          http://super.magfest.org
+        stops: |
+          Thank You,
+          Staff Operations: MAGFest Inc.
+          http://super.magfest.org
+        marketplace: |
+          - Danielle Pomfrey,
+          MAGFest Marketplace Coordinator
+        panels: |
+          - MAGFest Panels Department
+        guests: |
+          Super MAGFest Guests & MAGMoves Team
+        music: "- MAGFest Music Department"
+        merch: "- MAGFest Merch Team"
+        mits: "The MITS Team"
+        mivs: "- The MIVS Staff"
+        noreply: "- MAGFest"
 
     donation_tier_descriptions:
       no_thanks:

@@ -16,11 +16,15 @@ plugins:
     treasury_dept_checklist_form_url: https://super.dev.magevent.net/static_views/treasury_form.html
 
     dates:
-      panels_start: 2025-07-11
+      panels_start: 2025-04-11
       panels_deadline: 2025-10-15
       dealer_reg_start: 2025-08-11 19
       dealer_reg_deadline: ''
       dealer_reg_shutdown: 2025-08-11 20
+      mivs_start: 2025-04-11
+      mivs_deadline: 2025-10-11
+      indie_arcade_start: 2025-04-11
+      indie_arcade_deadline: 2025-10-11
       refund_start: 2025-10-01
       shifts_created: 2025-10-06 15
 
