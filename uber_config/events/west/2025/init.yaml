@@ -96,25 +96,21 @@ plugins:
       dealer_reg_deadline: ""  # Disable automatic waitlist
       dealer_waitlist_closed: ""  # If this is enabled, be sure to update the waitlist_closing.txt email
       band_info_deadline: ""
-      band_bio_deadline: 2025-07-01
-      band_panel_deadline: 2025-08-16 # Should be <= panels_deadline
-      band_stage_plot_deadline: 2025-07-31
+      band_bio_deadline: 2025-06-30
+      band_panel_deadline: 2025-06-30
+      band_stage_plot_deadline: 2025-06-30
       band_taxes_deadline: ""
       band_charity_deadline: ""
-      band_merch_deadline: 2025-09-10
-      band_mc_deadline: 2025-09-11
+      band_merch_deadline: 2025-06-30
+      band_mc_deadline: 2025-06-30
       band_autograph_deadline: ""
-      band_rehearsal_deadline: 2025-09-01
-      band_badges_deadline: 2025-09-01 # Should be <= placeholder_deadline
+      band_rehearsal_deadline: 2025-06-30
+      band_badges_deadline: 2025-06-30 # Should be <= placeholder_deadline
       rock_island_deadline: ""
 
       panels_deadline: 2025-05-15
       panels_confirm_deadline: ""
-      mivs_round_one_deadline: 2025-08-01
-      mivs_round_two_start: 2025-08-01
-      mivs_round_two_deadline: 2025-08-01
       mivs_judging_deadline: 2025-08-01
-      mivs_round_two_complete: 2025-08-01
       guest_panel_deadline: 2025-08-01
       guest_bio_deadline: 2025-08-01
       guest_info_deadline: ""
