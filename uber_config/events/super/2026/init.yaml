@@ -141,20 +141,20 @@ plugins:
       rock_island_deadline: 2025-12-31 # RI Inventory deadline
       auction_start: 2026-01-26 11
 
+      band_bio_deadline: 2025-09-15
+      band_stage_plot_deadline: 2025-09-15
+      band_performer_badges_deadline: 2025-09-15
       band_panel_deadline: 2025-09-30
-      band_bio_deadline: 2025-09-30
       band_autograph_deadline: 2025-09-30
-      band_performer_badges_deadline: 2025-09-30
-      band_stage_plot_deadline: 2025-11-01
-      band_merch_deadline: 2025-11-30
-      band_badges_deadline: 2025-12-01
-      band_travel_plans_deadline: 2025-12-15
-      band_charity_deadline: 2025-12-31
-      band_rehearsal_deadline: ''
-      band_taxes_deadline: 2025-12-31 # Always just set this to the latest checklist date
+      band_merch_deadline: 2025-11-16
+      band_badges_deadline: 2025-11-17
+      band_travel_plans_deadline: 2025-12-01
+      band_charity_deadline: 2025-12-17
+      band_taxes_deadline: 2025-12-17 # Always just set this to the latest checklist date
 
       band_info_deadline: ''
       band_mc_deadline: ''
+      band_rehearsal_deadline: ''
 
       guest_panel_deadline: 2025-09-30
       guest_bio_deadline: 2025-09-30
@@ -302,6 +302,21 @@ plugins:
     enums:
       badge:
         visitor_badge: Visitor
+
+      presentation:
+        basic: Lecture
+        group_discussion: Group Discussion with Moderator
+        qa: Question & Answer
+        gameshow: Gameshow
+        workshop: Workshop
+        learn_to_play: Learn to Play
+        participation: Audience Participation
+        physical_activity: Physical Activity (either group participation or performance)
+        performance: Comedy Performance
+        advanced_av: Podcast/Vodcast Recording
+        karaoke: Karaoke/Sing a Long
+        movie: Movie Screening
+        other: Other
 
       event_location:
         xpansion: Xpansion Pack Stage (Annapolis 2,3,4)
