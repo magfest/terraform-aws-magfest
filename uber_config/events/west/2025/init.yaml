@@ -245,6 +245,7 @@ plugins:
         mages: "MAGES"
         variety: "Variety Stage"
         pool_party: "Pool Party"
+        pool_patio: "Upper Pool Patio"
         lan: "LAN"
         indie_games: "Indie Games"
         marketplace: "Marketplace"
